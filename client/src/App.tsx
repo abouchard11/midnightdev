@@ -13,6 +13,8 @@ import CitationEngineering from "./pages/CitationEngineering";
 import Insights from "./pages/Insights";
 import ConversationalLandingPages from "./pages/ConversationalLandingPages";
 import SchemaBuilder from "./pages/SchemaBuilder";
+import Audit from "./pages/Audit";
+import Pricing from "./pages/Pricing";
 import BlogPostTemplate from "./pages/BlogPostTemplate";
 
 
@@ -34,6 +36,8 @@ function Router() {
       <Route path="/insights/:slug" component={BlogPostTemplate} />
       <Route path="/conversational-landing-pages" component={ConversationalLandingPages} />
       <Route path="/schema-builder" component={SchemaBuilder} />
+      <Route path="/audit" component={Audit} />
+      <Route path="/pricing" component={Pricing} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

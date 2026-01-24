@@ -54,6 +54,46 @@ export default function Hero() {
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
+
+          {/* Verified On Trust Badges */}
+          <div className="pt-12 border-t border-white/10 mt-8 w-full">
+            <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest mb-6">Verified On Authority Nodes</p>
+            <div className="flex flex-wrap gap-8 items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
+              
+              <div className="flex items-center gap-2 group">
+                <div className="w-5 h-5 bg-[#0477FF] rounded flex items-center justify-center font-bold text-white text-[10px]">cb</div>
+                <span className="font-bold text-sm text-white">Crunchbase</span>
+                <div className="text-[9px] font-mono text-muted-foreground border border-white/10 px-1 py-px rounded bg-black/40 ml-1">
+                  DA: <span className="text-[#0477FF]">91</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 group">
+                <div className="w-5 h-5 bg-[#FF3D00] rounded-full flex items-center justify-center font-bold text-white text-[8px]">C</div>
+                <span className="font-bold text-sm text-white">Clutch</span>
+                <div className="text-[9px] font-mono text-muted-foreground border border-white/10 px-1 py-px rounded bg-black/40 ml-1">
+                  DA: <span className="text-[#FF3D00]">88</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 group">
+                <div className="w-5 h-5 bg-[#FF492C] flex items-center justify-center font-bold text-white text-[10px] skew-x-[-10deg]">G2</div>
+                <span className="font-bold text-sm text-white">G2</span>
+                <div className="text-[9px] font-mono text-muted-foreground border border-white/10 px-1 py-px rounded bg-black/40 ml-1">
+                  DA: <span className="text-[#FF492C]">92</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 group">
+                <div className="w-5 h-5 bg-[#0A66C2] rounded flex items-center justify-center font-bold text-white text-[10px]">in</div>
+                <span className="font-bold text-sm text-white">LinkedIn</span>
+                <div className="text-[9px] font-mono text-muted-foreground border border-white/10 px-1 py-px rounded bg-black/40 ml-1">
+                  DA: <span className="text-[#0A66C2]">99</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
         {/* Abstract decorative element for right side */}

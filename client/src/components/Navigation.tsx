@@ -11,8 +11,10 @@ export default function Navigation() {
   const navItems = [
     { name: "Services", href: "/#services" },
     { name: "GEO Protocol", href: "/geo-optimization" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Audit", href: "/audit" },
+    { name: "Insights", href: "/insights" },
     { name: "Work", href: "/#work" },
-    { name: "About", href: "/#contact" },
   ];
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -40,7 +42,7 @@ export default function Navigation() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -53,7 +55,7 @@ export default function Navigation() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           <Button 
             variant="outline" 
             className="rounded-none border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono"
@@ -65,7 +67,7 @@ export default function Navigation() {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden z-50 p-2 text-foreground hover:text-primary transition-colors"
+          className="lg:hidden z-50 p-2 text-foreground hover:text-primary transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -74,18 +76,18 @@ export default function Navigation() {
 
         {/* Mobile Menu Overlay */}
         <div className={cn(
-          "fixed inset-0 bg-background/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center transition-all duration-300 md:hidden",
+          "fixed inset-0 bg-background/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center transition-all duration-300 lg:hidden",
           isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}>
           <div className="absolute inset-0 border-grid opacity-10 pointer-events-none"></div>
           
-          <nav className="flex flex-col items-center gap-8 w-full px-8">
+          <nav className="flex flex-col items-center gap-6 w-full px-8 max-h-[80vh] overflow-y-auto">
             {navItems.map((item, index) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
-                className="text-3xl font-bold tracking-tighter hover:text-primary transition-colors font-mono uppercase w-full text-center border-b border-white/5 pb-4"
+                className="text-2xl font-bold tracking-tighter hover:text-primary transition-colors font-mono uppercase w-full text-center border-b border-white/5 pb-4"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <span className="text-primary text-sm mr-4 align-top">0{index + 1} //</span>
