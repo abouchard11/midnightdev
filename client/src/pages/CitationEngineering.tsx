@@ -127,7 +127,7 @@ export default function CitationEngineering() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-70">
               {/* Crunchbase Style Badge */}
-              <div className="flex flex-col items-center gap-2 group cursor-default">
+              <a href="https://www.crunchbase.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-[#0477FF] rounded flex items-center justify-center font-bold text-white text-lg">cb</div>
                   <span className="font-bold text-xl text-white group-hover:text-[#0477FF] transition-colors">Crunchbase</span>
@@ -135,10 +135,10 @@ export default function CitationEngineering() {
                 <div className="text-[10px] font-mono text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded bg-black/40">
                   DA: <span className="text-[#0477FF]">91</span>
                 </div>
-              </div>
+              </a>
 
               {/* Clutch Style Badge */}
-              <div className="flex flex-col items-center gap-2 group cursor-default">
+              <a href="https://clutch.co" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-[#FF3D00] rounded-full flex items-center justify-center font-bold text-white text-xs">C</div>
                   <span className="font-bold text-xl text-white group-hover:text-[#FF3D00] transition-colors">Clutch</span>
@@ -146,10 +146,10 @@ export default function CitationEngineering() {
                 <div className="text-[10px] font-mono text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded bg-black/40">
                   DA: <span className="text-[#FF3D00]">88</span>
                 </div>
-              </div>
+              </a>
 
               {/* G2 Style Badge */}
-              <div className="flex flex-col items-center gap-2 group cursor-default">
+              <a href="https://www.g2.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-[#FF492C] flex items-center justify-center font-bold text-white text-lg skew-x-[-10deg]">G2</div>
                   <span className="font-bold text-xl text-white group-hover:text-[#FF492C] transition-colors">G2 Crowd</span>
@@ -157,10 +157,10 @@ export default function CitationEngineering() {
                 <div className="text-[10px] font-mono text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded bg-black/40">
                   DA: <span className="text-[#FF492C]">92</span>
                 </div>
-              </div>
+              </a>
 
               {/* LinkedIn Style Badge */}
-              <div className="flex flex-col items-center gap-2 group cursor-default">
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-[#0A66C2] rounded flex items-center justify-center font-bold text-white text-lg">in</div>
                   <span className="font-bold text-xl text-white group-hover:text-[#0A66C2] transition-colors">LinkedIn</span>
@@ -168,7 +168,7 @@ export default function CitationEngineering() {
                 <div className="text-[10px] font-mono text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded bg-black/40">
                   DA: <span className="text-[#0A66C2]">99</span>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </section>
