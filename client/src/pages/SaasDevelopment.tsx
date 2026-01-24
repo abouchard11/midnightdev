@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Database, Server, Shield, Zap, Code, Layout } from "lucide-react";
 import SaasArchitecture from "@/components/diagrams/SaasArchitecture";
+import SEO from "@/components/SEO";
 
 export default function SaasDevelopment() {
   const stack = [
@@ -42,6 +43,12 @@ export default function SaasDevelopment() {
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+      <SEO 
+        title="Enterprise SaaS Architecture"
+        description="Scalable, secure, and high-performance SaaS solutions. We architect systems using Next.js, React, and cloud-native technologies for high-growth companies."
+        url="/saas-development"
+        image="/images/saas-service.png"
+      />
       <Navigation />
       
       <main className="pt-24">

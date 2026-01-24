@@ -42,3 +42,11 @@
     - [ ] Update `SaasArchitecture.tsx`: Implement vertical layout for mobile, horizontal for desktop. Adjust animation paths accordingly.
     - [ ] Update `AiWorkflow.tsx`: Adjust node positioning and SVG lines for smaller screens. Ensure text is readable.
     - [ ] Test responsiveness on simulated mobile breakpoints.
+
+- [ ] **SEO & Meta Tags**:
+    - [ ] Install `wouter` compatible SEO solution (e.g., `react-helmet-async` or manual head management).
+    - [ ] Create a reusable `SEO` component.
+    - [ ] Add SEO tags to `Home.tsx`.
+    - [ ] Add SEO tags to `SaasDevelopment.tsx` (Title: "Enterprise SaaS Architecture | Midnight Dev", Desc: "Scalable, secure, and high-performance SaaS solutions...").
+    - [ ] Add SEO tags to `AiMarketing.tsx` (Title: "AI Marketing Agents | Midnight Dev", Desc: "Dominate local search with autonomous AI agents...").
+    - [ ] Verify Open Graph image paths.

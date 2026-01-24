@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Bot, Target, BarChart3, Globe, Cpu, Network, MessageSquare } from "lucide-react";
 import AiWorkflow from "@/components/diagrams/AiWorkflow";
+import SEO from "@/components/SEO";
 
 export default function AiMarketing() {
   const agents = [
@@ -21,6 +22,12 @@ export default function AiMarketing() {
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+      <SEO 
+        title="AI Marketing Agents"
+        description="Dominate local search with autonomous AI agents. Our systems automate content generation, lead qualification, and outreach for maximum ROI."
+        url="/ai-marketing"
+        image="/images/marketing-service.png"
+      />
       <Navigation />
       
       <main className="pt-24">
