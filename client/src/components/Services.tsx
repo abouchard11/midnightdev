@@ -4,13 +4,13 @@ import { ArrowUpRight, Database, Globe, Cpu, BarChart } from "lucide-react";
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 border-b border-white/10 bg-background relative">
+    <section id="services" className="py-16 md:py-24 border-b border-white/10 bg-background relative">
       <div className="container">
-        <div className="mb-16 max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
+        <div className="mb-12 md:mb-16 max-w-2xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tighter">
             DUAL_CORE <span className="text-primary">OPERATIONS</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base md:text-lg">
             We operate on two distinct frequencies. Whether you need enterprise-grade software or local market dominance, we deploy the right stack.
           </p>
         </div>

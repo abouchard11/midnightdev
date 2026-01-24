@@ -3,25 +3,25 @@ import { Mail, Github, Twitter, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-background border-t border-white/10 pt-24 pb-12">
+    <footer id="contact" className="bg-background border-t border-white/10 pt-16 md:pt-24 pb-12">
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-16 mb-24">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 mb-16 md:mb-24">
           <div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter leading-none">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 md:mb-8 tracking-tighter leading-none">
               READY TO <br />
               <span className="text-primary">GO DARK?</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-md mb-8">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-md mb-8">
               Whether you need enterprise scale or local dominance, we're ready to deploy.
             </p>
             
-            <Button size="lg" className="h-16 px-8 text-lg rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono">
+            <Button size="lg" className="w-full sm:w-auto h-16 px-8 text-lg rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono">
               <Mail className="mr-3 h-5 w-5" />
               HELLO@MIDNIGHT.DEV
             </Button>
           </div>
           
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between pt-12 lg:pt-0">
             <div className="grid grid-cols-2 gap-8 mb-12">
               <div>
                 <h3 className="font-mono text-sm text-primary mb-4 uppercase tracking-widest">Services</h3>

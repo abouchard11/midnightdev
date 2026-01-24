@@ -26,14 +26,14 @@ export default function Work() {
   ];
 
   return (
-    <section id="work" className="py-24 bg-background border-b border-white/10">
+    <section id="work" className="py-16 md:py-24 bg-background border-b border-white/10">
       <div className="container">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16 gap-6 md:gap-8">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tighter">
               SELECTED <span className="text-primary">WORKS</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-xl">
+            <p className="text-muted-foreground text-base md:text-lg max-w-xl">
               A collection of high-impact systems deployed for our partners.
             </p>
           </div>

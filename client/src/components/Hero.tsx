@@ -15,8 +15,8 @@ export default function Hero() {
         <div className="absolute inset-0 border-grid opacity-20"></div>
       </div>
 
-      <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
+      <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center pt-8 md:pt-0">
+        <div className="space-y-6 md:space-y-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-primary/30 bg-primary/10 text-primary font-mono text-xs uppercase tracking-widest">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
@@ -25,22 +25,22 @@ export default function Hero() {
             System Online v2.0
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.95] md:leading-[0.9]">
             BUILDING <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">THE FUTURE</span> <br />
             <span className="text-primary">AT NIGHT.</span>
           </h1>
           
-          <p className="text-xl text-muted-foreground max-w-lg font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-lg font-light leading-relaxed">
             We are a dual-service agency delivering enterprise SaaS architecture and AI-powered local marketing solutions.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button size="lg" className="rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono h-14 px-8 text-base">
+          <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
+            <Button size="lg" className="w-full sm:w-auto rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono h-14 px-8 text-base">
               <Terminal className="mr-2 h-4 w-4" />
               VIEW SERVICES
             </Button>
-            <Button size="lg" variant="outline" className="rounded-none border-white/20 hover:bg-white/5 text-foreground font-mono h-14 px-8 text-base group">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-none border-white/20 hover:bg-white/5 text-foreground font-mono h-14 px-8 text-base group">
               OUR WORK
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
