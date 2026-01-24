@@ -36,11 +36,20 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
-            <Button size="lg" className="w-full sm:w-auto rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono h-14 px-8 text-base">
+            <Button 
+              size="lg" 
+              className="w-full sm:w-auto rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono h-14 px-8 text-base"
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <Terminal className="mr-2 h-4 w-4" />
               VIEW SERVICES
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-none border-white/20 hover:bg-white/5 text-foreground font-mono h-14 px-8 text-base group">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="w-full sm:w-auto rounded-none border-white/20 hover:bg-white/5 text-foreground font-mono h-14 px-8 text-base group"
+              onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               OUR WORK
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>

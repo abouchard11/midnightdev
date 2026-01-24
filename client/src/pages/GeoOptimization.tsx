@@ -200,6 +200,7 @@ export default function GeoOptimization() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
+                id: "fintech-saas-platform",
                 client: "FinTech SaaS Platform",
                 metric: "+450%",
                 label: "AI REFERRAL TRAFFIC",
@@ -207,6 +208,7 @@ export default function GeoOptimization() {
                 tags: ["Perplexity", "ChatGPT", "Claude"]
               },
               {
+                id: "legal-firm-austin",
                 client: "Legal Firm (Austin)",
                 metric: "#1 RANK",
                 label: "LOCAL SEARCHGPT",
@@ -214,6 +216,7 @@ export default function GeoOptimization() {
                 tags: ["SearchGPT", "Bing Chat", "Google SGE"]
               },
               {
+                id: "e-commerce-brand",
                 client: "E-commerce Brand",
                 metric: "3.5x",
                 label: "CONVERSION RATE",
@@ -248,7 +251,7 @@ export default function GeoOptimization() {
                   ))}
                 </div>
 
-                <Link href={`/case-study/${study.client.toLowerCase().replace(/\s+/g, '-')}`}>
+                <Link href={`/case-study/${study.id}`}>
                   <Button variant="ghost" className="w-full justify-between hover:bg-white/5 hover:text-primary group-hover:border-primary/30 border border-transparent transition-all">
                     <span className="font-mono text-xs">READ_ANALYSIS</span>
                     <ArrowRight className="w-4 h-4 ml-2" />
