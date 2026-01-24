@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import ContactDialog from "@/components/ContactDialog";
 import SEO from "@/components/SEO";
-import { ArrowLeft, CheckCircle2, ShieldCheck, Network, Globe } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ShieldCheck, Network, Globe, HelpCircle } from "lucide-react";
 import { Link } from "wouter";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 export default function CitationEngineering() {
   return (
@@ -141,9 +142,19 @@ export default function CitationEngineering() {
                   <div className="w-8 h-8 bg-[#0477FF] rounded flex items-center justify-center font-bold text-white text-lg">cb</div>
                   <span className="font-bold text-xl text-white group-hover:text-[#0477FF] transition-colors">Crunchbase</span>
                 </div>
-                <div className="text-[10px] font-mono text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded bg-black/40">
-                  DA: <span className="text-[#0477FF]">91</span>
-                </div>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="text-[10px] font-mono text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded bg-black/40 flex items-center gap-1 cursor-help">
+                        DA: <span className="text-[#0477FF]">91</span>
+                        <HelpCircle className="w-2 h-2" />
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent className="bg-black border border-white/20 text-xs font-mono max-w-[200px]">
+                      <p>Domain Authority (DA) predicts how likely a website is to rank in search engine results. Higher scores indicate greater trust.</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </a>
 
               {/* Clutch Style Badge */}
@@ -152,9 +163,19 @@ export default function CitationEngineering() {
                   <div className="w-8 h-8 bg-[#FF3D00] rounded-full flex items-center justify-center font-bold text-white text-xs">C</div>
                   <span className="font-bold text-xl text-white group-hover:text-[#FF3D00] transition-colors">Clutch</span>
                 </div>
-                <div className="text-[10px] font-mono text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded bg-black/40">
-                  DA: <span className="text-[#FF3D00]">88</span>
-                </div>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="text-[10px] font-mono text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded bg-black/40 flex items-center gap-1 cursor-help">
+                        DA: <span className="text-[#FF3D00]">88</span>
+                        <HelpCircle className="w-2 h-2" />
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent className="bg-black border border-white/20 text-xs font-mono max-w-[200px]">
+                      <p>Domain Authority (DA) predicts how likely a website is to rank in search engine results. Higher scores indicate greater trust.</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </a>
 
               {/* G2 Style Badge */}
@@ -163,9 +184,19 @@ export default function CitationEngineering() {
                   <div className="w-8 h-8 bg-[#FF492C] flex items-center justify-center font-bold text-white text-lg skew-x-[-10deg]">G2</div>
                   <span className="font-bold text-xl text-white group-hover:text-[#FF492C] transition-colors">G2 Crowd</span>
                 </div>
-                <div className="text-[10px] font-mono text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded bg-black/40">
-                  DA: <span className="text-[#FF492C]">92</span>
-                </div>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="text-[10px] font-mono text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded bg-black/40 flex items-center gap-1 cursor-help">
+                        DA: <span className="text-[#FF492C]">92</span>
+                        <HelpCircle className="w-2 h-2" />
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent className="bg-black border border-white/20 text-xs font-mono max-w-[200px]">
+                      <p>Domain Authority (DA) predicts how likely a website is to rank in search engine results. Higher scores indicate greater trust.</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </a>
 
               {/* LinkedIn Style Badge */}
@@ -174,9 +205,19 @@ export default function CitationEngineering() {
                   <div className="w-8 h-8 bg-[#0A66C2] rounded flex items-center justify-center font-bold text-white text-lg">in</div>
                   <span className="font-bold text-xl text-white group-hover:text-[#0A66C2] transition-colors">LinkedIn</span>
                 </div>
-                <div className="text-[10px] font-mono text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded bg-black/40">
-                  DA: <span className="text-[#0A66C2]">99</span>
-                </div>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="text-[10px] font-mono text-muted-foreground border border-white/10 px-1.5 py-0.5 rounded bg-black/40 flex items-center gap-1 cursor-help">
+                        DA: <span className="text-[#0A66C2]">99</span>
+                        <HelpCircle className="w-2 h-2" />
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent className="bg-black border border-white/20 text-xs font-mono max-w-[200px]">
+                      <p>Domain Authority (DA) predicts how likely a website is to rank in search engine results. Higher scores indicate greater trust.</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </a>
             </div>
           </div>

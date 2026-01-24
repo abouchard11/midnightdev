@@ -11,6 +11,8 @@ import GeoOptimization from "./pages/GeoOptimization";
 import CaseStudyTemplate from "./pages/CaseStudyTemplate";
 import CitationEngineering from "./pages/CitationEngineering";
 import Insights from "./pages/Insights";
+import ConversationalLandingPages from "./pages/ConversationalLandingPages";
+import SchemaBuilder from "./pages/SchemaBuilder";
 import BlogPostTemplate from "./pages/BlogPostTemplate";
 
 
@@ -30,6 +32,8 @@ function Router() {
       <Route path="/citation-engineering" component={CitationEngineering} />
       <Route path="/insights" component={Insights} />
       <Route path="/insights/:slug" component={BlogPostTemplate} />
+      <Route path="/conversational-landing-pages" component={ConversationalLandingPages} />
+      <Route path="/schema-builder" component={SchemaBuilder} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

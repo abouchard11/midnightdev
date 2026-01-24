@@ -76,6 +76,21 @@ export default function CaseStudyTemplate() {
                 <span key={tag} className="border border-white/10 px-3 py-1 bg-white/5 text-primary/80 hover:bg-primary/10 transition-colors">{tag}</span>
               ))}
             </div>
+
+            {/* Testimonial Quote */}
+            <div className="mt-12 border-l-2 border-primary/50 pl-6 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500 fill-mode-backwards">
+              <blockquote className="text-xl md:text-2xl font-light italic text-muted-foreground mb-4">
+                "Midnight Dev didn't just build a website; they built a <span className="text-white not-italic font-normal">lead generation machine</span> that speaks the language of modern AI."
+              </blockquote>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold text-xs">
+                  {study.client.charAt(0)}
+                </div>
+                <div className="font-mono text-sm text-primary uppercase tracking-wider">
+                  CTO, {study.client}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
