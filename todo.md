@@ -50,3 +50,10 @@
     - [ ] Add SEO tags to `SaasDevelopment.tsx` (Title: "Enterprise SaaS Architecture | Midnight Dev", Desc: "Scalable, secure, and high-performance SaaS solutions...").
     - [ ] Add SEO tags to `AiMarketing.tsx` (Title: "AI Marketing Agents | Midnight Dev", Desc: "Dominate local search with autonomous AI agents...").
     - [ ] Verify Open Graph image paths.
+
+- [ ] **Structured Data (JSON-LD)**:
+    - [ ] Create `src/components/StructuredData.tsx` component.
+    - [ ] Add `Organization` schema to `Home.tsx`.
+    - [ ] Add `Service` schema to `SaasDevelopment.tsx`.
+    - [ ] Add `Service` schema to `AiMarketing.tsx`.
+    - [ ] Validate schema output format.

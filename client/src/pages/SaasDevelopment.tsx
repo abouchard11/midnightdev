@@ -5,8 +5,40 @@ import { Badge } from "@/components/ui/badge";
 import { Check, Database, Server, Shield, Zap, Code, Layout } from "lucide-react";
 import SaasArchitecture from "@/components/diagrams/SaasArchitecture";
 import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 
 export default function SaasDevelopment() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Enterprise SaaS Development",
+    "provider": {
+      "@type": "Organization",
+      "name": "Midnight Dev"
+    },
+    "description": "Scalable, secure, and high-performance SaaS solutions using Next.js, React, and cloud-native technologies.",
+    "areaServed": "Global",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "SaaS Development Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom SaaS Architecture"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Cloud Infrastructure Setup"
+          }
+        }
+      ]
+    }
+  };
   const stack = [
     { name: "Next.js 16", desc: "App Router Architecture" },
     { name: "React 19", desc: "Server Components" },
@@ -49,6 +81,7 @@ export default function SaasDevelopment() {
         url="/saas-development"
         image="/images/saas-service.png"
       />
+      <StructuredData data={schema} />
       <Navigation />
       
       <main className="pt-24">

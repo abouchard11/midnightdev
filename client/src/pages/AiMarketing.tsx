@@ -4,8 +4,40 @@ import { Button } from "@/components/ui/button";
 import { Bot, Target, BarChart3, Globe, Cpu, Network, MessageSquare } from "lucide-react";
 import AiWorkflow from "@/components/diagrams/AiWorkflow";
 import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 
 export default function AiMarketing() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI Marketing Agents",
+    "provider": {
+      "@type": "Organization",
+      "name": "Midnight Dev"
+    },
+    "description": "Autonomous AI agents for local search domination, content generation, and automated lead qualification.",
+    "areaServed": "Global",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Marketing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Automated Content Generation"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "24/7 Lead Qualification Bot"
+          }
+        }
+      ]
+    }
+  };
   const agents = [
     { name: "Content Generator", desc: "Automated SEO blog posts & copy" },
     { name: "Lead Qualifier", desc: "24/7 Chatbot & CRM entry" },
@@ -28,6 +60,7 @@ export default function AiMarketing() {
         url="/ai-marketing"
         image="/images/marketing-service.png"
       />
+      <StructuredData data={schema} />
       <Navigation />
       
       <main className="pt-24">
