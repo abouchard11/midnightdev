@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -51,14 +52,30 @@ export default function ContactForm({ service, onSuccess }: ContactFormProps) {
 
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    console.log("Form Submitted:", { ...values, captchaToken });
-    toast.success("Message sent successfully! We'll be in touch shortly.");
-    
-    setIsSubmitting(false);
-    if (onSuccess) onSuccess();
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_id",
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_id",
+        {
+          from_name: values.name,
+          from_email: values.email,
+          company: values.company || "Not specified",
+          message: values.message,
+          service_interest: service || "General Inquiry",
+          "g-recaptcha-response": captchaToken,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "public_key"
+      );
+
+      toast.success("Message sent successfully! We'll be in touch shortly.");
+      form.reset();
+      if (onSuccess) onSuccess();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error("Failed to send message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (

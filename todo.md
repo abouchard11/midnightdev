@@ -65,3 +65,8 @@
     - [ ] Replace "Initiate Consultation" button in `SaasDevelopment.tsx` with `ContactDialog`.
     - [ ] Replace "Start Project" button in `AiMarketing.tsx` with `ContactDialog`.
     - [ ] Ensure reCAPTCHA widget is responsive and styled (dark mode).
+
+- [ ] **EmailJS Integration**:
+    - [ ] Install `@emailjs/browser`.
+    - [ ] Update `ContactForm.tsx` to use `emailjs.send` instead of simulated wait.
+    - [ ] Configure environment variables for Service ID, Template ID, and Public Key.
