@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Database, Server, Shield, Zap, Code, Layout } from "lucide-react";
+import SaasArchitecture from "@/components/diagrams/SaasArchitecture";
 
 export default function SaasDevelopment() {
   const stack = [
@@ -98,6 +99,11 @@ export default function SaasDevelopment() {
                 <p className="text-lg text-muted-foreground mb-8">
                   Our development philosophy prioritizes stability, security, and speed. We don't just write code; we architect solutions.
                 </p>
+                
+                <div className="mb-12">
+                   <SaasArchitecture />
+                </div>
+
                 <Button size="lg" className="rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono h-14 px-8 text-base">
                   INITIATE CONSULTATION
                 </Button>

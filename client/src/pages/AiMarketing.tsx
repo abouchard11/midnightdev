@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Bot, Target, BarChart3, Globe, Cpu, Network, MessageSquare } from "lucide-react";
+import AiWorkflow from "@/components/diagrams/AiWorkflow";
 
 export default function AiMarketing() {
   const agents = [
@@ -88,34 +89,8 @@ export default function AiMarketing() {
                 </div>
               </div>
               
-              <div className="relative h-full min-h-[400px] border border-white/10 bg-black p-8 flex flex-col justify-center">
-                <div className="absolute inset-0 border-grid opacity-20"></div>
-                <div className="relative z-10 space-y-8">
-                  <div className="flex items-start gap-4">
-                    <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-primary mt-1">
-                      <Bot className="h-4 w-4" />
-                    </div>
-                    <div className="bg-white/10 p-4 rounded-none border border-white/5 max-w-[80%]">
-                      <p className="text-sm font-mono text-primary-foreground">Scanning local competitors...</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-primary mt-1">
-                      <Bot className="h-4 w-4" />
-                    </div>
-                    <div className="bg-white/10 p-4 rounded-none border border-white/5 max-w-[80%]">
-                      <p className="text-sm font-mono text-primary-foreground">Identified 3 high-value keywords. Generating content strategy...</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-primary mt-1">
-                      <Bot className="h-4 w-4" />
-                    </div>
-                    <div className="bg-white/10 p-4 rounded-none border border-white/5 max-w-[80%]">
-                      <p className="text-sm font-mono text-primary-foreground">Lead captured: Dr. Smith (Dentist). Booking consultation...</p>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative h-full min-h-[400px]">
+                <AiWorkflow />
               </div>
             </div>
           </div>

@@ -30,3 +30,10 @@
     - [ ] Update `src/App.tsx` with new routes.
     - [ ] Update `src/components/Navigation.tsx` to link to new pages.
     - [ ] Update `src/components/Services.tsx` "Learn More" buttons to point to new pages.
+
+- [ ] **Interactive Diagrams**:
+    - [ ] Create `src/components/diagrams/SaasArchitecture.tsx`: Animated visualization of data flow (Client -> Edge -> Server -> DB).
+    - [ ] Create `src/components/diagrams/AiWorkflow.tsx`: Animated visualization of agent swarm (Input -> Analysis -> Action -> Result).
+    - [ ] Integrate `SaasArchitecture` into `SaasDevelopment.tsx`.
+    - [ ] Integrate `AiWorkflow` into `AiMarketing.tsx`.
+    - [ ] Ensure animations are performant and respect `prefers-reduced-motion`.
