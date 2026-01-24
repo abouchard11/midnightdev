@@ -15,7 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { toast } from "sonner";
-import { Loader2 } from "lucide-react";
+import { Loader2, CheckCircle2 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
 const formSchema = z.object({
@@ -32,6 +32,7 @@ interface ContactFormProps {
 
 export default function ContactForm({ service, onSuccess }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -69,7 +70,7 @@ export default function ContactForm({ service, onSuccess }: ContactFormProps) {
 
       toast.success("Message sent successfully! We'll be in touch shortly.");
       form.reset();
-      if (onSuccess) onSuccess();
+      setIsSuccess(true);
     } catch (error) {
       console.error("EmailJS Error:", error);
       toast.error("Failed to send message. Please try again later.");
@@ -78,9 +79,33 @@ export default function ContactForm({ service, onSuccess }: ContactFormProps) {
     }
   }
 
+  if (isSuccess) {
+    return (
+      <div className="flex flex-col items-center justify-center py-12 text-center space-y-4 animate-in fade-in zoom-in duration-300">
+        <div className="rounded-full bg-primary/10 p-4">
+          <CheckCircle2 className="w-12 h-12 text-primary" />
+        </div>
+        <h3 className="text-2xl font-mono font-bold tracking-tight">Message Received</h3>
+        <p className="text-muted-foreground max-w-xs">
+          Thank you for reaching out. Our team will review your inquiry and get back to you shortly.
+        </p>
+        <Button 
+          variant="outline" 
+          onClick={() => {
+            setIsSuccess(false);
+            if (onSuccess) onSuccess();
+          }}
+          className="mt-4"
+        >
+          Close
+        </Button>
+      </div>
+    );
+  }
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <FormField
           control={form.control}
           name="name"

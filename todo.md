@@ -70,3 +70,8 @@
     - [ ] Install `@emailjs/browser`.
     - [ ] Update `ContactForm.tsx` to use `emailjs.send` instead of simulated wait.
     - [ ] Configure environment variables for Service ID, Template ID, and Public Key.
+
+- [ ] **Contact Form Success State**:
+    - [ ] Update `ContactForm.tsx` to include a success state variable.
+    - [ ] Design a success view with an icon (e.g., CheckCircle) and a thank you message.
+    - [ ] Conditionally render the success view when `isSubmitted` is true.
