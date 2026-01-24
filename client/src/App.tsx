@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import SaasDevelopment from "./pages/SaasDevelopment";
 import AiMarketing from "./pages/AiMarketing";
 import GeoOptimization from "./pages/GeoOptimization";
+import CaseStudyTemplate from "./pages/CaseStudyTemplate";
 
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
       <Route path={"/saas-development"} component={SaasDevelopment} />
       <Route path="/ai-marketing" component={AiMarketing} />
       <Route path="/geo-optimization" component={GeoOptimization} />
+      <Route path="/case-study/:slug" component={CaseStudyTemplate} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

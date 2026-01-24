@@ -3,7 +3,8 @@ import ContactDialog from "@/components/ContactDialog";
 import GeoDiagram from "@/components/diagrams/GeoDiagram";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
-import { CheckCircle2, Search, Database, MessageSquare } from "lucide-react";
+import { CheckCircle2, Search, Database, MessageSquare, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function GeoOptimization() {
   return (
@@ -209,13 +210,20 @@ export default function GeoOptimization() {
                   {study.desc}
                 </p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {study.tags.map((tag) => (
                     <span key={tag} className="text-[10px] font-mono border border-white/10 px-2 py-1 text-white/60 bg-black/20">
                       {tag}
                     </span>
                   ))}
                 </div>
+
+                <Link href={`/case-study/${study.client.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <Button variant="ghost" className="w-full justify-between hover:bg-white/5 hover:text-primary group-hover:border-primary/30 border border-transparent transition-all">
+                    <span className="font-mono text-xs">READ_ANALYSIS</span>
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>
