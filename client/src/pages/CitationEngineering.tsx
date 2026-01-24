@@ -115,6 +115,44 @@ export default function CitationEngineering() {
           </div>
         </section>
 
+        {/* Verified Data Sources */}
+        <section className="container px-4 md:px-6 mb-24">
+          <div className="border border-white/10 bg-white/5 p-8 md:p-12">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl font-mono font-bold mb-4">VERIFIED DATA SOURCES</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                We secure your presence on the high-authority indexes that serve as the training data for modern AI models.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-70">
+              {/* Crunchbase Style Badge */}
+              <div className="flex items-center gap-2 group cursor-default">
+                <div className="w-8 h-8 bg-[#0477FF] rounded flex items-center justify-center font-bold text-white text-lg">cb</div>
+                <span className="font-bold text-xl text-white group-hover:text-[#0477FF] transition-colors">Crunchbase</span>
+              </div>
+
+              {/* Clutch Style Badge */}
+              <div className="flex items-center gap-2 group cursor-default">
+                <div className="w-8 h-8 bg-[#FF3D00] rounded-full flex items-center justify-center font-bold text-white text-xs">C</div>
+                <span className="font-bold text-xl text-white group-hover:text-[#FF3D00] transition-colors">Clutch</span>
+              </div>
+
+              {/* G2 Style Badge */}
+              <div className="flex items-center gap-2 group cursor-default">
+                <div className="w-8 h-8 bg-[#FF492C] flex items-center justify-center font-bold text-white text-lg skew-x-[-10deg]">G2</div>
+                <span className="font-bold text-xl text-white group-hover:text-[#FF492C] transition-colors">G2 Crowd</span>
+              </div>
+
+              {/* LinkedIn Style Badge */}
+              <div className="flex items-center gap-2 group cursor-default">
+                <div className="w-8 h-8 bg-[#0A66C2] rounded flex items-center justify-center font-bold text-white text-lg">in</div>
+                <span className="font-bold text-xl text-white group-hover:text-[#0A66C2] transition-colors">LinkedIn</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Features Grid */}
         <section className="container px-4 md:px-6 mb-24">
           <div className="text-center mb-16">
