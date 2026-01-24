@@ -6,29 +6,93 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CheckCircle2, Search, BarChart3, Zap, Code } from "lucide-react";
+import { CheckCircle2, Search, BarChart3, Zap, Code, Loader2, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import ContactDialog from "@/components/ContactDialog";
+import { trpc } from "@/lib/trpc";
 
 export default function Audit() {
   const [formData, setFormData] = useState({
     businessName: "",
-    website: "",
+    websiteUrl: "",
     industry: "",
     serviceArea: "",
     email: "",
-    goals: ""
+    aiRecommendationGoal: ""
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const submitMutation = trpc.audit.submit.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+    },
+    onError: (error) => {
+      alert("Error submitting audit request: " + error.message);
+    }
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would submit to an API
-    // For now, we'll simulate a submission via the ContactDialog or just show a success message
-    // But since the requirement is a form, we'll assume it hooks into the same email system eventually
-    // For this implementation, we'll use the ContactDialog as the submission mechanism wrapper or just a direct form
-    // Given the detailed fields, let's make this a standalone form that triggers a "Report Generating" state
-    alert("Audit request received. Your report is being generated and will be emailed to " + formData.email);
+    if (!formData.industry) {
+      alert("Please select an industry");
+      return;
+    }
+    submitMutation.mutate(formData);
   };
+
+  if (submitted) {
+    return (
+      <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+        <SEO 
+          title="Audit Request Received | Midnight Dev"
+          description="Your AI Visibility Audit request has been submitted successfully."
+          url="/audit"
+        />
+        <Navigation />
+        <main className="pt-32 pb-24">
+          <div className="container max-w-2xl text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <div className="relative inline-block mb-8">
+                <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-full animate-pulse" />
+                <CheckCircle className="w-24 h-24 text-green-500 relative z-10" strokeWidth={1.5} />
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl font-mono font-bold text-white mb-4">
+                REQUEST_RECEIVED_
+              </h1>
+              
+              <div className="inline-block bg-green-500/10 border border-green-500/20 px-4 py-2 rounded mb-8">
+                <span className="text-green-500 font-mono text-sm tracking-widest uppercase">
+                  Audit Initiated
+                </span>
+              </div>
+              
+              <p className="text-gray-400 font-mono text-lg mb-8 max-w-md mx-auto">
+                Your AI Visibility Audit is being prepared. Our engineers will deliver your personalized report within 24 hours.
+              </p>
+
+              <div className="bg-purple-500/10 border border-purple-500/20 rounded-lg p-6 mb-8 text-left max-w-md mx-auto">
+                <h3 className="text-purple-400 font-mono font-bold mb-2">WHAT_HAPPENS_NEXT_</h3>
+                <ul className="text-gray-400 font-mono text-sm space-y-2">
+                  <li>1. Confirmation email sent to {formData.email}</li>
+                  <li>2. Our team analyzes your AI visibility</li>
+                  <li>3. Full report delivered within 24 hours</li>
+                  <li>4. Optional: Upgrade to paid audit for strategy call</li>
+                </ul>
+              </div>
+
+              <a href="/" className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 font-mono text-sm uppercase tracking-wider hover:bg-purple-400 transition-colors duration-300">
+                Return to Homepage
+              </a>
+            </motion.div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
@@ -139,8 +203,8 @@ export default function Audit() {
                     type="url"
                     className="bg-white/5 border-white/10 focus:border-primary"
                     placeholder="https://acme.com"
-                    value={formData.website}
-                    onChange={(e) => setFormData({...formData, website: e.target.value})}
+                    value={formData.websiteUrl}
+                    onChange={(e) => setFormData({...formData, websiteUrl: e.target.value})}
                   />
                 </div>
 
@@ -189,13 +253,25 @@ export default function Audit() {
                   <Textarea 
                     className="bg-white/5 border-white/10 focus:border-primary min-h-[100px]"
                     placeholder="e.g. 'Best enterprise CRM for real estate' or 'Top personal injury lawyer in Miami'"
-                    value={formData.goals}
-                    onChange={(e) => setFormData({...formData, goals: e.target.value})}
+                    value={formData.aiRecommendationGoal}
+                    onChange={(e) => setFormData({...formData, aiRecommendationGoal: e.target.value})}
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-black font-mono font-bold h-14 uppercase tracking-widest text-lg">
-                  AUDIT_MY_VISIBILITY_
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full bg-primary hover:bg-primary/90 text-black font-mono font-bold h-14 uppercase tracking-widest text-lg"
+                  disabled={submitMutation.isPending}
+                >
+                  {submitMutation.isPending ? (
+                    <>
+                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                      PROCESSING_
+                    </>
+                  ) : (
+                    "AUDIT_MY_VISIBILITY_"
+                  )}
                 </Button>
 
                 <p className="text-xs text-center text-muted-foreground mt-4">

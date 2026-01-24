@@ -1,15 +1,20 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ContactDialog from "@/components/ContactDialog";
 import { Button } from "@/components/ui/button";
-import { Check, Zap, Database, Network, Building2 } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Check, Zap, Database, Network, Building2, Loader2, CreditCard } from "lucide-react";
 import { motion } from "framer-motion";
+import { trpc } from "@/lib/trpc";
 
 const tiers = [
   {
     name: "SIGNAL_CHECK_",
     price: "$497",
+    priceNum: 497,
     period: "one-time",
     description: "The diagnostic entry point. Understand your current standing and fix immediate gaps.",
     icon: Zap,
@@ -20,12 +25,15 @@ const tiers = [
       "Custom JSON-LD Schema (Homepage)",
       "30-Minute Strategy Call"
     ],
-    cta: "INITIALIZE_PROTOCOL_",
-    highlight: false
+    cta: "BUY_NOW_",
+    highlight: false,
+    purchasable: true,
+    productType: "signal_check" as const
   },
   {
     name: "GEO_FOUNDATION_",
     price: "$2,500",
+    priceNum: 2500,
     period: "/month",
     sub: "3-month minimum",
     description: "Build the core infrastructure required for AI visibility and entity recognition.",
@@ -38,11 +46,13 @@ const tiers = [
       "Monthly Tracking Report"
     ],
     cta: "INITIALIZE_PROTOCOL_",
-    highlight: true
+    highlight: true,
+    purchasable: false
   },
   {
     name: "AI_AUTHORITY_",
     price: "$5,000",
+    priceNum: 5000,
     period: "/month",
     sub: "6-month minimum",
     description: "Aggressive authority building for competitive markets and rapid scaling.",
@@ -55,11 +65,13 @@ const tiers = [
       "Priority 24-Hour SLA"
     ],
     cta: "INITIALIZE_PROTOCOL_",
-    highlight: false
+    highlight: false,
+    purchasable: false
   },
   {
     name: "ENTERPRISE_PROTOCOL_",
     price: "Custom",
+    priceNum: 0,
     period: "",
     description: "Full-spectrum AI optimization for multi-location brands and large organizations.",
     icon: Building2,
@@ -71,11 +83,42 @@ const tiers = [
       "Custom Strategy Workshops"
     ],
     cta: "CONTACT_SALES_",
-    highlight: false
+    highlight: false,
+    purchasable: false
   }
 ];
 
 export default function Pricing() {
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [selectedTier, setSelectedTier] = useState<typeof tiers[0] | null>(null);
+  const [email, setEmail] = useState("");
+
+  const checkoutMutation = trpc.stripe.createCheckoutSession.useMutation({
+    onSuccess: (data) => {
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    },
+    onError: (error) => {
+      alert("Error creating checkout session: " + error.message);
+    }
+  });
+
+  const handlePurchaseClick = (tier: typeof tiers[0]) => {
+    setSelectedTier(tier);
+    setCheckoutOpen(true);
+  };
+
+  const handleCheckout = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!selectedTier?.productType) return;
+    
+    checkoutMutation.mutate({
+      email,
+      productType: selectedTier.productType,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <SEO 
@@ -146,16 +189,26 @@ export default function Pricing() {
                   ))}
                 </div>
 
-                <ContactDialog 
-                  trigger={
-                    <Button 
-                      className={`w-full font-mono font-bold h-12 uppercase tracking-widest ${tier.highlight ? 'bg-primary hover:bg-primary/90 text-black' : 'bg-white/10 hover:bg-white/20 text-white'}`}
-                    >
-                      {tier.cta}
-                    </Button>
-                  }
-                  service={`Pricing Inquiry: ${tier.name}`}
-                />
+                {tier.purchasable ? (
+                  <Button 
+                    onClick={() => handlePurchaseClick(tier)}
+                    className="w-full font-mono font-bold h-12 uppercase tracking-widest bg-green-600 hover:bg-green-500 text-white"
+                  >
+                    <CreditCard className="w-4 h-4 mr-2" />
+                    {tier.cta}
+                  </Button>
+                ) : (
+                  <ContactDialog 
+                    trigger={
+                      <Button 
+                        className={`w-full font-mono font-bold h-12 uppercase tracking-widest ${tier.highlight ? 'bg-primary hover:bg-primary/90 text-black' : 'bg-white/10 hover:bg-white/20 text-white'}`}
+                      >
+                        {tier.cta}
+                      </Button>
+                    }
+                    service={`Pricing Inquiry: ${tier.name}`}
+                  />
+                )}
               </motion.div>
             ))}
           </div>
@@ -180,6 +233,64 @@ export default function Pricing() {
           </div>
         </div>
       </main>
+
+      {/* Checkout Dialog */}
+      <Dialog open={checkoutOpen} onOpenChange={setCheckoutOpen}>
+        <DialogContent className="bg-black border border-white/10 text-white max-w-md">
+          <DialogHeader>
+            <DialogTitle className="font-mono text-xl">SECURE_CHECKOUT_</DialogTitle>
+            <DialogDescription className="text-muted-foreground">
+              Complete your purchase of {selectedTier?.name}
+            </DialogDescription>
+          </DialogHeader>
+          
+          <form onSubmit={handleCheckout} className="space-y-6 mt-4">
+            <div className="bg-white/5 border border-white/10 p-4 rounded">
+              <div className="flex justify-between items-center">
+                <span className="font-mono text-sm">{selectedTier?.name}</span>
+                <span className="font-bold text-lg">{selectedTier?.price}</span>
+              </div>
+              <p className="text-xs text-muted-foreground mt-2">
+                One-time payment • Includes 30-min strategy call
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Email Address *</label>
+              <Input 
+                required 
+                type="email"
+                className="bg-white/5 border-white/10 focus:border-primary"
+                placeholder="you@company.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+
+            <Button 
+              type="submit" 
+              className="w-full bg-green-600 hover:bg-green-500 text-white font-mono font-bold h-12 uppercase tracking-widest"
+              disabled={checkoutMutation.isPending}
+            >
+              {checkoutMutation.isPending ? (
+                <>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  PROCESSING_
+                </>
+              ) : (
+                <>
+                  <CreditCard className="w-4 h-4 mr-2" />
+                  PAY_{selectedTier?.price}_
+                </>
+              )}
+            </Button>
+
+            <p className="text-xs text-center text-muted-foreground">
+              Secure payment powered by Stripe. Your card details are never stored on our servers.
+            </p>
+          </form>
+        </DialogContent>
+      </Dialog>
 
       <Footer />
     </div>

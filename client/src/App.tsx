@@ -15,13 +15,14 @@ import ConversationalLandingPages from "./pages/ConversationalLandingPages";
 import SchemaBuilder from "./pages/SchemaBuilder";
 import Audit from "./pages/Audit";
 import Pricing from "./pages/Pricing";
+import PaymentSuccess from "./pages/PaymentSuccess";
 import BlogPostTemplate from "./pages/BlogPostTemplate";
 
 
 import ScrollToTop from "./components/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <>
       <ScrollToTop />
@@ -38,6 +39,7 @@ function Router() {
       <Route path="/schema-builder" component={SchemaBuilder} />
       <Route path="/audit" component={Audit} />
       <Route path="/pricing" component={Pricing} />
+      <Route path="/payment-success" component={PaymentSuccess} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

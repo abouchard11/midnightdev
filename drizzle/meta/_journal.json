@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1769288038147,
+      "tag": "0000_young_scrambler",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1769288158871,
+      "tag": "0001_wealthy_psylocke",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1769288181169,
+      "tag": "0002_nebulous_the_santerians",
+      "breakpoints": true
+    }
+  ]
+}

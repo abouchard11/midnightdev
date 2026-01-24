@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `payments` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `stripeSessionId` varchar(255) NOT NULL,\n  `stripePaymentIntentId` varchar(255),\n  `customerEmail` varchar(320),\n  `productType` varchar(100) NOT NULL,\n  `amount` int NOT NULL,\n  `currency` varchar(3) NOT NULL DEFAULT 'usd',\n  `status` enum('pending','completed','failed','refunded') NOT NULL DEFAULT 'pending',\n  `metadata` text,\n  `auditLeadId` int,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `payments_id` PRIMARY KEY(`id`),\n  CONSTRAINT `payments_stripeSessionId_unique` UNIQUE(`stripeSessionId`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user sF1ttg2f68VFRoc.a41dc6d8d84d --database ZX8jnWDekfsXfmgKPQvE9u --execute CREATE TABLE IF NOT EXISTS `payments` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `stripeSessionId` varchar(255) NOT NULL,\n  `stripePaymentIntentId` varchar(255),\n  `customerEmail` varchar(320),\n  `productType` varchar(100) NOT NULL,\n  `amount` int NOT NULL,\n  `currency` varchar(3) NOT NULL DEFAULT 'usd',\n  `status` enum('pending','completed','failed','refunded') NOT NULL DEFAULT 'pending',\n  `metadata` text,\n  `auditLeadId` int,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `payments_id` PRIMARY KEY(`id`),\n  CONSTRAINT `payments_stripeSessionId_unique` UNIQUE(`stripeSessionId`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 187
+}
