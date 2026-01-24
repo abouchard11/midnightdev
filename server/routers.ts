@@ -24,6 +24,7 @@ import {
   getPayments
 } from "./db";
 import { notifyOwner } from "./_core/notification";
+import { sendAuditConfirmation, sendContactConfirmation, sendPaymentConfirmation } from "./email";
 import Stripe from "stripe";
 
 // Initialize Stripe with the secret key from environment
@@ -58,10 +59,11 @@ export const appRouter = router({
       .mutation(async ({ input }) => {
         const lead = await createAuditLead(input);
         
-        // Notify owner of new lead
-        await notifyOwner({
-          title: "🎯 New AI Visibility Audit Request",
-          content: `**Business:** ${input.businessName}\n**Website:** ${input.websiteUrl}\n**Industry:** ${input.industry}\n**Email:** ${input.email}\n\n${input.aiRecommendationGoal ? `**Goal:** ${input.aiRecommendationGoal}` : ''}`
+        // Send confirmation and notify owner
+        await sendAuditConfirmation({
+          to: input.email,
+          businessName: input.businessName,
+          websiteUrl: input.websiteUrl,
         });
 
         return { success: true, leadId: lead?.id };
@@ -101,10 +103,10 @@ export const appRouter = router({
       .mutation(async ({ input }) => {
         const submission = await createContactSubmission(input);
         
-        // Notify owner of new contact
-        await notifyOwner({
-          title: "📬 New Contact Form Submission",
-          content: `**Name:** ${input.name}\n**Email:** ${input.email}\n${input.company ? `**Company:** ${input.company}\n` : ''}${input.service ? `**Service:** ${input.service}\n` : ''}\n**Message:**\n${input.message}`
+        // Send confirmation and notify owner
+        await sendContactConfirmation({
+          to: input.email,
+          name: input.name,
         });
 
         return { success: true, submissionId: submission?.id };
@@ -276,10 +278,11 @@ export const appRouter = router({
             await updateAuditLeadPayment(payment.auditLeadId, session.payment_intent as string);
           }
 
-          // Notify owner
-          await notifyOwner({
-            title: "💰 New Payment Received!",
-            content: `**Product:** ${payment?.productType}\n**Amount:** $${(payment?.amount || 0) / 100}\n**Email:** ${session.customer_email}`
+          // Send payment confirmation
+          await sendPaymentConfirmation({
+            to: session.customer_email || '',
+            productName: payment?.productType || 'Unknown Product',
+            amount: (payment?.amount || 0) / 100,
           });
         }
 
@@ -291,7 +294,7 @@ export const appRouter = router({
       }),
 
     // Admin: List all payments
-    list: protectedProcedure.query(async () => {
+    listPayments: protectedProcedure.query(async () => {
       return getPayments();
     }),
   }),

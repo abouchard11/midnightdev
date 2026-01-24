@@ -42,11 +42,15 @@
 - [x] **Audit Form Integration**: tRPC mutation with owner notification.
 - [x] **Pricing Stripe Checkout**: Direct purchase for Signal Check tier.
 
+## In Progress
+
+- [x] **Admin Dashboard**: Protected `/admin` route with leads and contacts view.
+- [x] **Email Confirmations**: Automated emails for audit submissions and purchases.
+- [x] **Stripe Verification**: Test checkout flow and document integration.
+
 ## Pending / Future Enhancements
 
 - [ ] **Blog CMS Admin Panel**: CRUD interface for managing blog posts.
-- [ ] **Lead Dashboard**: Admin view for audit leads and contact submissions.
-- [ ] **Email Confirmation**: Automated email to users after audit submission.
 - [ ] **Stripe Webhook**: Handle payment events for robust tracking.
 - [ ] **PWA Support**: Service workers for offline access.
 - [ ] **Dark/Light Mode Toggle**: User preference for theme.
