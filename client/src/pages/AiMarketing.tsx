@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Bot, Target, BarChart3, Globe, Cpu, Network, MessageSquare } from "lucide-react";
+import ContactDialog from "@/components/ContactDialog";
 import AiWorkflow from "@/components/diagrams/AiWorkflow";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
@@ -136,6 +137,25 @@ export default function AiMarketing() {
           </div>
         </section>
 
+        {/* CTA */}
+        <section className="py-24 bg-primary text-primary-foreground">
+          <div className="container text-center max-w-3xl">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tighter">
+              READY TO DOMINATE?
+            </h2>
+            <p className="text-xl opacity-90 mb-8">
+              Deploy your AI agent swarm today and start capturing leads while you sleep.
+            </p>
+            <ContactDialog 
+              triggerText="START PROJECT" 
+              service="AI Marketing Agents"
+              className="rounded-none font-mono h-14 px-8 text-base"
+              variant="secondary"
+              size="lg"
+            />
+          </div>
+        </section>
+
         {/* Strategy */}
         <section className="py-24 bg-background">
           <div className="container">
@@ -168,9 +188,12 @@ export default function AiMarketing() {
             </div>
             
             <div className="mt-16 text-center">
-              <Button size="lg" className="rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono h-14 px-8 text-base">
-                DEPLOY AGENTS NOW
-              </Button>
+              <ContactDialog 
+                triggerText="DEPLOY AGENTS NOW" 
+                service="AI Marketing Agents"
+                className="rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono h-14 px-8 text-base"
+                size="lg"
+              />
             </div>
           </div>
         </section>

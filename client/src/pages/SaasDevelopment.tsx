@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Database, Server, Shield, Zap, Code, Layout } from "lucide-react";
+import ContactDialog from "@/components/ContactDialog";
 import SaasArchitecture from "@/components/diagrams/SaasArchitecture";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
@@ -144,9 +145,12 @@ export default function SaasDevelopment() {
                    <SaasArchitecture />
                 </div>
 
-                <Button size="lg" className="rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono h-14 px-8 text-base">
-                  INITIATE CONSULTATION
-                </Button>
+                <ContactDialog 
+                  triggerText="INITIATE CONSULTATION" 
+                  service="Enterprise SaaS Development"
+                  className="rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono h-14 px-8 text-base"
+                  size="lg"
+                />
               </div>
               
               <div className="grid sm:grid-cols-2 gap-8">

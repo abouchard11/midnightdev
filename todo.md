@@ -57,3 +57,11 @@
     - [ ] Add `Service` schema to `SaasDevelopment.tsx`.
     - [ ] Add `Service` schema to `AiMarketing.tsx`.
     - [ ] Validate schema output format.
+
+- [ ] **Contact Form with reCAPTCHA**:
+    - [ ] Install `react-google-recaptcha`.
+    - [ ] Create `src/components/ContactForm.tsx` using `react-hook-form` and `zod`.
+    - [ ] Create `src/components/ContactDialog.tsx` to wrap the form in a modal.
+    - [ ] Replace "Initiate Consultation" button in `SaasDevelopment.tsx` with `ContactDialog`.
+    - [ ] Replace "Start Project" button in `AiMarketing.tsx` with `ContactDialog`.
+    - [ ] Ensure reCAPTCHA widget is responsive and styled (dark mode).
