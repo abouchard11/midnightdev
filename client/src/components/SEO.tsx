@@ -6,6 +6,7 @@ interface SEOProps {
   image?: string;
   url?: string;
   type?: string;
+  keywords?: string[];
 }
 
 export default function SEO({ 
@@ -13,7 +14,8 @@ export default function SEO({
   description, 
   image = "/images/hero-bg.png", 
   url = "https://midnightdev.dev", 
-  type = "website" 
+  type = "website",
+  keywords = []
 }: SEOProps) {
   const siteTitle = "Midnight Dev | Enterprise SaaS & AI Marketing";
   const fullTitle = title.includes("Midnight Dev") ? title : `${title} | Midnight Dev`;
@@ -25,6 +27,9 @@ export default function SEO({
       {/* Standard Metadata */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {keywords.length > 0 && (
+        <meta name="keywords" content={keywords.join(", ")} />
+      )}
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
