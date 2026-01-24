@@ -103,7 +103,12 @@ export default function GeoOptimization() {
                     <CheckCircle2 className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold font-mono mb-2">Citation Engineering</h3>
+                    <Link href="/citation-engineering" className="group">
+                      <h3 className="text-xl font-bold font-mono mb-2 group-hover:text-primary transition-colors flex items-center gap-2">
+                        Citation Engineering
+                        <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                      </h3>
+                    </Link>
                     <p className="text-muted-foreground">
                       Systematic placement of your brand on authoritative industry indexes to build the "Trust Rank" required for AI recommendations.
                     </p>

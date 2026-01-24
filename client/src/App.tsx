@@ -9,6 +9,7 @@ import SaasDevelopment from "./pages/SaasDevelopment";
 import AiMarketing from "./pages/AiMarketing";
 import GeoOptimization from "./pages/GeoOptimization";
 import CaseStudyTemplate from "./pages/CaseStudyTemplate";
+import CitationEngineering from "./pages/CitationEngineering";
 
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/ai-marketing" component={AiMarketing} />
       <Route path="/geo-optimization" component={GeoOptimization} />
       <Route path="/case-study/:slug" component={CaseStudyTemplate} />
+      <Route path="/citation-engineering" component={CitationEngineering} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
