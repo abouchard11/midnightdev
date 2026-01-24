@@ -16,7 +16,7 @@ export default function SEO({
   type = "website" 
 }: SEOProps) {
   const siteTitle = "Midnight Dev | Enterprise SaaS & AI Marketing";
-  const fullTitle = title === siteTitle ? title : `${title} | Midnight Dev`;
+  const fullTitle = title.includes("Midnight Dev") ? title : `${title} | Midnight Dev`;
   const fullUrl = url.startsWith("http") ? url : `https://midnightdev.dev${url}`;
   const fullImage = image.startsWith("http") ? image : `https://midnightdev.dev${image}`;
 

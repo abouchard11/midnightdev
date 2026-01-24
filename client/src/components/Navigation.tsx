@@ -10,6 +10,7 @@ export default function Navigation() {
 
   const navItems = [
     { name: "Services", href: "/#services" },
+    { name: "GEO Protocol", href: "/geo-optimization" },
     { name: "Work", href: "/#work" },
     { name: "About", href: "/#contact" },
   ];

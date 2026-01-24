@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import SaasDevelopment from "./pages/SaasDevelopment";
 import AiMarketing from "./pages/AiMarketing";
+import GeoOptimization from "./pages/GeoOptimization";
 
 
 function Router() {
@@ -14,7 +15,8 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/saas-development"} component={SaasDevelopment} />
-      <Route path={"/ai-marketing"} component={AiMarketing} />
+      <Route path="/ai-marketing" component={AiMarketing} />
+      <Route path="/geo-optimization" component={GeoOptimization} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -31,7 +33,7 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider
-        defaultTheme="light"
+        defaultTheme="dark"
         // switchable
       >
         <TooltipProvider>

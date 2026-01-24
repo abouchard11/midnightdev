@@ -12,6 +12,7 @@ import { useState } from "react";
 
 interface ContactDialogProps {
   triggerText?: string;
+  trigger?: React.ReactNode;
   service?: string;
   className?: string;
   variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
@@ -20,6 +21,7 @@ interface ContactDialogProps {
 
 export default function ContactDialog({ 
   triggerText = "CONTACT US", 
+  trigger,
   service,
   className,
   variant = "default",
@@ -30,9 +32,13 @@ export default function ContactDialog({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant={variant} size={size} className={className}>
-          {triggerText}
-        </Button>
+        {trigger ? (
+          trigger
+        ) : (
+          <Button variant={variant} size={size} className={className}>
+            {triggerText}
+          </Button>
+        )}
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px] bg-black border-white/10 text-foreground">
         <DialogHeader>
