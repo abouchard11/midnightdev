@@ -15,3 +15,18 @@
 - [ ] **General**:
     - [ ] Check tap targets (buttons, links) are at least 44px height.
     - [ ] Verify horizontal scrolling is prevented (no overflow).
+
+- [ ] **SaaS Development Page**:
+    - [ ] Create `src/pages/SaasDevelopment.tsx`.
+    - [ ] Design layout consistent with Cyber-Brutalist Noir theme.
+    - [ ] Content: Technical stack details (Next.js, React 19, Clerk, Stripe), architecture diagrams (visual), process flow.
+    - [ ] Add "Start Project" CTA.
+- [ ] **AI Marketing Page**:
+    - [ ] Create `src/pages/AiMarketing.tsx`.
+    - [ ] Design layout consistent with theme.
+    - [ ] Content: AI agent workflows, SEO strategy, automation tools (OpenAI, Anthropic), success metrics.
+    - [ ] Add "Deploy Agents" CTA.
+- [ ] **Navigation Updates**:
+    - [ ] Update `src/App.tsx` with new routes.
+    - [ ] Update `src/components/Navigation.tsx` to link to new pages.
+    - [ ] Update `src/components/Services.tsx` "Learn More" buttons to point to new pages.

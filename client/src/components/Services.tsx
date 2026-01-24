@@ -50,7 +50,7 @@ export default function Services() {
                 </li>
               </ul>
 
-              <a href="#contact" className="inline-flex items-center text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors">
+              <a href="/saas-development" className="inline-flex items-center text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors">
                 Initialize Protocol <ArrowUpRight className="ml-2 h-4 w-4" />
               </a>
             </div>
@@ -90,7 +90,7 @@ export default function Services() {
                 </li>
               </ul>
 
-              <a href="#contact" className="inline-flex items-center text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors">
+              <a href="/ai-marketing" className="inline-flex items-center text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors">
                 Deploy Agents <ArrowUpRight className="ml-2 h-4 w-4" />
               </a>
             </div>

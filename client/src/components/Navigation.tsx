@@ -9,19 +9,25 @@ export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Services", href: "#services" },
-    { name: "Work", href: "#work" },
-    { name: "About", href: "#contact" }, // Updated to point to contact/footer since there is no separate about page yet
+    { name: "Services", href: "/#services" },
+    { name: "Work", href: "/#work" },
+    { name: "About", href: "/#contact" },
   ];
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    if (id.startsWith("#")) {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // If we're on the home page and the link is a hash, scroll to it
+    if (location === "/" && href.startsWith("/#")) {
       e.preventDefault();
+      const id = href.replace("/", "");
       const element = document.querySelector(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
         setIsMobileMenuOpen(false);
       }
+    }
+    // If we're NOT on the home page, let the link behave normally (navigate to /#section)
+    else {
+      setIsMobileMenuOpen(false);
     }
   };
 
