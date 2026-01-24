@@ -1,6 +1,7 @@
 export interface CaseStudy {
   id: string;
   client: string;
+  logoIcon: string;
   industry: string;
   metric: string;
   metricLabel: string;
@@ -17,6 +18,7 @@ export const caseStudies: Record<string, CaseStudy> = {
   "fintech-saas-platform": {
     id: "fintech-saas-platform",
     client: "FinTech SaaS Platform",
+    logoIcon: "Building2",
     industry: "Financial Technology",
     metric: "+450%",
     metricLabel: "AI Referral Traffic",
@@ -35,6 +37,7 @@ export const caseStudies: Record<string, CaseStudy> = {
   "legal-firm-austin": {
     id: "legal-firm-austin",
     client: "Legal Firm (Austin)",
+    logoIcon: "Scale",
     industry: "Corporate Law",
     metric: "#1 RANK",
     metricLabel: "Local SearchGPT",
@@ -53,6 +56,7 @@ export const caseStudies: Record<string, CaseStudy> = {
   "e-commerce-brand": {
     id: "e-commerce-brand",
     client: "E-commerce Brand",
+    logoIcon: "ShoppingBag",
     industry: "Direct-to-Consumer",
     metric: "3.5x",
     metricLabel: "Conversion Rate",

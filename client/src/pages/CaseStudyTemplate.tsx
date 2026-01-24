@@ -1,9 +1,15 @@
 import { Button } from "@/components/ui/button";
 import ContactDialog from "@/components/ContactDialog";
 import SEO from "@/components/SEO";
-import { ArrowLeft, CheckCircle2, Search, BarChart3, TrendingUp, Share2, ExternalLink } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Search, BarChart3, TrendingUp, Share2, ExternalLink, Building2, Scale, ShoppingBag } from "lucide-react";
 import { Link, useRoute } from "wouter";
 import { caseStudies } from "@/data/caseStudies";
+
+const iconMap: Record<string, any> = {
+  "Building2": Building2,
+  "Scale": Scale,
+  "ShoppingBag": ShoppingBag
+};
 import NotFound from "./NotFound";
 
 export default function CaseStudyTemplate() {
@@ -12,6 +18,8 @@ export default function CaseStudyTemplate() {
   const study = slug ? caseStudies[slug] : null;
 
   if (!study) return <NotFound />;
+
+  const LogoIcon = study.logoIcon ? iconMap[study.logoIcon] : Building2;
 
   return (
     <>
@@ -40,9 +48,14 @@ export default function CaseStudyTemplate() {
               <span>CASE_LOG_VERIFIED</span>
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-mono font-bold tracking-tighter leading-tight mb-6">
-              {study.client}
-            </h1>
+            <div className="flex items-center gap-6 mb-8">
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-primary">
+                <LogoIcon className="w-8 h-8 md:w-10 md:h-10" />
+              </div>
+              <h1 className="text-4xl md:text-6xl font-mono font-bold tracking-tighter leading-tight">
+                {study.client}
+              </h1>
+            </div>
             
             <div className="flex flex-wrap gap-4 text-sm font-mono text-muted-foreground">
               <span className="border border-white/10 px-3 py-1 bg-white/5">{study.industry}</span>
