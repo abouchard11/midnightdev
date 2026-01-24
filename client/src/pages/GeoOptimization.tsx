@@ -3,7 +3,7 @@ import ContactDialog from "@/components/ContactDialog";
 import GeoDiagram from "@/components/diagrams/GeoDiagram";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
-import { CheckCircle2, Search, Database, MessageSquare, ArrowRight } from "lucide-react";
+import { CheckCircle2, Search, Database, MessageSquare, ArrowRight, Building2, Scale, ShoppingBag } from "lucide-react";
 import { Link } from "wouter";
 
 export default function GeoOptimization() {
@@ -61,6 +61,31 @@ export default function GeoOptimization() {
                 }
                 service="GEO / ChatGPT Optimization"
               />
+            </div>
+
+            {/* Trusted By Grid */}
+            <div className="pt-12 border-t border-white/5 mt-12 w-full max-w-3xl mx-auto">
+              <p className="text-xs font-mono text-muted-foreground mb-6 uppercase tracking-widest">Trusted by high-growth entities</p>
+              <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center opacity-60">
+                <div className="flex items-center gap-3 group">
+                  <div className="w-10 h-10 bg-white/5 border border-white/10 rounded flex items-center justify-center group-hover:border-primary/50 transition-colors">
+                    <Building2 className="w-5 h-5 text-white group-hover:text-primary transition-colors" />
+                  </div>
+                  <span className="font-mono text-sm font-bold text-white/80 group-hover:text-white transition-colors">FINTECH_SAAS</span>
+                </div>
+                <div className="flex items-center gap-3 group">
+                  <div className="w-10 h-10 bg-white/5 border border-white/10 rounded flex items-center justify-center group-hover:border-primary/50 transition-colors">
+                    <Scale className="w-5 h-5 text-white group-hover:text-primary transition-colors" />
+                  </div>
+                  <span className="font-mono text-sm font-bold text-white/80 group-hover:text-white transition-colors">AUSTIN_LEGAL</span>
+                </div>
+                <div className="flex items-center gap-3 group">
+                  <div className="w-10 h-10 bg-white/5 border border-white/10 rounded flex items-center justify-center group-hover:border-primary/50 transition-colors">
+                    <ShoppingBag className="w-5 h-5 text-white group-hover:text-primary transition-colors" />
+                  </div>
+                  <span className="font-mono text-sm font-bold text-white/80 group-hover:text-white transition-colors">LUXE_COMMERCE</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

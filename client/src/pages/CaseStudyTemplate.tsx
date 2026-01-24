@@ -19,7 +19,13 @@ export default function CaseStudyTemplate() {
 
   if (!study) return <NotFound />;
 
-  const LogoIcon = study.logoIcon ? iconMap[study.logoIcon] : Building2;
+  const renderLogo = () => {
+    if (study.logoType === 'image') {
+      return <img src={study.logoValue} alt={study.client} className="w-full h-full object-contain p-2" />;
+    }
+    const IconComponent = iconMap[study.logoValue] || Building2;
+    return <IconComponent className="w-8 h-8 md:w-10 md:h-10" />;
+  };
 
   return (
     <>
@@ -43,24 +49,24 @@ export default function CaseStudyTemplate() {
         {/* Hero Header */}
         <div className="container px-4 md:px-6 mb-16">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 border border-primary/30 bg-primary/10 text-primary text-xs font-mono tracking-wider mb-6">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 border border-primary/30 bg-primary/10 text-primary text-xs font-mono tracking-wider mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
               <CheckCircle2 className="w-4 h-4" />
               <span>CASE_LOG_VERIFIED</span>
             </div>
             
-            <div className="flex items-center gap-6 mb-8">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-primary">
-                <LogoIcon className="w-8 h-8 md:w-10 md:h-10" />
+            <div className="flex items-center gap-6 mb-8 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-150 fill-mode-backwards">
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-primary shadow-[0_0_30px_-10px_rgba(124,58,237,0.3)] transition-transform duration-500 hover:scale-105">
+                {renderLogo()}
               </div>
               <h1 className="text-4xl md:text-6xl font-mono font-bold tracking-tighter leading-tight">
                 {study.client}
               </h1>
             </div>
             
-            <div className="flex flex-wrap gap-4 text-sm font-mono text-muted-foreground">
-              <span className="border border-white/10 px-3 py-1 bg-white/5">{study.industry}</span>
+            <div className="flex flex-wrap gap-4 text-sm font-mono text-muted-foreground animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-backwards">
+              <span className="border border-white/10 px-3 py-1 bg-white/5 hover:bg-white/10 transition-colors">{study.industry}</span>
               {study.tags.map(tag => (
-                <span key={tag} className="border border-white/10 px-3 py-1 bg-white/5 text-primary/80">{tag}</span>
+                <span key={tag} className="border border-white/10 px-3 py-1 bg-white/5 text-primary/80 hover:bg-primary/10 transition-colors">{tag}</span>
               ))}
             </div>
           </div>
