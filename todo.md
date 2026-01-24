@@ -37,3 +37,8 @@
     - [ ] Integrate `SaasArchitecture` into `SaasDevelopment.tsx`.
     - [ ] Integrate `AiWorkflow` into `AiMarketing.tsx`.
     - [ ] Ensure animations are performant and respect `prefers-reduced-motion`.
+
+- [ ] **Mobile Diagram Optimization**:
+    - [ ] Update `SaasArchitecture.tsx`: Implement vertical layout for mobile, horizontal for desktop. Adjust animation paths accordingly.
+    - [ ] Update `AiWorkflow.tsx`: Adjust node positioning and SVG lines for smaller screens. Ensure text is readable.
+    - [ ] Test responsiveness on simulated mobile breakpoints.

@@ -20,23 +20,36 @@ export default function SaasArchitecture() {
   ];
 
   return (
-    <div className="w-full p-8 border border-white/10 bg-black/50 backdrop-blur-sm relative overflow-hidden">
+    <div className="w-full p-4 md:p-8 border border-white/10 bg-black/50 backdrop-blur-sm relative overflow-hidden">
       <div className="absolute inset-0 border-grid opacity-20"></div>
       
-      {/* Connection Lines */}
-      <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -translate-y-1/2 z-0"></div>
+      {/* Connection Lines - Responsive */}
+      {/* Desktop Horizontal Line */}
+      <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -translate-y-1/2 z-0"></div>
+      {/* Mobile Vertical Line */}
+      <div className="md:hidden absolute left-1/2 top-0 h-full w-0.5 bg-white/10 -translate-x-1/2 z-0"></div>
       
       {/* Animated Data Packet */}
+      {/* Desktop Animation */}
       <div 
-        className="absolute top-1/2 h-2 w-2 bg-primary rounded-full shadow-[0_0_10px_var(--color-primary)] z-10 transition-all duration-500 ease-linear"
+        className="hidden md:block absolute top-1/2 h-2 w-2 bg-primary rounded-full shadow-[0_0_10px_var(--color-primary)] z-10 transition-all duration-500 ease-linear"
         style={{ 
           left: `${(activeStep * 25) + 12.5}%`,
           opacity: 1,
           transform: 'translate(-50%, -50%)'
         }}
       ></div>
+      {/* Mobile Animation */}
+      <div 
+        className="md:hidden absolute left-1/2 h-2 w-2 bg-primary rounded-full shadow-[0_0_10px_var(--color-primary)] z-10 transition-all duration-500 ease-linear"
+        style={{ 
+          top: `${(activeStep * 25) + 12.5}%`, // Approximate positioning for vertical stack
+          opacity: 1,
+          transform: 'translate(-50%, -50%)'
+        }}
+      ></div>
 
-      <div className="relative z-20 grid grid-cols-4 gap-4">
+      <div className="relative z-20 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 py-8 md:py-0">
         {steps.map((step, index) => {
           const isActive = index === activeStep;
           const isPast = index < activeStep;
@@ -45,7 +58,7 @@ export default function SaasArchitecture() {
             <div key={step.id} className="flex flex-col items-center gap-4">
               <div 
                 className={cn(
-                  "h-16 w-16 border-2 flex items-center justify-center transition-all duration-500 bg-background",
+                  "h-16 w-16 border-2 flex items-center justify-center transition-all duration-500 bg-background z-20 relative",
                   isActive ? `border-primary scale-110 shadow-[0_0_20px_rgba(139,92,246,0.3)]` : "border-white/10 opacity-50",
                   isPast && "border-primary/50 text-primary"
                 )}
@@ -53,7 +66,7 @@ export default function SaasArchitecture() {
                 <step.icon className={cn("h-6 w-6 transition-colors duration-300", isActive ? "text-primary" : "text-muted-foreground")} />
               </div>
               
-              <div className="text-center">
+              <div className="text-center relative z-20 bg-black/80 md:bg-transparent px-2 py-1 rounded">
                 <p className={cn(
                   "font-mono text-xs uppercase tracking-widest transition-colors duration-300",
                   isActive ? "text-primary font-bold" : "text-muted-foreground"
@@ -62,8 +75,8 @@ export default function SaasArchitecture() {
                 </p>
                 
                 {isActive && (
-                  <div className="absolute top-24 left-0 w-full text-center mt-4 animate-in fade-in slide-in-from-top-2 duration-300">
-                    <span className="inline-block bg-primary/10 border border-primary/20 px-3 py-1 text-xs text-primary font-mono">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-32 text-center mt-2 md:mt-4 animate-in fade-in slide-in-from-top-2 duration-300 z-30">
+                    <span className="inline-block bg-primary/10 border border-primary/20 px-3 py-1 text-[10px] md:text-xs text-primary font-mono whitespace-nowrap">
                       Processing...
                     </span>
                   </div>
@@ -74,7 +87,7 @@ export default function SaasArchitecture() {
         })}
       </div>
       
-      <div className="mt-16 pt-8 border-t border-white/10 grid grid-cols-2 gap-8">
+      <div className="mt-8 md:mt-16 pt-8 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
         <div className="flex items-center gap-3">
           <Shield className="h-5 w-5 text-green-500" />
           <div>
