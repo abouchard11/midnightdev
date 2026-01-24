@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import ContactDialog from "@/components/ContactDialog";
 import SEO from "@/components/SEO";
-import { ArrowLeft, CheckCircle2, Search, BarChart3, TrendingUp, Share2, ExternalLink, Building2, Scale, ShoppingBag } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Search, BarChart3, TrendingUp, Share2, ExternalLink, Building2, Scale, ShoppingBag } from "lucide-react";
 import { Link, useRoute } from "wouter";
 import { caseStudies } from "@/data/caseStudies";
 
@@ -26,6 +26,13 @@ export default function CaseStudyTemplate() {
     const IconComponent = iconMap[study.logoValue] || Building2;
     return <IconComponent className="w-8 h-8 md:w-10 md:h-10" />;
   };
+
+  // Calculate next case study
+  const studyKeys = Object.keys(caseStudies);
+  const currentIndex = studyKeys.indexOf(slug || "");
+  const nextIndex = (currentIndex + 1) % studyKeys.length;
+  const nextSlug = studyKeys[nextIndex];
+  const nextStudy = caseStudies[nextSlug];
 
   return (
     <>
@@ -183,6 +190,28 @@ export default function CaseStudyTemplate() {
 
           </div>
         </div>
+
+        {/* Next Case Study Navigation */}
+        <section className="container px-4 md:px-6 mb-24">
+          <div className="border-t border-white/10 pt-12">
+            <div className="text-xs font-mono text-muted-foreground mb-4 uppercase tracking-widest">Next Case Log</div>
+            <Link href={`/case-study/${nextSlug}`}>
+              <a className="group block">
+                <div className="flex items-center justify-between p-8 border border-white/10 bg-white/5 hover:border-primary/50 hover:bg-white/10 transition-all duration-300">
+                  <div>
+                    <h3 className="text-3xl font-mono font-bold text-white group-hover:text-primary transition-colors mb-2">
+                      {nextStudy.client}
+                    </h3>
+                    <p className="text-muted-foreground font-mono text-sm">
+                      {nextStudy.industry} // {nextStudy.metric} {nextStudy.metricLabel}
+                    </p>
+                  </div>
+                  <ArrowRight className="w-8 h-8 text-white group-hover:text-primary group-hover:translate-x-2 transition-all duration-300" />
+                </div>
+              </a>
+            </Link>
+          </div>
+        </section>
 
         {/* CTA Footer */}
         <section className="container px-4 md:px-6">

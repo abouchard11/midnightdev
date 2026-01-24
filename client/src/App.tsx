@@ -10,21 +10,32 @@ import AiMarketing from "./pages/AiMarketing";
 import GeoOptimization from "./pages/GeoOptimization";
 import CaseStudyTemplate from "./pages/CaseStudyTemplate";
 import CitationEngineering from "./pages/CitationEngineering";
+import Insights from "./pages/Insights";
+import BlogPostTemplate from "./pages/BlogPostTemplate";
 
+
+import ScrollToTop from "./components/ScrollToTop";
+import { Analytics } from "@vercel/analytics/react";
 
 function Router() {
   return (
-    <Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/saas-development"} component={SaasDevelopment} />
       <Route path="/ai-marketing" component={AiMarketing} />
       <Route path="/geo-optimization" component={GeoOptimization} />
       <Route path="/case-study/:slug" component={CaseStudyTemplate} />
       <Route path="/citation-engineering" component={CitationEngineering} />
+      <Route path="/insights" component={Insights} />
+      <Route path="/insights/:slug" component={BlogPostTemplate} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
-    </Switch>
+      </Switch>
+      <Analytics />
+    </>
   );
 }
 
