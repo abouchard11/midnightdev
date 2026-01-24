@@ -8,9 +8,18 @@ export default function CitationEngineering() {
   return (
     <>
       <SEO 
-        title="Citation Engineering | Midnight Dev"
+        title="Citation Engineering | Build Trust Rank for AI"
         description="Build the 'Trust Rank' AI models require. Systematic placement on authoritative industry indexes to ensure your brand is the cited answer."
         url="/citation-engineering"
+        keywords={[
+          "Citation Engineering",
+          "Brand Trust Rank",
+          "AI Authority Building",
+          "Digital PR for AI",
+          "Knowledge Graph Optimization",
+          "Entity Authority",
+          "Corporate Citations"
+        ]}
       />
 
       <div className="min-h-screen pt-24 pb-12">

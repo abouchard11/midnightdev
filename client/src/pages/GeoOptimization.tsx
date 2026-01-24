@@ -10,9 +10,18 @@ export default function GeoOptimization() {
   return (
     <>
       <SEO 
-        title="ChatGPT Search Optimization (GEO)"
+        title="ChatGPT Search Optimization (GEO) | AI Search Ranking"
         description="Dominate the new era of search. We optimize your digital footprint to be the recommended answer in ChatGPT, SearchGPT, and AI-driven platforms."
         url="/geo-optimization"
+        keywords={[
+          "ChatGPT Search Optimization",
+          "GEO Services",
+          "Generative Engine Optimization",
+          "Perplexity AI Ranking",
+          "AI Search Visibility",
+          "Entity Verification",
+          "Structured Data for AI"
+        ]}
       />
       <StructuredData 
         data={{
