@@ -56,10 +56,19 @@ export default function AiMarketing() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <SEO 
-        title="AI Marketing Agents"
+        title="AI Marketing Agents | Autonomous Local SEO & Automation"
         description="Dominate local search with autonomous AI agents. Our systems automate content generation, lead qualification, and outreach for maximum ROI."
         url="/ai-marketing"
         image="/images/marketing-service.png"
+        keywords={[
+          "AI Marketing Automation",
+          "Local SEO Services",
+          "Autonomous Marketing Agents",
+          "AI Search Optimization",
+          "Google Maps Ranking",
+          "Local Business Growth",
+          "Marketing Technology"
+        ]}
       />
       <StructuredData data={schema} />
       <Navigation />

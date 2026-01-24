@@ -77,10 +77,19 @@ export default function SaasDevelopment() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <SEO 
-        title="Enterprise SaaS Architecture"
+        title="Enterprise SaaS Architecture | Scalable Cloud Native Solutions"
         description="Scalable, secure, and high-performance SaaS solutions. We architect systems using Next.js, React, and cloud-native technologies for high-growth companies."
         url="/saas-development"
         image="/images/saas-service.png"
+        keywords={[
+          "Enterprise SaaS Development",
+          "Scalable Cloud Architecture",
+          "Next.js SaaS Platform",
+          "React Application Development",
+          "Node.js Backend Services",
+          "Microservices Architecture",
+          "SaaS MVP Development"
+        ]}
       />
       <StructuredData data={schema} />
       <Navigation />
