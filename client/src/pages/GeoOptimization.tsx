@@ -151,6 +151,76 @@ export default function GeoOptimization() {
           </div>
         </section>
 
+        {/* Case Studies Section */}
+        <section className="container px-4 md:px-6 mb-32">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+            <div>
+              <h2 className="text-2xl font-mono font-bold mb-4">OPTIMIZATION_RESULTS</h2>
+              <p className="text-muted-foreground max-w-xl">
+                Real-world impact of Generative Engine Optimization on AI search visibility and brand authority.
+              </p>
+            </div>
+            <div className="hidden md:block h-px flex-1 bg-white/10 mx-8 mb-4"></div>
+            <div className="font-mono text-xs text-primary/50">
+              // INDEXED_SUCCESS_STORIES
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                client: "FinTech SaaS Platform",
+                metric: "+450%",
+                label: "AI REFERRAL TRAFFIC",
+                desc: "Optimized documentation and API references for developer-focused AI queries.",
+                tags: ["Perplexity", "ChatGPT", "Claude"]
+              },
+              {
+                client: "Legal Firm (Austin)",
+                metric: "#1 RANK",
+                label: "LOCAL SEARCHGPT",
+                desc: "Dominated 'best corporate law firm' queries through structured entity verification.",
+                tags: ["SearchGPT", "Bing Chat", "Google SGE"]
+              },
+              {
+                client: "E-commerce Brand",
+                metric: "3.5x",
+                label: "CONVERSION RATE",
+                desc: "High-intent traffic from conversational search resulted in significantly higher qualified leads.",
+                tags: ["Gemini", "Meta AI", "ChatGPT"]
+              }
+            ].map((study, i) => (
+              <div key={i} className="group relative border border-white/10 bg-white/5 p-6 hover:border-primary/50 transition-colors duration-300">
+                <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
+                  <CheckCircle2 className="w-6 h-6 text-primary" />
+                </div>
+                
+                <div className="mb-6">
+                  <div className="text-xs font-mono text-muted-foreground mb-2">// CLIENT_0{i+1}</div>
+                  <h3 className="text-lg font-bold text-white">{study.client}</h3>
+                </div>
+
+                <div className="mb-6 space-y-1">
+                  <div className="text-4xl font-mono font-bold text-primary">{study.metric}</div>
+                  <div className="text-xs font-mono tracking-widest text-muted-foreground uppercase">{study.label}</div>
+                </div>
+
+                <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                  {study.desc}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {study.tags.map((tag) => (
+                    <span key={tag} className="text-[10px] font-mono border border-white/10 px-2 py-1 text-white/60 bg-black/20">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="container px-4 md:px-6 mb-24">
           <div className="border border-primary/20 bg-primary/5 p-8 md:p-16 text-center space-y-8 relative overflow-hidden">
