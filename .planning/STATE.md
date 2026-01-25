@@ -10,11 +10,14 @@ See: .planning/PROJECT.md (updated 2026-01-25)
 ## Current Position
 
 Phase: 4 of 4 (Deployment)
-Plan: Not started
-Status: Ready to plan
-Last activity: 2026-01-25 — Phase 3 complete
+Plan: Complete
+Status: ✅ Deployed to Railway
+Last activity: 2026-01-25 — Deployed to Railway
 
-Progress: ███████░░░ 67%
+Progress: ██████████ 100%
+
+**Live URL:** https://midnightdev.dev (custom domain configured)
+**Railway URL:** https://midnightdev-production.up.railway.app
 
 ## Performance Metrics
 
@@ -30,10 +33,11 @@ Progress: ███████░░░ 67%
 | 1. Cleanup | 1/1 | ~5 min | ~5 min |
 | 2. Auth Migration | 2/2 | ~20 min | ~10 min |
 | 3. Notifications | 1/1 | ~5 min | ~5 min |
+| 4. Deployment | 1/1 | ~15 min | ~15 min |
 
 **Recent Trend:**
-- Last 4 plans: 01-01, 02-01, 02-02, 03-01
-- Trend: Fast execution
+- All phases complete
+- Migration from Manus to Railway complete
 
 ## Accumulated Context
 
@@ -46,10 +50,13 @@ Recent decisions affecting current work:
 - Auto-sync user from Clerk to local DB on first authenticated request
 - Resend sends owner notification emails (same interface as before)
 - Owner email: alex@midnightdev.dev
+- Railway for hosting (Node 18 compatible)
+- Added CLERK_PUBLISHABLE_KEY as runtime env var (in addition to VITE_CLERK_PUBLISHABLE_KEY for build)
 
 ### Deferred Issues
 
-None yet.
+- ~~Custom domain (midnightdev.dev) needs to be removed from old Railway project first~~ ✅ RESOLVED
+- VITE_ANALYTICS_ENDPOINT not configured (analytics disabled)
 
 ### Blockers/Concerns
 
@@ -58,5 +65,15 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-25
-Stopped at: Phase 3 complete, ready for deployment
+Stopped at: All phases complete - site deployed to Railway
 Resume file: None
+
+## Deployment Details
+
+- **Platform:** Railway
+- **Live URL:** https://midnightdev.dev
+- **Railway URL:** https://midnightdev-production.up.railway.app
+- **Railway Endpoint:** tuugsmnh.up.railway.app (CNAME target)
+- **Database:** Railway MySQL
+- **Environment Variables:** 12 configured (including CLERK_PUBLISHABLE_KEY fix)
+- **DNS:** Cloudflare (CNAME → tuugsmnh.up.railway.app, proxied)
