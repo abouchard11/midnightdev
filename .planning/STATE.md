@@ -5,34 +5,35 @@
 See: .planning/PROJECT.md (updated 2026-01-25)
 
 **Core value:** Full agency website with lead capture forms, Stripe payments, and blog CMS that works independently of Manus platform.
-**Current focus:** Phase 2 — Auth Migration
+**Current focus:** Phase 4 — Deployment
 
 ## Current Position
 
-Phase: 2 of 4 (Auth Migration)
-Plan: 2 of 3 complete
-Status: Ready for human verification (02-03)
-Last activity: 2026-01-25 — Plans 02-01 and 02-02 complete
+Phase: 4 of 4 (Deployment)
+Plan: Not started
+Status: Ready to plan
+Last activity: 2026-01-25 — Phase 3 complete
 
-Progress: ████░░░░░░ 42%
+Progress: ███████░░░ 67%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: ~8 min
-- Total execution time: ~25 min
+- Total plans completed: 4
+- Average duration: ~7 min
+- Total execution time: ~30 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1. Cleanup | 1/1 | ~5 min | ~5 min |
-| 2. Auth Migration | 2/3 | ~20 min | ~10 min |
+| 2. Auth Migration | 2/2 | ~20 min | ~10 min |
+| 3. Notifications | 1/1 | ~5 min | ~5 min |
 
 **Recent Trend:**
-- Last 3 plans: 01-01, 02-01, 02-02
-- Trend: Stable
+- Last 4 plans: 01-01, 02-01, 02-02, 03-01
+- Trend: Fast execution
 
 ## Accumulated Context
 
@@ -43,8 +44,8 @@ Recent decisions affecting current work:
 
 - Clerk handles all session/token management (no custom JWT for auth)
 - Auto-sync user from Clerk to local DB on first authenticated request
-- Stubbed notification.ts (Phase 3 will replace with Resend)
-- Role checking still uses local DB (trpc.auth.me for dbUser.role)
+- Resend sends owner notification emails (same interface as before)
+- Owner email: alex@midnightdev.dev
 
 ### Deferred Issues
 
@@ -57,5 +58,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-25
-Stopped at: 02-02 complete, ready for human verification
+Stopped at: Phase 3 complete, ready for deployment
 Resume file: None
