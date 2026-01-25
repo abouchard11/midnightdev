@@ -57,3 +57,5 @@
 - [ ] **Stripe Webhook**: Handle payment events for robust tracking.
 - [ ] **PWA Support**: Service workers for offline access.
 - [ ] **Dark/Light Mode Toggle**: User preference for theme.
+
+- [x] **Featured Images for Blog Posts**: Add image field to blog data and display on listing/detail pages.

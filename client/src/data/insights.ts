@@ -8,6 +8,7 @@ export interface BlogPost {
   author: string;
   content: string; // Markdown-like content or HTML
   tags: string[];
+  featuredImage?: string; // Optional featured image URL
 }
 
 export const insights: BlogPost[] = [
@@ -20,6 +21,7 @@ export const insights: BlogPost[] = [
     category: "AI Marketing",
     author: "Midnight Dev Team",
     tags: ["GEO", "Future of Search", "AI Strategy", "SEO"],
+    featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop",
     content: `
       <h2>The Paradigm Shift: From Search to Synthesis</h2>
       <p>For two decades, the goal of digital marketing was simple: rank #1 on Google. The user would type a query, see a list of blue links, and (hopefully) click yours. That era is ending.</p>
@@ -67,6 +69,7 @@ export const insights: BlogPost[] = [
     category: "AI Marketing",
     author: "Midnight Dev Team",
     tags: ["SearchGPT", "GEO", "AI Search", "SEO"],
+    featuredImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop",
     content: `
       <h2>The Shift from Keywords to Context</h2>
       <p>SearchGPT and other AI-driven search engines don't just look for keywords; they look for answers. The traditional model of 10 blue links is being replaced by direct answers synthesized from multiple sources.</p>
@@ -92,6 +95,7 @@ export const insights: BlogPost[] = [
     category: "SaaS Development",
     author: "Midnight Dev Team",
     tags: ["SaaS", "Architecture", "Edge Computing", "Security"],
+    featuredImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=450&fit=crop",
     content: `
       <h2>The Edge Computing Revolution</h2>
       <p>Latency is the new downtime. In 2024, enterprise SaaS architectures are moving closer to the user. By leveraging edge functions and distributed databases, we can deliver near-instant experiences regardless of user location.</p>
@@ -112,6 +116,7 @@ export const insights: BlogPost[] = [
     category: "AI Marketing",
     author: "Midnight Dev Team",
     tags: ["Trust Rank", "Citation Engineering", "Brand Authority"],
+    featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
     content: `
       <h2>What is Trust Rank?</h2>
       <p>Trust Rank is a metric used by AI models to evaluate the credibility of a source. Unlike traditional Domain Authority, which focuses on link quantity, Trust Rank focuses on the <em>quality</em> and <em>context</em> of mentions.</p>
