@@ -39,6 +39,11 @@ async function startServer() {
     handleStripeWebhook
   );
 
+  // Health check for Railway/load balancers
+  app.get("/api/health", (_req, res) => {
+    res.json({ status: "ok", timestamp: new Date().toISOString() });
+  });
+
   // Clerk middleware - must come before body parsers for session verification
   app.use(clerkMiddleware());
 
