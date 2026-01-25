@@ -44,8 +44,7 @@ export default function Insights() {
           <div className="container">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {insights.map((post) => (
-                <Link key={post.slug} href={`/insights/${post.slug}`}>
-                  <a className="group block h-full border border-white/10 bg-card hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
+                <Link key={post.slug} href={`/insights/${post.slug}`} className="group block h-full border border-white/10 bg-card hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
                     <div className="p-8 h-full flex flex-col">
                       <div className="flex items-center justify-between mb-4 text-xs font-mono text-muted-foreground">
                         <span>{post.date}</span>
@@ -61,7 +60,6 @@ export default function Insights() {
                         READ_LOG <ArrowRight className="ml-2 h-3 w-3" />
                       </div>
                     </div>
-                  </a>
                 </Link>
               ))}
             </div>

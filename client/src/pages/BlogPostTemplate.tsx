@@ -2,14 +2,14 @@ import { useRoute } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { blogPosts } from "@/data/blogPosts";
+import { insights } from "@/data/insights";
 import NotFound from "./NotFound";
 import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
 import { Link } from "wouter";
 
 export default function BlogPostTemplate() {
   const [match, params] = useRoute("/insights/:slug");
-  const post = blogPosts.find(p => p.slug === params?.slug);
+  const post = insights.find(p => p.slug === params?.slug);
 
   if (!match || !post) return <NotFound />;
 
@@ -19,7 +19,6 @@ export default function BlogPostTemplate() {
         title={`${post.title} | Midnight Dev Insights`}
         description={post.excerpt}
         url={`/insights/${post.slug}`}
-        image={post.image}
         type="article"
       />
       <Navigation />
@@ -30,15 +29,12 @@ export default function BlogPostTemplate() {
           <header className="relative py-24 border-b border-white/10 overflow-hidden">
             <div className="absolute inset-0 z-0">
                <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background"></div>
-               <img src={post.image} alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" />
                <div className="absolute inset-0 border-grid opacity-10"></div>
             </div>
             
             <div className="container relative z-10 max-w-4xl">
-              <Link href="/insights">
-                <a className="inline-flex items-center text-muted-foreground hover:text-primary mb-8 transition-colors font-mono text-xs uppercase tracking-widest">
-                  <ArrowLeft className="mr-2 h-3 w-3" /> Back to Insights
-                </a>
+              <Link href="/insights" className="inline-flex items-center text-muted-foreground hover:text-primary mb-8 transition-colors font-mono text-xs uppercase tracking-widest">
+                <ArrowLeft className="mr-2 h-3 w-3" /> Back to Insights
               </Link>
               
               <div className="flex flex-wrap gap-4 mb-6 font-mono text-xs text-primary uppercase tracking-widest">

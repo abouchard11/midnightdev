@@ -47,6 +47,9 @@
 - [x] **Admin Dashboard**: Protected `/admin` route with leads and contacts view.
 - [x] **Email Confirmations**: Automated emails for audit submissions and purchases.
 - [x] **Stripe Verification**: Test checkout flow and document integration.
+- [x] **Blog CMS in Admin**: CRUD interface for managing blog posts from admin dashboard.
+- [x] **Stripe Webhooks**: Webhook endpoint for payment event handling.
+- [x] **Stripe Sandbox Claim**: Documentation for claiming test environment.
 
 ## Pending / Future Enhancements
 
