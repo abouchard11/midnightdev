@@ -1,10 +1,10 @@
 import { eq, desc } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { 
-  InsertUser, 
-  users, 
-  auditLeads, 
-  InsertAuditLead, 
+import {
+  InsertUser,
+  users,
+  auditLeads,
+  InsertAuditLead,
   AuditLead,
   contactSubmissions,
   InsertContactSubmission,
@@ -34,8 +34,8 @@ export async function getDb() {
 }
 
 export async function upsertUser(user: InsertUser): Promise<void> {
-  if (!user.openId) {
-    throw new Error("User openId is required for upsert");
+  if (!user.clerkUserId) {
+    throw new Error("User clerkUserId is required for upsert");
   }
 
   const db = await getDb();
@@ -46,7 +46,7 @@ export async function upsertUser(user: InsertUser): Promise<void> {
 
   try {
     const values: InsertUser = {
-      openId: user.openId,
+      clerkUserId: user.clerkUserId,
     };
     const updateSet: Record<string, unknown> = {};
 
@@ -70,7 +70,7 @@ export async function upsertUser(user: InsertUser): Promise<void> {
     if (user.role !== undefined) {
       values.role = user.role;
       updateSet.role = user.role;
-    } else if (user.openId === ENV.ownerOpenId) {
+    } else if (user.clerkUserId === ENV.ownerClerkId) {
       values.role = 'admin';
       updateSet.role = 'admin';
     }
@@ -92,14 +92,14 @@ export async function upsertUser(user: InsertUser): Promise<void> {
   }
 }
 
-export async function getUserByOpenId(openId: string) {
+export async function getUserByClerkId(clerkUserId: string) {
   const db = await getDb();
   if (!db) {
     console.warn("[Database] Cannot get user: database not available");
     return undefined;
   }
 
-  const result = await db.select().from(users).where(eq(users.openId, openId)).limit(1);
+  const result = await db.select().from(users).where(eq(users.clerkUserId, clerkUserId)).limit(1);
 
   return result.length > 0 ? result[0] : undefined;
 }
@@ -150,8 +150,8 @@ export async function updateAuditLeadPayment(id: number, stripePaymentId: string
   const db = await getDb();
   if (!db) return;
 
-  await db.update(auditLeads).set({ 
-    stripePaymentId, 
+  await db.update(auditLeads).set({
+    stripePaymentId,
     paidAt: new Date(),
     status: 'qualified'
   }).where(eq(auditLeads.id, id));
@@ -278,8 +278,8 @@ export async function getPaymentBySessionId(sessionId: string): Promise<Payment 
 }
 
 export async function updatePaymentStatus(
-  sessionId: string, 
-  status: Payment['status'], 
+  sessionId: string,
+  status: Payment['status'],
   paymentIntentId?: string
 ): Promise<void> {
   const db = await getDb();

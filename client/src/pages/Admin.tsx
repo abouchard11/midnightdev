@@ -1,4 +1,4 @@
-import { useAuth } from "@/_core/hooks/useAuth";
+import { useAuth, useUser, useClerk, SignInButton } from "@clerk/clerk-react";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,14 +10,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { 
-  Shield, 
-  Users, 
-  Mail, 
-  CreditCard, 
-  Clock, 
-  CheckCircle2, 
-  XCircle, 
+import {
+  Shield,
+  Users,
+  Mail,
+  CreditCard,
+  Clock,
+  CheckCircle2,
+  XCircle,
   AlertCircle,
   ExternalLink,
   RefreshCw,
@@ -29,7 +29,6 @@ import {
   Eye,
   EyeOff
 } from "lucide-react";
-import { getLoginUrl } from "@/const";
 import { format } from "date-fns";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -86,26 +85,36 @@ const emptyPostForm: BlogPostForm = {
 };
 
 export default function Admin() {
-  const { user, loading, isAuthenticated, logout } = useAuth();
+  const { isSignedIn, isLoaded } = useAuth();
+  const { user: clerkUser } = useUser();
+  const { signOut } = useClerk();
   const utils = trpc.useUtils();
-  
+
+  // Get DB user for role check
+  const { data: dbUser, isLoading: dbUserLoading } = trpc.auth.me.useQuery(undefined, {
+    enabled: isSignedIn,
+  });
+
   // Blog post form state
   const [postForm, setPostForm] = useState<BlogPostForm>(emptyPostForm);
   const [editingPostId, setEditingPostId] = useState<number | null>(null);
   const [isPostDialogOpen, setIsPostDialogOpen] = useState(false);
 
+  const isAuthenticated = !!(isSignedIn && dbUser);
+  const isAdmin = dbUser?.role === "admin";
+
   // Fetch data
   const { data: leads, isLoading: leadsLoading } = trpc.audit.list.useQuery(undefined, {
-    enabled: isAuthenticated && user?.role === "admin",
+    enabled: isAuthenticated && isAdmin,
   });
   const { data: contacts, isLoading: contactsLoading } = trpc.contact.list.useQuery(undefined, {
-    enabled: isAuthenticated && user?.role === "admin",
+    enabled: isAuthenticated && isAdmin,
   });
   const { data: payments, isLoading: paymentsLoading } = trpc.stripe.listPayments.useQuery(undefined, {
-    enabled: isAuthenticated && user?.role === "admin",
+    enabled: isAuthenticated && isAdmin,
   });
   const { data: blogPosts, isLoading: postsLoading } = trpc.blog.all.useQuery(undefined, {
-    enabled: isAuthenticated && user?.role === "admin",
+    enabled: isAuthenticated && isAdmin,
   });
 
   // Mutations
@@ -181,7 +190,7 @@ export default function Admin() {
   };
 
   // Loading state
-  if (loading) {
+  if (!isLoaded || dbUserLoading) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center">
@@ -193,7 +202,7 @@ export default function Admin() {
   }
 
   // Not authenticated
-  if (!isAuthenticated) {
+  if (!isSignedIn) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center p-4">
         <Card className="max-w-md w-full bg-black border-white/10">
@@ -205,12 +214,11 @@ export default function Admin() {
             <p className="text-muted-foreground">
               Authentication required to access the admin dashboard.
             </p>
-            <Button 
-              onClick={() => window.location.href = getLoginUrl()}
-              className="w-full bg-primary hover:bg-primary/90 text-black font-mono"
-            >
-              AUTHENTICATE_
-            </Button>
+            <SignInButton mode="modal">
+              <Button className="w-full bg-primary hover:bg-primary/90 text-black font-mono">
+                AUTHENTICATE_
+              </Button>
+            </SignInButton>
           </CardContent>
         </Card>
       </div>
@@ -218,7 +226,7 @@ export default function Admin() {
   }
 
   // Not admin
-  if (user?.role !== "admin") {
+  if (!isAdmin) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center p-4">
         <Card className="max-w-md w-full bg-black border-red-500/30">
@@ -231,10 +239,10 @@ export default function Admin() {
               You do not have administrator privileges.
             </p>
             <p className="text-xs text-muted-foreground font-mono">
-              Logged in as: {user?.email}
+              Logged in as: {clerkUser?.primaryEmailAddress?.emailAddress}
             </p>
-            <Button 
-              onClick={() => logout()}
+            <Button
+              onClick={() => signOut()}
               variant="outline"
               className="w-full font-mono"
             >
@@ -257,10 +265,12 @@ export default function Admin() {
             <span className="font-mono font-bold">ADMIN_CONSOLE_</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-sm text-muted-foreground font-mono">{user?.email}</span>
-            <Button 
-              onClick={() => logout()} 
-              variant="ghost" 
+            <span className="text-sm text-muted-foreground font-mono">
+              {clerkUser?.primaryEmailAddress?.emailAddress}
+            </span>
+            <Button
+              onClick={() => signOut()}
+              variant="ghost"
               size="sm"
               className="font-mono"
             >
@@ -379,9 +389,9 @@ export default function Admin() {
                               <StatusBadge status={lead.status} />
                             </div>
                             <p className="text-sm text-muted-foreground">{lead.email}</p>
-                            <a 
-                              href={lead.websiteUrl} 
-                              target="_blank" 
+                            <a
+                              href={lead.websiteUrl}
+                              target="_blank"
                               rel="noopener noreferrer"
                               className="text-sm text-primary hover:underline flex items-center gap-1"
                             >
@@ -397,8 +407,8 @@ export default function Admin() {
                             )}
                           </div>
                           <div className="flex items-center gap-2">
-                            <Select 
-                              value={lead.status} 
+                            <Select
+                              value={lead.status}
                               onValueChange={(value) => updateLeadStatus.mutate({ id: lead.id, status: value as any })}
                             >
                               <SelectTrigger className="w-32 bg-white/5 border-white/10">
@@ -464,8 +474,8 @@ export default function Admin() {
                             </p>
                           </div>
                           <div className="flex items-center gap-2">
-                            <Select 
-                              value={contact.status} 
+                            <Select
+                              value={contact.status}
                               onValueChange={(value) => updateContactStatus.mutate({ id: contact.id, status: value as any })}
                             >
                               <SelectTrigger className="w-32 bg-white/5 border-white/10">
@@ -610,8 +620,8 @@ export default function Admin() {
                       <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="category">Category</Label>
-                          <Select 
-                            value={postForm.category} 
+                          <Select
+                            value={postForm.category}
                             onValueChange={(value) => setPostForm({ ...postForm, category: value })}
                           >
                             <SelectTrigger className="bg-white/5 border-white/10">
@@ -676,8 +686,8 @@ export default function Admin() {
                         />
                         <Label htmlFor="published">Publish immediately</Label>
                       </div>
-                      <Button 
-                        onClick={handleSubmitPost} 
+                      <Button
+                        onClick={handleSubmitPost}
                         className="w-full bg-primary hover:bg-primary/90 text-black font-mono"
                         disabled={createPost.isPending || updatePost.isPending}
                       >
