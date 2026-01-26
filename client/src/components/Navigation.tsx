@@ -76,28 +76,28 @@ export default function Navigation() {
 
         {/* Mobile Menu Overlay */}
         <div className={cn(
-          "fixed inset-0 bg-background/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center transition-all duration-300 lg:hidden",
+          "fixed inset-0 top-20 bg-background z-40 flex flex-col items-start pt-8 transition-all duration-300 lg:hidden",
           isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}>
           <div className="absolute inset-0 border-grid opacity-10 pointer-events-none"></div>
-          
-          <nav className="flex flex-col items-center gap-6 w-full px-8 max-h-[80vh] overflow-y-auto">
+
+          <nav className="flex flex-col items-start gap-4 w-full px-6 max-h-[80vh] overflow-y-auto">
             {navItems.map((item, index) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
-                className="text-2xl font-bold tracking-tighter hover:text-primary transition-colors font-mono uppercase w-full text-center border-b border-white/5 pb-4"
+                className="text-xl font-bold tracking-tighter hover:text-primary transition-colors font-mono uppercase w-full text-left border-b border-white/10 pb-4"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <span className="text-primary text-sm mr-4 align-top">0{index + 1} //</span>
+                <span className="text-primary text-sm mr-3">0{index + 1} //</span>
                 {item.name}
               </a>
             ))}
             
-            <Button 
+            <Button
               size="lg"
-              className="mt-8 w-full rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono h-14 text-lg"
+              className="mt-6 w-full rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono h-12 text-base"
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
