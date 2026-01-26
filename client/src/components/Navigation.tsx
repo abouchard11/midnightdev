@@ -66,47 +66,47 @@ export default function Navigation() {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button 
+        <button
           className="lg:hidden z-50 p-2 text-foreground hover:text-primary transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
+      </div>
 
-        {/* Mobile Menu Overlay */}
-        <div className={cn(
-          "fixed left-0 right-0 bottom-0 bg-[#0a0a0a] z-40 flex flex-col items-start pt-8 transition-all duration-300 lg:hidden",
-          isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        )} style={{ top: '5rem' }}>
-          <div className="absolute inset-0 border-grid opacity-10 pointer-events-none"></div>
+      {/* Mobile Menu Overlay - OUTSIDE container to avoid height constraints */}
+      <div className={cn(
+        "fixed left-0 right-0 bottom-0 bg-[#0a0a0a] z-40 flex flex-col items-start pt-8 transition-all duration-300 lg:hidden",
+        isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+      )} style={{ top: '5rem' }}>
+        <div className="absolute inset-0 border-grid opacity-10 pointer-events-none"></div>
 
-          <nav className="flex flex-col items-start gap-4 w-full px-6 max-h-[80vh] overflow-y-auto">
-            {navItems.map((item, index) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={(e) => scrollToSection(e, item.href)}
-                className="text-xl font-bold tracking-tighter hover:text-primary transition-colors font-mono uppercase w-full text-left border-b border-white/10 pb-4"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <span className="text-primary text-sm mr-3">0{index + 1} //</span>
-                {item.name}
-              </a>
-            ))}
-            
-            <Button
-              size="lg"
-              className="mt-6 w-full rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono h-12 text-base"
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-              }}
+        <nav className="flex flex-col items-start gap-4 w-full px-6 max-h-[80vh] overflow-y-auto">
+          {navItems.map((item, index) => (
+            <a
+              key={item.name}
+              href={item.href}
+              onClick={(e) => scrollToSection(e, item.href)}
+              className="text-xl font-bold tracking-tighter hover:text-primary transition-colors font-mono uppercase w-full text-left border-b border-white/10 pb-4"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              START PROJECT_
-            </Button>
-          </nav>
-        </div>
+              <span className="text-primary text-sm mr-3">0{index + 1} //</span>
+              {item.name}
+            </a>
+          ))}
+
+          <Button
+            size="lg"
+            className="mt-6 w-full rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono h-12 text-base"
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            START PROJECT_
+          </Button>
+        </nav>
       </div>
     </header>
   );
