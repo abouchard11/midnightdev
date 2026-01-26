@@ -20,10 +20,10 @@ export default function Footer() {
               Whether you need enterprise scale or local dominance, we're ready to deploy.
             </p>
 
-            <a href="mailto:hello@midnight.dev">
+            <a href="mailto:contact@midnightdev.dev">
               <Button size="lg" className="w-full sm:w-auto h-16 px-8 text-lg rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono">
                 <Mail className="mr-3 h-5 w-5" />
-                HELLO@MIDNIGHT.DEV
+                CONTACT@MIDNIGHTDEV.DEV
               </Button>
             </a>
           </div>
