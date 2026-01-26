@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Github, Twitter, Linkedin } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <footer id="contact" className="bg-background border-t border-white/10 pt-16 md:pt-24 pb-12">
       <div className="container">
@@ -14,31 +19,33 @@ export default function Footer() {
             <p className="text-lg md:text-xl text-muted-foreground max-w-md mb-8">
               Whether you need enterprise scale or local dominance, we're ready to deploy.
             </p>
-            
-            <Button size="lg" className="w-full sm:w-auto h-16 px-8 text-lg rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono">
-              <Mail className="mr-3 h-5 w-5" />
-              HELLO@MIDNIGHT.DEV
-            </Button>
+
+            <a href="mailto:hello@midnight.dev">
+              <Button size="lg" className="w-full sm:w-auto h-16 px-8 text-lg rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono">
+                <Mail className="mr-3 h-5 w-5" />
+                HELLO@MIDNIGHT.DEV
+              </Button>
+            </a>
           </div>
-          
+
           <div className="flex flex-col justify-between pt-12 lg:pt-0">
             <div className="grid grid-cols-2 gap-8 mb-12">
               <div>
                 <h3 className="font-mono text-sm text-primary mb-4 uppercase tracking-widest">Services</h3>
                 <ul className="space-y-3 text-muted-foreground">
-                  <li className="hover:text-foreground transition-colors cursor-pointer">SaaS Development</li>
-                  <li className="hover:text-foreground transition-colors cursor-pointer">AI Automation</li>
-                  <li className="hover:text-foreground transition-colors cursor-pointer">Local SEO</li>
-                  <li className="hover:text-foreground transition-colors cursor-pointer">Consulting</li>
+                  <li><Link href="/saas-development" className="hover:text-foreground transition-colors">SaaS Development</Link></li>
+                  <li><Link href="/ai-marketing" className="hover:text-foreground transition-colors">AI Automation</Link></li>
+                  <li><Link href="/geo-optimization" className="hover:text-foreground transition-colors">Local SEO</Link></li>
+                  <li><button onClick={() => scrollToSection('contact')} className="hover:text-foreground transition-colors text-left">Consulting</button></li>
                 </ul>
               </div>
               <div>
                 <h3 className="font-mono text-sm text-primary mb-4 uppercase tracking-widest">Company</h3>
                 <ul className="space-y-3 text-muted-foreground">
-                  <li className="hover:text-foreground transition-colors cursor-pointer">About</li>
-                  <li className="hover:text-foreground transition-colors cursor-pointer">Work</li>
-                  <li className="hover:text-foreground transition-colors cursor-pointer">Careers</li>
-                  <li className="hover:text-foreground transition-colors cursor-pointer">Legal</li>
+                  <li><button onClick={() => scrollToSection('services')} className="hover:text-foreground transition-colors text-left">About</button></li>
+                  <li><button onClick={() => scrollToSection('work')} className="hover:text-foreground transition-colors text-left">Work</button></li>
+                  <li><Link href="/pricing" className="hover:text-foreground transition-colors">Careers</Link></li>
+                  <li><Link href="/privacy" className="hover:text-foreground transition-colors">Legal</Link></li>
                 </ul>
               </div>
             </div>
@@ -62,13 +69,13 @@ export default function Footer() {
           </p>
           
           <div className="flex gap-6">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://github.com/midnightdev" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
               <Github className="h-5 w-5" />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://twitter.com/midnightdev" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Twitter">
               <Twitter className="h-5 w-5" />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://linkedin.com/company/midnightdev" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
               <Linkedin className="h-5 w-5" />
             </a>
           </div>
