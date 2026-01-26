@@ -35,54 +35,58 @@ export default function Navigation() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-background/90 backdrop-blur-md">
-      <div className="container mx-auto flex h-20 items-center justify-between relative">
-        <Link href="/" className="text-2xl font-mono font-bold tracking-tighter hover:text-primary transition-colors z-50">
-          MIDNIGHT<span className="text-primary">_DEV</span>
-        </Link>
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-background/90 backdrop-blur-md">
+        <div className="container mx-auto flex h-20 items-center justify-between relative">
+          <Link href="/" className="text-2xl font-mono font-bold tracking-tighter hover:text-primary transition-colors z-50">
+            MIDNIGHT<span className="text-primary">_DEV</span>
+          </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              onClick={(e) => scrollToSection(e, item.href)}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-widest"
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={(e) => scrollToSection(e, item.href)}
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-widest"
+              >
+                {item.name}
+              </a>
+            ))}
+          </nav>
+
+          <div className="hidden lg:flex items-center gap-4">
+            <Button
+              variant="outline"
+              className="rounded-none border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono"
+              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
             >
-              {item.name}
-            </a>
-          ))}
-        </nav>
+              START PROJECT_
+            </Button>
+          </div>
 
-        <div className="hidden lg:flex items-center gap-4">
-          <Button 
-            variant="outline" 
-            className="rounded-none border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono"
-            onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+          {/* Mobile Menu Toggle */}
+          <button
+            className="lg:hidden z-50 p-2 text-foreground hover:text-primary transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
-            START PROJECT_
-          </Button>
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+      </header>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="lg:hidden z-50 p-2 text-foreground hover:text-primary transition-colors"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay - OUTSIDE container to avoid height constraints */}
-      <div className={cn(
-        "fixed left-0 right-0 bottom-0 bg-[#0a0a0a] z-40 flex flex-col items-start pt-8 transition-all duration-300 lg:hidden",
-        isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-      )} style={{ top: '5rem' }}>
+      {/* Mobile Menu Overlay - Completely outside header element */}
+      <div
+        className={cn(
+          "fixed top-20 left-0 right-0 h-[calc(100vh-5rem)] bg-[#0a0a0a] z-40 flex flex-col items-start pt-8 transition-all duration-300 lg:hidden",
+          isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        )}
+      >
         <div className="absolute inset-0 border-grid opacity-10 pointer-events-none"></div>
 
-        <nav className="flex flex-col items-start gap-4 w-full px-6 max-h-[80vh] overflow-y-auto">
+        <nav className="flex flex-col items-start gap-4 w-full px-6 overflow-y-auto">
           {navItems.map((item, index) => (
             <a
               key={item.name}
@@ -108,6 +112,6 @@ export default function Navigation() {
           </Button>
         </nav>
       </div>
-    </header>
+    </>
   );
 }
