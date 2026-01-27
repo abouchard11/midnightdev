@@ -3,12 +3,15 @@ import ContactDialog from "@/components/ContactDialog";
 import GeoDiagram from "@/components/diagrams/GeoDiagram";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { CheckCircle2, Search, Database, MessageSquare, ArrowRight, Building2, Scale, ShoppingBag } from "lucide-react";
 import { Link } from "wouter";
 
 export default function GeoOptimization() {
   return (
-    <>
+    <div className="min-h-screen bg-background text-foreground">
+      <Navigation />
       <SEO 
         title="ChatGPT Search Optimization (GEO) | AI Search Ranking"
         description="Dominate the new era of search. We optimize your digital footprint to be the recommended answer in ChatGPT, SearchGPT, and AI-driven platforms."
@@ -40,7 +43,7 @@ export default function GeoOptimization() {
         }}
       />
 
-      <div className="min-h-screen pt-24 pb-12">
+      <main className="pt-24 pb-12">
         {/* Hero Section */}
         <div className="container px-4 md:px-6 mb-24">
           <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -261,9 +264,9 @@ export default function GeoOptimization() {
                 </div>
 
                 <Link href={`/case-study/${study.id}`}>
-                  <Button variant="ghost" className="w-full justify-between hover:bg-white/5 hover:text-primary group-hover:border-primary/30 border border-transparent transition-all">
+                  <Button variant="outline" className="w-full justify-between border-white/20 hover:border-primary hover:bg-primary/10 hover:text-primary transition-all group/btn animate-pulse hover:animate-none">
                     <span className="font-mono text-xs">READ_ANALYSIS</span>
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
               </div>
@@ -275,13 +278,13 @@ export default function GeoOptimization() {
         <section className="container px-4 md:px-6 mb-24">
           <div className="border border-primary/20 bg-primary/5 p-8 md:p-16 text-center space-y-8 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
-            
+
             <h2 className="text-3xl md:text-4xl font-mono font-bold">FUTURE-PROOF YOUR VISIBILITY</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               The shift to AI search is happening now. Secure your position as the industry authority before your competitors do.
             </p>
-            
-            <ContactDialog 
+
+            <ContactDialog
               trigger={
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-mono rounded-none px-8 h-14 text-lg">
                   INITIALIZE_GEO_PROTOCOL_
@@ -291,7 +294,8 @@ export default function GeoOptimization() {
             />
           </div>
         </section>
-      </div>
-    </>
+      </main>
+      <Footer />
+    </div>
   );
 }

@@ -8,6 +8,16 @@ export default function Navigation() {
   const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Determine if a nav item is active based on current route
+  const isActive = (href: string) => {
+    // For non-hash routes, check exact match
+    if (!href.includes('#')) {
+      return location === href;
+    }
+    // Hash links are only "active" context when on home page
+    return false; // Don't highlight hash links as active
+  };
+
   const navItems = [
     { name: "Services", href: "/#services" },
     { name: "GEO Protocol", href: "/geo-optimization" },
@@ -49,7 +59,12 @@ export default function Navigation() {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-widest"
+                className={cn(
+                  "text-sm font-medium font-mono uppercase tracking-widest transition-colors relative",
+                  isActive(item.href)
+                    ? "text-primary after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-primary"
+                    : "text-muted-foreground hover:text-primary"
+                )}
               >
                 {item.name}
               </a>
@@ -92,7 +107,10 @@ export default function Navigation() {
               key={item.name}
               href={item.href}
               onClick={(e) => scrollToSection(e, item.href)}
-              className="text-xl font-bold tracking-tighter hover:text-primary transition-colors font-mono uppercase w-full text-left border-b border-white/10 pb-4"
+              className={cn(
+                "text-xl font-bold tracking-tighter font-mono uppercase w-full text-left border-b border-white/10 pb-4 transition-colors",
+                isActive(item.href) ? "text-primary border-l-2 border-l-primary pl-3" : "hover:text-primary"
+              )}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <span className="text-primary text-sm mr-3">0{index + 1} //</span>

@@ -10,8 +10,9 @@ import "./index.css";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
+// Allow running without Clerk for local development
 if (!PUBLISHABLE_KEY) {
-  throw new Error("Missing VITE_CLERK_PUBLISHABLE_KEY");
+  console.warn("⚠️ VITE_CLERK_PUBLISHABLE_KEY not set - running without authentication");
 }
 
 const queryClient = new QueryClient();
@@ -31,14 +32,23 @@ const trpcClient = trpc.createClient({
   ],
 });
 
+// Wrap with ClerkProvider only if key is available
+const AppWithProviders = () => (
+  <trpc.Provider client={trpcClient} queryClient={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
+    </QueryClientProvider>
+  </trpc.Provider>
+);
+
 createRoot(document.getElementById("root")!).render(
-  <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-    <trpc.Provider client={trpcClient} queryClient={queryClient}>
-      <QueryClientProvider client={queryClient}>
-        <HelmetProvider>
-          <App />
-        </HelmetProvider>
-      </QueryClientProvider>
-    </trpc.Provider>
-  </ClerkProvider>
+  PUBLISHABLE_KEY ? (
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+      <AppWithProviders />
+    </ClerkProvider>
+  ) : (
+    <AppWithProviders />
+  )
 );

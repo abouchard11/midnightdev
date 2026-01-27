@@ -44,8 +44,8 @@ export default function Footer() {
                 <ul className="space-y-3 text-muted-foreground">
                   <li><button onClick={() => scrollToSection('services')} className="hover:text-foreground transition-colors text-left">About</button></li>
                   <li><button onClick={() => scrollToSection('work')} className="hover:text-foreground transition-colors text-left">Work</button></li>
-                  <li><Link href="/pricing" className="hover:text-foreground transition-colors">Careers</Link></li>
-                  <li><Link href="/privacy" className="hover:text-foreground transition-colors">Legal</Link></li>
+                  <li><button onClick={() => scrollToSection('contact')} className="hover:text-foreground transition-colors text-left">Careers</button></li>
+                  <li><Link href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
                 </ul>
               </div>
             </div>
@@ -64,9 +64,14 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-muted-foreground font-mono">
-            © 2026 MIDNIGHT DEV LLC. ALL RIGHTS RESERVED.
-          </p>
+          <div className="text-center md:text-left">
+            <p className="text-sm text-muted-foreground font-mono">
+              © 2025 MIDNIGHT DEV LLC. ALL RIGHTS RESERVED.
+            </p>
+            <p className="text-xs text-muted-foreground/60 font-mono mt-1">
+              Privacy Policy · Terms of Service · DMCA Compliance
+            </p>
+          </div>
           
           <div className="flex gap-6">
             <a href="https://github.com/midnightdev" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">

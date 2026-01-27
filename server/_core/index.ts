@@ -45,7 +45,12 @@ async function startServer() {
   });
 
   // Clerk middleware - must come before body parsers for session verification
-  app.use(clerkMiddleware());
+  // Skip if no publishable key (allows running without auth for development)
+  if (process.env.CLERK_SECRET_KEY && process.env.VITE_CLERK_PUBLISHABLE_KEY) {
+    app.use(clerkMiddleware());
+  } else {
+    console.log('⚠️  Clerk keys not configured - running without authentication');
+  }
 
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));

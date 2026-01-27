@@ -48,23 +48,23 @@
 
 :root {
   /* Default to Dark Mode values for this theme */
-  --background: oklch(0.1 0 0); /* Deep Black #000000 */
+  --background: oklch(0.18 0 0); /* Dark Charcoal #242424 - more lift */
   --foreground: oklch(0.95 0 0); /* White #F2F2F2 */
-  
-  --card: oklch(0.12 0 0);
+
+  --card: oklch(0.20 0 0); /* Slightly lighter than background */
   --card-foreground: oklch(0.95 0 0);
-  
-  --popover: oklch(0.12 0 0);
+
+  --popover: oklch(0.20 0 0);
   --popover-foreground: oklch(0.95 0 0);
-  
+
   --primary: oklch(0.62 0.22 285); /* Electric Purple #8B5CF6 */
   --primary-foreground: oklch(0.98 0 0);
-  
-  --secondary: oklch(0.2 0 0);
+
+  --secondary: oklch(0.25 0 0); /* Lifted more */
   --secondary-foreground: oklch(0.95 0 0);
-  
-  --muted: oklch(0.2 0 0);
-  --muted-foreground: oklch(0.6 0 0);
+
+  --muted: oklch(0.25 0 0); /* Lifted more */
+  --muted-foreground: oklch(0.65 0 0); /* Slightly brighter */
   
   --accent: oklch(0.2 0 0);
   --accent-foreground: oklch(0.95 0 0);
@@ -90,18 +90,18 @@
 
 .dark {
   /* Same as root for this specific design system */
-  --background: oklch(0.1 0 0);
+  --background: oklch(0.18 0 0); /* Dark Charcoal - more lift */
   --foreground: oklch(0.95 0 0);
-  --card: oklch(0.12 0 0);
+  --card: oklch(0.20 0 0); /* Lifted */
   --card-foreground: oklch(0.95 0 0);
-  --popover: oklch(0.12 0 0);
+  --popover: oklch(0.20 0 0);
   --popover-foreground: oklch(0.95 0 0);
   --primary: oklch(0.62 0.22 285);
   --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.2 0 0);
+  --secondary: oklch(0.25 0 0); /* Lifted more */
   --secondary-foreground: oklch(0.95 0 0);
-  --muted: oklch(0.2 0 0);
-  --muted-foreground: oklch(0.6 0 0);
+  --muted: oklch(0.25 0 0); /* Lifted more */
+  --muted-foreground: oklch(0.65 0 0); /* Brighter */
   --accent: oklch(0.2 0 0);
   --accent-foreground: oklch(0.95 0 0);
   --destructive: oklch(0.6 0.2 20);

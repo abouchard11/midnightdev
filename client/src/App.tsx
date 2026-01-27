@@ -18,6 +18,7 @@ import Pricing from "./pages/Pricing";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import BlogPostTemplate from "./pages/BlogPostTemplate";
 import Admin from "./pages/Admin";
+import Privacy from "./pages/Privacy";
 
 
 import ScrollToTop from "./components/ScrollToTop";
@@ -42,6 +43,7 @@ function Router() {
       <Route path="/pricing" component={Pricing} />
       <Route path="/payment-success" component={PaymentSuccess} />
       <Route path="/admin" component={Admin} />
+      <Route path="/privacy" component={Privacy} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
