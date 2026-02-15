@@ -59,11 +59,13 @@ export const appRouter = router({
       .mutation(async ({ input }) => {
         const lead = await createAuditLead(input);
         
-        // Send confirmation and notify owner
-        await sendAuditConfirmation({
+        // Send confirmation and notify owner (asynchronous)
+        sendAuditConfirmation({
           to: input.email,
           businessName: input.businessName,
           websiteUrl: input.websiteUrl,
+        }).catch((err) => {
+          console.error("[Audit] Failed to send confirmation email:", err);
         });
 
         return { success: true, leadId: lead?.id };
@@ -103,10 +105,12 @@ export const appRouter = router({
       .mutation(async ({ input }) => {
         const submission = await createContactSubmission(input);
         
-        // Send confirmation and notify owner
-        await sendContactConfirmation({
+        // Send confirmation and notify owner (asynchronous)
+        sendContactConfirmation({
           to: input.email,
           name: input.name,
+        }).catch((err) => {
+          console.error("[Contact] Failed to send confirmation email:", err);
         });
 
         return { success: true, submissionId: submission?.id };
@@ -278,11 +282,13 @@ export const appRouter = router({
             await updateAuditLeadPayment(payment.auditLeadId, session.payment_intent as string);
           }
 
-          // Send payment confirmation
-          await sendPaymentConfirmation({
+          // Send payment confirmation (asynchronous)
+          sendPaymentConfirmation({
             to: session.customer_email || '',
             productName: payment?.productType || 'Unknown Product',
             amount: (payment?.amount || 0) / 100,
+          }).catch((err) => {
+            console.error("[Payment] Failed to send confirmation email:", err);
           });
         }
 
