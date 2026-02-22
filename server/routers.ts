@@ -60,10 +60,12 @@ export const appRouter = router({
         const lead = await createAuditLead(input);
         
         // Send confirmation and notify owner
-        await sendAuditConfirmation({
+        sendAuditConfirmation({
           to: input.email,
           businessName: input.businessName,
           websiteUrl: input.websiteUrl,
+        }).catch((err) => {
+          console.error(`[Audit] Failed to send confirmation email to ${input.email}:`, err);
         });
 
         return { success: true, leadId: lead?.id };
