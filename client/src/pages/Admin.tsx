@@ -323,7 +323,7 @@ export default function Admin() {
                 <div>
                   <p className="text-xs text-muted-foreground font-mono uppercase">Revenue</p>
                   <p className="text-3xl font-bold">
-                    ${payments?.filter(p => p.status === "completed").reduce((sum, p) => sum + (p.amount || 0), 0) || 0}
+                    ${payments?.reduce((sum, p) => p.status === "completed" ? sum + (p.amount || 0) : sum, 0) || 0}
                   </p>
                 </div>
                 <CreditCard className="w-8 h-8 text-yellow-500 opacity-50" />
