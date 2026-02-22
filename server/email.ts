@@ -1,6 +1,6 @@
 /**
  * Email Notification System
- * 
+ *
  * Uses the built-in Manus notification system to send emails.
  * For production, you can integrate with services like:
  * - Resend (https://resend.com)
@@ -31,7 +31,9 @@ interface ContactConfirmationEmail {
  * Send confirmation email after audit form submission
  * Currently notifies owner - can be extended with transactional email service
  */
-export async function sendAuditConfirmation(data: AuditConfirmationEmail): Promise<boolean> {
+export async function sendAuditConfirmation(
+  data: AuditConfirmationEmail
+): Promise<boolean> {
   // Notify owner about the submission
   const ownerNotified = await notifyOwner({
     title: "🎯 New AI Visibility Audit Request",
@@ -43,7 +45,7 @@ export async function sendAuditConfirmation(data: AuditConfirmationEmail): Promi
 - **Email:** ${data.to}
 
 The user has been shown a confirmation message. Follow up within 24 hours.
-    `.trim()
+    `.trim(),
   });
 
   // In production, you would also send an email to the user here
@@ -55,14 +57,18 @@ The user has been shown a confirmation message. Follow up within 24 hours.
   //   html: generateAuditEmailTemplate(data)
   // });
 
-  console.log(`[Email] Audit confirmation for ${data.to} - Owner notified: ${ownerNotified}`);
+  console.log(
+    `[Email] Audit confirmation for ${data.to} - Owner notified: ${ownerNotified}`
+  );
   return ownerNotified;
 }
 
 /**
  * Send confirmation email after successful payment
  */
-export async function sendPaymentConfirmation(data: PaymentConfirmationEmail): Promise<boolean> {
+export async function sendPaymentConfirmation(
+  data: PaymentConfirmationEmail
+): Promise<boolean> {
   const ownerNotified = await notifyOwner({
     title: "💰 Payment Received!",
     content: `
@@ -73,17 +79,21 @@ export async function sendPaymentConfirmation(data: PaymentConfirmationEmail): P
 - **Customer:** ${data.to}
 
 Deliver the audit within the promised timeframe.
-    `.trim()
+    `.trim(),
   });
 
-  console.log(`[Email] Payment confirmation for ${data.to} - Owner notified: ${ownerNotified}`);
+  console.log(
+    `[Email] Payment confirmation for ${data.to} - Owner notified: ${ownerNotified}`
+  );
   return ownerNotified;
 }
 
 /**
  * Send confirmation email after contact form submission
  */
-export async function sendContactConfirmation(data: ContactConfirmationEmail): Promise<boolean> {
+export async function sendContactConfirmation(
+  data: ContactConfirmationEmail
+): Promise<boolean> {
   const ownerNotified = await notifyOwner({
     title: "📬 New Contact Form Submission",
     content: `
@@ -93,10 +103,12 @@ export async function sendContactConfirmation(data: ContactConfirmationEmail): P
 - **Email:** ${data.to}
 
 Respond within 24 hours to maintain response time SLA.
-    `.trim()
+    `.trim(),
   });
 
-  console.log(`[Email] Contact confirmation for ${data.to} - Owner notified: ${ownerNotified}`);
+  console.log(
+    `[Email] Contact confirmation for ${data.to} - Owner notified: ${ownerNotified}`
+  );
   return ownerNotified;
 }
 
@@ -104,7 +116,9 @@ Respond within 24 hours to maintain response time SLA.
  * Email template generator for audit confirmation
  * Use this when integrating with a transactional email service
  */
-export function generateAuditEmailTemplate(data: AuditConfirmationEmail): string {
+export function generateAuditEmailTemplate(
+  data: AuditConfirmationEmail
+): string {
   return `
 <!DOCTYPE html>
 <html>

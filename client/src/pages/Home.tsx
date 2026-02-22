@@ -10,18 +10,19 @@ export default function Home() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Midnight Dev",
-    "url": "https://midnightdev.dev",
-    "logo": "https://midnightdev.dev/logo.png",
-    "description": "A dual-service agency delivering enterprise SaaS architecture and AI-powered local marketing solutions.",
-    "sameAs": [
+    name: "Midnight Dev",
+    url: "https://midnightdev.dev",
+    logo: "https://midnightdev.dev/logo.png",
+    description:
+      "A dual-service agency delivering enterprise SaaS architecture and AI-powered local marketing solutions.",
+    sameAs: [
       "https://github.com/midnightdev",
-      "https://twitter.com/midnightdev"
-    ]
+      "https://twitter.com/midnightdev",
+    ],
   };
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
-      <SEO 
+      <SEO
         title="Midnight Dev | Enterprise SaaS & AI Marketing Agency"
         description="Midnight Dev is a dual-service agency delivering scalable enterprise SaaS architecture and AI-powered local marketing solutions. We build the future at night."
         url="/"
@@ -32,7 +33,7 @@ export default function Home() {
           "React Developers",
           "Local SEO Automation",
           "SaaS Architecture",
-          "Midnight Dev"
+          "Midnight Dev",
         ]}
       />
       <StructuredData data={schema} />

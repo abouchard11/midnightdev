@@ -26,7 +26,9 @@ export async function createContext(
         await upsertUser({
           clerkUserId: userId,
           email: clerkUser.emailAddresses[0]?.emailAddress ?? null,
-          name: `${clerkUser.firstName ?? ''} ${clerkUser.lastName ?? ''}`.trim() || null,
+          name:
+            `${clerkUser.firstName ?? ""} ${clerkUser.lastName ?? ""}`.trim() ||
+            null,
         });
         user = (await getUserByClerkId(userId)) ?? null;
       }

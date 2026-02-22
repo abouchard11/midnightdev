@@ -1,4 +1,13 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean, json } from "drizzle-orm/mysql-core";
+import {
+  int,
+  mysqlEnum,
+  mysqlTable,
+  text,
+  timestamp,
+  varchar,
+  boolean,
+  json,
+} from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -36,7 +45,15 @@ export const auditLeads = mysqlTable("audit_leads", {
   serviceArea: varchar("serviceArea", { length: 255 }),
   email: varchar("email", { length: 320 }).notNull(),
   aiRecommendationGoal: text("aiRecommendationGoal"),
-  status: mysqlEnum("status", ["new", "contacted", "qualified", "converted", "closed"]).default("new").notNull(),
+  status: mysqlEnum("status", [
+    "new",
+    "contacted",
+    "qualified",
+    "converted",
+    "closed",
+  ])
+    .default("new")
+    .notNull(),
   notes: text("notes"),
   stripePaymentId: varchar("stripePaymentId", { length: 255 }),
   paidAt: timestamp("paidAt"),
@@ -57,7 +74,9 @@ export const contactSubmissions = mysqlTable("contact_submissions", {
   company: varchar("company", { length: 255 }),
   service: varchar("service", { length: 100 }),
   message: text("message").notNull(),
-  status: mysqlEnum("status", ["new", "read", "replied", "archived"]).default("new").notNull(),
+  status: mysqlEnum("status", ["new", "read", "replied", "archived"])
+    .default("new")
+    .notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
@@ -94,13 +113,17 @@ export type InsertBlogPost = typeof blogPosts.$inferInsert;
  */
 export const payments = mysqlTable("payments", {
   id: int("id").autoincrement().primaryKey(),
-  stripeSessionId: varchar("stripeSessionId", { length: 255 }).notNull().unique(),
+  stripeSessionId: varchar("stripeSessionId", { length: 255 })
+    .notNull()
+    .unique(),
   stripePaymentIntentId: varchar("stripePaymentIntentId", { length: 255 }),
   customerEmail: varchar("customerEmail", { length: 320 }),
   productType: varchar("productType", { length: 100 }).notNull(),
   amount: int("amount").notNull(), // Amount in cents
   currency: varchar("currency", { length: 3 }).default("usd").notNull(),
-  status: mysqlEnum("status", ["pending", "completed", "failed", "refunded"]).default("pending").notNull(),
+  status: mysqlEnum("status", ["pending", "completed", "failed", "refunded"])
+    .default("pending")
+    .notNull(),
   metadata: text("metadata"), // Store as JSON string
   auditLeadId: int("auditLeadId"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),

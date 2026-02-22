@@ -15,17 +15,23 @@ interface ContactDialogProps {
   trigger?: React.ReactNode;
   service?: string;
   className?: string;
-  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
+  variant?:
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link";
   size?: "default" | "sm" | "lg" | "icon";
 }
 
-export default function ContactDialog({ 
-  triggerText = "CONTACT US", 
+export default function ContactDialog({
+  triggerText = "CONTACT US",
   trigger,
   service,
   className,
   variant = "default",
-  size = "default"
+  size = "default",
 }: ContactDialogProps) {
   const [open, setOpen] = useState(false);
 

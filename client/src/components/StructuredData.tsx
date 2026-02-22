@@ -7,9 +7,7 @@ interface StructuredDataProps {
 export default function StructuredData({ data }: StructuredDataProps) {
   return (
     <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(data)}
-      </script>
+      <script type="application/ld+json">{JSON.stringify(data)}</script>
     </Helmet>
   );
 }

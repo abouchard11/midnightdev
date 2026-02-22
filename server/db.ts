@@ -14,9 +14,9 @@ import {
   BlogPost,
   payments,
   InsertPayment,
-  Payment
+  Payment,
 } from "../drizzle/schema";
-import { ENV } from './_core/env';
+import { ENV } from "./_core/env";
 
 let _db: ReturnType<typeof drizzle> | null = null;
 
@@ -71,8 +71,8 @@ export async function upsertUser(user: InsertUser): Promise<void> {
       values.role = user.role;
       updateSet.role = user.role;
     } else if (user.clerkUserId === ENV.ownerClerkId) {
-      values.role = 'admin';
-      updateSet.role = 'admin';
+      values.role = "admin";
+      updateSet.role = "admin";
     }
 
     if (!values.lastSignedIn) {
@@ -99,14 +99,20 @@ export async function getUserByClerkId(clerkUserId: string) {
     return undefined;
   }
 
-  const result = await db.select().from(users).where(eq(users.clerkUserId, clerkUserId)).limit(1);
+  const result = await db
+    .select()
+    .from(users)
+    .where(eq(users.clerkUserId, clerkUserId))
+    .limit(1);
 
   return result.length > 0 ? result[0] : undefined;
 }
 
 // ==================== AUDIT LEADS ====================
 
-export async function createAuditLead(lead: InsertAuditLead): Promise<AuditLead | null> {
+export async function createAuditLead(
+  lead: InsertAuditLead
+): Promise<AuditLead | null> {
   const db = await getDb();
   if (!db) {
     console.warn("[Database] Cannot create audit lead: database not available");
@@ -116,7 +122,11 @@ export async function createAuditLead(lead: InsertAuditLead): Promise<AuditLead 
   try {
     const result = await db.insert(auditLeads).values(lead);
     const insertId = result[0].insertId;
-    const created = await db.select().from(auditLeads).where(eq(auditLeads.id, insertId)).limit(1);
+    const created = await db
+      .select()
+      .from(auditLeads)
+      .where(eq(auditLeads.id, insertId))
+      .limit(1);
     return created[0] || null;
   } catch (error) {
     console.error("[Database] Failed to create audit lead:", error);
@@ -135,41 +145,62 @@ export async function getAuditLeadById(id: number): Promise<AuditLead | null> {
   const db = await getDb();
   if (!db) return null;
 
-  const result = await db.select().from(auditLeads).where(eq(auditLeads.id, id)).limit(1);
+  const result = await db
+    .select()
+    .from(auditLeads)
+    .where(eq(auditLeads.id, id))
+    .limit(1);
   return result[0] || null;
 }
 
-export async function updateAuditLeadStatus(id: number, status: AuditLead['status']): Promise<void> {
+export async function updateAuditLeadStatus(
+  id: number,
+  status: AuditLead["status"]
+): Promise<void> {
   const db = await getDb();
   if (!db) return;
 
   await db.update(auditLeads).set({ status }).where(eq(auditLeads.id, id));
 }
 
-export async function updateAuditLeadPayment(id: number, stripePaymentId: string): Promise<void> {
+export async function updateAuditLeadPayment(
+  id: number,
+  stripePaymentId: string
+): Promise<void> {
   const db = await getDb();
   if (!db) return;
 
-  await db.update(auditLeads).set({
-    stripePaymentId,
-    paidAt: new Date(),
-    status: 'qualified'
-  }).where(eq(auditLeads.id, id));
+  await db
+    .update(auditLeads)
+    .set({
+      stripePaymentId,
+      paidAt: new Date(),
+      status: "qualified",
+    })
+    .where(eq(auditLeads.id, id));
 }
 
 // ==================== CONTACT SUBMISSIONS ====================
 
-export async function createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission | null> {
+export async function createContactSubmission(
+  submission: InsertContactSubmission
+): Promise<ContactSubmission | null> {
   const db = await getDb();
   if (!db) {
-    console.warn("[Database] Cannot create contact submission: database not available");
+    console.warn(
+      "[Database] Cannot create contact submission: database not available"
+    );
     return null;
   }
 
   try {
     const result = await db.insert(contactSubmissions).values(submission);
     const insertId = result[0].insertId;
-    const created = await db.select().from(contactSubmissions).where(eq(contactSubmissions.id, insertId)).limit(1);
+    const created = await db
+      .select()
+      .from(contactSubmissions)
+      .where(eq(contactSubmissions.id, insertId))
+      .limit(1);
     return created[0] || null;
   } catch (error) {
     console.error("[Database] Failed to create contact submission:", error);
@@ -181,19 +212,30 @@ export async function getContactSubmissions(): Promise<ContactSubmission[]> {
   const db = await getDb();
   if (!db) return [];
 
-  return db.select().from(contactSubmissions).orderBy(desc(contactSubmissions.createdAt));
+  return db
+    .select()
+    .from(contactSubmissions)
+    .orderBy(desc(contactSubmissions.createdAt));
 }
 
-export async function updateContactSubmissionStatus(id: number, status: ContactSubmission['status']): Promise<void> {
+export async function updateContactSubmissionStatus(
+  id: number,
+  status: ContactSubmission["status"]
+): Promise<void> {
   const db = await getDb();
   if (!db) return;
 
-  await db.update(contactSubmissions).set({ status }).where(eq(contactSubmissions.id, id));
+  await db
+    .update(contactSubmissions)
+    .set({ status })
+    .where(eq(contactSubmissions.id, id));
 }
 
 // ==================== BLOG POSTS ====================
 
-export async function createBlogPost(post: InsertBlogPost): Promise<BlogPost | null> {
+export async function createBlogPost(
+  post: InsertBlogPost
+): Promise<BlogPost | null> {
   const db = await getDb();
   if (!db) {
     console.warn("[Database] Cannot create blog post: database not available");
@@ -203,7 +245,11 @@ export async function createBlogPost(post: InsertBlogPost): Promise<BlogPost | n
   try {
     const result = await db.insert(blogPosts).values(post);
     const insertId = result[0].insertId;
-    const created = await db.select().from(blogPosts).where(eq(blogPosts.id, insertId)).limit(1);
+    const created = await db
+      .select()
+      .from(blogPosts)
+      .where(eq(blogPosts.id, insertId))
+      .limit(1);
     return created[0] || null;
   } catch (error) {
     console.error("[Database] Failed to create blog post:", error);
@@ -215,7 +261,9 @@ export async function getPublishedBlogPosts(): Promise<BlogPost[]> {
   const db = await getDb();
   if (!db) return [];
 
-  return db.select().from(blogPosts)
+  return db
+    .select()
+    .from(blogPosts)
     .where(eq(blogPosts.published, true))
     .orderBy(desc(blogPosts.publishedAt));
 }
@@ -227,15 +275,24 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
   return db.select().from(blogPosts).orderBy(desc(blogPosts.createdAt));
 }
 
-export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+export async function getBlogPostBySlug(
+  slug: string
+): Promise<BlogPost | null> {
   const db = await getDb();
   if (!db) return null;
 
-  const result = await db.select().from(blogPosts).where(eq(blogPosts.slug, slug)).limit(1);
+  const result = await db
+    .select()
+    .from(blogPosts)
+    .where(eq(blogPosts.slug, slug))
+    .limit(1);
   return result[0] || null;
 }
 
-export async function updateBlogPost(id: number, updates: Partial<InsertBlogPost>): Promise<void> {
+export async function updateBlogPost(
+  id: number,
+  updates: Partial<InsertBlogPost>
+): Promise<void> {
   const db = await getDb();
   if (!db) return;
 
@@ -251,7 +308,9 @@ export async function deleteBlogPost(id: number): Promise<void> {
 
 // ==================== PAYMENTS ====================
 
-export async function createPayment(payment: InsertPayment): Promise<Payment | null> {
+export async function createPayment(
+  payment: InsertPayment
+): Promise<Payment | null> {
   const db = await getDb();
   if (!db) {
     console.warn("[Database] Cannot create payment: database not available");
@@ -261,7 +320,11 @@ export async function createPayment(payment: InsertPayment): Promise<Payment | n
   try {
     const result = await db.insert(payments).values(payment);
     const insertId = result[0].insertId;
-    const created = await db.select().from(payments).where(eq(payments.id, insertId)).limit(1);
+    const created = await db
+      .select()
+      .from(payments)
+      .where(eq(payments.id, insertId))
+      .limit(1);
     return created[0] || null;
   } catch (error) {
     console.error("[Database] Failed to create payment:", error);
@@ -269,17 +332,23 @@ export async function createPayment(payment: InsertPayment): Promise<Payment | n
   }
 }
 
-export async function getPaymentBySessionId(sessionId: string): Promise<Payment | null> {
+export async function getPaymentBySessionId(
+  sessionId: string
+): Promise<Payment | null> {
   const db = await getDb();
   if (!db) return null;
 
-  const result = await db.select().from(payments).where(eq(payments.stripeSessionId, sessionId)).limit(1);
+  const result = await db
+    .select()
+    .from(payments)
+    .where(eq(payments.stripeSessionId, sessionId))
+    .limit(1);
   return result[0] || null;
 }
 
 export async function updatePaymentStatus(
   sessionId: string,
-  status: Payment['status'],
+  status: Payment["status"],
   paymentIntentId?: string
 ): Promise<void> {
   const db = await getDb();
@@ -290,7 +359,10 @@ export async function updatePaymentStatus(
     updates.stripePaymentIntentId = paymentIntentId;
   }
 
-  await db.update(payments).set(updates).where(eq(payments.stripeSessionId, sessionId));
+  await db
+    .update(payments)
+    .set(updates)
+    .where(eq(payments.stripeSessionId, sessionId));
 }
 
 export async function getPayments(): Promise<Payment[]> {
