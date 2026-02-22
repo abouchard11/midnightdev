@@ -39,18 +39,21 @@ Full agency website with lead capture forms, Stripe payments, and blog CMS that 
 ## Context
 
 **Current State:**
+
 - App built on Manus 1.6 platform with vite-plugin-manus-runtime
 - OAuth tightly coupled to Manus OAuth server (OAUTH_SERVER_URL, VITE_APP_ID)
 - Notifications via Manus Forge API (BUILT_IN_FORGE_API_URL)
 - Multiple unused Manus services (llm.ts, imageGeneration.ts, etc.) defined but never called
 
 **Target State:**
+
 - Railway hosting (supports Vite + Express)
 - Clerk for authentication (similar OAuth flow, easy migration)
 - Resend for transactional emails (email templates already exist)
 - PlanetScale or Railway MySQL for database
 
 **Critical Files:**
+
 - `server/_core/sdk.ts` — Manus OAuth implementation
 - `server/_core/oauth.ts` — OAuth callback handler
 - `server/_core/notification.ts` — Manus notification service
@@ -67,12 +70,13 @@ Full agency website with lead capture forms, Stripe payments, and blog CMS that 
 
 ## Key Decisions
 
-| Decision | Rationale | Outcome |
-|----------|-----------|---------|
-| Clerk over Auth0/NextAuth | Similar OAuth UX to Manus, React SDK, Express middleware | — Pending |
-| Resend over SendGrid | Modern, simple API, generous free tier | — Pending |
-| Railway over Vercel | Better support for Express servers, built-in MySQL | — Pending |
-| Delete unused Manus services | Never called in app, adds complexity | — Pending |
+| Decision                     | Rationale                                                | Outcome   |
+| ---------------------------- | -------------------------------------------------------- | --------- |
+| Clerk over Auth0/NextAuth    | Similar OAuth UX to Manus, React SDK, Express middleware | — Pending |
+| Resend over SendGrid         | Modern, simple API, generous free tier                   | — Pending |
+| Railway over Vercel          | Better support for Express servers, built-in MySQL       | — Pending |
+| Delete unused Manus services | Never called in app, adds complexity                     | — Pending |
 
 ---
-*Last updated: 2026-01-25 after initialization*
+
+_Last updated: 2026-01-25 after initialization_

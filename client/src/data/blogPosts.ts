@@ -13,7 +13,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "optimizing-for-searchgpt",
     title: "Optimizing for SearchGPT: The New SEO Frontier",
-    excerpt: "Why traditional keyword stuffing is dead and how to structure your data for the next generation of AI search engines.",
+    excerpt:
+      "Why traditional keyword stuffing is dead and how to structure your data for the next generation of AI search engines.",
     date: "2024-03-15",
     readTime: "5 min read",
     category: "AI_STRATEGY",
@@ -31,12 +32,13 @@ export const blogPosts: BlogPost[] = [
         <li>Build "Conversational Landing Pages" that answer specific questions</li>
         <li>Focus on high-authority citations over spammy backlinks</li>
       </ul>
-    `
+    `,
   },
   {
     slug: "enterprise-saas-architecture",
     title: "Enterprise SaaS Architecture: Scaling Beyond the MVP",
-    excerpt: "A deep dive into microservices, multi-tenancy, and how to build a codebase that survives your Series B.",
+    excerpt:
+      "A deep dive into microservices, multi-tenancy, and how to build a codebase that survives your Series B.",
     date: "2024-03-10",
     readTime: "8 min read",
     category: "ENGINEERING",
@@ -47,12 +49,13 @@ export const blogPosts: BlogPost[] = [
       
       <h2>Moving to Microservices</h2>
       <p>Breaking your app into distinct services (Auth, Billing, Core Logic) allows for independent scaling and faster iteration cycles. But it introduces complexity in data consistency and observability.</p>
-    `
+    `,
   },
   {
     slug: "ai-agents-local-marketing",
     title: "Why AI Agents Are Replacing Traditional Marketing Agencies",
-    excerpt: "Autonomous agents don't sleep, don't take breaks, and respond to leads instantly. Here's why the agency model is being disrupted.",
+    excerpt:
+      "Autonomous agents don't sleep, don't take breaks, and respond to leads instantly. Here's why the agency model is being disrupted.",
     date: "2024-03-01",
     readTime: "4 min read",
     category: "MARKETING",
@@ -63,6 +66,6 @@ export const blogPosts: BlogPost[] = [
       
       <h2>Cost Efficiency</h2>
       <p>Instead of paying a retainer for a team of humans to manually post on social media, AI agents can generate and schedule content at a fraction of the cost.</p>
-    `
-  }
+    `,
+  },
 ];

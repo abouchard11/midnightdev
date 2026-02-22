@@ -9,18 +9,24 @@ interface SEOProps {
   keywords?: string[];
 }
 
-export default function SEO({ 
-  title, 
-  description, 
-  image = "/images/hero-bg.png", 
-  url = "https://midnightdev.dev", 
+export default function SEO({
+  title,
+  description,
+  image = "/images/hero-bg.png",
+  url = "https://midnightdev.dev",
   type = "website",
-  keywords = []
+  keywords = [],
 }: SEOProps) {
   const siteTitle = "Midnight Dev | Enterprise SaaS & AI Marketing";
-  const fullTitle = title.includes("Midnight Dev") ? title : `${title} | Midnight Dev`;
-  const fullUrl = url.startsWith("http") ? url : `https://midnightdev.dev${url}`;
-  const fullImage = image.startsWith("http") ? image : `https://midnightdev.dev${image}`;
+  const fullTitle = title.includes("Midnight Dev")
+    ? title
+    : `${title} | Midnight Dev`;
+  const fullUrl = url.startsWith("http")
+    ? url
+    : `https://midnightdev.dev${url}`;
+  const fullImage = image.startsWith("http")
+    ? image
+    : `https://midnightdev.dev${image}`;
 
   return (
     <Helmet>
@@ -30,7 +36,7 @@ export default function SEO({
       {keywords.length > 0 && (
         <meta name="keywords" content={keywords.join(", ")} />
       )}
-      
+
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
       <meta property="og:url" content={fullUrl} />

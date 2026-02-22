@@ -1,6 +1,19 @@
 import { describe, expect, it, vi } from "vitest";
 import { appRouter } from "./routers";
 import type { TrpcContext } from "./_core/context";
+// Mock Stripe
+vi.mock("stripe", () => {
+  return {
+    default: vi.fn().mockImplementation(() => ({
+      checkout: {
+        sessions: {
+          create: vi.fn(),
+          retrieve: vi.fn(),
+        },
+      },
+    })),
+  };
+});
 
 // Mock the notification module
 vi.mock("./_core/notification", () => ({

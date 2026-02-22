@@ -24,7 +24,7 @@ import { useIsMobile } from "@/hooks/useMobile";
 import { LayoutDashboard, LogOut, PanelLeft, Users } from "lucide-react";
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
-import { DashboardLayoutSkeleton } from './DashboardLayoutSkeleton';
+import { DashboardLayoutSkeleton } from "./DashboardLayoutSkeleton";
 import { Button } from "./ui/button";
 
 const menuItems = [
@@ -50,16 +50,19 @@ export default function DashboardLayout({
   const { user: clerkUser } = useUser();
 
   // Get DB user for name/email fallback
-  const { data: dbUser, isLoading: dbUserLoading } = trpc.auth.me.useQuery(undefined, {
-    enabled: isSignedIn,
-  });
+  const { data: dbUser, isLoading: dbUserLoading } = trpc.auth.me.useQuery(
+    undefined,
+    {
+      enabled: isSignedIn,
+    }
+  );
 
   useEffect(() => {
     localStorage.setItem(SIDEBAR_WIDTH_KEY, sidebarWidth.toString());
   }, [sidebarWidth]);
 
   if (!isLoaded || dbUserLoading) {
-    return <DashboardLayoutSkeleton />
+    return <DashboardLayoutSkeleton />;
   }
 
   if (!isSignedIn) {
@@ -71,7 +74,8 @@ export default function DashboardLayout({
               Sign in to continue
             </h1>
             <p className="text-sm text-muted-foreground text-center max-w-sm">
-              Access to this dashboard requires authentication. Continue to launch the login flow.
+              Access to this dashboard requires authentication. Continue to
+              launch the login flow.
             </p>
           </div>
           <SignInButton mode="modal">
@@ -89,7 +93,8 @@ export default function DashboardLayout({
 
   // Use Clerk user data with DB user as fallback
   const displayName = clerkUser?.firstName || dbUser?.name || "User";
-  const displayEmail = clerkUser?.primaryEmailAddress?.emailAddress || dbUser?.email || "";
+  const displayEmail =
+    clerkUser?.primaryEmailAddress?.emailAddress || dbUser?.email || "";
 
   return (
     <SidebarProvider

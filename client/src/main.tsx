@@ -12,7 +12,9 @@ const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 // Allow running without Clerk for local development
 if (!PUBLISHABLE_KEY) {
-  console.warn("⚠️ VITE_CLERK_PUBLISHABLE_KEY not set - running without authentication");
+  console.warn(
+    "⚠️ VITE_CLERK_PUBLISHABLE_KEY not set - running without authentication"
+  );
 }
 
 const queryClient = new QueryClient();

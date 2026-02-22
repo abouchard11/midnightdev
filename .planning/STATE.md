@@ -22,20 +22,22 @@ Progress: ██████████ 100%
 ## Performance Metrics
 
 **Velocity:**
+
 - Total plans completed: 4
 - Average duration: ~7 min
 - Total execution time: ~30 min
 
 **By Phase:**
 
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| 1. Cleanup | 1/1 | ~5 min | ~5 min |
-| 2. Auth Migration | 2/2 | ~20 min | ~10 min |
-| 3. Notifications | 1/1 | ~5 min | ~5 min |
-| 4. Deployment | 1/1 | ~15 min | ~15 min |
+| Phase             | Plans | Total   | Avg/Plan |
+| ----------------- | ----- | ------- | -------- |
+| 1. Cleanup        | 1/1   | ~5 min  | ~5 min   |
+| 2. Auth Migration | 2/2   | ~20 min | ~10 min  |
+| 3. Notifications  | 1/1   | ~5 min  | ~5 min   |
+| 4. Deployment     | 1/1   | ~15 min | ~15 min  |
 
 **Recent Trend:**
+
 - All phases complete
 - Migration from Manus to Railway complete
 

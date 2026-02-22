@@ -5,6 +5,7 @@
 ## What Was Done
 
 ### Files Deleted (6 unused services)
+
 - `server/_core/llm.ts` — LLM/chat API (never called)
 - `server/_core/imageGeneration.ts` — Image generation (never called)
 - `server/_core/voiceTranscription.ts` — Voice transcription (never called)
@@ -13,23 +14,25 @@
 - `server/storage.ts` — File storage (never called)
 
 ### Directories Deleted
+
 - `client/public/__manus__/` — Debug collector scripts
 - `.manus/` — Manus configuration directory
 
 ### Files Updated
+
 - `vite.config.ts` — Removed `vitePluginManusRuntime()` and debug collector plugin, removed Manus hosts from allowedHosts
 - `package.json` — Removed `vite-plugin-manus-runtime` from devDependencies
 
 ## Verification Results
 
-| Check | Result |
-|-------|--------|
-| `pnpm check` (TypeScript) | ✓ Pass |
-| `pnpm build` | ✓ Pass |
+| Check                       | Result     |
+| --------------------------- | ---------- |
+| `pnpm check` (TypeScript)   | ✓ Pass     |
+| `pnpm build`                | ✓ Pass     |
 | All 6 service files deleted | ✓ Verified |
-| Manus directories deleted | ✓ Verified |
-| Package.json updated | ✓ Verified |
-| Vite config updated | ✓ Verified |
+| Manus directories deleted   | ✓ Verified |
+| Package.json updated        | ✓ Verified |
+| Vite config updated         | ✓ Verified |
 
 ## Impact
 
