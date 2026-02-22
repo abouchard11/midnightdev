@@ -15,7 +15,7 @@ export default function BlogPostTemplate() {
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
-      <SEO 
+      <SEO
         title={`${post.title} | Midnight Dev Insights`}
         description={post.excerpt}
         url={`/insights/${post.slug}`}
@@ -23,7 +23,7 @@ export default function BlogPostTemplate() {
         type="article"
       />
       <Navigation />
-      
+
       <main className="pt-24">
         <article>
           {/* Header with Featured Image */}
@@ -32,9 +32,9 @@ export default function BlogPostTemplate() {
             <div className="absolute inset-0 z-0">
               {post.featuredImage ? (
                 <>
-                  <img 
-                    src={post.featuredImage} 
-                    alt="" 
+                  <img
+                    src={post.featuredImage}
+                    alt=""
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background"></div>
@@ -46,12 +46,15 @@ export default function BlogPostTemplate() {
                 </>
               )}
             </div>
-            
+
             <div className="container relative z-10 max-w-4xl">
-              <Link href="/insights" className="inline-flex items-center text-muted-foreground hover:text-primary mb-8 transition-colors font-mono text-xs uppercase tracking-widest">
+              <Link
+                href="/insights"
+                className="inline-flex items-center text-muted-foreground hover:text-primary mb-8 transition-colors font-mono text-xs uppercase tracking-widest"
+              >
                 <ArrowLeft className="mr-2 h-3 w-3" /> Back to Insights
               </Link>
-              
+
               <div className="flex flex-wrap gap-4 mb-6 font-mono text-xs uppercase tracking-widest">
                 <span className="flex items-center gap-2 bg-primary/10 px-3 py-1 border border-primary/20 text-primary backdrop-blur-sm">
                   <Tag className="h-3 w-3" /> {post.category}
@@ -63,23 +66,27 @@ export default function BlogPostTemplate() {
                   <Clock className="h-3 w-3" /> {post.readTime}
                 </span>
               </div>
-              
+
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6 leading-tight">
                 {post.title}
               </h1>
-              
+
               <p className="text-xl text-muted-foreground leading-relaxed border-l-2 border-primary pl-6 mb-6">
                 {post.excerpt}
               </p>
-              
+
               {/* Author */}
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center">
                   <User className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <div className="font-medium text-foreground">{post.author}</div>
-                  <div className="text-xs font-mono uppercase tracking-wider">Author</div>
+                  <div className="font-medium text-foreground">
+                    {post.author}
+                  </div>
+                  <div className="text-xs font-mono uppercase tracking-wider">
+                    Author
+                  </div>
                 </div>
               </div>
             </div>
@@ -89,8 +96,8 @@ export default function BlogPostTemplate() {
           {post.featuredImage && (
             <div className="container max-w-4xl -mt-12 relative z-20 mb-8">
               <div className="border border-white/10 overflow-hidden shadow-2xl">
-                <img 
-                  src={post.featuredImage} 
+                <img
+                  src={post.featuredImage}
                   alt={post.title}
                   className="w-full h-auto aspect-video object-cover"
                 />
@@ -100,18 +107,20 @@ export default function BlogPostTemplate() {
 
           {/* Content */}
           <div className="container max-w-3xl py-16">
-            <div 
+            <div
               className="prose prose-invert prose-lg max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary prose-img:rounded-none prose-img:border prose-img:border-white/10"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
-            
+
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (
               <div className="mt-16 pt-8 border-t border-white/10">
                 <div className="flex flex-wrap gap-2">
-                  <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground mr-2">Tags:</span>
-                  {post.tags.map((tag) => (
-                    <span 
+                  <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground mr-2">
+                    Tags:
+                  </span>
+                  {post.tags.map(tag => (
+                    <span
                       key={tag}
                       className="px-3 py-1 text-xs font-mono bg-white/5 border border-white/10 text-muted-foreground hover:border-primary/30 hover:text-primary transition-colors"
                     >
@@ -124,7 +133,7 @@ export default function BlogPostTemplate() {
           </div>
         </article>
       </main>
-      
+
       <Footer />
     </div>
   );

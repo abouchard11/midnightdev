@@ -34,8 +34,9 @@ async function startServer() {
 
   // Stripe webhook needs raw body for signature verification
   // Must be registered BEFORE express.json() middleware
-  app.post('/api/stripe/webhook',
-    express.raw({ type: 'application/json' }),
+  app.post(
+    "/api/stripe/webhook",
+    express.raw({ type: "application/json" }),
     handleStripeWebhook
   );
 
@@ -49,7 +50,9 @@ async function startServer() {
   if (process.env.CLERK_SECRET_KEY && process.env.VITE_CLERK_PUBLISHABLE_KEY) {
     app.use(clerkMiddleware());
   } else {
-    console.log('⚠️  Clerk keys not configured - running without authentication');
+    console.log(
+      "⚠️  Clerk keys not configured - running without authentication"
+    );
   }
 
   // Configure body parser with larger size limit for file uploads

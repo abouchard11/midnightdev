@@ -11,16 +11,18 @@ export default function PaymentSuccess() {
   const searchString = useSearch();
   const params = new URLSearchParams(searchString);
   const sessionId = params.get("session_id");
-  
-  const [verificationStatus, setVerificationStatus] = useState<'loading' | 'success' | 'error'>('loading');
+
+  const [verificationStatus, setVerificationStatus] = useState<
+    "loading" | "success" | "error"
+  >("loading");
   const [paymentDetails, setPaymentDetails] = useState<{
     email: string | null;
     amount: number | null;
   } | null>(null);
 
   const { data, error, isLoading } = trpc.stripe.verifyPayment.useQuery(
-    { sessionId: sessionId || '' },
-    { 
+    { sessionId: sessionId || "" },
+    {
       enabled: !!sessionId,
       retry: 3,
       retryDelay: 1000,
@@ -29,34 +31,34 @@ export default function PaymentSuccess() {
 
   useEffect(() => {
     if (data) {
-      if (data.status === 'paid') {
-        setVerificationStatus('success');
+      if (data.status === "paid") {
+        setVerificationStatus("success");
         setPaymentDetails({
           email: data.customerEmail,
           amount: data.amountTotal,
         });
       } else {
-        setVerificationStatus('error');
+        setVerificationStatus("error");
       }
     }
     if (error) {
-      setVerificationStatus('error');
+      setVerificationStatus("error");
     }
   }, [data, error]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SEO 
+      <SEO
         title="Payment Successful | Midnight Dev"
         description="Your payment has been processed successfully."
         url="/payment-success"
       />
       <Navigation />
-      
+
       <main className="pt-32 pb-20">
         <div className="container max-w-2xl">
-          {isLoading || verificationStatus === 'loading' ? (
-            <motion.div 
+          {isLoading || verificationStatus === "loading" ? (
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               className="text-center"
@@ -69,42 +71,52 @@ export default function PaymentSuccess() {
                 Please wait while we confirm your transaction...
               </p>
             </motion.div>
-          ) : verificationStatus === 'success' ? (
-            <motion.div 
+          ) : verificationStatus === "success" ? (
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-center"
             >
               <div className="relative inline-block mb-8">
                 <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-full animate-pulse" />
-                <CheckCircle className="w-24 h-24 text-green-500 relative z-10" strokeWidth={1.5} />
+                <CheckCircle
+                  className="w-24 h-24 text-green-500 relative z-10"
+                  strokeWidth={1.5}
+                />
               </div>
-              
+
               <h1 className="text-4xl md:text-5xl font-mono font-bold text-white mb-4">
                 PAYMENT_CONFIRMED_
               </h1>
-              
+
               <div className="inline-block bg-green-500/10 border border-green-500/20 px-4 py-2 rounded mb-8">
                 <span className="text-green-500 font-mono text-sm tracking-widest uppercase">
                   Transaction Successful
                 </span>
               </div>
-              
+
               <p className="text-gray-400 font-mono text-lg mb-8 max-w-md mx-auto">
-                Thank you for your purchase. Your AI Visibility Audit has been initiated.
+                Thank you for your purchase. Your AI Visibility Audit has been
+                initiated.
               </p>
 
               {paymentDetails && (
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6 mb-8 text-left">
-                  <h3 className="text-white font-mono font-bold mb-4">ORDER_DETAILS_</h3>
+                  <h3 className="text-white font-mono font-bold mb-4">
+                    ORDER_DETAILS_
+                  </h3>
                   <div className="space-y-2 text-sm font-mono">
                     <div className="flex justify-between">
-                      <span className="text-gray-500">Confirmation sent to:</span>
+                      <span className="text-gray-500">
+                        Confirmation sent to:
+                      </span>
                       <span className="text-white">{paymentDetails.email}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-500">Amount paid:</span>
-                      <span className="text-green-500">${((paymentDetails.amount || 0) / 100).toFixed(2)}</span>
+                      <span className="text-green-500">
+                        ${((paymentDetails.amount || 0) / 100).toFixed(2)}
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-500">Product:</span>
@@ -115,11 +127,17 @@ export default function PaymentSuccess() {
               )}
 
               <div className="bg-purple-500/10 border border-purple-500/20 rounded-lg p-6 mb-8">
-                <h3 className="text-purple-400 font-mono font-bold mb-2">WHAT_HAPPENS_NEXT_</h3>
+                <h3 className="text-purple-400 font-mono font-bold mb-2">
+                  WHAT_HAPPENS_NEXT_
+                </h3>
                 <ul className="text-gray-400 font-mono text-sm space-y-2 text-left">
-                  <li>1. You'll receive a confirmation email within 5 minutes</li>
+                  <li>
+                    1. You'll receive a confirmation email within 5 minutes
+                  </li>
                   <li>2. Our team will begin your AI visibility analysis</li>
-                  <li>3. Your full audit report will be delivered within 48 hours</li>
+                  <li>
+                    3. Your full audit report will be delivered within 48 hours
+                  </li>
                   <li>4. We'll schedule your 30-minute strategy call</li>
                 </ul>
               </div>
@@ -132,22 +150,26 @@ export default function PaymentSuccess() {
               </Link>
             </motion.div>
           ) : (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-center"
             >
               <div className="relative inline-block mb-8">
                 <div className="absolute inset-0 bg-red-500/20 blur-xl rounded-full" />
-                <XCircle className="w-24 h-24 text-red-500 relative z-10" strokeWidth={1.5} />
+                <XCircle
+                  className="w-24 h-24 text-red-500 relative z-10"
+                  strokeWidth={1.5}
+                />
               </div>
-              
+
               <h1 className="text-4xl md:text-5xl font-mono font-bold text-white mb-4">
                 VERIFICATION_FAILED_
               </h1>
-              
+
               <p className="text-gray-400 font-mono text-lg mb-8 max-w-md mx-auto">
-                We couldn't verify your payment. If you believe this is an error, please contact us.
+                We couldn't verify your payment. If you believe this is an
+                error, please contact us.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -167,7 +189,7 @@ export default function PaymentSuccess() {
           )}
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );

@@ -20,7 +20,6 @@ import BlogPostTemplate from "./pages/BlogPostTemplate";
 import Admin from "./pages/Admin";
 import Privacy from "./pages/Privacy";
 
-
 import ScrollToTop from "./components/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
 function Router() {
@@ -29,24 +28,27 @@ function Router() {
     <>
       <ScrollToTop />
       <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/saas-development"} component={SaasDevelopment} />
-      <Route path="/ai-marketing" component={AiMarketing} />
-      <Route path="/geo-optimization" component={GeoOptimization} />
-      <Route path="/case-study/:slug" component={CaseStudyTemplate} />
-      <Route path="/citation-engineering" component={CitationEngineering} />
-      <Route path="/insights" component={Insights} />
-      <Route path="/insights/:slug" component={BlogPostTemplate} />
-      <Route path="/conversational-landing-pages" component={ConversationalLandingPages} />
-      <Route path="/schema-builder" component={SchemaBuilder} />
-      <Route path="/audit" component={Audit} />
-      <Route path="/pricing" component={Pricing} />
-      <Route path="/payment-success" component={PaymentSuccess} />
-      <Route path="/admin" component={Admin} />
-      <Route path="/privacy" component={Privacy} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
+        <Route path={"/"} component={Home} />
+        <Route path={"/saas-development"} component={SaasDevelopment} />
+        <Route path="/ai-marketing" component={AiMarketing} />
+        <Route path="/geo-optimization" component={GeoOptimization} />
+        <Route path="/case-study/:slug" component={CaseStudyTemplate} />
+        <Route path="/citation-engineering" component={CitationEngineering} />
+        <Route path="/insights" component={Insights} />
+        <Route path="/insights/:slug" component={BlogPostTemplate} />
+        <Route
+          path="/conversational-landing-pages"
+          component={ConversationalLandingPages}
+        />
+        <Route path="/schema-builder" component={SchemaBuilder} />
+        <Route path="/audit" component={Audit} />
+        <Route path="/pricing" component={Pricing} />
+        <Route path="/payment-success" component={PaymentSuccess} />
+        <Route path="/admin" component={Admin} />
+        <Route path="/privacy" component={Privacy} />
+        <Route path={"/404"} component={NotFound} />
+        {/* Final fallback route */}
+        <Route component={NotFound} />
       </Switch>
       <Analytics />
     </>

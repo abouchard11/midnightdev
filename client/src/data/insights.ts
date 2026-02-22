@@ -14,14 +14,17 @@ export interface BlogPost {
 export const insights: BlogPost[] = [
   {
     slug: "traditional-seo-vs-geo",
-    title: "Traditional SEO vs GEO: Why Ranking #1 on Google Isn't Enough Anymore",
-    excerpt: "The shift from 'list of links' to 'single recommended answer' changes everything. Learn why being an option is no longer enough.",
+    title:
+      "Traditional SEO vs GEO: Why Ranking #1 on Google Isn't Enough Anymore",
+    excerpt:
+      "The shift from 'list of links' to 'single recommended answer' changes everything. Learn why being an option is no longer enough.",
     date: "2024-03-20",
     readTime: "8 min read",
     category: "AI Marketing",
     author: "Midnight Dev Team",
     tags: ["GEO", "Future of Search", "AI Strategy", "SEO"],
-    featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop",
+    featuredImage:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop",
     content: `
       <h2>The Paradigm Shift: From Search to Synthesis</h2>
       <p>For two decades, the goal of digital marketing was simple: rank #1 on Google. The user would type a query, see a list of blue links, and (hopefully) click yours. That era is ending.</p>
@@ -58,18 +61,20 @@ export const insights: BlogPost[] = [
           Get Your Free AI Visibility Audit
         </a>
       </div>
-    `
+    `,
   },
   {
     slug: "optimizing-for-searchgpt",
     title: "Optimizing for SearchGPT: The New SEO Frontier",
-    excerpt: "Why traditional keyword stuffing is dead and how to structure your data for AI-driven search engines.",
+    excerpt:
+      "Why traditional keyword stuffing is dead and how to structure your data for AI-driven search engines.",
     date: "2024-03-15",
     readTime: "5 min read",
     category: "AI Marketing",
     author: "Midnight Dev Team",
     tags: ["SearchGPT", "GEO", "AI Search", "SEO"],
-    featuredImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop",
+    featuredImage:
+      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop",
     content: `
       <h2>The Shift from Keywords to Context</h2>
       <p>SearchGPT and other AI-driven search engines don't just look for keywords; they look for answers. The traditional model of 10 blue links is being replaced by direct answers synthesized from multiple sources.</p>
@@ -84,18 +89,20 @@ export const insights: BlogPost[] = [
       <blockquote>"The future of search isn't about being found; it's about being the answer."</blockquote>
 
       <p>At Midnight Dev, we're pioneering the infrastructure needed to thrive in this new ecosystem. Our AI-Ready Infrastructure package ensures your SaaS platform is readable by the machines that will drive the next decade of traffic.</p>
-    `
+    `,
   },
   {
     slug: "enterprise-saas-architecture-2024",
     title: "Enterprise SaaS Architecture: 2024 & Beyond",
-    excerpt: "Scalability, security, and the move towards edge computing in modern SaaS applications.",
+    excerpt:
+      "Scalability, security, and the move towards edge computing in modern SaaS applications.",
     date: "2024-03-01",
     readTime: "7 min read",
     category: "SaaS Development",
     author: "Midnight Dev Team",
     tags: ["SaaS", "Architecture", "Edge Computing", "Security"],
-    featuredImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=450&fit=crop",
+    featuredImage:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=450&fit=crop",
     content: `
       <h2>The Edge Computing Revolution</h2>
       <p>Latency is the new downtime. In 2024, enterprise SaaS architectures are moving closer to the user. By leveraging edge functions and distributed databases, we can deliver near-instant experiences regardless of user location.</p>
@@ -105,18 +112,20 @@ export const insights: BlogPost[] = [
 
       <h3>Modular Monoliths vs. Microservices</h3>
       <p>The pendulum is swinging back. While microservices offer scale, they introduce complexity. For many high-growth SaaS companies, a well-architected modular monolith offers the best balance of velocity and maintainability until massive scale is truly required.</p>
-    `
+    `,
   },
   {
     slug: "trust-rank-and-citation-engineering",
     title: "Trust Rank & Citation Engineering",
-    excerpt: "How to build authority in the age of AI. It's not just about backlinks anymore.",
+    excerpt:
+      "How to build authority in the age of AI. It's not just about backlinks anymore.",
     date: "2024-02-20",
     readTime: "6 min read",
     category: "AI Marketing",
     author: "Midnight Dev Team",
     tags: ["Trust Rank", "Citation Engineering", "Brand Authority"],
-    featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
+    featuredImage:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
     content: `
       <h2>What is Trust Rank?</h2>
       <p>Trust Rank is a metric used by AI models to evaluate the credibility of a source. Unlike traditional Domain Authority, which focuses on link quantity, Trust Rank focuses on the <em>quality</em> and <em>context</em> of mentions.</p>
@@ -130,6 +139,6 @@ export const insights: BlogPost[] = [
       </ol>
 
       <p>This ensures that when an AI is asked about the "best enterprise SaaS solution," your brand is part of the generated answer.</p>
-    `
-  }
+    `,
+  },
 ];

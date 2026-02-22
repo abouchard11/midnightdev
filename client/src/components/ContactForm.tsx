@@ -52,7 +52,7 @@ export default function ContactForm({ service, onSuccess }: ContactFormProps) {
     }
 
     setIsSubmitting(true);
-    
+
     try {
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_id",
@@ -85,12 +85,15 @@ export default function ContactForm({ service, onSuccess }: ContactFormProps) {
         <div className="rounded-full bg-primary/10 p-4">
           <CheckCircle2 className="w-12 h-12 text-primary" />
         </div>
-        <h3 className="text-2xl font-mono font-bold tracking-tight">Message Received</h3>
+        <h3 className="text-2xl font-mono font-bold tracking-tight">
+          Message Received
+        </h3>
         <p className="text-muted-foreground max-w-xs">
-          Thank you for reaching out. Our team will review your inquiry and get back to you shortly.
+          Thank you for reaching out. Our team will review your inquiry and get
+          back to you shortly.
         </p>
-        <Button 
-          variant="outline" 
+        <Button
+          variant="outline"
           onClick={() => {
             setIsSuccess(false);
             if (onSuccess) onSuccess();
@@ -113,13 +116,17 @@ export default function ContactForm({ service, onSuccess }: ContactFormProps) {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="John Doe" {...field} className="bg-white/5 border-white/10" />
+                <Input
+                  placeholder="John Doe"
+                  {...field}
+                  className="bg-white/5 border-white/10"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        
+
         <FormField
           control={form.control}
           name="email"
@@ -127,7 +134,11 @@ export default function ContactForm({ service, onSuccess }: ContactFormProps) {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="john@company.com" {...field} className="bg-white/5 border-white/10" />
+                <Input
+                  placeholder="john@company.com"
+                  {...field}
+                  className="bg-white/5 border-white/10"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -141,7 +152,11 @@ export default function ContactForm({ service, onSuccess }: ContactFormProps) {
             <FormItem>
               <FormLabel>Company (Optional)</FormLabel>
               <FormControl>
-                <Input placeholder="Acme Inc." {...field} className="bg-white/5 border-white/10" />
+                <Input
+                  placeholder="Acme Inc."
+                  {...field}
+                  className="bg-white/5 border-white/10"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -155,10 +170,10 @@ export default function ContactForm({ service, onSuccess }: ContactFormProps) {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Textarea 
-                  placeholder="Tell us about your project..." 
-                  className="min-h-[100px] bg-white/5 border-white/10" 
-                  {...field} 
+                <Textarea
+                  placeholder="Tell us about your project..."
+                  className="min-h-[100px] bg-white/5 border-white/10"
+                  {...field}
                 />
               </FormControl>
               <FormMessage />
@@ -170,12 +185,12 @@ export default function ContactForm({ service, onSuccess }: ContactFormProps) {
           <ReCAPTCHA
             sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" // Test key
             theme="dark"
-            onChange={(token) => setCaptchaToken(token)}
+            onChange={token => setCaptchaToken(token)}
           />
         </div>
 
-        <Button 
-          type="submit" 
+        <Button
+          type="submit"
           className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-mono rounded-none"
           disabled={isSubmitting}
         >
