@@ -43,20 +43,12 @@ export async function handleStripeWebhook(req: Request, res: Response) {
         // Update payment status in database
         const payment = await getPaymentBySessionId(session.id);
         if (payment) {
-          await updatePaymentStatus(String(payment.id), 'completed');
-          
-          // If this was an audit payment, update the lead
-          if (session.metadata?.leadId) {
-            await updateAuditLeadPayment(
-              parseInt(session.metadata.leadId),
-              session.id
-            );
-          }
-          
-          // Notify owner
-          await notifyOwner({
-            title: '💰 Payment Completed!',
-            content: `
+          // Parallelize independent operations: DB updates and notification
+          const tasks: Promise<any>[] = [
+            updatePaymentStatus(session.id, 'completed', session.payment_intent as string),
+            notifyOwner({
+              title: '💰 Payment Completed!',
+              content: `
 **New Payment Received**
 
 - **Customer:** ${session.customer_email}
@@ -65,8 +57,21 @@ export async function handleStripeWebhook(req: Request, res: Response) {
 - **Session ID:** ${session.id}
 
 Payment has been marked as completed in the database.
-            `.trim()
-          });
+              `.trim()
+            })
+          ];
+
+          // If this was an audit payment, update the lead
+          // Note: using both auditLeadId (from router) and leadId for compatibility
+          const leadId = session.metadata?.auditLeadId || session.metadata?.leadId;
+          if (leadId) {
+            tasks.push(updateAuditLeadPayment(
+              parseInt(leadId),
+              session.id
+            ));
+          }
+
+          await Promise.all(tasks);
         }
         break;
       }
@@ -79,7 +84,7 @@ Payment has been marked as completed in the database.
         // Update payment status
         const payment = await getPaymentBySessionId(session.id);
         if (payment) {
-          await updatePaymentStatus(String(payment.id), 'failed');
+          await updatePaymentStatus(session.id, 'failed');
         }
         break;
       }
