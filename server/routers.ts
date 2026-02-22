@@ -267,8 +267,10 @@ export const appRouter = router({
     verifyPayment: publicProcedure
       .input(z.object({ sessionId: z.string() }))
       .query(async ({ input }) => {
-        const session = await stripe.checkout.sessions.retrieve(input.sessionId);
-        const payment = await getPaymentBySessionId(input.sessionId);
+        const [session, payment] = await Promise.all([
+          stripe.checkout.sessions.retrieve(input.sessionId),
+          getPaymentBySessionId(input.sessionId)
+        ]);
 
         if (session.payment_status === 'paid' && payment?.status !== 'completed') {
           await updatePaymentStatus(input.sessionId, 'completed', session.payment_intent as string);
@@ -292,7 +294,6 @@ export const appRouter = router({
           amountTotal: session.amount_total,
         };
       }),
-
     // Admin: List all payments
     listPayments: protectedProcedure.query(async () => {
       return getPayments();
