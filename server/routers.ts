@@ -65,7 +65,7 @@ export const appRouter = router({
       .mutation(async ({ input }) => {
         const lead = await createAuditLead(input);
 
-        // Send confirmation and notify owner
+        // Send confirmation and notify owner (non-blocking for performance)
         sendAuditConfirmation({
           to: input.email,
           businessName: input.businessName,
@@ -124,7 +124,7 @@ export const appRouter = router({
       .mutation(async ({ input }) => {
         const submission = await createContactSubmission(input);
 
-        // Send confirmation and notify owner
+        // Send confirmation and notify owner (non-blocking for performance)
         await sendContactConfirmation({
           to: input.email,
           name: input.name,
