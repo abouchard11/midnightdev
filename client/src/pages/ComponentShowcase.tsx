@@ -152,6 +152,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { Toggle } from "@/components/ui/toggle";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+
 import {
   Tooltip,
   TooltipContent,
@@ -172,6 +173,10 @@ import {
 import { useState } from "react";
 import { toast as sonnerToast } from "sonner";
 import { AIChatBox, type Message } from "@/components/AIChatBox";
+
+const MONTHS = Array.from({ length: 12 }, (_, i) => i + 1);
+const currentYear = new Date().getFullYear();
+const YEARS = Array.from({ length: 10 }, (_, i) => currentYear - 5 + i);
 
 export default function ComponentsShowcase() {
   const { theme, toggleTheme } = useTheme();
@@ -630,7 +635,7 @@ export default function ComponentsShowcase() {
                           <SelectValue placeholder="MM" />
                         </SelectTrigger>
                         <SelectContent>
-                          {Array.from({ length: 12 }, (_, i) => i + 1).map(
+                          {MONTHS.map(
                             month => (
                               <SelectItem
                                 key={month}
@@ -655,10 +660,7 @@ export default function ComponentsShowcase() {
                           <SelectValue placeholder="YYYY" />
                         </SelectTrigger>
                         <SelectContent>
-                          {Array.from(
-                            { length: 10 },
-                            (_, i) => new Date().getFullYear() - 5 + i
-                          ).map(year => (
+                          {YEARS.map(year => (
                             <SelectItem key={year} value={year.toString()}>
                               {year}
                             </SelectItem>
