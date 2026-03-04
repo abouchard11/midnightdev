@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -7,6 +7,11 @@ import { Menu, X } from "lucide-react";
 export default function Navigation() {
   const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const contactElement = useRef<Element | null>(null);
+    useEffect(() => {
+          // Cache the contact element after mount to avoid querying DOM on every click
+          contactElement.current = document.querySelector("#contact");
+        }, []);
 
   // Determine if a nav item is active based on current route
   const isActive = (href: string) => {
