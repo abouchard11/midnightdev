@@ -7,9 +7,12 @@ export function ContactForm() {
     "idle"
   );
 
+  const [errorMsg, setErrorMsg] = useState("");
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
+    setErrorMsg("");
 
     const form = e.currentTarget;
     const data = {
@@ -17,6 +20,7 @@ export function ContactForm() {
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
+      company: (form.elements.namedItem("company") as HTMLInputElement)?.value,
     };
 
     try {
@@ -30,9 +34,12 @@ export function ContactForm() {
         setStatus("sent");
         form.reset();
       } else {
+        const body = await res.json().catch(() => null);
+        setErrorMsg(body?.error || "Something went wrong. Please try again.");
         setStatus("error");
       }
     } catch {
+      setErrorMsg("Network error. Check your connection and try again.");
       setStatus("error");
     }
   }
@@ -58,6 +65,23 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <input
+        type="text"
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        className="absolute -left-[9999px] h-0 w-0 opacity-0"
+        aria-hidden="true"
+      />
+      {status === "error" && errorMsg && (
+        <div
+          role="alert"
+          aria-live="assertive"
+          className="rounded-[var(--r-sm)] border border-[var(--error)] bg-[var(--error)]/10 px-4 py-3 font-mono text-xs text-[var(--error)]"
+        >
+          {errorMsg}
+        </div>
+      )}
       <div>
         <label
           htmlFor="name"

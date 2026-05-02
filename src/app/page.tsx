@@ -3,45 +3,7 @@ import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ContactForm } from "@/components/contact-form";
-
-const projects = [
-  {
-    name: "Methylene Blue Ultra",
-    slug: "methyleneblueultra",
-    url: "methyleneblueultra.com",
-    description:
-      "Supplement e-commerce. Product education, waitlist, pre-orders.",
-    stack: ["next.js", "stripe", "vercel"],
-    screenshot: "/screenshots/methyleneblueultra.png",
-  },
-  {
-    name: "Jones Act Calculator",
-    slug: "jonesactcalculator",
-    url: "jonesactcalculator.com",
-    description:
-      "Maritime injury calculator. Case value estimation, attorney matching.",
-    stack: ["next.js", "typescript", "vercel"],
-    screenshot: "/screenshots/jonesactcalculator.png",
-  },
-  {
-    name: "HTX Permit Fix",
-    slug: "htxpermitfix",
-    url: "htxpermitfix.com",
-    description:
-      "Permit expediting for Houston contractors. Lead gen, service matching.",
-    stack: ["next.js", "react", "vercel"],
-    screenshot: "/screenshots/htxpermitfix.png",
-  },
-  {
-    name: "StackD Workforce",
-    slug: "stackdworkforce",
-    url: "stackdworkforce.com",
-    description:
-      "Contractor marketplace for heavy industry. Matching, payments, compliance.",
-    stack: ["next.js", "supabase", "stripe"],
-    screenshot: "/screenshots/stackdworkforce.png",
-  },
-];
+import { projectList } from "@/data/projects";
 
 export default function Home() {
   return (
@@ -122,12 +84,12 @@ export default function Home() {
                 Selected platforms, shipped to production.
               </h2>
               <span className="hidden font-mono text-xs text-[var(--text-dim)] md:inline">
-                {projects.length} projects
+                {projectList.length} projects
               </span>
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2">
-              {projects.map((project) => (
+              {projectList.map((project) => (
                 <Link
                   key={project.slug}
                   href={`/work/${project.slug}`}
@@ -139,6 +101,7 @@ export default function Home() {
                       alt={project.name}
                       width={640}
                       height={400}
+                      sizes="(max-width: 640px) 100vw, 50vw"
                       className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
                     />
                   </div>

@@ -40,6 +40,8 @@ export function Nav() {
           onClick={() => setOpen(!open)}
           className="flex h-8 w-8 items-center justify-center rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] md:hidden"
           aria-label="Toggle menu"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           <svg
             width="16"
@@ -68,7 +70,7 @@ export function Nav() {
       </div>
 
       {open && (
-        <div className="border-t border-[var(--border)] px-6 pb-5 pt-4 md:hidden">
+        <div id="mobile-menu" className="border-t border-[var(--border)] px-6 pb-5 pt-4 md:hidden">
           <div className="flex flex-col gap-4 font-mono text-[13px] text-[var(--text-muted)]">
             <Link
               href="/#work"

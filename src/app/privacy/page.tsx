@@ -36,8 +36,8 @@ export default function PrivacyPage() {
               <p>
                 When you submit the contact form on this site, I collect your
                 name, email address, and project details. This information is
-                sent directly to my inbox via email and is not stored in any
-                database or third-party service.
+                delivered to my inbox via Google Workspace email (Gmail SMTP)
+                and is not stored in any database.
               </p>
             </section>
 
@@ -48,19 +48,17 @@ export default function PrivacyPage() {
               <p>
                 Your contact information is used solely to respond to your
                 inquiry and discuss potential projects. I do not sell, share, or
-                distribute your information to third parties.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="mb-3 font-display text-lg font-bold text-[var(--text-primary)]">
-                Analytics
-              </h2>
-              <p>
-                This site uses Google Analytics to understand how visitors use
-                the site. This collects anonymous usage data such as pages
-                visited and time on site. No personally identifiable information
-                is collected through analytics.
+                distribute your information to third parties. Google processes
+                the email delivery per their{" "}
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--accent-blue)] transition-colors hover:text-[var(--text-primary)]"
+                >
+                  privacy policy
+                </a>
+                .
               </p>
             </section>
 
@@ -70,8 +68,7 @@ export default function PrivacyPage() {
               </h2>
               <p>
                 This site uses only essential cookies required for basic
-                functionality. No advertising or tracking cookies are used
-                beyond Google Analytics.
+                functionality. No advertising or tracking cookies are used.
               </p>
             </section>
 

@@ -1,27 +1,21 @@
 import type { MetadataRoute } from "next";
-
-const projects = [
-  "methyleneblueultra",
-  "jonesactcalculator",
-  "htxpermitfix",
-  "stackdworkforce",
-];
+import { projectSlugs } from "@/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://midnightdev.dev",
-      lastModified: new Date(),
+      lastModified: "2026-05-02",
       priority: 1,
     },
-    ...projects.map((slug) => ({
+    ...projectSlugs.map((slug) => ({
       url: `https://midnightdev.dev/work/${slug}`,
-      lastModified: new Date(),
+      lastModified: "2026-05-02",
       priority: 0.8,
     })),
     {
       url: "https://midnightdev.dev/privacy",
-      lastModified: new Date(),
+      lastModified: "2026-05-02",
       priority: 0.3,
     },
   ];
