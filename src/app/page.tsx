@@ -5,36 +5,12 @@ import { Footer } from "@/components/footer";
 
 const projects = [
   {
-    name: "StackD Workforce",
-    url: "stackdworkforce.com",
+    name: "Methylene Blue Ultra",
+    url: "methyleneblueultra.com",
     description:
-      "Contractor marketplace for heavy industry. Matching, payments, compliance.",
-    stack: ["next.js", "supabase", "stripe"],
-    gradient: "from-[#152538] to-[#1E3050]",
-  },
-  {
-    name: "BuyLandFL",
-    url: "buylandfl.com",
-    description:
-      "Florida land sales platform. Property listings, lead gen, owner financing.",
-    stack: ["next.js", "react", "vercel"],
-    gradient: "from-[#0F2E0F] to-[#1A3D1A]",
-  },
-  {
-    name: "Houston Lawyer List",
-    url: "houstonlawyerlist.com",
-    description:
-      "Legal directory. Attorney profiles, practice areas, lead generation.",
-    stack: ["next.js", "seo", "vercel"],
-    gradient: "from-[#2A1A0F] to-[#382618]",
-  },
-  {
-    name: "HTX Dental Implants",
-    url: "htxdentalimplants.com",
-    description:
-      "Dental lead generation. Provider profiles, procedure info, appointment booking.",
-    stack: ["next.js", "react", "vercel"],
-    gradient: "from-[#0F1A2A] to-[#182538]",
+      "Supplement e-commerce. Product education, waitlist, pre-orders.",
+    stack: ["next.js", "stripe", "vercel"],
+    gradient: "from-[#0F0F2A] to-[#181838]",
   },
   {
     name: "Jones Act Calculator",
@@ -45,12 +21,20 @@ const projects = [
     gradient: "from-[#2A2A0F] to-[#383818]",
   },
   {
-    name: "Methylene Blue Ultra",
-    url: "methyleneblueultra.com",
+    name: "HTX Permit Fix",
+    url: "htxpermitfix.com",
     description:
-      "Supplement e-commerce. Product education, waitlist, pre-orders.",
-    stack: ["next.js", "stripe", "vercel"],
-    gradient: "from-[#0F0F2A] to-[#181838]",
+      "Permit expediting for Houston contractors. Lead gen, service matching.",
+    stack: ["next.js", "react", "vercel"],
+    gradient: "from-[#2A1A0F] to-[#382618]",
+  },
+  {
+    name: "StackD Workforce",
+    url: "stackdworkforce.com",
+    description:
+      "Contractor marketplace for heavy industry. Matching, payments, compliance.",
+    stack: ["next.js", "supabase", "stripe"],
+    gradient: "from-[#152538] to-[#1E3050]",
   },
 ];
 
@@ -130,14 +114,14 @@ export default function Home() {
             </p>
             <div className="mb-10 flex items-baseline justify-between">
               <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
-                Eight platforms, shipped to production.
+                Selected platforms, shipped to production.
               </h2>
               <span className="hidden font-mono text-xs text-[var(--text-dim)] md:inline">
                 {projects.length} projects
               </span>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2">
               {projects.map((project) => (
                 <a
                   key={project.url}
