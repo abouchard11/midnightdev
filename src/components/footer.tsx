@@ -17,7 +17,7 @@ export function Footer() {
             github
           </a>
           <a
-            href="https://linkedin.com/in/alexbouchard11"
+            href="https://share.google/0klvUVK3PQvOa0X5I"
             target="_blank"
             rel="noopener noreferrer"
             className="font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"

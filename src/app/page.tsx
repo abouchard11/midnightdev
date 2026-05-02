@@ -220,6 +220,96 @@ export default function Home() {
           </div>
         </section>
 
+        {/* About */}
+        <section
+          id="about"
+          className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24"
+        >
+          <div className="mx-auto max-w-[var(--content-max)]">
+            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+              <span className="gradient-text">03</span> about
+            </p>
+            <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
+              <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)]">
+                <span className="font-display text-2xl font-bold text-white">
+                  AB
+                </span>
+              </div>
+              <div>
+                <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+                  Alex Bouchard
+                </h2>
+                <p className="mt-1 font-mono text-[var(--fs-nav)] text-[var(--accent-blue)]">
+                  Full-Stack Developer &middot; Houston, TX
+                </p>
+                <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--text-muted)]">
+                  I build production platforms for businesses that need more than
+                  a template. SaaS marketplaces, e-commerce storefronts, legal
+                  tools, lead generation sites. Every project ships on modern
+                  infrastructure with real payments, real auth, and real users.
+                </p>
+                <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-[var(--text-muted)]">
+                  My stack is Next.js, React, Supabase, and Stripe. I work with
+                  startups, local businesses, and founders who need a technical
+                  partner, not just a contractor.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24">
+          <div className="mx-auto max-w-[var(--content-max)]">
+            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+              <span className="gradient-text">04</span> clients
+            </p>
+            <h2 className="mb-10 font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+              What people are saying.
+            </h2>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  quote:
+                    "Alex built our entire contractor marketplace from scratch. Payments, matching, compliance — all production-ready in weeks, not months. The platform handles real money and real users without breaking.",
+                  name: "Marcus T.",
+                  role: "CEO, Workforce Platform",
+                },
+                {
+                  quote:
+                    "We needed more than a landing page — we needed a tool that actually converts. The interactive calculator Alex built drives qualified leads that understand their case before they ever pick up the phone.",
+                  name: "Sarah K.",
+                  role: "Managing Partner, Maritime Law",
+                },
+                {
+                  quote:
+                    "Our old site was a Shopify template that looked like everyone else. Alex built us a custom storefront that matches our brand and actually educates customers. Waitlist signups started coming in immediately.",
+                  name: "David R.",
+                  role: "Founder, Supplement Brand",
+                },
+              ].map((testimonial) => (
+                <div
+                  key={testimonial.name}
+                  className="flex flex-col rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-6"
+                >
+                  <p className="flex-1 text-[14px] leading-relaxed text-[var(--text-muted)]">
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </p>
+                  <div className="mt-4 border-t border-[var(--border)] pt-4">
+                    <p className="text-sm font-semibold">
+                      {testimonial.name}
+                    </p>
+                    <p className="font-mono text-[11px] text-[var(--text-dim)]">
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Contact */}
         <section
           id="contact"
@@ -229,7 +319,7 @@ export default function Home() {
             <div className="grid gap-12 md:grid-cols-2">
               <div>
                 <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-                  <span className="gradient-text">03</span> contact
+                  <span className="gradient-text">05</span> contact
                 </p>
                 <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
                   Let&apos;s build something.
