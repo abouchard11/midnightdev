@@ -42,6 +42,14 @@ export const metadata: Metadata = {
   description:
     "Full-stack development for startups and businesses. Next.js, React, Supabase, Stripe. From contractor marketplaces to real estate tools to legal calculators.",
   metadataBase: new URL("https://midnightdev.dev"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "MidnightDev | Building platforms that ship",
     description:
@@ -49,6 +57,12 @@ export const metadata: Metadata = {
     url: "https://midnightdev.dev",
     siteName: "MidnightDev",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MidnightDev | Building platforms that ship",
+    description:
+      "Full-stack development for startups and businesses. Next.js, React, Supabase, Stripe.",
   },
 };
 
