@@ -126,14 +126,14 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-6 sm:grid-cols-2">
               {projects.map((project) => (
                 <Link
                   key={project.slug}
                   href={`/work/${project.slug}`}
                   className="group overflow-hidden rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--border-hover)]"
                 >
-                  <div className="relative h-[180px] overflow-hidden">
+                  <div className="relative h-[260px] overflow-hidden">
                     <Image
                       src={project.screenshot}
                       alt={project.name}
