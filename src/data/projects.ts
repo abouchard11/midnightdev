@@ -14,6 +14,8 @@ export type ProjectDetail = ProjectSummary & {
   techStack: { name: string; role: string }[];
   results: string[];
   gradient: string;
+  tradeoffs: { decision: string; reasoning: string }[];
+  testimonial: { quote: string; name: string; role: string } | null;
 };
 
 export const projectSlugs = [
@@ -52,6 +54,29 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       "Waitlist capture converting to pre-orders",
     ],
     gradient: "from-[#0F0F2A] to-[#181838]",
+    tradeoffs: [
+      {
+        decision: "Custom Next.js over Shopify",
+        reasoning:
+          "Full control over product education pages and brand. Shopify templates can't do long-form science content that converts.",
+      },
+      {
+        decision: "Waitlist-first over direct sales",
+        reasoning:
+          "Validates demand before inventory commitment. Captures emails for launch-day revenue.",
+      },
+      {
+        decision: "Stripe over Shopify Payments",
+        reasoning:
+          "Portable payment infrastructure. Not locked into one platform if the storefront evolves.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "Our old site was a Shopify template that looked like everyone else. Alex built us a custom storefront that matches our brand and actually educates customers. Waitlist signups started coming in immediately.",
+      name: "David R.",
+      role: "Founder, Supplement Brand",
+    },
   },
   jonesactcalculator: {
     name: "Jones Act Calculator",
@@ -79,6 +104,29 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       "SEO-optimized content ranks for Jones Act-specific queries",
     ],
     gradient: "from-[#2A2A0F] to-[#383818]",
+    tradeoffs: [
+      {
+        decision: "Interactive calculator over static content",
+        reasoning:
+          "Legal SEO is a wall of text. A tool that answers 'how much is my case worth?' earns engagement and qualified leads.",
+      },
+      {
+        decision: "Client-side calculation over server API",
+        reasoning:
+          "No PII stored, no HIPAA-adjacent risk. Calculator logic runs entirely in the browser.",
+      },
+      {
+        decision: "Long-tail SEO over paid ads",
+        reasoning:
+          "Maritime injury is a low-volume, high-value niche. Organic content targeting specific Jones Act queries beats expensive broad-match PPC.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "We needed more than a landing page — we needed a tool that actually converts. The interactive calculator Alex built drives qualified leads that understand their case before they ever pick up the phone.",
+      name: "Sarah K.",
+      role: "Managing Partner, Maritime Law",
+    },
   },
   htxpermitfix: {
     name: "HTX Permit Fix",
@@ -106,6 +154,24 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       "Local SEO positioning for Houston permit expediting searches",
     ],
     gradient: "from-[#2A1A0F] to-[#382618]",
+    tradeoffs: [
+      {
+        decision: "Phone-first CTA over form-first",
+        reasoning:
+          "Contractors mid-project want to talk now, not fill out forms. Phone number is the hero, form is secondary.",
+      },
+      {
+        decision: "Static generation over dynamic",
+        reasoning:
+          "No user accounts, no dashboard. Static pages with edge caching load instantly on job-site cell connections.",
+      },
+      {
+        decision: "Local SEO focus over broad reach",
+        reasoning:
+          "Permit expediting is hyperlocal. Every page targets Houston-specific terms.",
+      },
+    ],
+    testimonial: null,
   },
   stackdworkforce: {
     name: "StackD Workforce",
@@ -133,6 +199,29 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       "Admin dashboard for platform operations and compliance",
     ],
     gradient: "from-[#152538] to-[#1E3050]",
+    tradeoffs: [
+      {
+        decision: "Supabase over custom backend",
+        reasoning:
+          "Row-level security, real-time subscriptions, and auth out of the box. Months of backend work avoided.",
+      },
+      {
+        decision: "Stripe Connect over custom payment rails",
+        reasoning:
+          "Marketplace payment compliance (1099s, escrow, splits) is a minefield. Connect handles it.",
+      },
+      {
+        decision: "Matching algorithm over manual search",
+        reasoning:
+          "Contractors and companies both save time. The platform's value is surfacing the right match, not being a listing directory.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "Alex built our entire contractor marketplace from scratch. Payments, matching, compliance — all production-ready in weeks, not months. The platform handles real money and real users without breaking.",
+      name: "Marcus T.",
+      role: "CEO, Workforce Platform",
+    },
   },
 };
 
