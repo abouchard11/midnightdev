@@ -10,7 +10,7 @@ const projects = [
     description:
       "Contractor marketplace for heavy industry. Matching, payments, compliance.",
     stack: ["next.js", "supabase", "stripe"],
-    gradient: "from-[#0F1923] to-[#162033]",
+    gradient: "from-[#152538] to-[#1E3050]",
   },
   {
     name: "BuyLandFL",
@@ -18,7 +18,7 @@ const projects = [
     description:
       "Florida land sales platform. Property listings, lead gen, owner financing.",
     stack: ["next.js", "react", "vercel"],
-    gradient: "from-[#0A1F0A] to-[#132813]",
+    gradient: "from-[#0F2E0F] to-[#1A3D1A]",
   },
   {
     name: "Houston Lawyer List",
@@ -26,7 +26,7 @@ const projects = [
     description:
       "Legal directory. Attorney profiles, practice areas, lead generation.",
     stack: ["next.js", "seo", "vercel"],
-    gradient: "from-[#1A0F0A] to-[#231813]",
+    gradient: "from-[#2A1A0F] to-[#382618]",
   },
   {
     name: "HTX Dental Implants",
@@ -34,7 +34,7 @@ const projects = [
     description:
       "Dental lead generation. Provider profiles, procedure info, appointment booking.",
     stack: ["next.js", "react", "vercel"],
-    gradient: "from-[#0A0F1A] to-[#131823]",
+    gradient: "from-[#0F1A2A] to-[#182538]",
   },
   {
     name: "Jones Act Calculator",
@@ -42,7 +42,7 @@ const projects = [
     description:
       "Maritime injury calculator. Case value estimation, attorney matching.",
     stack: ["next.js", "typescript", "vercel"],
-    gradient: "from-[#1A1A0A] to-[#232313]",
+    gradient: "from-[#2A2A0F] to-[#383818]",
   },
   {
     name: "Methylene Blue Ultra",
@@ -50,7 +50,7 @@ const projects = [
     description:
       "Supplement e-commerce. Product education, waitlist, pre-orders.",
     stack: ["next.js", "stripe", "vercel"],
-    gradient: "from-[#0A0A1A] to-[#131323]",
+    gradient: "from-[#0F0F2A] to-[#181838]",
   },
 ];
 
@@ -61,39 +61,39 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero */}
-        <section className="px-6 pt-20 pb-16 md:px-12 md:pt-28 md:pb-20">
-          <div className="mx-auto max-w-[1200px]">
-            <p className="mb-6 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--accent-blue)]">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-green-500" />
-              accepting projects for Q3 2026
+        <section className="bg-dotgrid px-6 pt-24 pb-20 md:px-12 md:pt-[120px] md:pb-[100px]">
+          <div className="mx-auto max-w-[var(--content-max)]">
+            <p className="mb-6 flex items-center gap-2 font-mono text-[11px] lowercase tracking-[0.08em] text-[var(--accent-blue)]">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--success)]" />
+              accepting_projects_q3_2026
             </p>
 
-            <h1 className="font-display text-[clamp(42px,6vw,72px)] font-extrabold leading-[1.0] tracking-[-0.04em]">
+            <h1 className="font-display text-[var(--fs-hero)] font-extrabold leading-[1.0] tracking-[-0.04em]">
               Building
               <br />
-              <span className="bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] bg-clip-text text-transparent">
+              <span className="gradient-text">
                 platforms
               </span>
               <br />
               that ship.
             </h1>
 
-            <p className="mt-6 max-w-[520px] font-body text-lg leading-relaxed text-[var(--text-muted)]">
+            <p className="mt-8 max-w-[520px] text-lg leading-relaxed text-[var(--text-muted)]">
               Full-stack development for startups and businesses. Next.js, React,
               Supabase, Stripe. From contractor marketplaces to real estate tools
               to legal calculators.
             </p>
 
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-10 flex items-center gap-4">
               <Link
                 href="#work"
-                className="rounded-[var(--radius-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 font-mono text-[13px] font-medium text-white transition-opacity hover:opacity-90"
+                className="rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 font-mono text-[var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110"
               >
                 see the work
               </Link>
               <Link
                 href="#contact"
-                className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] px-6 py-3 font-mono text-[13px] font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--text-dim)] hover:bg-[var(--surface-hover)]"
+                className="rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] px-6 py-3 font-mono text-[var(--fs-nav)] font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]"
               >
                 start a project
               </Link>
@@ -103,7 +103,7 @@ export default function Home() {
 
         {/* Stats */}
         <section className="border-y border-[var(--border)] px-6 py-10 md:px-12">
-          <div className="mx-auto flex max-w-[1200px] flex-wrap gap-12 md:gap-16">
+          <div className="mx-auto flex max-w-[var(--content-max)] flex-wrap gap-12 md:gap-16">
             {[
               { value: "8+", label: "production platforms" },
               { value: "2026", label: "shipping since" },
@@ -114,7 +114,7 @@ export default function Home() {
                 <span className="font-display text-[28px] font-bold tracking-[-0.02em]">
                   {stat.value}
                 </span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.05em] text-[var(--text-dim)]">
+                <span className="font-mono text-[var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]">
                   {stat.label}
                 </span>
               </div>
@@ -123,13 +123,16 @@ export default function Home() {
         </section>
 
         {/* Portfolio */}
-        <section id="work" className="px-6 py-16 md:px-12 md:py-20">
-          <div className="mx-auto max-w-[1200px]">
-            <div className="mb-8 flex items-baseline justify-between">
-              <h2 className="font-display text-[32px] font-bold tracking-[-0.03em]">
-                Selected work
+        <section id="work" className="px-6 py-16 md:px-12 md:py-24">
+          <div className="mx-auto max-w-[var(--content-max)]">
+            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+              <span className="gradient-text">01</span> selected work
+            </p>
+            <div className="mb-10 flex items-baseline justify-between">
+              <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+                Eight platforms, shipped to production.
               </h2>
-              <span className="font-mono text-xs text-[var(--text-dim)]">
+              <span className="hidden font-mono text-xs text-[var(--text-dim)] md:inline">
                 {projects.length} projects
               </span>
             </div>
@@ -141,20 +144,21 @@ export default function Home() {
                   href={`https://${project.url}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group overflow-hidden rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] transition-all hover:-translate-y-0.5 hover:border-[var(--text-dim)]"
+                  className="group overflow-hidden rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--border-hover)]"
                 >
                   <div
-                    className={`flex h-[180px] items-center justify-center bg-gradient-to-br ${project.gradient}`}
+                    className={`relative flex h-[180px] items-center justify-center bg-gradient-to-br ${project.gradient}`}
                   >
-                    <span className="font-mono text-xs text-[var(--text-dim)] transition-colors group-hover:text-[var(--text-muted)]">
+                    <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
+                    <span className="relative font-mono text-xs text-[var(--text-dim)] transition-colors group-hover:text-[var(--text-muted)]">
                       {project.url}
                     </span>
                   </div>
                   <div className="p-4">
-                    <h3 className="font-body text-[15px] font-semibold">
+                    <h3 className="text-[15px] font-semibold">
                       {project.name}
                     </h3>
-                    <p className="mt-1 font-body text-[13px] leading-snug text-[var(--text-muted)]">
+                    <p className="mt-1 text-[13px] leading-snug text-[var(--text-muted)]">
                       {project.description}
                     </p>
                     <div className="mt-3 flex flex-wrap gap-1.5">
@@ -177,16 +181,17 @@ export default function Home() {
         {/* Services */}
         <section
           id="services"
-          className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-20"
+          className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24"
         >
-          <div className="mx-auto max-w-[1200px]">
-            <div className="section-label mb-8 font-mono text-[11px] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-              <span className="bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] bg-clip-text text-transparent">
-                services
-              </span>
-            </div>
+          <div className="mx-auto max-w-[var(--content-max)]">
+            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+              <span className="gradient-text">02</span> services
+            </p>
+            <h2 className="mb-10 font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+              From zero to production.
+            </h2>
 
-            <div className="grid gap-8 md:grid-cols-2">
+            <div className="grid gap-4 md:grid-cols-2">
               {[
                 {
                   title: "SaaS & Platform Development",
@@ -207,12 +212,12 @@ export default function Home() {
               ].map((service) => (
                 <div
                   key={service.title}
-                  className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] p-6"
+                  className="rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-6 transition-colors hover:border-[var(--border-hover)]"
                 >
                   <h3 className="font-display text-lg font-bold">
                     {service.title}
                   </h3>
-                  <p className="mt-2 font-body text-[15px] leading-relaxed text-[var(--text-muted)]">
+                  <p className="mt-2 text-[15px] leading-relaxed text-[var(--text-muted)]">
                     {service.desc}
                   </p>
                 </div>
@@ -224,19 +229,22 @@ export default function Home() {
         {/* Contact */}
         <section
           id="contact"
-          className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-20"
+          className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24"
         >
-          <div className="mx-auto max-w-[1200px]">
-            <h2 className="font-display text-[clamp(32px,4vw,48px)] font-bold tracking-[-0.03em]">
+          <div className="mx-auto max-w-[var(--content-max)]">
+            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+              <span className="gradient-text">03</span> contact
+            </p>
+            <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
               Let&apos;s build something.
             </h2>
-            <p className="mt-4 max-w-md font-body text-lg text-[var(--text-muted)]">
+            <p className="mt-4 max-w-md text-lg text-[var(--text-muted)]">
               Have a project in mind? Reach out and let&apos;s talk about what
               you need.
             </p>
             <a
               href="mailto:alex@midnightdev.dev"
-              className="mt-6 inline-block rounded-[var(--radius-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 font-mono text-[13px] font-medium text-white transition-opacity hover:opacity-90"
+              className="mt-8 inline-block rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 font-mono text-[var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110"
             >
               alex@midnightdev.dev
             </a>
