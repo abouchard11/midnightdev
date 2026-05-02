@@ -273,12 +273,12 @@ export default async function ProjectPage({
             <p className="mx-auto mt-4 max-w-md text-lg text-[var(--text-muted)]">
               Let&apos;s talk about your project.
             </p>
-            <a
-              href="mailto:alex@midnightdev.dev"
+            <Link
+              href="/#contact"
               className="mt-8 inline-block rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 font-mono text-[var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110"
             >
-              alex@midnightdev.dev
-            </a>
+              start a project &rarr;
+            </Link>
           </div>
         </section>
       </main>

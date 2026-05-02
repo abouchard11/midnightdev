@@ -112,7 +112,7 @@ export default function Home() {
         </section>
 
         {/* Portfolio */}
-        <section id="work" className="px-6 py-16 md:px-12 md:py-24">
+        <section id="work" className="px-6 py-12 md:px-12 md:py-16">
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
               <span className="gradient-text">01</span> selected work
@@ -163,21 +163,53 @@ export default function Home() {
                 </Link>
               ))}
             </div>
+
+            <div className="mt-6 rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-5">
+              <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]">
+                also shipped
+              </p>
+              <div className="flex flex-wrap gap-x-6 gap-y-2">
+                {[
+                  { name: "BuyLandFL", url: "buylandfl.com", desc: "real estate listings" },
+                  { name: "Houston Lawyer List", url: "houstonlawyerlist.com", desc: "legal directory" },
+                  { name: "HTX Dental Implants", url: "htxdentalimplants.com", desc: "dental lead gen" },
+                  { name: "HTX Immigration Law", url: "htximmigrationlaw.com", desc: "immigration law" },
+                ].map((site) => (
+                  <a
+                    key={site.url}
+                    href={`https://${site.url}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/link flex items-baseline gap-2 py-1"
+                  >
+                    <span className="font-mono text-[13px] text-[var(--text-muted)] transition-colors group-hover/link:text-[var(--text-primary)]">
+                      {site.name}
+                    </span>
+                    <span className="font-mono text-[10px] text-[var(--text-dim)]">
+                      {site.desc}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Services */}
         <section
           id="services"
-          className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24"
+          className="border-t border-[var(--border)] px-6 py-12 md:px-12 md:py-16"
         >
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
               <span className="gradient-text">02</span> services
             </p>
-            <h2 className="mb-10 font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+            <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
               From zero to production.
             </h2>
+            <p className="mt-2 mb-10 font-mono text-[var(--fs-nav)] text-[var(--text-muted)]">
+              Projects typically range from $5K&ndash;$75K depending on scope and complexity.
+            </p>
 
             <div className="grid gap-4 md:grid-cols-2">
               {[
@@ -223,18 +255,20 @@ export default function Home() {
         {/* About */}
         <section
           id="about"
-          className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24"
+          className="border-t border-[var(--border)] px-6 py-12 md:px-12 md:py-16"
         >
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
               <span className="gradient-text">03</span> about
             </p>
             <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
-              <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)]">
-                <span className="font-display text-2xl font-bold text-white">
-                  AB
-                </span>
-              </div>
+              <Image
+                src="/headshot.jpg"
+                alt="Alex Bouchard"
+                width={96}
+                height={96}
+                className="h-24 w-24 shrink-0 rounded-full object-cover"
+              />
               <div>
                 <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
                   Alex Bouchard
@@ -251,22 +285,44 @@ export default function Home() {
                 <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-[var(--text-muted)]">
                   My stack is Next.js, React, Supabase, and Stripe. I work with
                   startups, local businesses, and founders who need a technical
-                  partner, not just a contractor.
+                  partner, not just a contractor. When you hire me, you get an
+                  engineer who owns the outcome end to end — from database schema
+                  to deploy pipeline to the Stripe webhook that processes your
+                  first payment.
                 </p>
+                <div className="mt-5 flex items-center gap-4">
+                  <a
+                    href="https://github.com/abouchard11"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-[var(--fs-nav)] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+                  >
+                    github &rarr;
+                  </a>
+                  <Link
+                    href="#contact"
+                    className="font-mono text-[var(--fs-nav)] text-[var(--accent-blue)] transition-colors hover:text-[var(--text-primary)]"
+                  >
+                    get in touch &rarr;
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Testimonials */}
-        <section className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24">
+        <section className="border-t border-[var(--border)] px-6 py-12 md:px-12 md:py-16">
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
               <span className="gradient-text">04</span> clients
             </p>
-            <h2 className="mb-10 font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+            <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
               What people are saying.
             </h2>
+            <p className="mt-2 mb-8 font-mono text-[var(--fs-label)] text-[var(--text-dim)]">
+              Client names redacted at request.
+            </p>
 
             <div className="grid gap-4 md:grid-cols-3">
               {[
@@ -313,7 +369,7 @@ export default function Home() {
         {/* Contact */}
         <section
           id="contact"
-          className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24"
+          className="border-t border-[var(--border)] px-6 py-12 md:px-12 md:py-16"
         >
           <div className="mx-auto max-w-[var(--content-max)]">
             <div className="grid gap-12 md:grid-cols-2">

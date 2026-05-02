@@ -9,7 +9,7 @@ export function Nav() {
 
   return (
     <nav className="border-b border-[var(--border)]">
-      <div className="flex items-center justify-between px-6 py-5 md:px-12">
+      <div className="mx-auto flex w-full max-w-[var(--content-max)] items-center justify-between px-6 py-5 md:px-12">
         <Link href="/" className="flex items-center gap-2.5">
           <Image src="/logo.png" alt="MidnightDev" width={28} height={28} />
           <span className="font-mono text-sm font-semibold tracking-tight text-[var(--text-primary)]">

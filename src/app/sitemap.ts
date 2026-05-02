@@ -19,5 +19,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 0.8,
     })),
+    {
+      url: "https://midnightdev.dev/privacy",
+      lastModified: new Date(),
+      priority: 0.3,
+    },
   ];
 }
