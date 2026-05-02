@@ -38,9 +38,9 @@ const cabinetGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "MidnightDev | Building platforms that ship",
+  title: "MidnightDev | Full-Stack Developer Houston | Next.js, React, Supabase",
   description:
-    "Full-stack development for startups and businesses. Next.js, React, Supabase, Stripe. From contractor marketplaces to real estate tools to legal calculators.",
+    "Houston-based full-stack developer building production platforms for startups and businesses. Next.js, React, Supabase, Stripe. SaaS, e-commerce, lead gen, and AI integration.",
   metadataBase: new URL("https://midnightdev.dev"),
   icons: {
     icon: [
@@ -76,7 +76,78 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${jetbrainsMono.variable} ${cabinetGrotesk.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col antialiased">{children}</body>
+      <body className="min-h-full flex flex-col antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "MidnightDev",
+              url: "https://midnightdev.dev",
+              logo: "https://midnightdev.dev/logo.png",
+              description:
+                "Houston-based full-stack developer building production platforms. Next.js, React, Supabase, Stripe.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Houston",
+                addressRegion: "TX",
+                addressCountry: "US",
+              },
+              email: "alex@midnightdev.dev",
+              founder: {
+                "@type": "Person",
+                name: "Alex Bouchard",
+                jobTitle: "Full-Stack Developer",
+              },
+              areaServed: "Houston, TX",
+              knowsAbout: [
+                "Next.js",
+                "React",
+                "Supabase",
+                "Stripe",
+                "TypeScript",
+                "Vercel",
+              ],
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Development Services",
+                itemListElement: [
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "SaaS & Platform Development",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Lead Generation Sites",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "E-Commerce",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "AI Integration",
+                    },
+                  },
+                ],
+              },
+            }),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
