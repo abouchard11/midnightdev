@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   const { name, email, message } = await req.json();
@@ -7,33 +8,28 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   }
 
-  // Resend integration
-  const RESEND_API_KEY = process.env.RESEND_API_KEY;
-
-  if (!RESEND_API_KEY) {
-    // Fallback: log to server console if no Resend key configured
-    console.log("CONTACT FORM SUBMISSION:", { name, email, message });
-    return NextResponse.json({ ok: true });
-  }
-
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${RESEND_API_KEY}`,
-      "Content-Type": "application/json",
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: "alex@midnightdev.dev",
+      pass: process.env.GMAIL_APP_PASSWORD,
     },
-    body: JSON.stringify({
-      from: "MidnightDev <contact@midnightdev.dev>",
-      to: "alex@midnightdev.dev",
-      reply_to: email,
-      subject: `New project inquiry from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-    }),
   });
 
-  if (!res.ok) {
+  try {
+    await transporter.sendMail({
+      from: "MidnightDev <alex@midnightdev.dev>",
+      to: "alex@midnightdev.dev",
+      replyTo: email,
+      subject: `New project inquiry from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\n\nProject Details:\n${message}`,
+    });
+
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error("Email send failed:", err);
     return NextResponse.json({ error: "Failed to send" }, { status: 500 });
   }
-
-  return NextResponse.json({ ok: true });
 }
