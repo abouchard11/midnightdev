@@ -123,11 +123,35 @@ export default async function ProjectPage({
           </div>
         </section>
 
+        {/* Decisions & Tradeoffs */}
+        <section className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24">
+          <div className="mx-auto max-w-[var(--content-max)]">
+            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+              <span className="gradient-text">03</span> decisions &amp; tradeoffs
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {project.tradeoffs.map((tradeoff) => (
+                <div
+                  key={tradeoff.decision}
+                  className="rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-5"
+                >
+                  <h3 className="font-mono text-sm font-semibold text-[var(--text-primary)]">
+                    {tradeoff.decision}
+                  </h3>
+                  <p className="mt-1 text-[13px] leading-relaxed text-[var(--text-muted)]">
+                    {tradeoff.reasoning}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Tech Stack */}
         <section className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24">
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-              <span className="gradient-text">03</span> tech stack
+              <span className="gradient-text">04</span> tech stack
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {project.techStack.map((tech) => (
@@ -151,7 +175,7 @@ export default async function ProjectPage({
         <section className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24">
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-              <span className="gradient-text">04</span> results
+              <span className="gradient-text">05</span> results
             </p>
             <ul className="mt-6 space-y-3">
               {project.results.map((result) => (
@@ -166,6 +190,32 @@ export default async function ProjectPage({
             </ul>
           </div>
         </section>
+
+        {/* Testimonial */}
+        {project.testimonial && (
+          <section className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24">
+            <div className="mx-auto max-w-[var(--content-max)]">
+              <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+                <span className="gradient-text">06</span> client feedback
+              </p>
+              <div className="mt-6 rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-8 md:p-10">
+                <div className="border-l-2 border-[var(--accent-purple)] pl-6">
+                  <p className="text-[15px] leading-relaxed text-[var(--text-muted)]">
+                    &ldquo;{project.testimonial.quote}&rdquo;
+                  </p>
+                  <div className="mt-4">
+                    <p className="text-sm font-semibold">
+                      {project.testimonial.name}
+                    </p>
+                    <p className="font-mono text-[11px] text-[var(--text-dim)]">
+                      {project.testimonial.role}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24">
