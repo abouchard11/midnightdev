@@ -12,7 +12,7 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-dotgrid px-6 pt-24 pb-20 md:px-12 md:pt-[120px] md:pb-[100px]">
+        <section className="bg-dotgrid px-6 pt-16 pb-16 md:px-12 md:pt-[120px] md:pb-[100px]">
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-6 flex items-center gap-2 font-mono text-[11px] lowercase tracking-[0.08em] text-[var(--accent-blue)]">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--success)]" />
@@ -54,7 +54,7 @@ export default function Home() {
 
         {/* Stats */}
         <section className="border-y border-[var(--border)] px-6 py-10 md:px-12">
-          <div className="mx-auto flex max-w-[var(--content-max)] flex-wrap gap-12 md:gap-16">
+          <div className="mx-auto grid max-w-[var(--content-max)] grid-cols-2 gap-6 md:flex md:gap-16">
             {[
               { value: "8+", label: "production platforms" },
               { value: "Houston", label: "based in texas" },
@@ -95,7 +95,7 @@ export default function Home() {
                   href={`/work/${project.slug}`}
                   className="group overflow-hidden rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--border-hover)]"
                 >
-                  <div className="relative h-[260px] overflow-hidden">
+                  <div className="relative h-[180px] sm:h-[260px] overflow-hidden">
                     <Image
                       src={project.screenshot}
                       alt={project.name}
@@ -131,7 +131,7 @@ export default function Home() {
               <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]">
                 also shipped
               </p>
-              <div className="flex flex-wrap gap-x-6 gap-y-2">
+              <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
                 {[
                   { name: "BuyLandFL", url: "buylandfl.com", desc: "real estate listings" },
                   { name: "Houston Lawyer List", url: "houstonlawyerlist.com", desc: "legal directory" },
