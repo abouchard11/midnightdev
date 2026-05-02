@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ContactForm } from "@/components/contact-form";
-import { projectList } from "@/data/projects";
+import { projectList, projects } from "@/data/projects";
 
 export default function Home() {
   return (
@@ -288,26 +288,13 @@ export default function Home() {
             </p>
 
             <div className="grid gap-4 md:grid-cols-3">
-              {[
-                {
-                  quote:
-                    "Alex built our entire contractor marketplace from scratch. Payments, matching, compliance — all production-ready in weeks, not months. The platform handles real money and real users without breaking.",
-                  name: "Marcus T.",
-                  role: "CEO, Workforce Platform",
-                },
-                {
-                  quote:
-                    "We needed more than a landing page — we needed a tool that actually converts. The interactive calculator Alex built drives qualified leads that understand their case before they ever pick up the phone.",
-                  name: "Sarah K.",
-                  role: "Managing Partner, Maritime Law",
-                },
-                {
-                  quote:
-                    "Our old site was a Shopify template that looked like everyone else. Alex built us a custom storefront that matches our brand and actually educates customers. Waitlist signups started coming in immediately.",
-                  name: "David R.",
-                  role: "Founder, Supplement Brand",
-                },
-              ].map((testimonial) => (
+              {projectList
+                .map((p) => {
+                  const detail = projects[p.slug as keyof typeof projects];
+                  return detail?.testimonial ? detail.testimonial : null;
+                })
+                .filter((t): t is NonNullable<typeof t> => t !== null)
+                .map((testimonial) => (
                 <div
                   key={testimonial.name}
                   className="flex flex-col rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-6"

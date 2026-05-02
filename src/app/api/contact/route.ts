@@ -41,7 +41,7 @@ export async function POST(req: Request) {
   const name = typeof body.name === "string" ? body.name.trim() : "";
   const email = typeof body.email === "string" ? body.email.trim() : "";
   const message = typeof body.message === "string" ? body.message.trim() : "";
-  const honeypot = typeof body.company === "string" ? body.company : "";
+  const honeypot = typeof body.website_url_confirm === "string" ? body.website_url_confirm : "";
 
   if (honeypot) {
     return NextResponse.json({ ok: true });

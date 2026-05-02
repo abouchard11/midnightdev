@@ -38,7 +38,7 @@ export function Nav() {
 
         <button
           onClick={() => setOpen(!open)}
-          className="flex h-8 w-8 items-center justify-center rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] md:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
           aria-controls="mobile-menu"

@@ -20,7 +20,7 @@ export function ContactForm() {
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
-      company: (form.elements.namedItem("company") as HTMLInputElement)?.value,
+      website_url_confirm: (form.elements.namedItem("website_url_confirm") as HTMLInputElement)?.value,
     };
 
     try {
@@ -67,7 +67,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <input
         type="text"
-        name="company"
+        name="website_url_confirm"
         tabIndex={-1}
         autoComplete="off"
         className="absolute -left-[9999px] h-0 w-0 opacity-0"
@@ -111,7 +111,7 @@ export function ContactForm() {
           type="email"
           required
           className="w-full rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-dim)] focus:border-[var(--accent-blue)] focus:outline-none"
-          placeholder="you@company.com"
+          placeholder="you@website_url_confirm.com"
         />
       </div>
       <div>

@@ -95,6 +95,7 @@ export default async function ProjectPage({
                 width={1280}
                 height={800}
                 className="w-full"
+                sizes="100vw"
                 priority
               />
             </div>
