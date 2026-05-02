@@ -22,7 +22,7 @@
   --error: #EF4444;
 
   /* Type sizes */
-  --fs-hero: clamp(56px, 8vw, 96px);
+  --fs-hero: clamp(42px, 8vw, 96px);
   --fs-h1: clamp(40px, 5vw, 64px);
   --fs-h2: clamp(28px, 3.2vw, 40px);
   --fs-h3: 24px;
