@@ -6,35 +6,39 @@ import { Footer } from "@/components/footer";
 const projects = [
   {
     name: "Methylene Blue Ultra",
+    slug: "methyleneblueultra",
     url: "methyleneblueultra.com",
     description:
       "Supplement e-commerce. Product education, waitlist, pre-orders.",
     stack: ["next.js", "stripe", "vercel"],
-    gradient: "from-[#0F0F2A] to-[#181838]",
+    screenshot: "/screenshots/methyleneblueultra.png",
   },
   {
     name: "Jones Act Calculator",
+    slug: "jonesactcalculator",
     url: "jonesactcalculator.com",
     description:
       "Maritime injury calculator. Case value estimation, attorney matching.",
     stack: ["next.js", "typescript", "vercel"],
-    gradient: "from-[#2A2A0F] to-[#383818]",
+    screenshot: "/screenshots/jonesactcalculator.png",
   },
   {
     name: "HTX Permit Fix",
+    slug: "htxpermitfix",
     url: "htxpermitfix.com",
     description:
       "Permit expediting for Houston contractors. Lead gen, service matching.",
     stack: ["next.js", "react", "vercel"],
-    gradient: "from-[#2A1A0F] to-[#382618]",
+    screenshot: "/screenshots/htxpermitfix.png",
   },
   {
     name: "StackD Workforce",
+    slug: "stackdworkforce",
     url: "stackdworkforce.com",
     description:
       "Contractor marketplace for heavy industry. Matching, payments, compliance.",
     stack: ["next.js", "supabase", "stripe"],
-    gradient: "from-[#152538] to-[#1E3050]",
+    screenshot: "/screenshots/stackdworkforce.png",
   },
 ];
 
@@ -123,20 +127,19 @@ export default function Home() {
 
             <div className="grid gap-4 sm:grid-cols-2">
               {projects.map((project) => (
-                <a
-                  key={project.url}
-                  href={`https://${project.url}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  key={project.slug}
+                  href={`/work/${project.slug}`}
                   className="group overflow-hidden rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--border-hover)]"
                 >
-                  <div
-                    className={`relative flex h-[180px] items-center justify-center bg-gradient-to-br ${project.gradient}`}
-                  >
-                    <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
-                    <span className="relative font-mono text-xs text-[var(--text-dim)] transition-colors group-hover:text-[var(--text-muted)]">
-                      {project.url}
-                    </span>
+                  <div className="relative h-[180px] overflow-hidden">
+                    <Image
+                      src={project.screenshot}
+                      alt={project.name}
+                      width={640}
+                      height={400}
+                      className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+                    />
                   </div>
                   <div className="p-4">
                     <h3 className="text-[15px] font-semibold">
@@ -156,7 +159,7 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
