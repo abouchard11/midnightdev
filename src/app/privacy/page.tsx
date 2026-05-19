@@ -4,7 +4,10 @@ import { Footer } from "@/components/footer";
 
 export const metadata = {
   title: "Privacy Policy — MidnightDev",
-  description: "Privacy policy for midnightdev.dev",
+  description: "Privacy policy for midnightdev.dev — what data is collected via the contact form, how it's used, and your rights.",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function PrivacyPage() {

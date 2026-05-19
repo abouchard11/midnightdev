@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
+    host: "https://midnightdev.dev",
     sitemap: "https://midnightdev.dev/sitemap.xml",
   };
 }
