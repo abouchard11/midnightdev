@@ -16,6 +16,9 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
     return {
       title: `${project.name} — MidnightDev`,
       description: project.tagline,
+      alternates: {
+        canonical: `/work/${slug}`,
+      },
       openGraph: {
         title: `${project.name} — MidnightDev`,
         description: project.tagline,
