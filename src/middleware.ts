@@ -4,13 +4,14 @@ import type { NextRequest } from "next/server";
 const CANONICAL_HOST = "midnightdev.dev";
 
 export function middleware(request: NextRequest) {
-  const host = request.headers.get("host") ?? "";
+  const host = (request.headers.get("host") ?? "").split(":")[0];
 
-  // Redirect www to apex domain
-  if (host.startsWith("www.")) {
+  // Redirect any non-canonical host (www, vercel.app, etc.) to apex
+  if (host !== CANONICAL_HOST && host !== "localhost") {
     const url = request.nextUrl.clone();
     url.host = CANONICAL_HOST;
     url.port = "";
+    url.protocol = "https:";
     return NextResponse.redirect(url, 301);
   }
 
