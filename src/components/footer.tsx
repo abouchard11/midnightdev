@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function Footer() {
@@ -6,9 +7,18 @@ export function Footer() {
       <div className="mx-auto max-w-[var(--content-max)]">
         <div className="flex flex-col gap-8 sm:flex-row sm:justify-between">
           <div className="flex flex-col gap-3">
-            <span className="font-mono text-sm font-semibold text-[var(--text-primary)]">
-              midnight_dev
-            </span>
+            <div className="flex items-center gap-2.5">
+              <Image
+                src="/logo.png"
+                alt="MidnightDev"
+                width={32}
+                height={32}
+                className="h-8 w-8"
+              />
+              <span className="font-mono text-sm font-semibold text-[var(--text-primary)]">
+                midnight_dev
+              </span>
+            </div>
             <span className="font-mono text-xs text-[var(--text-dim)]">
               Full-stack development for startups
               <br />
