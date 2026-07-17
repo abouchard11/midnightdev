@@ -63,7 +63,7 @@ export default function Home() {
         <section className="border-y border-[var(--border)] px-6 py-10 md:px-12">
           <div className="mx-auto grid max-w-[var(--content-max)] grid-cols-2 gap-6 md:flex md:gap-16">
             {[
-              { value: "8+", label: "production platforms" },
+              { value: "9+", label: "production platforms" },
               { value: "Houston", label: "based in texas" },
               { value: "Next.js", label: "primary stack" },
               { value: "Vercel", label: "deployed on" },

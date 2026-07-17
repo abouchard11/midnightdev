@@ -23,6 +23,7 @@ export const projectSlugs = [
   "jonesactcalculator",
   "htxpermitfix",
   "stackdworkforce",
+  "yapword",
 ] as const;
 
 export type ProjectSlug = (typeof projectSlugs)[number];
@@ -222,6 +223,51 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       name: "Marcus T.",
       role: "CEO, Workforce Platform",
     },
+  },
+  yapword: {
+    name: "Yapword",
+    slug: "yapword",
+    url: "yapword.com",
+    description:
+      "Daily AI word game. App Store shipped, push notifications, in-app purchases.",
+    stack: ["react", "capacitor", "vercel"],
+    screenshot: "/screenshots/yapword.png",
+    tagline: "Daily word game — one codebase, shipped to the App Store.",
+    problem:
+      "A daily word game needed to reach players on web, iOS, and Android without splitting into three separate codebases — or settling for a bare webview that feels nothing like a real App Store app.",
+    solution:
+      "Built as a single React/TypeScript app, then shipped natively via Capacitor with real push notifications, in-app purchases, and haptics — not a wrapped webview. Every release runs through an automated CI gate (2,300+ tests) before it reaches Apple's review queue.",
+    techStack: [
+      { name: "React + TypeScript", role: "Single codebase driving the web app, iOS build, and Android build" },
+      { name: "Capacitor", role: "Native iOS/Android shell — push (Firebase), in-app purchases (RevenueCat), haptics, share sheet" },
+      { name: "Supabase", role: "Auth, game-state persistence, and daily-puzzle backend" },
+      { name: "Vercel", role: "Web hosting, edge functions, and dynamic OG image generation" },
+    ],
+    results: [
+      "#2 in the Apple App Store for \"AI word game\"",
+      "2,300+ automated tests gate every release before App Store submission",
+      "One codebase ships web, iOS, and Android — no platform-specific rewrites",
+      "Real native integrations: push notifications, in-app purchases, haptics",
+    ],
+    gradient: "from-[#2A0F14] to-[#38181F]",
+    tradeoffs: [
+      {
+        decision: "Capacitor over React Native or native Swift",
+        reasoning:
+          "One React/TypeScript codebase ships web, iOS, and Android — real native APIs (push, IAP, haptics) without a parallel Swift codebase to maintain.",
+      },
+      {
+        decision: "CI test gate before every App Store submission",
+        reasoning:
+          "2,300+ tests must pass before a build reaches Apple's review queue — regressions get caught before they cost a review cycle, not after.",
+      },
+      {
+        decision: "Manual release over auto-release",
+        reasoning:
+          "Every approved version waits for an explicit go in App Store Connect instead of releasing to the public automatically.",
+      },
+    ],
+    testimonial: null,
   },
 };
 
