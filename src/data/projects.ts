@@ -19,11 +19,14 @@ export type ProjectDetail = ProjectSummary & {
 };
 
 export const projectSlugs = [
+  "yapword",
+  "yapoleonscourt",
+  "thatsmybest",
+  "agentinfra",
+  "stackdworkforce",
   "methyleneblueultra",
   "jonesactcalculator",
   "htxpermitfix",
-  "stackdworkforce",
-  "yapword",
 ] as const;
 
 export type ProjectSlug = (typeof projectSlugs)[number];
@@ -223,6 +226,158 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       name: "Marcus T.",
       role: "CEO, Workforce Platform",
     },
+  },
+  yapoleonscourt: {
+    name: "Yapoleon's Court",
+    slug: "yapoleonscourt",
+    url: "court.yapoleon.com",
+    description:
+      "Competitive AI game where the model can't touch the score.",
+    stack: ["react", "gemini", "vercel"],
+    screenshot: "/screenshots/yapoleonscourt.png",
+    tagline: "An AI game the LLM can't game.",
+    problem:
+      "A competitive game backed by an LLM the player is actively trying to game — running on a paid API, in front of minors — is a stack of production hazards. The model can be prompt-injected. It can be flattered into a high score. A bad actor can burn through your API bill. And the model can say things a family audience shouldn't hear.",
+    solution:
+      "Built the game so the model *can't* be gamed — structurally, not with hope. The Gemini call returns taste only (five bounded axes plus one in-voice line). The favor delta is derived server-side by a pure function the model can't see or reach. Prompt injection, sycophancy-gaming, and denial-of-wallet are handled at the architecture layer. A deterministic red-line pre-filter runs before any model call, so flagged input costs zero.",
+    techStack: [
+      { name: "Google Gemini", role: "Server-side proxy, low-temperature structured taste-only output" },
+      { name: "React + TypeScript", role: "Web app, share-card generator, favor meter UI" },
+      { name: "Vercel serverless", role: "API routes with atomic-slot concurrency damper (TOCTOU-safe)" },
+      { name: "Supabase", role: "Auth, standing and rivalry persistence across days" },
+    ],
+    results: [
+      "The model never emits the score — favor delta is derived server-side from clamped, weighted taste axes",
+      "Denial-of-wallet bounded five ways: 3-turn daily cap, per-IP + per-user rate limits, atomic concurrency slot, cached degrade mode, Vercel spend hard-stop",
+      "Content pre-filter short-circuits red-line input before any model call — zero cost on flagged requests",
+      "Prompt injection handled structurally (player reply rides as data being judged, never in the system instruction)",
+    ],
+    gradient: "from-[#160B2A] to-[#241238]",
+    tradeoffs: [
+      {
+        decision: "Model returns taste, server derives the score",
+        reasoning:
+          "Making the favor delta a field the LLM can output makes it a field the LLM can be talked into inflating. Removing the field entirely is stronger than any prompt hardening.",
+      },
+      {
+        decision: "Structured, low-temperature output only",
+        reasoning:
+          "Predictable schema across every turn, cheaper to reason about, easier to write invariant tests against. Voice comes from prompt, not temperature.",
+      },
+      {
+        decision: "Deterministic pre-filter before model call",
+        reasoning:
+          "Red-line content should never spend a token. Rules-based short-circuit is faster, cheaper, and auditable in a way an LLM classifier isn't.",
+      },
+      {
+        decision: "Cached degrade mode over hard failure under load",
+        reasoning:
+          "Concurrency damper serves an in-voice cached reaction with zero model calls when spend or load spikes. Still routes a neutral score through the same derive-favor function. Meter never breaks, character never breaks.",
+      },
+    ],
+    testimonial: null,
+  },
+  thatsmybest: {
+    name: "That's My Best",
+    slug: "thatsmybest",
+    url: "thatsmybest.com",
+    description:
+      "AI judges your friends' photos. Character-IP extension into a new product.",
+    stack: ["vite", "react", "vercel"],
+    screenshot: "/screenshots/thatsmybest.png",
+    tagline: "A weekend-shipped character-IP extension.",
+    problem:
+      "Turning an existing character (Yapoleon, from Yapword) into a new product is a brand-extension pattern most solo builders can't run — usually because the character voice lives in the founder's head, not in a repo, so extending it is a rewrite. And the product needs to ship fast enough to catch a wave, not a quarter later.",
+    solution:
+      "Built a mobile-first PWA that repackages the same character voice, share loop, and infra pattern as Yapword — into an entirely different UX. Because Yapoleon's voice is codified (prompts, temperatures, canned-line fallback, CI invariants), extending it into a new product surface is a copy-and-adapt job, not a rewrite.",
+    techStack: [
+      { name: "Vite + React", role: "Mobile-first PWA with in-flow scoring UX" },
+      { name: "Google Gemini", role: "Photo-aware character judge, shared voice architecture from Yapword" },
+      { name: "Vercel serverless", role: "Same proxy pattern as Yapword — one architecture, two products" },
+      { name: "PWA", role: "Add-to-Home-Screen, offline-safe, iOS-ready without an App Store cycle" },
+    ],
+    results: [
+      "Character IP extended into a new product surface without a rewrite",
+      "Reuses the Yapword voice architecture — proven pattern, faster ship",
+      "PWA-first — deploys instantly, no App Store review cycle",
+      "Ships as one URL people share to challenge each other",
+    ],
+    gradient: "from-[#0C0C10] to-[#181820]",
+    tradeoffs: [
+      {
+        decision: "PWA over native app",
+        reasoning:
+          "A share-driven photo game doesn't need App Store distribution — it needs a URL friends can send. PWA installs on iOS + Android without a review cycle.",
+      },
+      {
+        decision: "Same voice architecture as Yapword",
+        reasoning:
+          "Yapoleon's character is codified with CI-pinned invariants. Reusing the same prompts, temperatures, and fallbacks means the character stays on-brand across every product it appears in.",
+      },
+      {
+        decision: "Ship one product, extend the IP later",
+        reasoning:
+          "That's My Best is the proof-of-pattern. Once the extension pattern works, additional Yapoleon-branded products follow the same template.",
+      },
+    ],
+    testimonial: null,
+  },
+  agentinfra: {
+    name: "Agent Infrastructure",
+    slug: "agentinfra",
+    url: "midnightdev.dev",
+    description:
+      "Multi-agent orchestration with cost-tiered model routing. Runs a real-money real estate acquisition agent team in production.",
+    stack: ["openrouter", "gemini", "ollama", "zep", "firestore"],
+    screenshot: "/screenshots/agentinfra.png",
+    tagline: "Multi-agent infra with a real-money production agent team on top.",
+    problem:
+      "The AI-agent tooling shelf is full now — LangGraph, CrewAI, Claude sub-agents, managed memory. But three problems the managed frameworks still don't solve well: cross-provider cost tiering (they assume one model per node), persistent artifact storage that flows into human review (sub-agent outputs evaporate at session end), and real production usage in a specialist vertical (demos are cheap, real-money agents are rare). Needed to solve all three at once for a real estate acquisition workflow.",
+    solution:
+      "Built a multi-agent orchestration platform (K2 Empire, running on OpenClaw) and put a real-money production agent team on top of it. Three specialist agents plus a local-Llama heartbeat, each model-matched to workload. Cross-provider fallback chains keep the system up when providers wobble. Three-layer artifact persistence (filesystem + Zep temporal graph + Slack Canvases for human review) means agent outputs don't evaporate. On top of that: a real-estate acquisition agent team running in a Telegram group chat — lead-hunter, builder, outreach, and an orchestrator that takes strategic direction from the operator and delegates. Every six hours a heartbeat verifies no specialist has drifted from its SOUL.md role file.",
+    techStack: [
+      { name: "K2 Empire (3-agent architecture)", role: "Orchestrator + Coder + Researcher, plus a local-Llama heartbeat. Each agent model-matched to workload." },
+      { name: "Cross-provider model routing", role: "Kimi K2.5, Qwen 3.6+, Gemini 2.5 Flash, local Llama — routed per-agent-role with cross-provider fallback chains" },
+      { name: "Three-layer artifact persistence", role: "Filesystem (Git-durable) + Zep Cloud (temporal knowledge graph) + Slack Canvases (human review). Nothing evaporates." },
+      { name: "PropStream-Bot (production agent team)", role: "Telegram-native operator UX. Lead-hunter + builder + outreach + orchestrator. Custom PropStream CLI + Atom API enrichment + ranking-driven outbound." },
+      { name: "SOUL.md drift detection", role: "6-hour heartbeat checks each specialist against its role file and against Zep + CRM facts. Catches drift and hallucination in the first day, not the first month." },
+    ],
+    results: [
+      "Three specialist agents + local-Llama heartbeat, cost-tiered per role",
+      "Cross-provider fallback chains — system stays up when providers rate-limit",
+      "Three-layer persistence (filesystem + Zep graph + Slack review) — agent outputs never evaporate",
+      "Real production agent team running in Telegram: lead-hunter, builder, outreach, orchestrator — 141 leads in CRM, real messages in flight",
+      "6-hour drift detection against SOUL.md — role-drift and hallucination caught in day-one, not month-one",
+    ],
+    gradient: "from-[#0A0F1F] to-[#151F35]",
+    tradeoffs: [
+      {
+        decision: "Cross-provider model routing over single-provider lock-in",
+        reasoning:
+          "Providers rate-limit, prices shift, model quality drifts. Routing across OpenRouter, Google, and local Llama means no single provider outage takes the system down, and each workload runs on the cheapest capable model.",
+      },
+      {
+        decision: "Local Llama for the heartbeat layer",
+        reasoning:
+          "Uptime checks and drift-detection pings don't need frontier intelligence. Local model = $0/turn + sub-1s latency + no network dependency. Frees the paid budget for the workloads that actually need it.",
+      },
+      {
+        decision: "SOUL.md + drift detection as a first-class production concern",
+        reasoning:
+          "Agents that still work but slowly drift from their assigned role is a real production failure mode the managed frameworks don't handle. A 6-hour check against a role-invariant file catches drift on day one.",
+      },
+      {
+        decision: "Telegram group chat as the multi-agent coordination surface",
+        reasoning:
+          "The operator wants a natural chat interface, not a dashboard. Specialists talking to each other in the same thread makes debugging trivial: you can read what they said to each other and to you, in order, in one place.",
+      },
+      {
+        decision: "Production agent (PropStream-Bot) on top of the infra",
+        reasoning:
+          "A framework nobody uses in production is a framework nobody knows works. Running an actual money-touching agent on K2 Empire proves the infra survives real load — and generated the specific pain points that drove features like drift detection.",
+      },
+    ],
+    testimonial: null,
   },
   yapword: {
     name: "Yapword",
