@@ -46,7 +46,7 @@ const researchAndOperations = [
   {
     name: "Independent patent development",
     detail:
-      "Developed an invention, specification, prior-art review, examiner brief, and 26-claim provisional application package, with critique from an Australian patent reviewer.",
+      "Completed a provisional patent application package for an independently developed invention, including the specification, prior-art review, examiner brief, and 26 claims, with critique from an Australian patent reviewer.",
   },
 ];
 
@@ -65,30 +65,30 @@ const selectedWebSystems = [
   },
 ];
 
-const chronology = [
+const progression = [
   {
     date: "Dec 2025",
-    title: "Adversarial AI boardroom",
+    title: "Six AI perspectives challenged one forecast",
     detail:
-      "Six synthetic decision lenses attacked a real Houston festival forecast and exposed revenue fantasy.",
+      "Used deliberately different roles to stress-test a real event model. They found optimistic revenue assumptions; a later audit found a second error in how the source data was defined.",
   },
   {
     date: "Jan–Feb 2026",
-    title: "Persistent-agent experiments",
+    title: "Persistent agents created new failure modes",
     detail:
-      "Configured and modified an OpenClaw-era workspace with memory, heartbeats, delegated checks, and human review.",
+      "Gave agents memory, follow-up schedules, and delegated tasks. The result was useful, but made ownership and human review more important—not less.",
   },
   {
     date: "Mar 2026",
-    title: "Twenty-one-role synthetic company",
+    title: "A 21-role simulation exposed bad handoffs",
     detail:
-      "Designed the Diggs lab hierarchy: executive review, specialist squads, an event spine, and a mission ledger.",
+      "Simulated a small company to see where product, engineering, legal, and growth teams lost context. The failures pointed to shared state, written decisions, and explicit owners.",
   },
   {
     date: "Mid-2026",
-    title: "Production controls",
+    title: "The lessons became product rules",
     detail:
-      "Shipped consumer apps with deterministic state, creator-confirmed truth, safety gates, analytics, and spend limits.",
+      "In Yapword, That’s My Best, and Yapoleon’s Court, models generate character and content; people and deterministic code control scores, confirmed answers, safety, and spend.",
   },
 ];
 
@@ -98,25 +98,33 @@ export default function Home() {
       <Nav />
 
       <main className="flex-1">
-        <section className="bg-dotgrid px-6 pb-16 pt-16 md:px-12 md:pb-24 md:pt-[112px]">
+        <section className="bg-dotgrid px-6 pb-14 pt-14 md:px-12 md:pb-20 md:pt-24">
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-6 flex items-center gap-2 font-mono text-[11px] lowercase tracking-[0.08em] text-[var(--accent-blue)]">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--success)]" />
-              open_to_applied_ai_product_roles
+              Houston, Texas · open to applied AI product roles
             </p>
 
-            <h1 className="max-w-[980px] font-display text-[var(--fs-hero)] font-extrabold leading-[0.98] tracking-[-0.045em]">
-              I ship AI products
+            <h1 className="max-w-[920px] font-display text-[var(--fs-h1)] font-bold leading-[1.05] tracking-[-0.035em]">
+              I build consumer AI products—
               <br />
-              <span className="gradient-text">that hold up</span>
-              <br />
-              in public.
+              and put hard limits on what the model controls.
             </h1>
 
-            <p className="mt-8 max-w-[660px] text-lg leading-relaxed text-[var(--text-muted)] md:text-xl">
-              I&apos;m Alex Bouchard, a Houston-based applied AI product engineer
-              and solo founder. I build where model behavior, product experience,
-              safety, cost, and reliability collide.
+            <p className="mt-8 max-w-[760px] text-lg leading-relaxed text-[var(--text-muted)] md:text-xl">
+              I&apos;m Alex Bouchard, founder of MidnightDev. Before software, I
+              contributed to{" "}
+              <a
+                href="https://www.linkedin.com/in/alex-bouchard-70aa958"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-[var(--text-dim)] underline-offset-4 transition-colors hover:text-[var(--text-primary)] hover:decoration-[var(--text-muted)]"
+              >
+                roughly $400 million in commercial real estate transactions
+              </a>
+              . Now I ship AI games on web and iOS. The common thread is judgment
+              under uncertainty: check the source data, define who has authority,
+              and own the result.
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -124,7 +132,7 @@ export default function Home() {
                 href="#work"
                 className="rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 text-center font-mono text-[var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110"
               >
-                see shipped systems
+                view my work
               </Link>
               <a
                 href="https://github.com/abouchard11"
@@ -132,48 +140,32 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] px-6 py-3 text-center font-mono text-[var(--fs-nav)] font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]"
               >
-                inspect the evidence
+                view GitHub
               </a>
             </div>
 
-            <blockquote className="mt-14 max-w-[860px] border-l-2 border-[var(--accent-purple)] pl-5 font-display text-[clamp(20px,2.5vw,32px)] font-bold leading-tight tracking-[-0.02em]">
-              Generate boldly. Validate cheaply. Kill ruthlessly. Scale what survives.
-            </blockquote>
-          </div>
-        </section>
-
-        <section className="border-y border-[var(--border)] px-6 py-10 md:px-12">
-          <div className="mx-auto grid max-w-[var(--content-max)] grid-cols-2 gap-8 md:grid-cols-4">
-            {[
-              { value: "2", label: "consumer AI apps on iOS" },
-              { value: "Web + iOS", label: "publicly shipped surfaces" },
-              { value: "100K", label: "seeded forecast trials" },
-              { value: "Solo", label: "human product owner" },
-            ].map((stat) => (
-              <div key={stat.label} className="flex flex-col gap-1">
-                <span className="font-display text-[28px] font-bold tracking-[-0.02em]">
-                  {stat.value}
-                </span>
-                <span className="max-w-[160px] font-mono text-[var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
+            <p className="mt-10 max-w-[760px] border-l-2 border-[var(--accent-purple)] pl-4 text-[15px] leading-relaxed text-[var(--text-muted)]">
+              Operating principle:{" "}
+              <strong className="font-semibold text-[var(--text-primary)]">
+                Generate boldly. Validate cheaply. Kill ruthlessly. Scale what survives.
+              </strong>
+            </p>
           </div>
         </section>
 
         <section id="work" className="px-6 py-14 md:px-12 md:py-20">
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-              <span className="gradient-text">01</span> proof, not promises
+              Featured work
             </p>
             <div className="mb-10 grid gap-4 md:grid-cols-[1fr_0.7fr] md:items-end">
               <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
-                Shipped products and reproducible engineering evidence.
+                Three live AI products—and the engineering evidence behind them.
               </h2>
               <p className="text-[15px] leading-relaxed text-[var(--text-muted)]">
-                The products show what users touch. The public case studies show
-                the controls, tradeoffs, failures, and judgment underneath them.
+                The products are different by design. The case studies explain
+                where the model helps, where it fails, and what the code keeps
+                under control.
               </p>
             </div>
 
@@ -227,18 +219,17 @@ export default function Home() {
         >
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-              <span className="gradient-text">02</span> reliability primitives
+              Reliability and safety
             </p>
             <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
               <div>
                 <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
-                  Models suggest. Systems decide.
+                  The model can generate content. It cannot own truth, scoring,
+                  safety, or spend.
                 </h2>
                 <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--text-muted)]">
-                  The useful work is not hiding a prompt behind a button. It is
-                  deciding which outputs can affect state, what must be confirmed
-                  by a human, when the system fails closed, and how much failure
-                  is allowed to cost.
+                  Those boundaries appear in the apps and in small public reference
+                  systems for model fallback, content safety, and graph operations.
                 </p>
               </div>
 
@@ -275,16 +266,17 @@ export default function Home() {
         >
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-              <span className="gradient-text">03</span> research, IP, and commercial systems
+              Additional work
             </p>
             <div className="grid gap-8 md:grid-cols-2">
               <div>
                 <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
-                  The work extends beyond product cards.
+                  Research, IP, and smaller systems that still matter.
                 </h2>
                 <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--text-muted)]">
-                  Research, operating systems, and invention work belong in the
-                  evidence map without pretending they are shipped consumer apps.
+                  Not every useful piece of work needs a flagship case study.
+                  These projects cover AI citation research, technical SEO,
+                  independent invention work, and focused web tools.
                 </p>
                 <div className="mt-6 divide-y divide-[var(--border)] rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)]">
                   {researchAndOperations.map((item) => {
@@ -327,12 +319,12 @@ export default function Home() {
 
               <div>
                 <p className="font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-                  selected commercial systems
+                  selected websites
                 </p>
                 <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--text-muted)]">
-                  Smaller web systems that demonstrate interactive tools,
-                  information architecture, and search discipline. They are
-                  supporting evidence, not inflated into flagship case studies.
+                  Smaller web products that demonstrate interactive tools,
+                  information architecture, public methodology, and search
+                  discipline.
                 </p>
                 <div className="mt-6 divide-y divide-[var(--border)] rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)]">
                   {selectedWebSystems.map((item) => (
@@ -368,14 +360,14 @@ export default function Home() {
         >
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-              <span className="gradient-text">04</span> chronological evolution
+              From experiments to product rules
             </p>
             <h2 className="max-w-[760px] font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
-              From synthetic debate to production authority boundaries.
+              Each experiment changed what I was willing to let a model control.
             </h2>
 
             <div className="mt-10 grid gap-4 md:grid-cols-2">
-              {chronology.map((item) => (
+              {progression.map((item) => (
                 <div
                   key={item.date}
                   className="rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-6"
@@ -409,24 +401,22 @@ export default function Home() {
             />
             <div>
               <p className="font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-                <span className="gradient-text">05</span> operator turned builder
+                Background
               </p>
               <h2 className="mt-3 font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
-                Product judgment with commercial scar tissue.
+                I did not take the usual route into AI.
               </h2>
               <div className="mt-5 grid max-w-[900px] gap-5 text-[15px] leading-relaxed text-[var(--text-muted)] md:grid-cols-2">
                 <p>
-                  Before shipping AI products, I led acquisitions, dispositions,
-                  leasing, and portfolio decisions in commercial real estate. That
-                  background trained the reflex I now bring to software: define the
-                  decision, reconcile the numbers, and distrust a beautiful model
-                  that cannot survive diligence.
+                  Before MidnightDev, I led acquisitions, dispositions, leasing,
+                  and portfolio strategy in commercial real estate. The work
+                  demanded disciplined underwriting, careful diligence, and clear
+                  decisions under uncertainty.
                 </p>
                 <p>
-                  Founder of MidnightDev in Houston, Texas. My operating rule is
-                  simple: models propose and challenge; explicit authority
-                  boundaries, human confirmation, and machine-checkable invariants
-                  decide what ships.
+                  That experience is why I treat model output as evidence, not
+                  authority. In my products, people and deterministic code still
+                  control truth, scores, safety, and spend.
                 </p>
               </div>
             </div>
@@ -440,15 +430,14 @@ export default function Home() {
           <div className="mx-auto grid max-w-[var(--content-max)] gap-12 md:grid-cols-2">
             <div>
               <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-                <span className="gradient-text">06</span> contact
+                Contact
               </p>
               <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
-                Put me near a hard product problem.
+                Interested in the work?
               </h2>
               <p className="mt-4 max-w-md text-lg leading-relaxed text-[var(--text-muted)]">
-                I&apos;m open to applied-AI product engineering roles, founder-level
-                collaborations, and selective consulting where the outcome matters
-                more than the ceremony.
+                I&apos;m open to applied-AI product roles, product partnerships,
+                and selective consulting engagements.
               </p>
               <div className="mt-6 flex flex-col gap-2 font-mono text-[var(--fs-nav)]">
                 <a
@@ -465,7 +454,7 @@ export default function Home() {
                 href="/services"
                 className="mt-8 inline-block font-mono text-xs text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
               >
-                looking for consulting services? →
+                consulting services →
               </Link>
             </div>
             <ContactForm />
