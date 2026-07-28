@@ -38,9 +38,9 @@ const cabinetGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "MidnightDev | Full-Stack Developer Houston | Next.js, React, Supabase",
+  title: "Alex Bouchard | Applied AI Product Engineer | MidnightDev",
   description:
-    "Houston-based full-stack developer building production platforms for startups and businesses. Next.js, React, Supabase, Stripe. SaaS, e-commerce, lead gen, and AI integration.",
+    "Applied AI product engineer and solo founder shipping consumer AI across web and iOS. Model behavior, multimodal generation, safety, reliability, cost controls, and product systems.",
   metadataBase: new URL("https://midnightdev.dev"),
   icons: {
     icon: [
@@ -51,18 +51,18 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "MidnightDev | Building platforms that ship",
+    title: "Alex Bouchard | Applied AI Product Engineer",
     description:
-      "Full-stack development for startups and businesses. Next.js, React, Supabase, Stripe.",
+      "Consumer AI products and public engineering evidence across model behavior, safety, reliability, and product systems.",
     url: "https://midnightdev.dev",
     siteName: "MidnightDev",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MidnightDev | Building platforms that ship",
+    title: "Alex Bouchard | Applied AI Product Engineer",
     description:
-      "Full-stack development for startups and businesses. Next.js, React, Supabase, Stripe.",
+      "Generate boldly. Validate cheaply. Kill ruthlessly. Scale what survives.",
   },
 };
 
@@ -82,67 +82,36 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              name: "MidnightDev",
+              "@type": "Person",
+              name: "Alex Bouchard",
+              jobTitle: "Applied AI Product Engineer",
               url: "https://midnightdev.dev",
-              logo: "https://midnightdev.dev/logo.png",
-              description:
-                "Houston-based full-stack developer building production platforms. Next.js, React, Supabase, Stripe.",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Houston",
-                addressRegion: "TX",
-                addressCountry: "US",
+              image: "https://midnightdev.dev/headshot.jpg",
+              email: "mailto:alex@midnightdev.dev",
+              homeLocation: {
+                "@type": "Place",
+                name: "Houston, Texas",
               },
-              email: "alex@midnightdev.dev",
-              founder: {
-                "@type": "Person",
-                name: "Alex Bouchard",
-                jobTitle: "Full-Stack Developer",
+              worksFor: {
+                "@type": "Organization",
+                name: "MidnightDev",
+                url: "https://midnightdev.dev",
               },
-              areaServed: "Houston, TX",
-              knowsAbout: [
-                "Next.js",
-                "React",
-                "Supabase",
-                "Stripe",
-                "TypeScript",
-                "Vercel",
+              sameAs: [
+                "https://github.com/abouchard11",
+                "https://www.linkedin.com/in/alex-bouchard-70aa958",
               ],
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
-                name: "Development Services",
-                itemListElement: [
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "SaaS & Platform Development",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Lead Generation Sites",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "E-Commerce",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "AI Integration",
-                    },
-                  },
-                ],
-              },
+              knowsAbout: [
+                "Applied artificial intelligence",
+                "AI product engineering",
+                "Model behavior",
+                "Multimodal AI",
+                "AI safety",
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Python",
+              ],
             }),
           }}
         />

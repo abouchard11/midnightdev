@@ -21,8 +21,11 @@ export function Nav() {
           <Link href="/#work" className="transition-colors hover:text-[var(--text-primary)]">
             work
           </Link>
-          <Link href="/#services" className="transition-colors hover:text-[var(--text-primary)]">
-            services
+          <Link href="/#systems" className="transition-colors hover:text-[var(--text-primary)]">
+            systems
+          </Link>
+          <Link href="/#story" className="transition-colors hover:text-[var(--text-primary)]">
+            story
           </Link>
           <Link href="/#contact" className="transition-colors hover:text-[var(--text-primary)]">
             contact
@@ -33,7 +36,7 @@ export function Nav() {
           href="/#contact"
           className="hidden rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-4 py-2 font-mono text-xs font-medium text-white transition-opacity hover:opacity-90 md:inline-block"
         >
-          start a project
+          talk to Alex
         </Link>
 
         <button
@@ -80,11 +83,18 @@ export function Nav() {
               work
             </Link>
             <Link
-              href="/#services"
+              href="/#systems"
               onClick={() => setOpen(false)}
               className="transition-colors hover:text-[var(--text-primary)]"
             >
-              services
+              systems
+            </Link>
+            <Link
+              href="/#story"
+              onClick={() => setOpen(false)}
+              className="transition-colors hover:text-[var(--text-primary)]"
+            >
+              story
             </Link>
             <Link
               href="/#contact"
@@ -98,7 +108,7 @@ export function Nav() {
               onClick={() => setOpen(false)}
               className="mt-1 inline-block rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-4 py-2 text-center font-mono text-xs font-medium text-white transition-opacity hover:opacity-90"
             >
-              start a project
+              talk to Alex
             </Link>
           </div>
         </div>

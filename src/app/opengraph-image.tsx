@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "MidnightDev — Building platforms that ship";
+export const alt = "Alex Bouchard — Applied AI Product Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -70,7 +70,7 @@ export default async function Image() {
             display: "flex",
           }}
         >
-          Building platforms that ship.
+          AI products that hold up in public.
         </div>
 
         {/* Subline */}
@@ -83,7 +83,7 @@ export default async function Image() {
             display: "flex",
           }}
         >
-          Next.js &middot; React &middot; Supabase &middot; Stripe
+          Generate boldly &middot; Validate cheaply &middot; Scale what survives
         </div>
 
         {/* Bottom accent line */}

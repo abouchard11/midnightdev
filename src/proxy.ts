@@ -3,11 +3,13 @@ import type { NextRequest } from "next/server";
 
 const CANONICAL_HOST = "midnightdev.dev";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const host = (request.headers.get("host") ?? "").split(":")[0];
+  const isLocal = host === "localhost" || host === "127.0.0.1";
+  const isVercelPreview =
+    process.env.VERCEL_ENV === "preview" && host.endsWith(".vercel.app");
 
-  // Redirect any non-canonical host (www, vercel.app, etc.) to apex
-  if (host !== CANONICAL_HOST && host !== "localhost") {
+  if (host !== CANONICAL_HOST && !isLocal && !isVercelPreview) {
     const url = request.nextUrl.clone();
     url.host = CANONICAL_HOST;
     url.port = "";
@@ -20,7 +22,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Match all paths except static files and Next.js internals
     "/((?!_next/static|_next/image|favicon.ico|icon-.*\\.png|apple-touch-icon\\.png).*)",
   ],
 };

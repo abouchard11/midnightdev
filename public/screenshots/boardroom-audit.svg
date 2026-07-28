@@ -1,0 +1,44 @@
+<svg width="1280" height="800" viewBox="0 0 1280 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1224"/>
+      <stop offset="1" stop-color="#18102B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="140" y1="0" x2="1120" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4B8BF5"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg)"/>
+  <g opacity="0.08">
+    <path d="M0 80H1280M0 160H1280M0 240H1280M0 320H1280M0 400H1280M0 480H1280M0 560H1280M0 640H1280M0 720H1280" stroke="white"/>
+    <path d="M80 0V800M160 0V800M240 0V800M320 0V800M400 0V800M480 0V800M560 0V800M640 0V800M720 0V800M800 0V800M880 0V800M960 0V800M1040 0V800M1120 0V800M1200 0V800" stroke="white"/>
+  </g>
+  <rect x="84" y="70" width="1112" height="660" rx="24" fill="#0D0D16" fill-opacity="0.86" stroke="#2A2A3E"/>
+  <text x="136" y="136" fill="#7A7A8E" font-family="ui-monospace, monospace" font-size="18" letter-spacing="2">RECONSTRUCTED FOR REPRODUCIBILITY · 2026</text>
+  <text x="136" y="220" fill="#EDEDF0" font-family="Arial, sans-serif" font-size="56" font-weight="700">The forecast did not survive.</text>
+  <rect x="136" y="260" width="1008" height="4" rx="2" fill="url(#accent)"/>
+  <g>
+    <rect x="136" y="316" width="296" height="180" rx="16" fill="#111118" stroke="#2A2A3E"/>
+    <text x="164" y="358" fill="#7A7A8E" font-family="ui-monospace, monospace" font-size="15">ORIGINAL FORECAST</text>
+    <text x="164" y="430" fill="#EF4444" font-family="Arial, sans-serif" font-size="64" font-weight="700">$65.9M</text>
+    <text x="164" y="468" fill="#7A7A8E" font-family="Arial, sans-serif" font-size="18">projected profit</text>
+  </g>
+  <g>
+    <rect x="464" y="316" width="296" height="180" rx="16" fill="#111118" stroke="#2A2A3E"/>
+    <text x="492" y="358" fill="#7A7A8E" font-family="ui-monospace, monospace" font-size="15">MEDIAN RECONSTRUCTION</text>
+    <text x="492" y="430" fill="#EDEDF0" font-family="Arial, sans-serif" font-size="64" font-weight="700">$1.22M</text>
+    <text x="492" y="468" fill="#7A7A8E" font-family="Arial, sans-serif" font-size="18">fully loaded profit</text>
+  </g>
+  <g>
+    <rect x="792" y="316" width="352" height="180" rx="16" fill="#111118" stroke="#2A2A3E"/>
+    <text x="820" y="358" fill="#7A7A8E" font-family="ui-monospace, monospace" font-size="15">P(PROFIT ≥ $5M)</text>
+    <text x="820" y="430" fill="#8B5CF6" font-family="Arial, sans-serif" font-size="64" font-weight="700">10.5%</text>
+    <text x="820" y="468" fill="#7A7A8E" font-family="Arial, sans-serif" font-size="18">100,000 seeded trials</text>
+  </g>
+  <g>
+    <text x="136" y="566" fill="#EDEDF0" font-family="Arial, sans-serif" font-size="24" font-weight="700">Six synthetic decision lenses</text>
+    <text x="136" y="606" fill="#7A7A8E" font-family="Arial, sans-serif" font-size="18">finance · operations · industry · legal · marketing · investor diligence</text>
+    <text x="136" y="660" fill="#4B8BF5" font-family="ui-monospace, monospace" font-size="18">one canonical source of truth → invariant tests → human decision</text>
+  </g>
+</svg>

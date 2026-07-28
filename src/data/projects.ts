@@ -16,12 +16,14 @@ export type ProjectDetail = ProjectSummary & {
   gradient: string;
   tradeoffs: { decision: string; reasoning: string }[];
   testimonial: { quote: string; name: string; role: string } | null;
+  linkLabel?: string;
 };
 
 export const projectSlugs = [
   "yapword",
   "yapoleonscourt",
   "thatsmybest",
+  "boardroom",
   "agentinfra",
   "stackdworkforce",
   "methyleneblueultra",
@@ -30,6 +32,15 @@ export const projectSlugs = [
 ] as const;
 
 export type ProjectSlug = (typeof projectSlugs)[number];
+
+export const featuredProjectSlugs = [
+  "yapword",
+  "thatsmybest",
+  "yapoleonscourt",
+  "boardroom",
+] as const satisfies readonly ProjectSlug[];
+
+export type FeaturedProjectSlug = (typeof featuredProjectSlugs)[number];
 
 export const projects: Record<ProjectSlug, ProjectDetail> = {
   methyleneblueultra: {
@@ -282,45 +293,120 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
     slug: "thatsmybest",
     url: "thatsmybest.com",
     description:
-      "AI judges your friends' photos. Character-IP extension into a new product.",
-    stack: ["vite", "react", "vercel"],
+      "Multimodal social game that turns photo-grid screenshots into a friend quiz.",
+    stack: ["multimodal ai", "human confirmation", "web + ios"],
     screenshot: "/screenshots/thatsmybest.png",
-    tagline: "A weekend-shipped character-IP extension.",
+    tagline: "Screenshots in. A playable social memory test out.",
     problem:
-      "Turning an existing character (Yapoleon, from Yapword) into a new product is a brand-extension pattern most solo builders can't run — usually because the character voice lives in the founder's head, not in a repo, so extending it is a rewrite. And the product needs to ship fast enough to catch a wave, not a quarter later.",
+      "A screenshot contains visual evidence, but a model can still invent context, misread a tile, or turn an observation into mind-reading. The product also has to make quiz creation fast enough for a friend to finish, share, and pull other people into the loop.",
     solution:
-      "Built a mobile-first PWA that repackages the same character voice, share loop, and infra pattern as Yapword — into an entirely different UX. Because Yapoleon's voice is codified (prompts, temperatures, canned-line fallback, CI invariants), extending it into a new product surface is a copy-and-adapt job, not a rewrite.",
+      "Built a mobile-first web and iOS flow that ingests one to four social-grid screenshots, selects candidate tiles, generates questions and answer-specific reactions, then requires the creator to confirm the answer key before sealing the quiz. The model proposes; the person who knows the photos establishes truth.",
     techStack: [
-      { name: "Vite + React", role: "Mobile-first PWA with in-flow scoring UX" },
-      { name: "Google Gemini", role: "Photo-aware character judge, shared voice architecture from Yapword" },
-      { name: "Vercel serverless", role: "Same proxy pattern as Yapword — one architecture, two products" },
-      { name: "PWA", role: "Add-to-Home-Screen, offline-safe, iOS-ready without an App Store cycle" },
+      {
+        name: "Multimodal generation",
+        role: "Reads uploaded photo grids and proposes visually grounded quiz questions.",
+      },
+      {
+        name: "Creator-confirmed truth",
+        role: "The creator reviews the selected tile and answer key before publication.",
+      },
+      {
+        name: "Serverless product loop",
+        role: "Generation, publishing, attempts, reactions, group reveal, and share assets.",
+      },
+      {
+        name: "Capacitor + App Store",
+        role: "The live iOS app opens directly into the creation flow while web links preserve frictionless sharing.",
+      },
     ],
     results: [
-      "Character IP extended into a new product surface without a rewrite",
-      "Reuses the Yapword voice architecture — proven pattern, faster ship",
-      "PWA-first — deploys instantly, no App Store review cycle",
-      "Ships as one URL people share to challenge each other",
+      "Live on the web and in the Apple App Store",
+      "Creator-confirmed answer keys keep model guesses from becoming product truth",
+      "Answer-specific reactions, named friends, and timed group reveals create the social loop",
+      "Early soft-launch generation cost measured at roughly 6–7¢ per completed quiz",
     ],
     gradient: "from-[#0C0C10] to-[#181820]",
     tradeoffs: [
       {
-        decision: "PWA over native app",
+        decision: "Human confirmation over model confidence",
         reasoning:
-          "A share-driven photo game doesn't need App Store distribution — it needs a URL friends can send. PWA installs on iOS + Android without a review cycle.",
+          "The creator knows which person, moment, or detail is correct. A confidence score does not.",
       },
       {
-        decision: "Same voice architecture as Yapword",
+        decision: "Web links and an iOS app",
         reasoning:
-          "Yapoleon's character is codified with CI-pinned invariants. Reusing the same prompts, temperatures, and fallbacks means the character stays on-brand across every product it appears in.",
+          "Creation benefits from an app-like surface; participation must remain one tap away for friends who will not install anything first.",
       },
       {
-        decision: "Ship one product, extend the IP later",
+        decision: "Objective visual memory over personality judgment",
         reasoning:
-          "That's My Best is the proof-of-pattern. Once the extension pattern works, additional Yapoleon-branded products follow the same template.",
+          "The funny part should come from what is actually visible in the screenshots, not invented claims about a person's looks, intelligence, or inner life.",
+      },
+      {
+        decision: "Group reveal over constant notifications",
+        reasoning:
+          "Named players create anticipation, while a timed fallback prevents one missing friend from holding the entire experience hostage.",
       },
     ],
     testimonial: null,
+  },
+  boardroom: {
+    name: "AI Boardroom Forecast Audit",
+    slug: "boardroom",
+    url: "github.com/abouchard11/ai-boardroom-forecast-audit",
+    description:
+      "Six synthetic decision lenses, one broken forecast, and a reproducible source-of-truth audit.",
+    stack: ["python", "monte carlo", "regression", "invariant tests"],
+    screenshot: "/screenshots/boardroom-audit.svg",
+    tagline: "The AI boardroom that killed a $65.9M forecast.",
+    problem:
+      "An AI-built operating plan for a real Houston festival concept produced an approximately $65.9M profit forecast. A six-seat synthetic review cut the headline dramatically, but a later audit found that even the corrected workbook mixed incompatible expense definitions.",
+    solution:
+      "Reconstructed the decision as a transparent Python model with 100,000 seeded Monte Carlo trials, standardized regression sensitivity, committed outputs, and invariant tests. Historical claims, reconstructed analysis, and real planning inputs are labeled separately.",
+    techStack: [
+      {
+        name: "Synthetic executive review",
+        role: "Finance, operations, industry, legal, marketing, and investor lenses submitted competing objections.",
+      },
+      {
+        name: "Monte Carlo simulation",
+        role: "Seeded trials stress-test sell-through, revenue execution, expense variance, weather, sponsorship, and delays.",
+      },
+      {
+        name: "Regression sensitivity",
+        role: "Standardized coefficients expose which uncertain inputs drive the modeled outcome.",
+      },
+      {
+        name: "Invariant tests",
+        role: "Machine-checkable reconciliation blocks incompatible definitions from quietly surviving consensus.",
+      },
+    ],
+    results: [
+      "Reconciled a $3.397M gap between reported and fully loaded base-case expenses",
+      "Median reconstructed profit: $1.22M",
+      "Probability of reaching at least $5M: 10.5%",
+      "Deterministic outputs, tests, evidence ledger, and limitations published publicly",
+    ],
+    gradient: "from-[#0A1224] to-[#18102B]",
+    tradeoffs: [
+      {
+        decision: "Competing roles over one agreeable assistant",
+        reasoning:
+          "The review needed distinct incentives and downside ownership, not six paraphrases of the same optimistic answer.",
+      },
+      {
+        decision: "One canonical assumptions schema",
+        reasoning:
+          "Consensus did not prevent arithmetic drift. Every view must regenerate from the same definitions.",
+      },
+      {
+        decision: "Reconstruction labeled explicitly",
+        reasoning:
+          "The original run outputs were not fully preserved, so the public model is marked as reconstructed for reproducibility in 2026.",
+      },
+    ],
+    testimonial: null,
+    linkLabel: "inspect repository",
   },
   agentinfra: {
     name: "Agent Infrastructure",
@@ -384,49 +470,61 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
     slug: "yapword",
     url: "yapword.com",
     description:
-      "Daily AI word game. App Store shipped, push notifications, in-app purchases.",
-    stack: ["react", "capacitor", "vercel"],
+      "Daily word game with a persistent generative character that reacts to real play.",
+    stack: ["react", "gemini", "capacitor", "web + ios"],
     screenshot: "/screenshots/yapword.png",
-    tagline: "Daily word game — one codebase, shipped to the App Store.",
+    tagline: "A daily word game where the character remembers how you played.",
     problem:
-      "A daily word game needed to reach players on web, iOS, and Android without splitting into three separate codebases — or settling for a bare webview that feels nothing like a real App Store app.",
+      "A funny system prompt can produce a good line once. A consumer character has to remain recognizable across guesses, hints, difficulty modes, wins, losses, fallbacks, model changes, and thousands of repeated interactions — without being allowed to rewrite game truth.",
     solution:
-      "Built as a single React/TypeScript app, then shipped natively via Capacitor with real push notifications, in-app purchases, and haptics — not a wrapped webview. Every release runs through an automated CI gate (2,300+ tests) before it reaches Apple's review queue.",
+      "Built a React and TypeScript game in which deterministic code owns the puzzle, score, and limits while Gemini produces bounded character behavior from structured game context. Capacitor ships the public iOS app from the same product core used on the web.",
     techStack: [
-      { name: "React + TypeScript", role: "Single codebase driving the web app, iOS build, and Android build" },
-      { name: "Capacitor", role: "Native iOS/Android shell — push (Firebase), in-app purchases (RevenueCat), haptics, share sheet" },
-      { name: "Supabase", role: "Auth, game-state persistence, and daily-puzzle backend" },
-      { name: "Vercel", role: "Web hosting, edge functions, and dynamic OG image generation" },
+      {
+        name: "React + TypeScript",
+        role: "Shared product core for the public web game and iOS application.",
+      },
+      {
+        name: "Google Gemini",
+        role: "Bounded contextual reactions and hints; never the source of score or puzzle truth.",
+      },
+      {
+        name: "Capacitor",
+        role: "iOS packaging and native integrations including haptics, sharing, and purchases.",
+      },
+      {
+        name: "Supabase + Vercel",
+        role: "Persistence, server-side model access, analytics hooks, dynamic share assets, and deployment.",
+      },
     ],
     results: [
-      "#2 in the Apple App Store for \"AI word game\"",
-      "2,300+ automated tests gate every release before App Store submission",
-      "One codebase ships web, iOS, and Android — no platform-specific rewrites",
-      "Real native integrations: push notifications, in-app purchases, haptics",
+      "Live on the web and in the Apple App Store",
+      "Three daily difficulty modes, themed games, contextual hints, and shareable challenges",
+      "Automated regression checks gate releases and character-behavior changes",
+      "Server-owned rules prevent the generative layer from touching game truth",
     ],
     gradient: "from-[#2A0F14] to-[#38181F]",
     tradeoffs: [
       {
-        decision: "Capacitor over React Native or native Swift",
+        decision: "Deterministic game state, generative commentary",
         reasoning:
-          "One React/TypeScript codebase ships web, iOS, and Android — real native APIs (push, IAP, haptics) without a parallel Swift codebase to maintain.",
+          "A model can make the experience feel alive without being granted authority over the answer, score, or limits.",
       },
       {
-        decision: "CI test gate before every App Store submission",
+        decision: "Mechanism-level voice rules over word bans",
         reasoning:
-          "2,300+ tests must pass before a build reaches Apple's review queue — regressions get caught before they cost a review cycle, not after.",
+          "Positive behavioral guidance preserved comedic range better than expanding lists of forbidden phrases.",
       },
       {
-        decision: "Manual release over auto-release",
+        decision: "Web plus a public iOS app",
         reasoning:
-          "Every approved version waits for an explicit go in App Store Connect instead of releasing to the public automatically.",
+          "The web keeps sharing friction low; Capacitor delivers an App Store surface without maintaining a second product implementation.",
       },
     ],
     testimonial: null,
   },
 };
 
-export const projectList: ProjectSummary[] = projectSlugs.map((slug) => ({
+export const projectList: ProjectSummary[] = featuredProjectSlugs.map((slug) => ({
   name: projects[slug].name,
   slug: projects[slug].slug,
   url: projects[slug].url,

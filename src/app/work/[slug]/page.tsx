@@ -3,16 +3,22 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { projects, projectSlugs } from "@/data/projects";
+import { featuredProjectSlugs, projects } from "@/data/projects";
 
 export function generateStaticParams() {
-  return projectSlugs.map((slug) => ({ slug }));
+  return featuredProjectSlugs.map((slug) => ({ slug }));
 }
 
 export function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   return Promise.resolve(params).then(({ slug }) => {
+    const isFeatured = (featuredProjectSlugs as readonly string[]).includes(slug);
     const project = projects[slug as keyof typeof projects];
-    if (!project) return { title: "Project Not Found" };
+    if (!project || !isFeatured) {
+      return {
+        title: "Project Not Found",
+        robots: { index: false, follow: false },
+      };
+    }
     return {
       title: `${project.name} — MidnightDev`,
       description: project.tagline,
@@ -41,8 +47,9 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const isFeatured = (featuredProjectSlugs as readonly string[]).includes(slug);
   const project = projects[slug as keyof typeof projects];
-  if (!project) notFound();
+  if (!project || !isFeatured) notFound();
 
   return (
     <>
@@ -77,7 +84,7 @@ export default async function ProjectPage({
                 rel="noopener noreferrer"
                 className="rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-5 py-2.5 font-mono text-[var(--fs-nav)] font-medium text-white transition-all hover:brightness-110"
               >
-                visit site &rarr;
+                {project.linkLabel ?? "visit site"} &rarr;
               </a>
               <span className="font-mono text-xs text-[var(--text-dim)]">
                 {project.url}

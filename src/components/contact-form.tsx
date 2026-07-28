@@ -50,7 +50,7 @@ export function ContactForm() {
         <div className="text-center">
           <p className="font-display text-lg font-bold">Message sent.</p>
           <p className="mt-2 text-sm text-[var(--text-muted)]">
-            I&apos;ll get back to you within 24 hours.
+            I&apos;ll reply as soon as I can.
           </p>
           <button
             onClick={() => setStatus("idle")}
@@ -111,7 +111,7 @@ export function ContactForm() {
           type="email"
           required
           className="w-full rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-dim)] focus:border-[var(--accent-blue)] focus:outline-none"
-          placeholder="you@website_url_confirm.com"
+          placeholder="you@example.com"
         />
       </div>
       <div>
@@ -119,7 +119,7 @@ export function ContactForm() {
           htmlFor="message"
           className="mb-1.5 block font-mono text-[var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]"
         >
-          Project details
+          What are you building?
         </label>
         <textarea
           id="message"
@@ -127,7 +127,7 @@ export function ContactForm() {
           required
           rows={4}
           className="w-full resize-none rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-dim)] focus:border-[var(--accent-blue)] focus:outline-none"
-          placeholder="Tell me about your project, timeline, and budget range"
+          placeholder="Tell me the goal, what already exists, and where the hard part is."
         />
       </div>
       <button
@@ -135,7 +135,7 @@ export function ContactForm() {
         disabled={status === "sending"}
         className="rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 font-mono text-[var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110 disabled:opacity-50"
       >
-        {status === "sending" ? "sending..." : "send message"}
+        {status === "sending" ? "sending..." : "send note"}
       </button>
     </form>
   );
