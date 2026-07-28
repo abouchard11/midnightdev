@@ -23,7 +23,7 @@ reproducible engineering evidence. It intentionally separates:
   in a daily word game, live on web and iOS.
 - [That's My Best](https://thatsmybest.com) — multimodal screenshot-to-quiz
   product with creator-confirmed truth, sharing, and group reveals.
-- [Yapoleon's Court](https://github.com/abouchard11/yapoleons-court) —
+- [Yapword Engineering Case Study](https://github.com/abouchard11/yapword-engineering-case-study) —
   deterministic scoring, prompt-injection isolation, safety, and spend controls.
 - [AI Boardroom Forecast Audit](https://github.com/abouchard11/ai-boardroom-forecast-audit)
   — adversarial AI roles, Monte Carlo forecasting, regression sensitivity, and
