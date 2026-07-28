@@ -120,7 +120,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="underline decoration-[var(--text-dim)] underline-offset-4 transition-colors hover:text-[var(--text-primary)] hover:decoration-[var(--text-muted)]"
               >
-                nearly $500 million in commercial real estate transactions
+                roughly $400 million in commercial real estate transactions
               </a>
               . Now I ship AI games on web and iOS. The common thread is judgment
               under uncertainty: check the source data, define who has authority,
