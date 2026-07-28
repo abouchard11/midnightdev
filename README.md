@@ -38,8 +38,9 @@ reproducible engineering evidence. It intentionally separates:
 - [Midnight SEO Skills](https://github.com/abouchard11/midnight-seo-skills) —
   an operational skill suite for audits, topical mapping, indexing, analytics,
   and search distribution.
-- Independent patent development — invention, specification, prior-art review,
-  examiner brief, and a 26-claim provisional application package, reviewed by an
+- Independent patent development — completed a provisional patent application
+  package for an independently developed invention, including the specification,
+  prior-art review, examiner brief, and 26 claims, with critique from an
   Australian patent reviewer.
 
 ## Selected commercial systems
