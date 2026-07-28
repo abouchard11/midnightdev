@@ -5,6 +5,10 @@ solo founder in Houston, Texas.
 
 > **Generate boldly. Validate cheaply. Kill ruthlessly. Scale what survives.**
 
+My operating rule is simple: models propose and challenge; explicit authority
+boundaries, human confirmation, and machine-checkable invariants decide what
+ships.
+
 This site is the front door to shipped consumer AI products and public,
 reproducible engineering evidence. It intentionally separates:
 
