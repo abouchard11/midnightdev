@@ -30,6 +30,26 @@ reproducible engineering evidence. It intentionally separates:
   — adversarial AI roles, Monte Carlo forecasting, regression sensitivity, and
   source-of-truth invariants.
 
+## Research, IP, and operations
+
+- [AI Citation Patterns](https://github.com/abouchard11/ai-citation-patterns) —
+  a dated, source-qualified reference on how answer engines crawl, retrieve, and
+  cite web content.
+- [Midnight SEO Skills](https://github.com/abouchard11/midnight-seo-skills) —
+  an operational skill suite for audits, topical mapping, indexing, analytics,
+  and search distribution.
+- Independent patent development — invention, specification, prior-art review,
+  examiner brief, and a 26-claim provisional application package, reviewed by an
+  Australian patent reviewer.
+
+## Selected commercial systems
+
+- [Jones Act Calculator](https://www.jonesactcalculator.com) — interactive
+  maritime claim-estimation and eligibility tools with public methodology and
+  explicit legal disclaimers.
+- [HTX Work Injury](https://htxworkinjury.com) — guided qualification,
+  calculation, and public safety data for Houston industrial-injury questions.
+
 ## Local development
 
 ```bash

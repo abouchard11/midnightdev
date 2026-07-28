@@ -30,6 +30,41 @@ const reliabilityWork = [
   },
 ];
 
+const researchAndOperations = [
+  {
+    name: "AI citation patterns",
+    href: "https://github.com/abouchard11/ai-citation-patterns",
+    detail:
+      "A dated, source-qualified reference on how answer engines crawl, retrieve, and cite web content.",
+  },
+  {
+    name: "Midnight SEO skills",
+    href: "https://github.com/abouchard11/midnight-seo-skills",
+    detail:
+      "An operational skill suite for audits, topical mapping, indexing, analytics, and search distribution.",
+  },
+  {
+    name: "Independent patent development",
+    detail:
+      "Developed an invention, specification, prior-art review, examiner brief, and 26-claim provisional application package, with critique from an Australian patent reviewer.",
+  },
+];
+
+const selectedWebSystems = [
+  {
+    name: "Jones Act Calculator",
+    href: "https://www.jonesactcalculator.com",
+    detail:
+      "An interactive maritime claim-estimation and eligibility resource with public methodology and explicit legal disclaimers.",
+  },
+  {
+    name: "HTX Work Injury",
+    href: "https://htxworkinjury.com",
+    detail:
+      "A Houston industrial-injury information system combining guided qualification, calculation, and public safety data.",
+  },
+];
+
 const chronology = [
   {
     date: "Dec 2025",
@@ -235,12 +270,105 @@ export default function Home() {
         </section>
 
         <section
+          id="breadth"
+          className="border-t border-[var(--border)] px-6 py-14 md:px-12 md:py-20"
+        >
+          <div className="mx-auto max-w-[var(--content-max)]">
+            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+              <span className="gradient-text">03</span> research, IP, and commercial systems
+            </p>
+            <div className="grid gap-8 md:grid-cols-2">
+              <div>
+                <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+                  The work extends beyond product cards.
+                </h2>
+                <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--text-muted)]">
+                  Research, operating systems, and invention work belong in the
+                  evidence map without pretending they are shipped consumer apps.
+                </p>
+                <div className="mt-6 divide-y divide-[var(--border)] rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)]">
+                  {researchAndOperations.map((item) => {
+                    const content = (
+                      <>
+                        <div className="flex items-start justify-between gap-4">
+                          <h3 className="font-mono text-sm font-semibold text-[var(--text-primary)]">
+                            {item.name}
+                          </h3>
+                          {item.href && (
+                            <span className="font-mono text-xs text-[var(--accent-blue)]">
+                              ↗
+                            </span>
+                          )}
+                        </div>
+                        <p className="mt-1 text-[13px] leading-relaxed text-[var(--text-muted)]">
+                          {item.detail}
+                        </p>
+                      </>
+                    );
+
+                    return item.href ? (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block p-5 transition-colors hover:bg-[var(--surface-hover)]"
+                      >
+                        {content}
+                      </a>
+                    ) : (
+                      <div key={item.name} className="p-5">
+                        {content}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div>
+                <p className="font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+                  selected commercial systems
+                </p>
+                <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--text-muted)]">
+                  Smaller web systems that demonstrate interactive tools,
+                  information architecture, and search discipline. They are
+                  supporting evidence, not inflated into flagship case studies.
+                </p>
+                <div className="mt-6 divide-y divide-[var(--border)] rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)]">
+                  {selectedWebSystems.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block p-5 transition-colors hover:bg-[var(--surface-hover)]"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <h3 className="font-mono text-sm font-semibold text-[var(--text-primary)]">
+                          {item.name}
+                        </h3>
+                        <span className="font-mono text-xs text-[var(--accent-blue)]">
+                          ↗
+                        </span>
+                      </div>
+                      <p className="mt-1 text-[13px] leading-relaxed text-[var(--text-muted)]">
+                        {item.detail}
+                      </p>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
           id="story"
           className="border-t border-[var(--border)] px-6 py-14 md:px-12 md:py-20"
         >
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-              <span className="gradient-text">03</span> chronological evolution
+              <span className="gradient-text">04</span> chronological evolution
             </p>
             <h2 className="max-w-[760px] font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
               From synthetic debate to production authority boundaries.
@@ -281,7 +409,7 @@ export default function Home() {
             />
             <div>
               <p className="font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-                <span className="gradient-text">04</span> operator turned builder
+                <span className="gradient-text">05</span> operator turned builder
               </p>
               <h2 className="mt-3 font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
                 Product judgment with commercial scar tissue.
@@ -312,7 +440,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-[var(--content-max)] gap-12 md:grid-cols-2">
             <div>
               <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-                <span className="gradient-text">05</span> contact
+                <span className="gradient-text">06</span> contact
               </p>
               <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
                 Put me near a hard product problem.
