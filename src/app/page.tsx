@@ -113,10 +113,18 @@ export default function Home() {
 
             <p className="mt-8 max-w-[760px] text-lg leading-relaxed text-[var(--text-muted)] md:text-xl">
               I&apos;m Alex Bouchard, founder of MidnightDev. Before software, I
-              contributed to nearly $500 million in commercial real estate
-              transactions. Now I ship AI games on web and iOS. The common thread
-              is judgment under uncertainty: check the source data, define who has
-              authority, and own the result.
+              contributed to{" "}
+              <a
+                href="https://www.linkedin.com/in/alex-bouchard-70aa958"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-[var(--text-dim)] underline-offset-4 transition-colors hover:text-[var(--text-primary)] hover:decoration-[var(--text-muted)]"
+              >
+                nearly $500 million in commercial real estate transactions
+              </a>
+              . Now I ship AI games on web and iOS. The common thread is judgment
+              under uncertainty: check the source data, define who has authority,
+              and own the result.
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
