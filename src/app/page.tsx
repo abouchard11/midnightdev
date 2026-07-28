@@ -295,10 +295,10 @@ export default function Home() {
                   that cannot survive diligence.
                 </p>
                 <p>
-                  I work as a solo human with AI systems, but I do not confuse tool
-                  output with authorship or authority. I set the objective, design
-                  the review structure, resolve conflicts, test the result, and own
-                  what reaches users.
+                  Founder of MidnightDev in Houston, Texas. My operating rule is
+                  simple: models propose and challenge; explicit authority
+                  boundaries, human confirmation, and machine-checkable invariants
+                  decide what ships.
                 </p>
               </div>
             </div>
