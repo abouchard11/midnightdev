@@ -20,40 +20,40 @@ export function Footer() {
               </span>
             </div>
             <span className="font-mono text-xs text-[var(--text-dim)]">
-              Full-stack development for startups
+              Applied AI products and systems
               <br />
-              and businesses in Houston and beyond.
+              built by Alex Bouchard in Houston.
             </span>
           </div>
 
           <div className="flex gap-8 sm:gap-12">
             <div className="flex flex-col gap-2">
               <span className="font-mono text-[var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]">
-                Services
+                Explore
               </span>
               <Link
-                href="/#services"
+                href="/#work"
                 className="font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
               >
-                saas & platforms
+                shipped work
               </Link>
               <Link
-                href="/#services"
+                href="/#systems"
                 className="font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
               >
-                lead generation
+                reliability systems
               </Link>
               <Link
-                href="/#services"
+                href="/#story"
                 className="font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
               >
-                e-commerce
+                chronological story
               </Link>
               <Link
-                href="/#services"
+                href="/services"
                 className="font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
               >
-                ai integration
+                consulting
               </Link>
             </div>
 

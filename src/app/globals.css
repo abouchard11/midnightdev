@@ -8,8 +8,8 @@
   --border: #1F1F2E;
   --border-hover: #2A2A3E;
   --text-primary: #EDEDF0;
-  --text-muted: #7A7A8E;
-  --text-dim: #4A4A5A;
+  --text-muted: #9A9AAD;
+  --text-dim: #68687A;
 
   /* Accents (gradient is sacred) */
   --accent-blue: #4B8BF5;
@@ -89,6 +89,20 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.32);
+  color: var(--text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 3px;
+}
+
 h1, h2, h3, h4 {
   font-family: var(--font-display), system-ui, sans-serif;
   font-weight: 800;
@@ -115,4 +129,17 @@ h1, h2, h3, h4 {
   background-color: var(--bg);
   background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
   background-size: 24px 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

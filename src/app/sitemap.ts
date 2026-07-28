@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { projectSlugs } from "@/data/projects";
+import { featuredProjectSlugs } from "@/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString().split("T")[0];
@@ -11,12 +11,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
-    ...projectSlugs.map((slug) => ({
+    ...featuredProjectSlugs.map((slug) => ({
       url: `https://midnightdev.dev/work/${slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
+    {
+      url: "https://midnightdev.dev/services",
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
     {
       url: "https://midnightdev.dev/privacy",
       lastModified: now,
