@@ -28,7 +28,7 @@ export function Footer() {
 
           <div className="flex gap-8 sm:gap-12">
             <div className="flex flex-col gap-2">
-              <span className="font-mono text-[var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]">
+              <span className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]">
                 Explore
               </span>
               <Link
@@ -58,7 +58,7 @@ export function Footer() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <span className="font-mono text-[var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]">
+              <span className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]">
                 Links
               </span>
               <Link

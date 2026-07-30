@@ -44,10 +44,10 @@ export default function ServicesPage() {
       <main className="flex-1">
         <section className="bg-dotgrid px-6 py-16 md:px-12 md:py-24">
           <div className="mx-auto max-w-[var(--content-max)]">
-            <p className="mb-4 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--accent-blue)]">
+            <p className="mb-4 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--accent-blue)]">
               selective consulting
             </p>
-            <h1 className="max-w-[900px] font-display text-[var(--fs-h1)] font-bold tracking-[-0.04em]">
+            <h1 className="max-w-[900px] font-display text-[length:var(--fs-h1)] font-bold tracking-[-0.04em]">
               Bring me the product problem that is resisting polite conversation.
             </h1>
             <p className="mt-6 max-w-[680px] text-lg leading-relaxed text-[var(--text-muted)]">
@@ -82,10 +82,10 @@ export default function ServicesPage() {
         <section className="border-t border-[var(--border)] px-6 py-14 md:px-12 md:py-20">
           <div className="mx-auto grid max-w-[var(--content-max)] gap-12 md:grid-cols-2">
             <div>
-              <p className="font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--accent-blue)]">
+              <p className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--accent-blue)]">
                 start with the truth
               </p>
-              <h2 className="mt-3 font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+              <h2 className="mt-3 font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
                 Tell me what must work, what already exists, and what has failed.
               </h2>
               <p className="mt-4 max-w-md text-[15px] leading-relaxed text-[var(--text-muted)]">

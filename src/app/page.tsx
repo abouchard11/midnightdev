@@ -105,7 +105,7 @@ export default function Home() {
               Houston, Texas · open to applied AI product roles
             </p>
 
-            <h1 className="max-w-[920px] font-display text-[var(--fs-h1)] font-bold leading-[1.05] tracking-[-0.035em]">
+            <h1 className="max-w-[920px] font-display text-[length:var(--fs-h1)] font-bold leading-[1.05] tracking-[-0.035em]">
               I build consumer AI products—
               <br />
               and put hard limits on what the model controls.
@@ -130,7 +130,7 @@ export default function Home() {
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
                 href="#work"
-                className="rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 text-center font-mono text-[var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110"
+                className="rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 text-center font-mono text-[length:var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110"
               >
                 view my work
               </Link>
@@ -138,7 +138,7 @@ export default function Home() {
                 href="https://github.com/abouchard11"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] px-6 py-3 text-center font-mono text-[var(--fs-nav)] font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]"
+                className="rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] px-6 py-3 text-center font-mono text-[length:var(--fs-nav)] font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]"
               >
                 view GitHub
               </a>
@@ -155,11 +155,11 @@ export default function Home() {
 
         <section id="work" className="px-6 py-14 md:px-12 md:py-20">
           <div className="mx-auto max-w-[var(--content-max)]">
-            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+            <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
               Featured work
             </p>
             <div className="mb-10 grid gap-4 md:grid-cols-[1fr_0.7fr] md:items-end">
-              <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+              <h2 className="font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
                 Three live AI products—and the engineering evidence behind them.
               </h2>
               <p className="text-[15px] leading-relaxed text-[var(--text-muted)]">
@@ -218,12 +218,12 @@ export default function Home() {
           className="border-t border-[var(--border)] px-6 py-14 md:px-12 md:py-20"
         >
           <div className="mx-auto max-w-[var(--content-max)]">
-            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+            <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
               Reliability and safety
             </p>
             <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
               <div>
-                <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+                <h2 className="font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
                   The model can generate content. It cannot own truth, scoring,
                   safety, or spend.
                 </h2>
@@ -265,12 +265,12 @@ export default function Home() {
           className="border-t border-[var(--border)] px-6 py-14 md:px-12 md:py-20"
         >
           <div className="mx-auto max-w-[var(--content-max)]">
-            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+            <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
               Additional work
             </p>
             <div className="grid gap-8 md:grid-cols-2">
               <div>
-                <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+                <h2 className="font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
                   Research, IP, and smaller systems that still matter.
                 </h2>
                 <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--text-muted)]">
@@ -318,7 +318,7 @@ export default function Home() {
               </div>
 
               <div>
-                <p className="font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+                <p className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
                   selected websites
                 </p>
                 <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--text-muted)]">
@@ -359,10 +359,10 @@ export default function Home() {
           className="border-t border-[var(--border)] px-6 py-14 md:px-12 md:py-20"
         >
           <div className="mx-auto max-w-[var(--content-max)]">
-            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+            <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
               From experiments to product rules
             </p>
-            <h2 className="max-w-[760px] font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+            <h2 className="max-w-[760px] font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
               Each experiment changed what I was willing to let a model control.
             </h2>
 
@@ -400,10 +400,10 @@ export default function Home() {
               className="h-28 w-28 rounded-full object-cover"
             />
             <div>
-              <p className="font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+              <p className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
                 Background
               </p>
-              <h2 className="mt-3 font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+              <h2 className="mt-3 font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
                 I did not take the usual route into AI.
               </h2>
               <div className="mt-5 grid max-w-[900px] gap-5 text-[15px] leading-relaxed text-[var(--text-muted)] md:grid-cols-2">
@@ -429,17 +429,17 @@ export default function Home() {
         >
           <div className="mx-auto grid max-w-[var(--content-max)] gap-12 md:grid-cols-2">
             <div>
-              <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+              <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
                 Contact
               </p>
-              <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+              <h2 className="font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
                 Interested in the work?
               </h2>
               <p className="mt-4 max-w-md text-lg leading-relaxed text-[var(--text-muted)]">
                 I&apos;m open to applied-AI product roles, product partnerships,
                 and selective consulting engagements.
               </p>
-              <div className="mt-6 flex flex-col gap-2 font-mono text-[var(--fs-nav)]">
+              <div className="mt-6 flex flex-col gap-2 font-mono text-[length:var(--fs-nav)]">
                 <a
                   href="mailto:alex@midnightdev.dev"
                   className="text-[var(--accent-blue)] transition-colors hover:text-[var(--text-primary)]"

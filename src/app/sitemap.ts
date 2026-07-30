@@ -11,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: "https://midnightdev.dev/build-room",
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
     ...featuredProjectSlugs.map((slug) => ({
       url: `https://midnightdev.dev/work/${slug}`,
       lastModified: now,
