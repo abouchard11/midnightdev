@@ -21,6 +21,9 @@ export function Nav() {
           <Link href="/#work" className="transition-colors hover:text-[var(--text-primary)]">
             work
           </Link>
+          <Link href="/build-room" className="transition-colors hover:text-[var(--text-primary)]">
+            build room
+          </Link>
           <Link href="/#systems" className="transition-colors hover:text-[var(--text-primary)]">
             systems
           </Link>
@@ -81,6 +84,13 @@ export function Nav() {
               className="transition-colors hover:text-[var(--text-primary)]"
             >
               work
+            </Link>
+            <Link
+              href="/build-room"
+              onClick={() => setOpen(false)}
+              className="transition-colors hover:text-[var(--text-primary)]"
+            >
+              build room
             </Link>
             <Link
               href="/#systems"
