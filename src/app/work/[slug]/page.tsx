@@ -61,12 +61,12 @@ export default async function ProjectPage({
           <div className="mx-auto max-w-[var(--content-max)]">
             <Link
               href="/#work"
-              className="mb-8 inline-flex items-center gap-2 font-mono text-[var(--fs-label)] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+              className="mb-8 inline-flex items-center gap-2 font-mono text-[length:var(--fs-label)] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
             >
               <span>&larr;</span> back to work
             </Link>
 
-            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+            <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
               <span className="gradient-text">case study</span>
             </p>
 
@@ -82,7 +82,7 @@ export default async function ProjectPage({
                 href={`https://${project.url}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-5 py-2.5 font-mono text-[var(--fs-nav)] font-medium text-white transition-all hover:brightness-110"
+                className="rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-5 py-2.5 font-mono text-[length:var(--fs-nav)] font-medium text-white transition-all hover:brightness-110"
               >
                 {project.linkLabel ?? "visit site"} &rarr;
               </a>
@@ -116,7 +116,7 @@ export default async function ProjectPage({
         <section className="px-6 py-16 md:px-12 md:py-24">
           <div className="mx-auto grid max-w-[var(--content-max)] gap-12 md:grid-cols-2">
             <div>
-              <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+              <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
                 <span className="gradient-text">01</span> the problem
               </p>
               <p className="text-[15px] leading-relaxed text-[var(--text-muted)]">
@@ -124,7 +124,7 @@ export default async function ProjectPage({
               </p>
             </div>
             <div>
-              <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+              <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
                 <span className="gradient-text">02</span> the solution
               </p>
               <p className="text-[15px] leading-relaxed text-[var(--text-muted)]">
@@ -137,7 +137,7 @@ export default async function ProjectPage({
         {/* Decisions & Tradeoffs */}
         <section className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24">
           <div className="mx-auto max-w-[var(--content-max)]">
-            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+            <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
               <span className="gradient-text">03</span> decisions &amp; tradeoffs
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -161,7 +161,7 @@ export default async function ProjectPage({
         {/* Tech Stack */}
         <section className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24">
           <div className="mx-auto max-w-[var(--content-max)]">
-            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+            <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
               <span className="gradient-text">04</span> tech stack
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -185,7 +185,7 @@ export default async function ProjectPage({
         {/* Results */}
         <section className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24">
           <div className="mx-auto max-w-[var(--content-max)]">
-            <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+            <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
               <span className="gradient-text">05</span> results
             </p>
             <ul className="mt-6 space-y-3">
@@ -206,7 +206,7 @@ export default async function ProjectPage({
         {project.testimonial && (
           <section className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24">
             <div className="mx-auto max-w-[var(--content-max)]">
-              <p className="mb-3 font-mono text-[var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+              <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
                 <span className="gradient-text">06</span> client feedback
               </p>
               <div className="mt-6 rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-8 md:p-10">
@@ -231,7 +231,7 @@ export default async function ProjectPage({
         {/* CTA */}
         <section className="border-t border-[var(--border)] px-6 py-16 md:px-12 md:py-24">
           <div className="mx-auto max-w-[var(--content-max)] text-center">
-            <h2 className="font-display text-[var(--fs-h2)] font-bold tracking-[-0.03em]">
+            <h2 className="font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
               Want something like this?
             </h2>
             <p className="mx-auto mt-4 max-w-md text-lg text-[var(--text-muted)]">
@@ -239,7 +239,7 @@ export default async function ProjectPage({
             </p>
             <Link
               href="/#contact"
-              className="mt-8 inline-block rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 font-mono text-[var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110"
+              className="mt-8 inline-block rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 font-mono text-[length:var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110"
             >
               start a project &rarr;
             </Link>

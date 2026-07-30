@@ -19,7 +19,7 @@ export default function PrivacyPage() {
         <div className="mx-auto max-w-[var(--content-max)]">
           <Link
             href="/"
-            className="mb-8 inline-flex items-center gap-2 font-mono text-[var(--fs-label)] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+            className="mb-8 inline-flex items-center gap-2 font-mono text-[length:var(--fs-label)] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
           >
             <span>&larr;</span> back to home
           </Link>
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
           <h1 className="font-display text-[clamp(32px,5vw,48px)] font-bold leading-[1.1] tracking-[-0.03em]">
             Privacy Policy
           </h1>
-          <p className="mt-2 font-mono text-[var(--fs-nav)] text-[var(--text-dim)]">
+          <p className="mt-2 font-mono text-[length:var(--fs-nav)] text-[var(--text-dim)]">
             Last updated: May 2026
           </p>
 

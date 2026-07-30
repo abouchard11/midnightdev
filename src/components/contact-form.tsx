@@ -85,7 +85,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="name"
-          className="mb-1.5 block font-mono text-[var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]"
+          className="mb-1.5 block font-mono text-[length:var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]"
         >
           Name
         </label>
@@ -101,7 +101,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="email"
-          className="mb-1.5 block font-mono text-[var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]"
+          className="mb-1.5 block font-mono text-[length:var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]"
         >
           Email
         </label>
@@ -117,7 +117,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="mb-1.5 block font-mono text-[var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]"
+          className="mb-1.5 block font-mono text-[length:var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]"
         >
           What are you building?
         </label>
@@ -133,7 +133,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 font-mono text-[var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110 disabled:opacity-50"
+        className="rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 font-mono text-[length:var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110 disabled:opacity-50"
       >
         {status === "sending" ? "sending..." : "send note"}
       </button>
