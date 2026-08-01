@@ -384,6 +384,15 @@ const graderProperties = [
   },
 ];
 
+const webProperties = [
+  { tag: "AI / studio", name: "MidnightDev", domain: "midnightdev.dev", href: "https://midnightdev.dev" },
+  { tag: "AI product", name: "Yapword", domain: "yapword.com", href: "https://yapword.com" },
+  { tag: "AI product", name: "That's My Best", domain: "thatsmybest.com", href: "https://thatsmybest.com" },
+  { tag: "AI product", name: "Yapoleon's Court", domain: "court.yapoleon.com", href: "https://court.yapoleon.com" },
+  { tag: "Owned media", name: "WordGameAI", domain: "wordgameai.com", href: "https://wordgameai.com" },
+  { tag: "Legal tool", name: "Jones Act Calculator", domain: "jonesactcalculator.com", href: "https://www.jonesactcalculator.com" },
+];
+
 const priorRecord = [
   {
     label: "Transaction record",
@@ -1100,6 +1109,72 @@ export default function BuildRoomPage() {
               >
                 llm-safety-gate &#8599;
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Agentic distribution + web properties */}
+        <section className="border-t border-[var(--border)] px-6 py-14 md:px-12 md:py-20">
+          <div className="mx-auto max-w-[var(--content-max)]">
+            <SectionLabel>exhibit e / distribution surface</SectionLabel>
+            <h2 className="max-w-[820px] font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
+              A governed agent, and the surfaces it publishes to.
+            </h2>
+
+            <div className="mt-10 rounded-[var(--r-md)] border border-[var(--accent-blue)]/30 bg-[var(--surface)] p-6">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.08em] text-[var(--accent-blue)]">
+                  agentic distribution
+                </span>
+                <span className="flex items-center gap-1.5 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.08em] text-[var(--success)]">
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--success)]" />
+                  live
+                </span>
+              </div>
+              <h3 className="mt-2 font-display text-xl font-bold tracking-[-0.02em]">
+                @YapoleonGreater
+              </h3>
+              <p className="mt-3 max-w-[820px] leading-relaxed text-[var(--text-muted)]">
+                Extends Yapword into a governed, near-autonomous social-publishing
+                system. It generates publication-ready responses in character
+                within owner-defined rules. I retain the voice, the publishing
+                boundaries, the escalation decisions, and the consequences — the
+                same authority split that governs every other model in this file.
+              </p>
+            </div>
+
+            <h3 className="mt-12 font-display text-2xl font-bold tracking-[-0.02em]">
+              Public web properties
+            </h3>
+            <p className="mt-3 max-w-[720px] leading-relaxed text-[var(--text-muted)]">
+              Products, tools, and commercial sites — each a real distribution
+              surface. Private systems and retired experiments are intentionally
+              excluded.
+            </p>
+
+            <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+              {webProperties.map((p) => (
+                <a
+                  key={p.domain}
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-5 transition-colors hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]"
+                >
+                  <span className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.08em] text-[var(--text-dim)]">
+                    {p.tag}
+                  </span>
+                  <h4 className="mt-1.5 flex items-center gap-2 font-display text-lg font-bold tracking-[-0.02em]">
+                    {p.name}
+                    <span className="text-[var(--accent-blue)] transition-transform group-hover:translate-x-0.5">
+                      &#8599;
+                    </span>
+                  </h4>
+                  <p className="mt-1 font-mono text-[length:var(--fs-small)] text-[var(--text-muted)]">
+                    {p.domain}
+                  </p>
+                </a>
+              ))}
             </div>
           </div>
         </section>
