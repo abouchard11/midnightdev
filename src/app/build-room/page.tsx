@@ -314,6 +314,76 @@ const telemetry = [
   },
 ];
 
+const graders = [
+  {
+    n: "01",
+    product: "Yapword",
+    started: "2026-05-23",
+    property: "Is the character's voice good — and what does it cost?",
+    grader:
+      "A multi-turn bench that walks whole games through the real prompt builder, sweeping the model's thinking level.",
+    result:
+      "~82% of inference COGS was invisible thinking. Zero thinking preserved the voice. The highest setting burned 8,991–11,663 tokens per game — $80–105 per 1k games — and was not better.",
+  },
+  {
+    n: "02",
+    product: "Yapoleon's Court",
+    started: "2026-06-15",
+    property: "Is the scoring rubric fair, learnable, and un-gameable?",
+    grader:
+      "Yapword's harness, forked and re-pointed at a different measurement: 30 demands x weak/mid/strong, plus a fixed-mold probe, against the live judge.",
+    result:
+      "72.2% mid / 0% weak / 96.7% strong — a clean skill gradient. Fixed mold 0% off-axis. 5 of 5 anti-gaming probes pass live. 1,095 calls, 0 errors.",
+  },
+  {
+    n: "03",
+    product: "That's My Best",
+    started: "2026-07-01",
+    property: "Is it safe to publish when the classifier itself is unreliable?",
+    grader:
+      "A fail-closed state machine with quorum voting over an injectable classifier — extracted out of the product entirely.",
+    result:
+      "Shipped as llm-safety-gate: zero-dependency, MIT, every failure path unit-tested without a network.",
+  },
+];
+
+const graderProperties = [
+  {
+    step: "01",
+    title: "Learnable",
+    rule: "Better input must score better",
+    detail: "Strong 96.7% > mid 72.2% > weak 0%. If the ordering breaks, the rubric is broken.",
+  },
+  {
+    step: "02",
+    title: "Not template-farmable",
+    rule: "The negative control",
+    detail:
+      "One fixed rhetorical mold, applied to all 30 days, must lose on its off-axis days. It wins 0%.",
+  },
+  {
+    step: "03",
+    title: "Not gameable",
+    rule: "Five adversarial probes, live",
+    detail:
+      "Naked flattery, prompt injection, legitimate audacity (the false-positive check), delimiter breakout, grovel-on-economy. All pass.",
+  },
+  {
+    step: "04",
+    title: "Bounded authority",
+    rule: "The model never emits the score",
+    detail:
+      "It returns five clamped axis sub-scores; a pure server-side function the model cannot see or reach computes the result.",
+  },
+  {
+    step: "05",
+    title: "Honest about noise",
+    rule: "Distributions, not point values",
+    detail:
+      "Hosted inference is not bit-reproducible at low temperature, so every cell runs at least three times and the spread is reported.",
+  },
+];
+
 const priorRecord = [
   {
     label: "Transaction record",
@@ -880,6 +950,156 @@ export default function BuildRoomPage() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Three graders */}
+        <section
+          id="graders"
+          className="border-t border-[var(--border)] px-6 py-14 md:px-12 md:py-20"
+        >
+          <div className="mx-auto max-w-[var(--content-max)]">
+            <SectionLabel>exhibit d / measurement</SectionLabel>
+            <h2 className="max-w-[900px] font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
+              Three products. Three things that can&apos;t be checked automatically.
+            </h2>
+            <p className="mt-5 max-w-[720px] leading-relaxed text-[var(--text-muted)]">
+              Every product has one quality property no test can assert — whether
+              the voice is good, whether the scoring is fair, whether it&apos;s safe
+              to publish. So I build the grader for that property, and then I take
+              it out of the product. Three products in six weeks; read them in
+              order, because the grader work matures across them.
+            </p>
+
+            <div className="mt-10 flex flex-col gap-4">
+              {graders.map((g) => (
+                <article
+                  key={g.n}
+                  className="rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-6"
+                >
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <span className="font-mono text-[length:var(--fs-label)] text-[var(--accent-blue)]">
+                      {g.n}
+                    </span>
+                    <h3 className="font-display text-xl font-bold tracking-[-0.02em]">
+                      {g.product}
+                    </h3>
+                    <span className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.05em] text-[var(--text-dim)]">
+                      started {g.started}
+                    </span>
+                  </div>
+
+                  <p className="mt-4 font-display text-lg font-bold leading-snug tracking-[-0.02em]">
+                    {g.property}
+                  </p>
+
+                  <div className="mt-4 grid gap-4 md:grid-cols-2">
+                    <div>
+                      <span className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.08em] text-[var(--text-dim)]">
+                        the grader
+                      </span>
+                      <p className="mt-1.5 text-[length:var(--fs-small)] leading-relaxed text-[var(--text-muted)]">
+                        {g.grader}
+                      </p>
+                    </div>
+                    <div>
+                      <span className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.08em] text-[var(--success)]">
+                        the result
+                      </span>
+                      <p className="mt-1.5 text-[length:var(--fs-small)] leading-relaxed text-[var(--text-primary)]">
+                        {g.result}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-[var(--r-md)] border border-[var(--accent-blue)]/30 bg-[var(--surface)] p-6">
+              <span className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.08em] text-[var(--accent-blue)]">
+                the arc
+              </span>
+              <p className="mt-2 font-display text-lg font-bold tracking-[-0.02em]">
+                Ad hoc &rarr; reused &rarr; extracted as infrastructure.
+              </p>
+              <p className="mt-3 max-w-[820px] text-[length:var(--fs-small)] leading-relaxed text-[var(--text-muted)]">
+                The first harness was written for one product&apos;s problem. The
+                second product didn&apos;t get a new one — the first was forked and
+                aimed at a question it was never built for, which is the first
+                evidence the method transfers. By the third, the grader stopped
+                living inside the product at all and shipped as a standalone
+                library someone else can inject their own classifier into.
+              </p>
+            </div>
+
+            <h3 className="mt-12 max-w-[820px] font-display text-2xl font-bold tracking-[-0.02em]">
+              What makes a grader trustworthy with no reference implementation
+            </h3>
+            <p className="mt-4 max-w-[720px] leading-relaxed text-[var(--text-muted)]">
+              Code can be graded against a reference build. Voice, fairness, and
+              taste cannot. So the scoring function is validated by its properties
+              instead.
+            </p>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {graderProperties.map((p) => (
+                <div
+                  key={p.step}
+                  className="rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-6"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-[length:var(--fs-label)] text-[var(--accent-blue)]">
+                      {p.step}
+                    </span>
+                    <h4 className="font-display text-lg font-bold tracking-[-0.02em]">
+                      {p.title}
+                    </h4>
+                  </div>
+                  <p className="mt-2.5 font-mono text-[length:var(--fs-small)] text-[var(--text-primary)]">
+                    {p.rule}
+                  </p>
+                  <p className="mt-2 text-[length:var(--fs-small)] leading-relaxed text-[var(--text-muted)]">
+                    {p.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-8 max-w-[820px] leading-relaxed text-[var(--text-muted)]">
+              The calibration also produced a finding I kept rather than buried:
+              the target was specified as a <em>median</em> win-rate, and the
+              median turned out to be bimodal and degenerate — an offline sweep of
+              hundreds of candidate curves found zero with a median in band. The
+              mean is smooth and stable across independent runs. The document says
+              so, and says why.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                href="https://github.com/abouchard11/yapoleons-court/blob/main/CALIBRATION-v2.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[length:var(--fs-small)] text-[var(--accent-blue)] transition-opacity hover:opacity-80"
+              >
+                read the calibration study &#8599;
+              </a>
+              <a
+                href="https://github.com/abouchard11/yapoleons-court/blob/main/scripts/yapoleon-calibrate.ts"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[length:var(--fs-small)] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+              >
+                the win-rate simulator &#8599;
+              </a>
+              <a
+                href="https://github.com/abouchard11/llm-safety-gate"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[length:var(--fs-small)] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+              >
+                llm-safety-gate &#8599;
+              </a>
             </div>
           </div>
         </section>
