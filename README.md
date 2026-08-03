@@ -1,7 +1,7 @@
 # MidnightDev Workfolio
 
-The public workfolio of **Alex Bouchard**, an applied AI product engineer and
-solo founder in Houston, Texas.
+The public workfolio of **Alex Bouchard**, a founder and solo builder creating
+applied AI products and organic growth systems in Houston, Texas.
 
 > **Generate boldly. Validate cheaply. Kill ruthlessly. Scale what survives.**
 
@@ -9,13 +9,26 @@ My operating rule is simple: models propose and challenge; explicit authority
 boundaries, human confirmation, and machine-checkable invariants decide what
 ships.
 
-This site is the front door to shipped consumer AI products and public,
-reproducible engineering evidence. It intentionally separates:
+This site is the front door to shipped consumer AI products, public engineering
+evidence, and owned organic-acquisition systems. It intentionally separates:
 
 - production products from lab experiments;
 - model-generated output from product authority;
 - authored systems from configured or adapted upstream work; and
 - historical evidence from reconstructed analysis.
+
+## Organic growth systems
+
+The portfolio includes solo-built and operated search properties across health
+research, real estate, legal information, local services, and consumer products.
+The homepage publishes dated first-party Google Search Console snapshots and
+labels visibility, leads, forecasts, and revenue separately.
+
+- BuyLandFL — transactional search and programmatic county geography
+- Methylene Blue Ultra — research-led topical authority, comparisons, and tools
+- Jones Act Calculator — calculator-led legal discovery with public methodology
+- HTX Permit Fix — urgent-intent local-service acquisition
+- WordGameAI — owned editorial distribution into Yapword
 
 ## Featured work
 

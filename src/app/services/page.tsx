@@ -5,9 +5,9 @@ import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 
 export const metadata: Metadata = {
-  title: "Consulting Services — MidnightDev",
+  title: "AI Product & Growth Systems Consulting — MidnightDev",
   description:
-    "Selective product engineering and AI systems consulting from Alex Bouchard at MidnightDev.",
+    "Selective product strategy, applied AI engineering, technical diligence, SEO/GEO, and organic growth systems consulting from Alex Bouchard at MidnightDev.",
   alternates: {
     canonical: "/services",
   },
@@ -15,24 +15,53 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    title: "AI product architecture",
+    title: "Product thesis and business design",
     detail:
-      "Turn a model capability into an actual product loop with explicit authority boundaries, human review, analytics, and cost controls.",
+      "Interrogate the opportunity, user loop, monetization, operating model, assumptions, and kill criteria before expensive certainty theater begins.",
   },
   {
-    title: "Model-behavior systems",
+    title: "AI architecture and model behavior",
     detail:
-      "Design persistent characters, structured outputs, evaluation loops, fallbacks, and regression checks that survive model drift.",
+      "Turn model capability into a reliable product with persistent behavior, explicit authority boundaries, human review, evaluations, fallbacks, analytics, and cost controls.",
   },
   {
-    title: "Product rescue and diligence",
+    title: "Organic discovery and distribution",
     detail:
-      "Audit an AI-built product, forecast, or codebase for false assumptions, security gaps, brittle state, and unsupported claims.",
+      "Build the technical SEO, content architecture, programmatic search, GEO/AI-answer readiness, App Store positioning, owned media, and PostHog measurement system around the product.",
   },
   {
-    title: "Full-stack product builds",
+    title: "Technical diligence and product rescue",
     detail:
-      "Focused web and mobile products using React, Next.js, TypeScript, Supabase, Vercel, and Capacitor.",
+      "Audit AI-built products, forecasts, and codebases for false assumptions, security gaps, brittle state, hidden cost, unsupported claims, and missing release controls.",
+  },
+  {
+    title: "AI-supported operating systems",
+    detail:
+      "Create shared context, decision records, agent workflows, PostHog dashboards, verification gates, and accountability systems that give small teams leverage without losing the plot.",
+  },
+  {
+    title: "Focused full-stack builds",
+    detail:
+      "Ship bounded web and mobile products across React, Next.js, TypeScript, Python, Supabase, Vercel, and Capacitor—with the business and measurement systems attached.",
+  },
+];
+
+const startingPoints = [
+  {
+    code: "01",
+    title: "Product diagnostic",
+    detail:
+      "A focused examination of the thesis, user loop, architecture, model behavior, acquisition path, unit economics, evidence, and failure modes.",
+    outcome:
+      "You leave with a blunt decision memo: what is true, what is assumed, what to test first, and what should not be built.",
+  },
+  {
+    code: "02",
+    title: "Proof-of-value build",
+    detail:
+      "A sharply bounded implementation designed to validate the hardest technical or commercial assumption in production conditions.",
+    outcome:
+      "You leave with a working system, measurement plan, documented tradeoffs, and an explicit build, change, or kill gate.",
   },
 ];
 
@@ -52,10 +81,52 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-6 max-w-[680px] text-lg leading-relaxed text-[var(--text-muted)]">
               MidnightDev takes a small number of engagements where product
-              judgment, AI behavior, and production engineering have to be solved
-              together. Scope and pricing follow the evidence—not a theatrical
-              menu of agency packages.
+              judgment, AI behavior, production engineering, and distribution
+              have to be solved together. Scope and pricing follow the
+              evidence—not a theatrical menu of agency packages.
             </p>
+          </div>
+        </section>
+
+        <section className="border-t border-[var(--border)] px-6 py-14 md:px-12 md:py-20">
+          <div className="mx-auto max-w-[var(--content-max)]">
+            <p className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--accent-blue)]">
+              how an engagement begins
+            </p>
+            <div className="mt-4 grid gap-6 md:grid-cols-[0.8fr_1.2fr]">
+              <div>
+                <h2 className="font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
+                  Start with the smallest engagement that can change the decision.
+                </h2>
+                <p className="mt-4 max-w-md text-[15px] leading-relaxed text-[var(--text-muted)]">
+                  The goal is not to manufacture a six-month roadmap. It is to
+                  expose the highest-risk assumption, test it honestly, and earn
+                  the right to do more.
+                </p>
+              </div>
+
+              <div className="grid gap-4">
+                {startingPoints.map((item) => (
+                  <div
+                    key={item.code}
+                    className="rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-6"
+                  >
+                    <p className="font-mono text-[10px] text-[var(--accent-blue)]">
+                      {item.code}
+                    </p>
+                    <h3 className="mt-2 font-display text-xl font-bold tracking-[-0.02em]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 text-[15px] leading-relaxed text-[var(--text-muted)]">
+                      {item.detail}
+                    </p>
+                    <p className="mt-4 border-l border-[var(--accent-purple)] pl-4 text-[13px] leading-relaxed text-[var(--text-primary)]">
+                      {item.outcome}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

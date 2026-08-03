@@ -481,6 +481,14 @@ export default function BuildRoomPage() {
               >
                 discuss a deployment problem
               </Link>
+              <a
+                href="/case-file"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[length:var(--fs-small)] text-[var(--accent-blue)] transition-opacity hover:opacity-80"
+              >
+                open the interactive case file &#8599;
+              </a>
             </div>
           </div>
         </section>
@@ -889,7 +897,10 @@ export default function BuildRoomPage() {
         </section>
 
         {/* Distribution */}
-        <section className="border-t border-[var(--border)] px-6 py-14 md:px-12 md:py-20">
+        <section
+          id="distribution"
+          className="border-t border-[var(--border)] px-6 py-14 md:px-12 md:py-20"
+        >
           <div className="mx-auto max-w-[var(--content-max)]">
             <SectionLabel>exhibit c / search distribution</SectionLabel>
             <h2 className="max-w-[820px] font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">

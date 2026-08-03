@@ -39,9 +39,9 @@ const cabinetGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Bouchard | Applied AI Product Engineer | MidnightDev",
+  title: "Alex Bouchard | AI Product & Growth Systems | MidnightDev",
   description:
-    "Applied AI product engineer and solo founder shipping consumer AI across web and iOS. Model behavior, multimodal generation, safety, reliability, cost controls, and product systems.",
+    "Founder and solo builder creating applied AI products and organic growth systems across product strategy, full-stack delivery, AI reliability, SEO/GEO, telemetry, and commercial technology.",
   metadataBase: new URL("https://midnightdev.dev"),
   icons: {
     icon: [
@@ -52,18 +52,18 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Alex Bouchard | Applied AI Product Engineer",
+    title: "Alex Bouchard | AI Product & Growth Systems",
     description:
-      "Consumer AI products and public engineering evidence across model behavior, safety, reliability, and product systems.",
+      "Applied AI products—and the systems that get them discovered, measured, and used.",
     url: "https://midnightdev.dev",
     siteName: "MidnightDev",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex Bouchard | Applied AI Product Engineer",
+    title: "Alex Bouchard | AI Product & Growth Systems",
     description:
-      "Generate boldly. Validate cheaply. Kill ruthlessly. Scale what survives.",
+      "Product strategy, full-stack delivery, AI reliability, SEO/GEO, telemetry, and commercial systems.",
   },
 };
 
@@ -85,7 +85,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Alex Bouchard",
-              jobTitle: "Applied AI Product Engineer",
+              jobTitle: "Founder and Applied AI Product & Growth Systems Builder",
               url: "https://midnightdev.dev",
               image: "https://midnightdev.dev/headshot.jpg",
               email: "mailto:alex@midnightdev.dev",
@@ -108,6 +108,14 @@ export default function RootLayout({
                 "Model behavior",
                 "Multimodal AI",
                 "AI safety",
+                "Product strategy",
+                "Technical SEO",
+                "Generative engine optimization",
+                "Content architecture",
+                "Organic growth strategy",
+                "Product analytics",
+                "PostHog",
+                "Commercial real estate technology",
                 "React",
                 "Next.js",
                 "TypeScript",

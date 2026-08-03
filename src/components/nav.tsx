@@ -21,14 +21,14 @@ export function Nav() {
           <Link href="/#work" className="transition-colors hover:text-[var(--text-primary)]">
             work
           </Link>
+          <Link href="/#growth" className="transition-colors hover:text-[var(--text-primary)]">
+            growth
+          </Link>
           <Link href="/build-room" className="transition-colors hover:text-[var(--text-primary)]">
             build room
           </Link>
-          <Link href="/#systems" className="transition-colors hover:text-[var(--text-primary)]">
-            systems
-          </Link>
-          <Link href="/#story" className="transition-colors hover:text-[var(--text-primary)]">
-            story
+          <Link href="/services" className="transition-colors hover:text-[var(--text-primary)]">
+            services
           </Link>
           <Link href="/#contact" className="transition-colors hover:text-[var(--text-primary)]">
             contact
@@ -43,7 +43,7 @@ export function Nav() {
         </Link>
 
         <button
-          onClick={() => setOpen(!open)}
+          onClick={() => setOpen((current) => !current)}
           className="flex h-10 w-10 items-center justify-center rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] md:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
@@ -93,18 +93,18 @@ export function Nav() {
               build room
             </Link>
             <Link
-              href="/#systems"
+              href="/#growth"
               onClick={() => setOpen(false)}
               className="transition-colors hover:text-[var(--text-primary)]"
             >
-              systems
+              growth
             </Link>
             <Link
-              href="/#story"
+              href="/services"
               onClick={() => setOpen(false)}
               className="transition-colors hover:text-[var(--text-primary)]"
             >
-              story
+              services
             </Link>
             <Link
               href="/#contact"

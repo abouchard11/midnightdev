@@ -7,6 +7,9 @@ import { Nav } from "@/components/nav";
 import { projectList } from "@/data/projects";
 
 export const metadata: Metadata = {
+  title: "AI Product & Organic Growth Systems | MidnightDev",
+  description:
+    "Alex Bouchard builds applied AI products and the organic growth systems that get them discovered, measured, and used—from product thesis through web and iOS launch, SEO/GEO, and telemetry.",
   alternates: {
     canonical: "/",
   },
@@ -50,6 +53,55 @@ const researchAndOperations = [
   },
 ];
 
+const organicResults = [
+  {
+    property: "BuyLandFL",
+    href: "https://buylandfl.com",
+    result: "51,804 impressions · 198 clicks",
+    period: "92-day Search Console export",
+    system: "Transactional search and programmatic county-level geography.",
+  },
+  {
+    property: "Methylene Blue Ultra",
+    href: "https://methyleneblueultra.com",
+    result: "7,746 impressions · 100 clicks",
+    period: "28-day Search Console export",
+    system: "Research-led topical authority, comparisons, citations, and calculators.",
+  },
+  {
+    property: "Jones Act Calculator",
+    href: "https://www.jonesactcalculator.com",
+    result: "2,700 impressions · 23 clicks",
+    period: "28-day Search Console export",
+    system: "Tool-led legal discovery with public methodology and intent-specific pages.",
+  },
+];
+
+const organicCapabilities = [
+  {
+    title: "Search architecture",
+    detail:
+      "Technical SEO, content taxonomies, internal-link systems, programmatic geography, structured data, and indexation controls.",
+  },
+  {
+    title: "AI-answer readiness",
+    detail:
+      "Entity clarity, source-qualified claims, extractable answers, citation surfaces, freshness signals, and answer-engine research.",
+  },
+  {
+    title: "Owned distribution",
+    detail:
+      "Editorial properties, App Store positioning, social character accounts, conversion paths, and PostHog telemetry that closes the loop.",
+  },
+];
+
+const posthogProof = [
+  "Five active PostHog project spaces across the portfolio",
+  "Dozens of explicit product events spanning web and iOS",
+  "Activation funnels, weekly retention, share-loop and referral measurement",
+  "Session replay, rage-click diagnosis, fallback health, and release telemetry",
+];
+
 const selectedWebSystems = [
   {
     name: "Jones Act Calculator",
@@ -62,6 +114,18 @@ const selectedWebSystems = [
     href: "https://htxworkinjury.com",
     detail:
       "A Houston industrial-injury information system combining guided qualification, calculation, and public safety data.",
+  },
+  {
+    name: "HTX Permit Fix",
+    href: "https://htxpermitfix.com",
+    detail:
+      "A local-service acquisition system built around urgent permitting intent, guided intake, and recurring organic inbound calls.",
+  },
+  {
+    name: "WordGameAI",
+    href: "https://wordgameai.com",
+    detail:
+      "An editorial comparison and methodology property that routes qualified discovery into the Yapword product ecosystem.",
   },
 ];
 
@@ -102,18 +166,20 @@ export default function Home() {
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-6 flex items-center gap-2 font-mono text-[11px] lowercase tracking-[0.08em] text-[var(--accent-blue)]">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--success)]" />
-              Houston, Texas · open to applied AI product roles
+              Houston, Texas · selective consulting · open to product roles
             </p>
 
             <h1 className="max-w-[920px] font-display text-[length:var(--fs-h1)] font-bold leading-[1.05] tracking-[-0.035em]">
-              I build consumer AI products—
+              I build AI products—
               <br />
-              and put hard limits on what the model controls.
+              and the systems that get them discovered, measured, and used.
             </h1>
 
             <p className="mt-8 max-w-[760px] text-lg leading-relaxed text-[var(--text-muted)] md:text-xl">
-              I&apos;m Alex Bouchard, founder of MidnightDev. Before software, I
-              contributed to{" "}
+              I&apos;m Alex Bouchard, founder and solo builder at MidnightDev. I
+              take products from thesis and business model through UX, AI
+              behavior, full-stack web and iOS delivery, organic search, and
+              telemetry. Before software, I contributed to{" "}
               <a
                 href="https://www.linkedin.com/in/alex-bouchard-70aa958"
                 target="_blank"
@@ -122,26 +188,23 @@ export default function Home() {
               >
                 roughly $400 million in commercial real estate transactions
               </a>
-              . Now I ship AI games on web and iOS. The common thread is judgment
-              under uncertainty: check the source data, define who has authority,
-              and own the result.
+              . The common thread is judgment under uncertainty: test the thesis,
+              check the source data, define who has authority, and own the result.
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
-                href="#work"
+                href="/services"
                 className="rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 text-center font-mono text-[length:var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110"
               >
-                view my work
+                work with MidnightDev
               </Link>
-              <a
-                href="https://github.com/abouchard11"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="#work"
                 className="rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] px-6 py-3 text-center font-mono text-[length:var(--fs-nav)] font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]"
               >
-                view GitHub
-              </a>
+                inspect the work
+              </Link>
             </div>
 
             <p className="mt-10 max-w-[760px] border-l-2 border-[var(--accent-purple)] pl-4 text-[15px] leading-relaxed text-[var(--text-muted)]">
@@ -160,7 +223,7 @@ export default function Home() {
             </p>
             <div className="mb-10 grid gap-4 md:grid-cols-[1fr_0.7fr] md:items-end">
               <h2 className="font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
-                Three live AI products—and the engineering evidence behind them.
+                Products that shipped—and the engineering evidence behind them.
               </h2>
               <p className="text-[15px] leading-relaxed text-[var(--text-muted)]">
                 The products are different by design. The case studies explain
@@ -209,6 +272,124 @@ export default function Home() {
                   </div>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="growth"
+          className="border-t border-[var(--border)] px-6 py-14 md:px-12 md:py-20"
+        >
+          <div className="mx-auto max-w-[var(--content-max)]">
+            <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
+              Organic growth systems
+            </p>
+            <div className="grid gap-6 md:grid-cols-[1fr_0.7fr] md:items-end">
+              <h2 className="font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
+                I build the product. Then I engineer how it gets found.
+              </h2>
+              <p className="text-[15px] leading-relaxed text-[var(--text-muted)]">
+                A solo-built and operated portfolio across health research, real
+                estate, legal information, local services, and consumer products.
+                Every result below is organic—no paid acquisition.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {organicResults.map((item) => (
+                <a
+                  key={item.property}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-6 transition-all hover:-translate-y-0.5 hover:border-[var(--border-hover)]"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="font-display text-xl font-bold tracking-[-0.02em]">
+                      {item.property}
+                    </h3>
+                    <span className="font-mono text-xs text-[var(--accent-blue)]">↗</span>
+                  </div>
+                  <p className="mt-5 font-mono text-[15px] font-semibold text-[var(--text-primary)]">
+                    {item.result}
+                  </p>
+                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--text-dim)]">
+                    {item.period}
+                  </p>
+                  <p className="mt-4 text-[13px] leading-relaxed text-[var(--text-muted)]">
+                    {item.system}
+                  </p>
+                </a>
+              ))}
+            </div>
+
+            <p className="mt-4 font-mono text-[10px] leading-relaxed text-[var(--text-dim)]">
+              Source: first-party Google Search Console exports supplied August 2,
+              2026. Impressions and clicks are visibility measures, not revenue claims.
+            </p>
+
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {organicCapabilities.map((item, index) => (
+                <div
+                  key={item.title}
+                  className="border-l border-[var(--border)] pl-5"
+                >
+                  <p className="font-mono text-[10px] text-[var(--accent-blue)]">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="mt-2 font-display text-lg font-bold tracking-[-0.02em]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-[13px] leading-relaxed text-[var(--text-muted)]">
+                    {item.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
+              <div className="grid gap-6 md:grid-cols-[0.75fr_1.25fr] md:items-start">
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--accent-blue)]">
+                    PostHog in production
+                  </p>
+                  <h3 className="mt-3 font-display text-2xl font-bold tracking-[-0.03em]">
+                    Instrument the decision—not merely the pageview.
+                  </h3>
+                  <p className="mt-3 text-[13px] leading-relaxed text-[var(--text-muted)]">
+                    The measurement system connects product behavior, acquisition,
+                    reliability, and release decisions across the operated portfolio.
+                  </p>
+                </div>
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {posthogProof.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2.5 text-[13px] leading-relaxed text-[var(--text-muted)]"
+                    >
+                      <span className="mt-[8px] inline-block h-1 w-1 shrink-0 rounded-full bg-[var(--accent-purple)]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-5">
+              <a
+                href="https://github.com/abouchard11/ai-citation-patterns"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-xs text-[var(--accent-blue)] transition-opacity hover:opacity-80"
+              >
+                inspect AI citation research ↗
+              </a>
+              <Link
+                href="/build-room#distribution"
+                className="font-mono text-xs text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+              >
+                inspect the distribution system →
+              </Link>
             </div>
           </div>
         </section>
@@ -266,17 +447,17 @@ export default function Home() {
         >
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-3 font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-              Additional work
+              Research and operating systems
             </p>
             <div className="grid gap-8 md:grid-cols-2">
               <div>
                 <h2 className="font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
-                  Research, IP, and smaller systems that still matter.
+                  Public research, reusable infrastructure, and commercial systems.
                 </h2>
                 <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--text-muted)]">
-                  Not every useful piece of work needs a flagship case study.
-                  These projects cover AI citation research, technical SEO,
-                  independent invention work, and focused web tools.
+                  The portfolio extends beyond consumer AI: citation research,
+                  technical SEO tooling, independent invention work, and focused
+                  systems built around real commercial intent.
                 </p>
                 <div className="mt-6 divide-y divide-[var(--border)] rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)]">
                   {researchAndOperations.map((item) => {
@@ -319,12 +500,12 @@ export default function Home() {
 
               <div>
                 <p className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.1em] text-[var(--text-dim)]">
-                  selected websites
+                  selected commercial systems
                 </p>
                 <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--text-muted)]">
-                  Smaller web products that demonstrate interactive tools,
-                  information architecture, public methodology, and search
-                  discipline.
+                  Owned properties that combine useful tools, disciplined
+                  information architecture, organic acquisition, and a defined
+                  conversion path.
                 </p>
                 <div className="mt-6 divide-y divide-[var(--border)] rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)]">
                   {selectedWebSystems.map((item) => (
@@ -415,8 +596,10 @@ export default function Home() {
                 </p>
                 <p>
                   That experience is why I treat model output as evidence, not
-                  authority. In my products, people and deterministic code still
-                  control truth, scores, safety, and spend.
+                  authority—and why I model the business, acquisition path, and
+                  downside before calling a build complete. In my products,
+                  people and deterministic code still control truth, scores,
+                  safety, and spend.
                 </p>
               </div>
             </div>
@@ -433,11 +616,12 @@ export default function Home() {
                 Contact
               </p>
               <h2 className="font-display text-[length:var(--fs-h2)] font-bold tracking-[-0.03em]">
-                Interested in the work?
+                Have a product, growth, or operating problem worth attacking?
               </h2>
               <p className="mt-4 max-w-md text-lg leading-relaxed text-[var(--text-muted)]">
-                I&apos;m open to applied-AI product roles, product partnerships,
-                and selective consulting engagements.
+                MidnightDev takes a limited number of consulting engagements,
+                embedded product builds, strategic partnerships, and unusually
+                good applied-AI product roles.
               </p>
               <div className="mt-6 flex flex-col gap-2 font-mono text-[length:var(--fs-nav)]">
                 <a

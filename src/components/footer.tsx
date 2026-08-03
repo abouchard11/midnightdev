@@ -20,7 +20,7 @@ export function Footer() {
               </span>
             </div>
             <span className="font-mono text-xs text-[var(--text-dim)]">
-              Applied AI products and systems
+              Applied AI product and growth systems
               <br />
               built by Alex Bouchard in Houston.
             </span>
@@ -38,10 +38,10 @@ export function Footer() {
                 shipped work
               </Link>
               <Link
-                href="/#systems"
+                href="/#growth"
                 className="font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
               >
-                reliability systems
+                organic growth systems
               </Link>
               <Link
                 href="/#story"
