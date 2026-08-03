@@ -5,9 +5,9 @@ import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 
 export const metadata: Metadata = {
-  title: "AI Product & Growth Systems Consulting — MidnightDev",
+  title: "Forward-Deployed AI & Growth Systems Consulting — MidnightDev",
   description:
-    "Selective product strategy, applied AI engineering, technical diligence, SEO/GEO, and organic growth systems consulting from Alex Bouchard at MidnightDev.",
+    "Forward-deployed product strategy, AI engineering, technical diligence, SEO/GEO, PostHog, and organic growth systems consulting from Alex Bouchard at MidnightDev.",
   alternates: {
     canonical: "/services",
   },
@@ -80,9 +80,9 @@ export default function ServicesPage() {
               Bring me the product problem that is resisting polite conversation.
             </h1>
             <p className="mt-6 max-w-[680px] text-lg leading-relaxed text-[var(--text-muted)]">
-              MidnightDev takes a small number of engagements where product
-              judgment, AI behavior, production engineering, and distribution
-              have to be solved together. Scope and pricing follow the
+              As a forward-deployed AI engineer, I take a small number of
+              MidnightDev engagements where product judgment, AI behavior,
+              production engineering, and distribution have to be solved together. Scope and pricing follow the
               evidence—not a theatrical menu of agency packages.
             </p>
           </div>

@@ -1,7 +1,8 @@
 # MidnightDev Workfolio
 
-The public workfolio of **Alex Bouchard**, a founder and solo builder creating
-applied AI products and organic growth systems in Houston, Texas.
+The public workfolio of **Alex Bouchard**, a forward-deployed AI engineer,
+founder, and solo builder creating products and organic growth systems in
+Houston, Texas.
 
 > **Generate boldly. Validate cheaply. Kill ruthlessly. Scale what survives.**
 
@@ -29,6 +30,9 @@ labels visibility, leads, forecasts, and revenue separately.
 - Jones Act Calculator — calculator-led legal discovery with public methodology
 - HTX Permit Fix — urgent-intent local-service acquisition
 - WordGameAI — owned editorial distribution into Yapword
+- [@YapoleonGreater on X](https://x.com/YapoleonGreater) — an operated social
+  distribution surface with governed character voice and owner-controlled
+  publishing boundaries
 
 ## Featured work
 
@@ -63,6 +67,10 @@ labels visibility, leads, forecasts, and revenue separately.
   explicit legal disclaimers.
 - [HTX Work Injury](https://htxworkinjury.com) — guided qualification,
   calculation, and public safety data for Houston industrial-injury questions.
+- [HTX Foundation Fix](https://htxfoundationfix.com) — a concept-to-live
+  specialized business scaffold built in two days, spanning acquisition,
+  diagnostic, operating, financing, and local-discovery systems; it is presented
+  as a venture prototype, not claimed contractor operating history.
 
 ## Local development
 

@@ -20,7 +20,7 @@ export function Footer() {
               </span>
             </div>
             <span className="font-mono text-xs text-[var(--text-dim)]">
-              Applied AI product and growth systems
+              Forward-deployed AI product and growth systems
               <br />
               built by Alex Bouchard in Houston.
             </span>

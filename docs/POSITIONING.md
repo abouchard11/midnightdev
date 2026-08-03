@@ -8,8 +8,8 @@ consistent with this file unless newer evidence is recorded here first.
 
 ## Core position
 
-> Alex Bouchard is a founder and solo builder who creates applied AI products
-> and the systems that get them discovered, measured, and used.
+> Alex Bouchard is a forward-deployed AI engineer, founder, and solo builder who
+> creates products and the systems that get them discovered, measured, and used.
 
 MidnightDev is a founder-led applied AI product and growth systems studio. The
 work spans product thesis, business modeling, UX and brand, model behavior,
@@ -36,7 +36,7 @@ programmatic search, GEO/AI-answer readiness, PostHog telemetry, and growth.
 
 ### Headline
 
-> Founder, MidnightDev | Applied AI Product & Growth Systems | Full-Stack Engineering, SEO/GEO, Technical Diligence & CRE Technology
+> Founder, MidnightDev | Forward-Deployed AI Engineer | Product, Growth & Intelligence Systems | Full-Stack, SEO/GEO, PostHog, Technical Diligence & CRE Tech
 
 ### About
 
@@ -50,6 +50,7 @@ Selected work:
 • Yapword — AI-native word game live on web and the App Store
 • That’s My Best — multimodal social product taken from concept to App Store approval in 14 days
 • Yapoleon’s Court — competitive AI game where the model never emits the score
+• HTX Foundation Fix — concept-to-live specialized business scaffold built in two days; a venture prototype, not claimed contractor operating history
 • An owned search portfolio across health, legal, real estate, local services, and consumer products
 
 That search portfolio is not theoretical. First-party Google Search Console snapshots supplied August 2, 2026 show:
@@ -60,17 +61,19 @@ All organic. No paid acquisition.
 
 PostHog is the measurement spine across five project spaces. Yapword alone has dozens of explicit web and iOS events covering activation, retention, sharing, referrals, paywalls, fallbacks, and release health—plus funnels, session replay, and rage-click diagnosis.
 
+The operated distribution system also includes [@YapoleonGreater on X](https://x.com/YapoleonGreater), where the model drafts in character while owner-defined rules retain publishing authority and escalation control.
+
 My operating rule is simple: models may propose, create, and challenge. People, explicit authority boundaries, and machine-checkable constraints determine what is true, safe, affordable, and ready to ship.
 
 Before software, I completed 85+ retail real estate transactions totaling roughly $400MM across acquisition, disposition, leasing, and repositioning. That experience still shapes how I underwrite products, inspect assumptions, and make decisions under uncertainty.
 
-MidnightDev takes a limited number of product diagnostics, proof-of-value builds, embedded engagements, and strategic partnerships. I am also open to unusually good applied-AI product roles.
+MidnightDev takes a limited number of product diagnostics, proof-of-value builds, embedded engagements, and strategic partnerships. I am also open to unusually good forward-deployed and applied-AI product roles.
 
 🌐 midnightdev.dev · 💻 github.com/abouchard11 · 📧 alex@midnightdev.dev
 
 ### MidnightDev experience description
 
-Founder-led applied AI product and growth systems studio. I serve as the sole human builder across product strategy, business modeling, UX, model behavior, full-stack delivery, organic acquisition, and telemetry.
+Founder-led applied AI product and growth systems studio, operated by a forward-deployed AI engineer. I serve as the sole human builder across product strategy, business modeling, UX, model behavior, full-stack delivery, organic acquisition, and telemetry.
 
 SHIPPED PRODUCTS
 • Yapword — persistent generative character inside a daily word game; live on web and the App Store
@@ -152,6 +155,7 @@ MidnightDev takes a limited number of product diagnostics, proof-of-value builds
 | 85+ retail CRE transactions | Existing public LinkedIn record and resume history | Keep “roughly” on aggregate dollar volume |
 | PostHog across five project spaces | Connected MidnightDev PostHog organization inspected Aug. 3, 2026 | Four named product projects plus one shared/default project |
 | Yapword product instrumentation | Live PostHog event schema and growth dashboard inspected Aug. 3, 2026 | Dozens of product events; do not claim every planned event is populated |
+| HTX Foundation Fix concept-to-live in two days | Owner statement; confirm against repository/deployment chronology before using in formal diligence | Describe as a specialized business scaffold or venture prototype, not contractor operating history |
 
 ## Public guardrails
 
@@ -161,7 +165,7 @@ MidnightDev takes a limited number of product diagnostics, proof-of-value builds
 - Do not expose private prompts, credentials, customer information, raw leads, or
   proprietary business-plan mechanics.
 - Share the interactive engineering portfolio through the branded public URL
-  `https://midnightdev.dev/case-file`; the branded landing page links to the
+  `https://midnightdev.dev/alex-bouchard`; the branded landing page links to the
   current hosted exhibit without exposing that host URL in profile copy.
 - Do not combine Search Console periods into one portfolio total.
 - Separate visibility, leads, revenue, projections, and owner observations.

@@ -7,14 +7,14 @@ const INTERACTIVE_CASE_FILE =
   "https://alex-ai-engineer-portfolio.amb1122.chatgpt.site/";
 
 export const metadata: Metadata = {
-  title: "Interactive AI Engineering Case File | MidnightDev",
+  title: "Forward-Deployed AI Engineering Case File | MidnightDev",
   description:
-    "A role-focused, interactive case file covering Alex Bouchard's shipped AI products, evaluation systems, PostHog telemetry, SEO/GEO, distribution, and operating background.",
+    "A forward-deployed AI engineering case file covering Alex Bouchard's shipped products, evaluation systems, PostHog telemetry, SEO/GEO, distribution, and operating background.",
   alternates: {
     canonical: "/case-file",
   },
   openGraph: {
-    title: "Alex Bouchard — Interactive AI Engineering Case File",
+    title: "Alex Bouchard — Forward-Deployed AI Engineering Case File",
     description:
       "Shipped products, model-governance boundaries, evals, PostHog telemetry, SEO/GEO, and distribution evidence in one interactive case file.",
     url: "https://midnightdev.dev/case-file",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Alex Bouchard — Interactive AI Engineering Case File",
     description:
-      "A role-focused evidence trail from product thesis through deployment, measurement, and distribution.",
+      "A forward-deployed engineering evidence trail from product thesis through deployment, measurement, and distribution.",
   },
 };
 
@@ -36,14 +36,14 @@ const proof = [
   "Technical SEO, GEO/AI-answer readiness, and operated distribution systems",
 ];
 
-export default function CaseFilePage() {
+export function CaseFilePage() {
   return (
     <>
       <Nav />
       <main className="flex-1 bg-dotgrid px-6 py-16 md:px-12 md:py-24">
         <div className="mx-auto max-w-[var(--content-max)]">
           <p className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.09em] text-[var(--accent-blue)]">
-            interactive case file / external exhibit
+            forward-deployed ai engineer / interactive case file
           </p>
           <h1 className="mt-5 max-w-[920px] font-display text-[length:var(--fs-h1)] font-extrabold leading-[1.02] tracking-[-0.04em]">
             One accountable builder.
@@ -51,7 +51,7 @@ export default function CaseFilePage() {
             <span className="gradient-text">The full evidence trail.</span>
           </h1>
           <p className="mt-7 max-w-[720px] text-lg leading-relaxed text-[var(--text-muted)]">
-            This role-focused portfolio takes MidnightDev&apos;s work apart: product
+            This forward-deployed engineering portfolio takes MidnightDev&apos;s work apart: product
             decisions, architecture, implementation, evaluation, native release,
             production telemetry, organic discovery, and operating judgment.
           </p>
@@ -87,7 +87,7 @@ export default function CaseFilePage() {
 
           <p className="mt-7 max-w-[700px] font-mono text-[length:var(--fs-label)] leading-relaxed text-[var(--text-dim)]">
             The interactive exhibit is hosted separately so it can stay tailored
-            to forward-deployed, applied-AI, and implementation roles. MidnightDev
+            to forward-deployed AI engineering and implementation roles. MidnightDev
             remains the canonical studio and consulting home.
           </p>
         </div>
@@ -96,3 +96,5 @@ export default function CaseFilePage() {
     </>
   );
 }
+
+export default CaseFilePage;

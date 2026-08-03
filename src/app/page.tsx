@@ -7,9 +7,9 @@ import { Nav } from "@/components/nav";
 import { projectList } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "AI Product & Organic Growth Systems | MidnightDev",
+  title: "Forward-Deployed AI Engineer | Product & Growth Systems",
   description:
-    "Alex Bouchard builds applied AI products and the organic growth systems that get them discovered, measured, and used—from product thesis through web and iOS launch, SEO/GEO, and telemetry.",
+    "Alex Bouchard is a forward-deployed AI engineer who builds products and the organic growth systems that get them discovered, measured, and used—from thesis through web and iOS launch, SEO/GEO, PostHog, and iteration.",
   alternates: {
     canonical: "/",
   },
@@ -122,6 +122,12 @@ const selectedWebSystems = [
       "A local-service acquisition system built around urgent permitting intent, guided intake, and recurring organic inbound calls.",
   },
   {
+    name: "HTX Foundation Fix",
+    href: "https://htxfoundationfix.com",
+    detail:
+      "A concept-to-live specialized business scaffold built in two days: acquisition, diagnostic, operating, financing, and local-discovery systems—not claimed contractor history.",
+  },
+  {
     name: "WordGameAI",
     href: "https://wordgameai.com",
     detail:
@@ -166,7 +172,7 @@ export default function Home() {
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-6 flex items-center gap-2 font-mono text-[11px] lowercase tracking-[0.08em] text-[var(--accent-blue)]">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--success)]" />
-              Houston, Texas · selective consulting · open to product roles
+              Houston, Texas · forward-deployed AI engineer · selective consulting
             </p>
 
             <h1 className="max-w-[920px] font-display text-[length:var(--fs-h1)] font-bold leading-[1.05] tracking-[-0.035em]">
@@ -176,8 +182,8 @@ export default function Home() {
             </h1>
 
             <p className="mt-8 max-w-[760px] text-lg leading-relaxed text-[var(--text-muted)] md:text-xl">
-              I&apos;m Alex Bouchard, founder and solo builder at MidnightDev. I
-              take products from thesis and business model through UX, AI
+              I&apos;m Alex Bouchard, a forward-deployed AI engineer, founder, and
+              solo builder at MidnightDev. I take products from thesis and business model through UX, AI
               behavior, full-stack web and iOS delivery, organic search, and
               telemetry. Before software, I contributed to{" "}
               <a
@@ -390,6 +396,14 @@ export default function Home() {
               >
                 inspect the distribution system →
               </Link>
+              <a
+                href="https://x.com/YapoleonGreater"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-xs text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+              >
+                operated social surface: @YapoleonGreater ↗
+              </a>
             </div>
           </div>
         </section>
@@ -621,7 +635,7 @@ export default function Home() {
               <p className="mt-4 max-w-md text-lg leading-relaxed text-[var(--text-muted)]">
                 MidnightDev takes a limited number of consulting engagements,
                 embedded product builds, strategic partnerships, and unusually
-                good applied-AI product roles.
+                good forward-deployed and applied-AI product roles.
               </p>
               <div className="mt-6 flex flex-col gap-2 font-mono text-[length:var(--fs-nav)]">
                 <a

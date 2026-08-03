@@ -431,7 +431,7 @@ export default function BuildRoomPage() {
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-6 flex flex-wrap items-center gap-2 font-mono text-[11px] lowercase tracking-[0.08em] text-[var(--accent-blue)]">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--success)]" />
-              case_file_001 · forward-deployed / applied ai
+              case_file_001 · forward-deployed ai engineer
             </p>
 
             <h1 className="max-w-[900px] font-display text-[length:var(--fs-h1)] font-extrabold leading-[1.0] tracking-[-0.04em]">
@@ -482,7 +482,7 @@ export default function BuildRoomPage() {
                 discuss a deployment problem
               </Link>
               <a
-                href="/case-file"
+                href="/alex-bouchard"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-mono text-[length:var(--fs-small)] text-[var(--accent-blue)] transition-opacity hover:opacity-80"
@@ -1143,7 +1143,14 @@ export default function BuildRoomPage() {
                 </span>
               </div>
               <h3 className="mt-2 font-display text-xl font-bold tracking-[-0.02em]">
-                @YapoleonGreater
+                <a
+                  href="https://x.com/YapoleonGreater"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-[var(--accent-blue)]"
+                >
+                  @YapoleonGreater on X &#8599;
+                </a>
               </h3>
               <p className="mt-3 max-w-[820px] leading-relaxed text-[var(--text-muted)]">
                 Extends Yapword into a governed, near-autonomous social-publishing

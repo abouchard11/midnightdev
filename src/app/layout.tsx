@@ -39,9 +39,9 @@ const cabinetGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Bouchard | AI Product & Growth Systems | MidnightDev",
+  title: "Alex Bouchard | Forward-Deployed AI Engineer | MidnightDev",
   description:
-    "Founder and solo builder creating applied AI products and organic growth systems across product strategy, full-stack delivery, AI reliability, SEO/GEO, telemetry, and commercial technology.",
+    "Forward-deployed AI engineer and MidnightDev founder building products, organic growth systems, and commercial technology across strategy, full-stack delivery, AI reliability, SEO/GEO, and telemetry.",
   metadataBase: new URL("https://midnightdev.dev"),
   icons: {
     icon: [
@@ -52,16 +52,16 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Alex Bouchard | AI Product & Growth Systems",
+    title: "Alex Bouchard | Forward-Deployed AI Engineer",
     description:
-      "Applied AI products—and the systems that get them discovered, measured, and used.",
+      "AI products—and the growth and intelligence systems that get them discovered, measured, and used.",
     url: "https://midnightdev.dev",
     siteName: "MidnightDev",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex Bouchard | AI Product & Growth Systems",
+    title: "Alex Bouchard | Forward-Deployed AI Engineer",
     description:
       "Product strategy, full-stack delivery, AI reliability, SEO/GEO, telemetry, and commercial systems.",
   },
@@ -85,7 +85,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Alex Bouchard",
-              jobTitle: "Founder and Applied AI Product & Growth Systems Builder",
+              jobTitle: "Founder and Forward-Deployed AI Engineer",
               url: "https://midnightdev.dev",
               image: "https://midnightdev.dev/headshot.jpg",
               email: "mailto:alex@midnightdev.dev",
@@ -104,6 +104,7 @@ export default function RootLayout({
               ],
               knowsAbout: [
                 "Applied artificial intelligence",
+                "Forward-deployed engineering",
                 "AI product engineering",
                 "Model behavior",
                 "Multimodal AI",
