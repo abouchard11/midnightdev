@@ -161,8 +161,8 @@ MidnightDev takes a limited number of product diagnostics, proof-of-value builds
 - Do not expose private prompts, credentials, customer information, raw leads, or
   proprietary business-plan mechanics.
 - Share the interactive engineering portfolio through the branded public URL
-  `https://midnightdev.dev/case-file`; the route redirects to the current hosted
-  case file without exposing the host URL in profile copy.
+  `https://midnightdev.dev/case-file`; the branded landing page links to the
+  current hosted exhibit without exposing that host URL in profile copy.
 - Do not combine Search Console periods into one portfolio total.
 - Separate visibility, leads, revenue, projections, and owner observations.
 - Describe owned and operated properties as owned ventures, not client work.
