@@ -24,8 +24,8 @@ const CONTACT = [
   { label: "midnightdev.dev", href: "https://midnightdev.dev" },
   { label: "github.com/abouchard11", href: "https://github.com/abouchard11" },
   {
-    label: "linkedin.com/in/alex-bouchard-70aa958",
-    href: "https://www.linkedin.com/in/alex-bouchard-70aa958",
+    label: "linkedin.com/in/alex-bouchard-ai",
+    href: "https://www.linkedin.com/in/alex-bouchard-ai",
   },
 ];
 
