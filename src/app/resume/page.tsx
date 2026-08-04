@@ -14,6 +14,14 @@ export const metadata = {
     url: "https://midnightdev.dev/resume",
     siteName: "MidnightDev",
     type: "profile",
+    images: [
+      {
+        url: "https://midnightdev.dev/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Alex Bouchard — Applied AI Product Engineer",
+      },
+    ],
   },
 };
 

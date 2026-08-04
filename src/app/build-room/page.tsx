@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: "https://midnightdev.dev/build-room",
     siteName: "MidnightDev",
     type: "article",
+    images: [
+      {
+        url: "https://midnightdev.dev/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Alex Bouchard — Applied AI Product Engineer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "The Build Room — Case File 001",
     description:
       "Two shipped AI products, taken apart. The model performs. The deterministic engine governs.",
+    images: ["https://midnightdev.dev/opengraph-image"],
   },
 };
 
