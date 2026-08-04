@@ -17,6 +17,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.9,
     },
+    {
+      url: "https://midnightdev.dev/writing/calibrating-an-llm-judge",
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.8,
+    },
+    {
+      url: "https://midnightdev.dev/writing",
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
     ...featuredProjectSlugs.map((slug) => ({
       url: `https://midnightdev.dev/work/${slug}`,
       lastModified: now,
