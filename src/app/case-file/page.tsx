@@ -43,7 +43,7 @@ export function CaseFilePage() {
       <main className="flex-1 bg-dotgrid px-6 py-16 md:px-12 md:py-24">
         <div className="mx-auto max-w-[var(--content-max)]">
           <p className="font-mono text-[length:var(--fs-label)] uppercase tracking-[0.09em] text-[var(--accent-blue)]">
-            forward-deployed ai engineer / interactive case file
+            forward-deployed ai lead / interactive case file
           </p>
           <h1 className="mt-5 max-w-[920px] font-display text-[length:var(--fs-h1)] font-extrabold leading-[1.02] tracking-[-0.04em]">
             One accountable builder.

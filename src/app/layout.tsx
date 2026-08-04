@@ -39,9 +39,9 @@ const cabinetGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Bouchard | Forward-Deployed AI Engineer | MidnightDev",
+  title: "Alex Bouchard | Forward-Deployed AI Lead | MidnightDev",
   description:
-    "Forward-deployed AI engineer and MidnightDev founder building products, organic growth systems, and commercial technology across strategy, full-stack delivery, AI reliability, SEO/GEO, and telemetry.",
+    "Forward-deployed AI lead and MidnightDev founder building products, organic growth systems, and commercial technology across strategy, full-stack delivery, AI reliability, SEO/GEO, and telemetry.",
   metadataBase: new URL("https://midnightdev.dev"),
   icons: {
     icon: [
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Alex Bouchard | Forward-Deployed AI Engineer",
+    title: "Alex Bouchard | Forward-Deployed AI Lead",
     description:
       "AI products—and the growth and intelligence systems that get them discovered, measured, and used.",
     url: "https://midnightdev.dev",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex Bouchard | Forward-Deployed AI Engineer",
+    title: "Alex Bouchard | Forward-Deployed AI Lead",
     description:
       "Product strategy, full-stack delivery, AI reliability, SEO/GEO, telemetry, and commercial systems.",
   },
@@ -86,7 +86,7 @@ export default function RootLayout({
               "@type": "Person",
               "@id": "https://midnightdev.dev/#alex-bouchard",
               name: "Alex Bouchard",
-              jobTitle: "Applied AI Product Engineer",
+              jobTitle: "Forward-Deployed AI Lead",
               url: "https://midnightdev.dev",
               image: "https://midnightdev.dev/headshot.jpg",
               email: "mailto:alex@midnightdev.dev",
