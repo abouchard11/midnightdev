@@ -125,6 +125,48 @@ export default function RootLayout({
             }),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://midnightdev.dev/#alex-bouchard",
+              name: "Alex Bouchard",
+              jobTitle: "Applied AI Product Engineer",
+              url: "https://midnightdev.dev",
+              email: "alex@midnightdev.dev",
+              worksFor: {
+                "@type": "Organization",
+                name: "MidnightDev",
+                url: "https://midnightdev.dev",
+              },
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Houston",
+                addressRegion: "TX",
+                addressCountry: "US",
+              },
+              sameAs: [
+                "https://www.linkedin.com/in/alex-bouchard-70aa958",
+                "https://github.com/abouchard11",
+                "https://yapword.com",
+                "https://thatsmybest.com",
+                "https://court.yapoleon.com",
+                "https://apps.apple.com/us/app/yapword-ai-word-game/id6774829903",
+                "https://apps.apple.com/us/app/thats-my-best-ai-friend-quiz/id6788340469",
+              ],
+              knowsAbout: [
+                "Applied AI",
+                "LLM evaluation",
+                "AI product engineering",
+                "TypeScript",
+                "Next.js",
+                "Commercial real estate",
+              ],
+            }),
+          }}
+        />
         {children}
         <Analytics />
       </body>
