@@ -80,7 +80,7 @@ export default function ServicesPage() {
               Bring me the product problem that is resisting polite conversation.
             </h1>
             <p className="mt-6 max-w-[680px] text-lg leading-relaxed text-[var(--text-muted)]">
-              As a forward-deployed AI engineer, I take a small number of
+              As a forward-deployed AI lead, I take a small number of
               MidnightDev engagements where product judgment, AI behavior,
               production engineering, and distribution have to be solved together. Scope and pricing follow the
               evidence—not a theatrical menu of agency packages.

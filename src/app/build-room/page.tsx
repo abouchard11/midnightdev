@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "https://midnightdev.dev/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Alex Bouchard — Applied AI Product Engineer",
+        alt: "Alex Bouchard — Forward-Deployed AI Lead",
       },
     ],
   },
@@ -440,7 +440,7 @@ export default function BuildRoomPage() {
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-6 flex flex-wrap items-center gap-2 font-mono text-[11px] lowercase tracking-[0.08em] text-[var(--accent-blue)]">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--success)]" />
-              case_file_001 · forward-deployed ai engineer
+              case_file_001 · forward-deployed ai lead
             </p>
 
             <h1 className="max-w-[900px] font-display text-[length:var(--fs-h1)] font-extrabold leading-[1.0] tracking-[-0.04em]">
@@ -1244,7 +1244,7 @@ export default function BuildRoomPage() {
               </span>
               <span className="text-[var(--accent-blue)]">&rarr;</span>
               <span className="rounded-[var(--r-sm)] border border-[var(--border)] px-3 py-1.5 text-[var(--text-muted)]">
-                2025-now · solo AI product builder
+                2025-now · forward-deployed AI lead
               </span>
             </div>
           </div>

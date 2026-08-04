@@ -7,9 +7,9 @@ import { Nav } from "@/components/nav";
 import { projectList } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Forward-Deployed AI Engineer | Product & Growth Systems",
+  title: "Forward-Deployed AI Lead | Product & Growth Systems",
   description:
-    "Alex Bouchard is a forward-deployed AI engineer who builds products and the organic growth systems that get them discovered, measured, and used—from thesis through web and iOS launch, SEO/GEO, PostHog, and iteration.",
+    "Alex Bouchard is a forward-deployed AI lead who builds products and the organic growth systems that get them discovered, measured, and used—from thesis through web and iOS launch, SEO/GEO, PostHog, and iteration.",
   alternates: {
     canonical: "/",
   },
@@ -172,7 +172,7 @@ export default function Home() {
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-6 flex items-center gap-2 font-mono text-[11px] lowercase tracking-[0.08em] text-[var(--accent-blue)]">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--success)]" />
-              Houston, Texas · forward-deployed AI engineer · selective consulting
+              Houston, Texas · forward-deployed AI lead · selective consulting
             </p>
 
             <h1 className="max-w-[920px] font-display text-[length:var(--fs-h1)] font-bold leading-[1.05] tracking-[-0.035em]">
@@ -182,7 +182,7 @@ export default function Home() {
             </h1>
 
             <p className="mt-8 max-w-[760px] text-lg leading-relaxed text-[var(--text-muted)] md:text-xl">
-              I&apos;m Alex Bouchard, a forward-deployed AI engineer, founder, and
+              I&apos;m Alex Bouchard, forward-deployed AI lead, founder, and
               solo builder at MidnightDev. I take products from thesis and business model through UX, AI
               behavior, full-stack web and iOS delivery, organic search, and
               telemetry. Before software, I contributed to{" "}

@@ -3,9 +3,9 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 
 export const metadata = {
-  title: "Résumé — Alex Bouchard | Applied AI Product Engineer",
+  title: "Résumé — Alex Bouchard | Forward-Deployed AI Lead",
   description:
-    "Applied AI product engineer. Two consumer AI products live on the App Store, built solo end to end — model behavior, safety gates, reliability, cost controls, native release, and telemetry.",
+    "Forward-deployed AI lead. Two consumer AI products live on the App Store, built solo end to end — model behavior, safety gates, reliability, cost controls, native release, and telemetry.",
   alternates: { canonical: "/resume" },
   openGraph: {
     title: "Résumé — Alex Bouchard",
@@ -19,7 +19,7 @@ export const metadata = {
         url: "https://midnightdev.dev/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Alex Bouchard — Applied AI Product Engineer",
+        alt: "Alex Bouchard — Forward-Deployed AI Lead",
       },
     ],
   },
@@ -213,7 +213,7 @@ export default function ResumePage() {
               Alex Bouchard
             </h1>
             <p className="mt-3 font-mono text-[13px] uppercase tracking-[0.1em] text-[var(--accent-blue)]">
-              Applied AI Product Engineer
+              Forward-Deployed AI Lead
             </p>
             <p className="mt-5 max-w-[680px] text-[15px] leading-relaxed text-[var(--text-muted)]">
               One person. Two consumer AI products live on the Apple App Store,
