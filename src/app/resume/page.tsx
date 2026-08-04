@@ -73,9 +73,9 @@ const WORK: Work[] = [
     href: "https://thatsmybest.com",
     meta: "Live — Web + Apple App Store · concept to App Store in 14 days",
     summary:
-      "Multimodal social game that turns social photo-grid screenshots into a playable friend quiz. The model proposes; the person who knows the photos establishes truth.",
+      "Multimodal social game that turns social photo-grid screenshots into a playable friend quiz. The model proposes the answer key; code bounds what a wrong one can reach.",
     bullets: [
-      "Creator-confirmed answer keys keep model guesses from becoming product truth — the creator seals the key before publication.",
+      "The model's guess ships as the answer key by default, so machine-checkable invariants bound it: no answers in the player payload, reveal only after a valid pick, an immutable seal, and scores only for players who actually played.",
       "Privacy-preserving by construction: creator-supplied screenshots, independent per-photo verdicts, no facial recognition, no Meta API access, no staff photo review.",
       "Early soft-launch generation cost measured at roughly 6–7¢ per completed quiz.",
       "Scoped to objective visual memory over personality judgment, so the model never invents claims about a person.",
@@ -121,7 +121,7 @@ const WORK: Work[] = [
 ];
 
 const GOVERNANCE = [
-  { k: "Truth", v: "Human-confirmed and server-owned." },
+  { k: "Truth", v: "Server-owned and invariant-bounded." },
   { k: "State", v: "Deterministic, kept outside the model." },
   { k: "Safety", v: "Untrusted content isolated as data, never instruction." },
   { k: "Reliability", v: "Failure paths designed in advance, not discovered in production." },
