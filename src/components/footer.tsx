@@ -90,6 +90,12 @@ export function Footer() {
                 linkedin
               </a>
               <Link
+                href="/resume"
+                className="font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+              >
+                resume
+              </Link>
+              <Link
                 href="/privacy"
                 className="font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
               >
