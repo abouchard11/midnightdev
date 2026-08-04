@@ -82,7 +82,7 @@ export function Footer() {
                 github
               </a>
               <a
-                href="https://www.linkedin.com/in/alex-bouchard-70aa958?trk=profile-badge"
+                href="https://www.linkedin.com/in/alex-bouchard-ai?trk=profile-badge"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"

@@ -103,7 +103,7 @@ export default function RootLayout({
               },
               sameAs: [
                 "https://github.com/abouchard11",
-                "https://www.linkedin.com/in/alex-bouchard-70aa958",
+                "https://www.linkedin.com/in/alex-bouchard-ai",
                 "https://yapword.com",
                 "https://thatsmybest.com",
                 "https://court.yapoleon.com",

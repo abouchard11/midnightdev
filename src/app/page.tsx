@@ -187,7 +187,7 @@ export default function Home() {
               behavior, full-stack web and iOS delivery, organic search, and
               telemetry. Before software, I contributed to{" "}
               <a
-                href="https://www.linkedin.com/in/alex-bouchard-70aa958"
+                href="https://www.linkedin.com/in/alex-bouchard-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline decoration-[var(--text-dim)] underline-offset-4 transition-colors hover:text-[var(--text-primary)] hover:decoration-[var(--text-muted)]"
