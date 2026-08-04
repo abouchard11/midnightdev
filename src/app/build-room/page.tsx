@@ -159,7 +159,7 @@ const shippedSystem = {
     "User-controlled grid screenshots",
     "Automated tile and eligibility pipeline",
     "Conservative exclusion of uncertainty",
-    "Creator-confirmed factual truth",
+    "Invariant-bounded answer keys",
   ],
 };
 
@@ -195,9 +195,9 @@ const tmbPipeline = [
   },
   {
     step: "06",
-    title: "Creator-owned truth",
+    title: "Sealed under invariants",
     detail:
-      "The creator confirms the answer key, seals the quiz, and shares it — without staff reviewing the photos.",
+      "The default path seals the model's proposed key; a paid override lets the creator replace it first. Either way the player payload carries no answers and the seal is immutable — without staff reviewing the photos.",
   },
 ];
 
@@ -205,8 +205,8 @@ const governance = [
   {
     step: "01",
     title: "Truth",
-    rule: "Human-confirmed and server-owned",
-    detail: "The model may propose; it does not become the authority.",
+    rule: "Server-owned and invariant-bounded",
+    detail: "The model can propose and perform; code decides the payload, the reveal, and the score.",
   },
   {
     step: "02",
@@ -745,7 +745,7 @@ export default function BuildRoomPage() {
               Shipped from concept to the App Store in 14 days by replacing facial
               recognition and Meta access with user-controlled screenshots. The
               pipeline segments the grid, excludes uncertain imagery, creates the
-              quiz, and returns factual authority to the creator.
+              quiz, and bounds what the model&apos;s proposed answer key can reach.
             </p>
 
             <div className="mt-10 grid gap-4 md:grid-cols-2">
@@ -812,8 +812,8 @@ export default function BuildRoomPage() {
             <p className="mt-6 max-w-[720px] text-[length:var(--fs-small)] leading-relaxed text-[var(--text-dim)]">
               The automation does not need to know who anyone is. The operator does
               not need to see the user&apos;s photos. The platform does not need to
-              grant account access. Safety stays conservative, and factual
-              authority stays with the creator.
+              grant account access. Safety stays conservative, and the invariants
+              hold whether or not the creator edits the key.
             </p>
           </div>
         </section>

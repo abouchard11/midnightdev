@@ -94,21 +94,21 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
     url: "thatsmybest.com",
     description:
       "Multimodal social game that turns photo-grid screenshots into a friend quiz.",
-    stack: ["multimodal ai", "human confirmation", "web + ios"],
+    stack: ["multimodal ai", "machine-checkable invariants", "web + ios"],
     screenshot: "/screenshots/thatsmybest.png",
     tagline: "Screenshots in. A playable social memory test out.",
     problem:
       "A screenshot contains visual evidence, but a model can still invent context, misread a tile, or turn an observation into mind-reading. The product also has to make quiz creation fast enough for a friend to finish, share, and pull other people into the loop.",
     solution:
-      "Built a mobile-first web and iOS flow that ingests one to four social-grid screenshots, selects candidate tiles, generates questions and answer-specific reactions, then requires the creator to confirm the answer key before sealing the quiz. The model proposes; the person who knows the photos establishes truth.",
+      "Built a mobile-first web and iOS flow that ingests one to four social-grid screenshots, selects candidate tiles, and generates questions and answer-specific reactions. On the free default path the model's own guess becomes the answer key at seal time; per-question correction ships as a paid upgrade, not a required step. So the guardrails are code, not a review queue: no answers in the player payload, reveal only after a valid pick, an immutable seal, and scores only for players who actually played.",
     techStack: [
       {
         name: "Multimodal generation",
         role: "Reads uploaded photo grids and proposes visually grounded quiz questions.",
       },
       {
-        name: "Creator-confirmed truth",
-        role: "The creator reviews the selected tile and answer key before publication.",
+        name: "Machine-checkable invariants",
+        role: "Bound what a wrong guess can reach: no answers in the player payload, reveal only after a valid pick, an immutable seal.",
       },
       {
         name: "Serverless product loop",
@@ -121,16 +121,16 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
     ],
     results: [
       "Live on the web and in the Apple App Store",
-      "Creator-confirmed answer keys keep model guesses from becoming product truth",
+      "Invariants hold on every quiz, whether or not a human touched the answer key",
       "Answer-specific reactions, named friends, and timed group reveals create the social loop",
       "Early soft-launch generation cost measured at roughly 6–7¢ per completed quiz",
     ],
     gradient: "from-[#0C0C10] to-[#181820]",
     tradeoffs: [
       {
-        decision: "Human confirmation over model confidence",
+        decision: "Invariants over a required review step",
         reasoning:
-          "The creator knows which person, moment, or detail is correct. A confidence score does not.",
+          "A human review step is worth building, but it is not what a system can rely on — the fastest path through any product is the one that skips it. Correction ships as a paid override; the invariants run either way.",
       },
       {
         decision: "Web links and an iOS app",
