@@ -28,9 +28,9 @@ programmatic search, GEO/AI-answer readiness, PostHog telemetry, and growth.
 > I’m Alex Bouchard, founder and solo builder at MidnightDev. I take products
 > from thesis and business model through UX, AI behavior, full-stack web and iOS
 > delivery, organic search, and telemetry. Before software, I contributed to
-> roughly $400 million in commercial real estate transactions. The common
-> thread is judgment under uncertainty: test the thesis, check the source data,
-> define who has authority, and own the result.
+> roughly $400 million in commercial real estate transactions as half of a
+> two-person team. The common thread is judgment under uncertainty: test the
+> thesis, check the source data, define who has authority, and own the result.
 
 ## LinkedIn
 
@@ -65,7 +65,7 @@ The operated distribution system also includes [@YapoleonGreater on X](https://x
 
 My operating rule is simple: models may propose, create, and challenge. People, explicit authority boundaries, and machine-checkable constraints determine what is true, safe, affordable, and ready to ship.
 
-Before software, I completed 85+ retail real estate transactions totaling roughly $400MM across acquisition, disposition, leasing, and repositioning. That experience still shapes how I underwrite products, inspect assumptions, and make decisions under uncertainty.
+Before software, I completed 85+ retail real estate transactions totaling roughly $400MM across acquisition, disposition, leasing, and repositioning — as half of a two-person team. That experience still shapes how I underwrite products, inspect assumptions, and make decisions under uncertainty.
 
 MidnightDev takes a limited number of product diagnostics, proof-of-value builds, embedded engagements, and strategic partnerships. I am also open to unusually good forward-deployed and applied-AI product roles.
 
@@ -151,7 +151,7 @@ MidnightDev takes a limited number of product diagnostics, proof-of-value builds
 | Methylene Blue Ultra: 7,746 impressions, 100 clicks | First-party Search Console export supplied Aug. 2, 2026 | 28-day period; organic visibility, not revenue |
 | Jones Act Calculator: 2,700 impressions, 23 clicks | First-party Search Console export supplied Aug. 2, 2026 | 28-day period; organic visibility, not revenue |
 | That’s My Best reached App Store approval in 14 days | Build Room chronology and release record | Say approval, not scaled adoption |
-| Roughly $400MM in CRE transactions | Existing public LinkedIn record and transaction history | Use “contributed to” in general summaries |
+| Roughly $400MM in CRE transactions, as half of a two-person team | Existing public LinkedIn record and transaction history | Use “contributed to” in general summaries; pair the dollar figure with the two-person-team qualifier |
 | 85+ retail CRE transactions | Existing public LinkedIn record and resume history | Keep “roughly” on aggregate dollar volume |
 | PostHog across five project spaces | Connected MidnightDev PostHog organization inspected Aug. 3, 2026 | Four named product projects plus one shared/default project |
 | Yapword product instrumentation | Live PostHog event schema and growth dashboard inspected Aug. 3, 2026 | Dozens of product events; do not claim every planned event is populated |
