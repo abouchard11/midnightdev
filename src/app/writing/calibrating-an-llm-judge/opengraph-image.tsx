@@ -1,5 +1,10 @@
 import { ImageResponse } from "next/og";
 
+// The figures in the result strip below duplicate numbers stated in ./page.tsx
+// and sourced from CALIBRATION-v2.md. The essay itself flags that a tighter
+// 5–6 runs-per-cell re-measurement has not been run yet — if those numbers are
+// ever re-measured, update them HERE as well or the share card goes stale.
+
 export const alt =
   "Calibrating an LLM judge for a game people are trying to beat — MidnightDev";
 export const size = { width: 1200, height: 630 };
