@@ -193,8 +193,9 @@ export default function Home() {
                 className="underline decoration-[var(--text-dim)] underline-offset-4 transition-colors hover:text-[var(--text-primary)] hover:decoration-[var(--text-muted)]"
               >
                 roughly $400 million in commercial real estate transactions
-              </a>
-              . The common thread is judgment under uncertainty: test the thesis,
+              </a>{" "}
+              as half of a two-person team. The common thread is judgment under
+              uncertainty: test the thesis,
               check the source data, define who has authority, and own the result.
             </p>
 

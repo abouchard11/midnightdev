@@ -407,7 +407,7 @@ const priorRecord = [
     label: "Transaction record",
     value: "85+ retail transactions",
     detail:
-      "Roughly $400M in total volume — buying, selling, leasing, and repositioning.",
+      "Roughly $400M in total volume as half of a two-person team — buying, selling, leasing, and repositioning.",
   },
   {
     label: "Operating record",
