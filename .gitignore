@@ -107,3 +107,6 @@ temp/
 *.sqlite3
 .gstack/
 .vercel
+
+# Claude Code — .claude/launch.json is intentionally tracked; local settings are not
+.claude/settings.local.json

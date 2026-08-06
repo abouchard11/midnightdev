@@ -23,21 +23,14 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: PUBLISHED,
     authors: ["Alex Bouchard"],
-    images: [
-      {
-        url: "https://midnightdev.dev/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Alex Bouchard — Forward-Deployed AI Lead",
-      },
-    ],
+    // Images intentionally omitted — ./opengraph-image.tsx supplies the
+    // per-article card via the file convention for both og: and twitter:.
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description:
       "The specified metric was a median win-rate. It turned out bimodal and degenerate — an offline sweep of hundreds of curves found zero in band. So the metric changed.",
-    images: ["https://midnightdev.dev/opengraph-image"],
   },
 };
 
@@ -51,7 +44,7 @@ const articleJsonLd = {
   dateModified: PUBLISHED,
   inLanguage: "en-US",
   url: URL,
-  image: "https://midnightdev.dev/opengraph-image",
+  image: `${URL}/opengraph-image`,
   author: {
     "@id": "https://midnightdev.dev/#alex-bouchard",
   },

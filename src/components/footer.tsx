@@ -50,6 +50,12 @@ export function Footer() {
                 chronological story
               </Link>
               <Link
+                href="/writing"
+                className="font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+              >
+                writing
+              </Link>
+              <Link
                 href="/services"
                 className="font-mono text-[13px] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
               >
