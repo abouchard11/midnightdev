@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Alex Bouchard — Interactive AI Case File",
     description:
-      "A forward-deployed engineering evidence trail from product thesis through deployment, measurement, and distribution.",
+      "A forward-deployed AI evidence trail from product thesis through deployment, measurement, and distribution.",
   },
 };
 
