@@ -3,7 +3,15 @@ import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 
-const TITLE = "Reading AI licensing deals out of HTTP status codes";
+// Slug intentionally does not match the title. The piece shipped as
+// "Reading AI licensing deals out of HTTP status codes" and was retitled
+// 2026-08-07 because that phrasing asserted a cause the data only correlates:
+// a status code tells you who is blocked, not why. The licensing material is
+// still in section 02, hedged. The slug stays put so the URL keeps working.
+// "firewall" not "WAF" on purpose — the acronym failed a live comprehension
+// test on a technical reader, and this piece is read by marketing and SEO
+// people too. The body uses WAF freely, with context around it.
+const TITLE = "Your firewall is your AI policy";
 const DESCRIPTION =
   "I probed 18 major sites with the user-agent of every AI crawler that matters. Who gets a 200 and who gets a 403 lines up with who signed deals and who is in litigation — and two of my own findings did not survive the data.";
 const URL = "https://midnightdev.dev/writing/ai-licensing-deals-in-status-codes";
@@ -233,8 +241,8 @@ export default function AiLicensingDealsInStatusCodesPage() {
             </p>
 
             <h1 className="max-w-[900px] font-display text-[length:var(--fs-h1)] font-extrabold leading-[1.05] tracking-[-0.04em]">
-              Reading AI licensing deals{" "}
-              <span className="gradient-text">out of HTTP status codes</span>
+              Your firewall is{" "}
+              <span className="gradient-text">your AI policy</span>
             </h1>
 
             <p className="mt-8 max-w-[720px] text-lg leading-relaxed text-[var(--text-muted)]">

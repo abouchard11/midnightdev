@@ -5,8 +5,7 @@ import { ImageResponse } from "next/og";
 // dataset is ever re-run, update the arrays in ./page.tsx AND this strip, or
 // the share card goes stale.
 
-export const alt =
-  "Reading AI licensing deals out of HTTP status codes — MidnightDev";
+export const alt = "Your firewall is your AI policy — MidnightDev";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -58,7 +57,9 @@ export default async function Image() {
         {/* Headline */}
         <div
           style={{
-            fontSize: 62,
+            // Larger than the sibling card's 62 — this title is five words and
+            // would sit lost in the middle of a 1200x630 canvas at that size.
+            fontSize: 88,
             fontWeight: 800,
             color: "#EDEDF0",
             letterSpacing: "-0.03em",
@@ -67,7 +68,7 @@ export default async function Image() {
             maxWidth: 1000,
           }}
         >
-          Reading AI licensing deals out of HTTP status codes
+          Your firewall is your AI policy
         </div>
 
         {/* Measured-result strip */}

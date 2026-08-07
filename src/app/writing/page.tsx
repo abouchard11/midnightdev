@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const posts = [
   {
     slug: "ai-licensing-deals-in-status-codes",
-    title: "Reading AI licensing deals out of HTTP status codes",
+    title: "Your firewall is your AI policy",
     description:
       "I probed 18 major sites with the user-agent of every AI crawler that matters. Who gets a 200 and who gets a 403 lines up with who signed deals and who is in litigation — and two of my own findings did not survive the data.",
     date: "2026-08-07",
