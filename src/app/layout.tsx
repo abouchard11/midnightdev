@@ -104,7 +104,6 @@ export default function RootLayout({
                     "https://midnightdev.dev",
                     "https://github.com/abouchard11",
                     "https://www.linkedin.com/in/alex-bouchard-ai",
-                    "https://www.linkedin.com/in/alex-bouchard-70aa958",
                     "https://dev.to/abouchard11",
                     "https://x.com/alexbouchardd",
                     "https://apps.apple.com/us/developer/alex-bouchard/id6774829905",
