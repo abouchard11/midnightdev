@@ -3,9 +3,6 @@ import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 
-const INTERACTIVE_CASE_FILE =
-  "https://alex-ai-engineer-portfolio.amb1122.chatgpt.site/";
-
 export const metadata: Metadata = {
   title: "Forward-Deployed AI Case File | MidnightDev",
   description:
@@ -25,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Alex Bouchard — Interactive AI Case File",
     description:
-      "A forward-deployed engineering evidence trail from product thesis through deployment, measurement, and distribution.",
+      "A forward-deployed AI evidence trail from product thesis through deployment, measurement, and distribution.",
   },
 };
 
@@ -51,7 +48,7 @@ export function CaseFilePage() {
             <span className="gradient-text">The full evidence trail.</span>
           </h1>
           <p className="mt-7 max-w-[720px] text-lg leading-relaxed text-[var(--text-muted)]">
-            This forward-deployed engineering portfolio takes MidnightDev&apos;s work apart: product
+            This forward-deployed AI portfolio takes MidnightDev&apos;s work apart: product
             decisions, architecture, implementation, evaluation, native release,
             production telemetry, organic discovery, and operating judgment.
           </p>
@@ -69,26 +66,24 @@ export function CaseFilePage() {
           </ul>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href={INTERACTIVE_CASE_FILE}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 font-mono text-[length:var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110"
-            >
-              open the interactive case file &#8599;
-            </a>
             <Link
               href="/build-room"
+              className="rounded-[var(--r-sm)] bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] px-6 py-3 font-mono text-[length:var(--fs-nav)] font-medium text-white shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110"
+            >
+              open the Build Room case file
+            </Link>
+            <Link
+              href="/#work"
               className="rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] px-6 py-3 font-mono text-[length:var(--fs-nav)] font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]"
             >
-              inspect the Build Room
+              browse the shipped work
             </Link>
           </div>
 
           <p className="mt-7 max-w-[700px] font-mono text-[length:var(--fs-label)] leading-relaxed text-[var(--text-dim)]">
-            The interactive exhibit is hosted separately so it can stay tailored
-            to forward-deployed AI engineering and implementation roles. MidnightDev
-            remains the canonical studio and consulting home.
+            The full exhibit lives in the Build Room, on this domain, tailored to
+            forward-deployed AI and implementation roles. MidnightDev remains the
+            canonical studio and consulting home.
           </p>
         </div>
       </main>
