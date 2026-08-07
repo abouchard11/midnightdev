@@ -7,14 +7,14 @@ const INTERACTIVE_CASE_FILE =
   "https://alex-ai-engineer-portfolio.amb1122.chatgpt.site/";
 
 export const metadata: Metadata = {
-  title: "Forward-Deployed AI Engineering Case File | MidnightDev",
+  title: "Forward-Deployed AI Case File | MidnightDev",
   description:
-    "A forward-deployed AI engineering case file covering Alex Bouchard's shipped products, evaluation systems, PostHog telemetry, SEO/GEO, distribution, and operating background.",
+    "A forward-deployed AI case file covering Alex Bouchard's shipped products, evaluation systems, PostHog telemetry, SEO/GEO, distribution, and operating background.",
   alternates: {
     canonical: "/case-file",
   },
   openGraph: {
-    title: "Alex Bouchard — Forward-Deployed AI Engineering Case File",
+    title: "Alex Bouchard — Forward-Deployed AI Case File",
     description:
       "Shipped products, model-governance boundaries, evals, PostHog telemetry, SEO/GEO, and distribution evidence in one interactive case file.",
     url: "https://midnightdev.dev/case-file",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex Bouchard — Interactive AI Engineering Case File",
+    title: "Alex Bouchard — Interactive AI Case File",
     description:
       "A forward-deployed engineering evidence trail from product thesis through deployment, measurement, and distribution.",
   },
