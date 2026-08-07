@@ -91,7 +91,7 @@ export default function RootLayout({
                   alternateName: "Alex Bouchard AI",
                   jobTitle: "Forward-Deployed AI Lead",
                   description:
-                    "Alex Bouchard is a Houston-based, AI-native product builder and the founder of MidnightDev. As a forward-deployed AI lead, he designs, ships, and operates consumer AI products end to end across web and iOS, including Yapword, That's My Best, and Yapoleon's Court. Before software, he spent roughly a decade in commercial real estate, closing 85+ retail transactions totaling roughly $400 million on a two-person team.",
+                    "Alex Bouchard is a Houston-based, AI-native product builder and the founder of MidnightDev. As a forward-deployed AI lead, he designs, ships, and operates consumer AI products end to end across web and iOS, including Yapword, That's My Best, and Yapoleon's Court. Before software, he spent roughly a decade in commercial real estate, closing 85+ retail transactions totaling roughly $400 million as half of a two-person team.",
                   url: "https://midnightdev.dev",
                   image: "https://midnightdev.dev/headshot.jpg",
                   email: "mailto:alex@midnightdev.dev",
