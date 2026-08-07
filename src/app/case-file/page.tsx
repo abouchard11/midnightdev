@@ -3,6 +3,9 @@ import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 
+const INTERACTIVE_CASE_FILE =
+  "https://alex-ai-engineer-portfolio.amb1122.chatgpt.site/";
+
 export const metadata: Metadata = {
   title: "Forward-Deployed AI Case File | MidnightDev",
   description:
@@ -72,16 +75,19 @@ export function CaseFilePage() {
             >
               open the Build Room case file
             </Link>
-            <Link
-              href="/#work"
+            <a
+              href={INTERACTIVE_CASE_FILE}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] px-6 py-3 font-mono text-[length:var(--fs-nav)] font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]"
             >
-              browse the shipped work
-            </Link>
+              open the interactive case file &#8599;
+            </a>
           </div>
 
           <p className="mt-7 max-w-[700px] font-mono text-[length:var(--fs-label)] leading-relaxed text-[var(--text-dim)]">
-            The full exhibit lives in the Build Room, on this domain, tailored to
+            The Build Room is the canonical case file on this domain. The
+            interactive exhibit is hosted separately, tailored to
             forward-deployed AI and implementation roles. MidnightDev remains the
             canonical studio and consulting home.
           </p>
