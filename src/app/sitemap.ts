@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://midnightdev.dev/writing/ai-licensing-deals-in-status-codes",
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.8,
+    },
+    {
       url: "https://midnightdev.dev/writing/calibrating-an-llm-judge",
       lastModified: now,
       changeFrequency: "yearly" as const,
