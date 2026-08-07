@@ -1,6 +1,6 @@
 # MidnightDev Workfolio
 
-The public workfolio of **Alex Bouchard**, a forward-deployed AI engineer,
+The public workfolio of **Alex Bouchard**, a forward-deployed AI lead,
 founder, and solo builder creating products and organic growth systems in
 Houston, Texas.
 
