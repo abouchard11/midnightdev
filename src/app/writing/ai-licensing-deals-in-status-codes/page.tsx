@@ -132,7 +132,7 @@ const gates = [
     title: "Readability",
     rule: "words in raw HTML, no JS",
     detail:
-      "GPTBot, ClaudeBot and PerplexityBot do not execute JavaScript. Googlebot, which feeds Gemini, is the only major AI-adjacent crawler that renders. A client-rendered site can rank first in Google and be blank everywhere else.",
+      "GPTBot, ClaudeBot and PerplexityBot do not execute JavaScript. For most sites, Googlebot (feeding Gemini) and Applebot are the only AI-adjacent crawlers that render it. A client-rendered site can rank first in Google and be blank to nearly everything else.",
   },
   {
     step: "04",
@@ -451,15 +451,20 @@ export default function AiLicensingDealsInStatusCodesPage() {
         <section className={SECTION}>
           <div className={INNER}>
             <SectionLabel>04 / accidental invisibility</SectionLabel>
-            <h2 className={H2}>Some very famous sites are blank to AI by accident</h2>
+            <h2 className={H2}>
+              Some very famous sites are blank to AI — deliberately or not
+            </h2>
 
             <p className={P}>
-              Airbnb 403s AI crawlers at the WAF{" "}
-              <em>and</em> serves 94 visible words of raw HTML — belt and
-              suspenders, if what you are securing is invisibility. LinkedIn
-              serves 23 words to anything without a session; the authwall applies
-              to the machines writing answers about your career too. Reddit&apos;s
-              homepage contains one visible word before JavaScript runs.
+              Airbnb returns 403 to nine of the twelve AI user-agents in the
+              test — every OpenAI, Perplexity, Microsoft, Amazon, Meta and
+              Common Crawl token — while all three Anthropic user-agents get a
+              200. Its homepage serves 94 visible words of raw HTML either way,
+              so even the allowed crawlers read a nearly blank page. LinkedIn
+              served the probe a 23-word bot-check interstitial — whatever a
+              verified crawler negotiates, the raw HTML a stranger receives is
+              effectively empty. Reddit&apos;s homepage contains one visible
+              word before JavaScript runs.
             </p>
 
             <p className={P}>
