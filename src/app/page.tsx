@@ -7,9 +7,9 @@ import { Nav } from "@/components/nav";
 import { projectList } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Forward-Deployed AI Lead | Product & Growth Systems",
+  title: "AI-Native Founder-Operator | Forward-Deployed AI Lead",
   description:
-    "Alex Bouchard is a forward-deployed AI lead who builds products and the organic growth systems that get them discovered, measured, and used—from thesis through web and iOS launch, SEO/GEO, PostHog, and iteration.",
+    "Alex Bouchard is an AI-native founder-operator and forward-deployed AI lead—the sole human accountable from product thesis and business model through engineering, release, growth, analytics, and operation.",
   alternates: {
     canonical: "/",
   },
@@ -104,6 +104,12 @@ const posthogProof = [
 
 const selectedWebSystems = [
   {
+    name: "ReadableByAI",
+    href: "https://readablebyai.com",
+    detail:
+      "An AI-crawler visibility system taken from concept to production in 72 hours: active probes, customer-owned monitoring, log analysis, a 661-company benchmark, and a paid verification path.",
+  },
+  {
     name: "Jones Act Calculator",
     href: "https://www.jonesactcalculator.com",
     detail:
@@ -172,7 +178,7 @@ export default function Home() {
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-6 flex items-center gap-2 font-mono text-[11px] lowercase tracking-[0.08em] text-[var(--accent-blue)]">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--success)]" />
-              Houston, Texas · forward-deployed AI lead · selective consulting
+              Houston, Texas · AI-native founder-operator · forward-deployed AI lead
             </p>
 
             <h1 className="max-w-[920px] font-display text-[length:var(--fs-h1)] font-bold leading-[1.05] tracking-[-0.035em]">
@@ -181,23 +187,58 @@ export default function Home() {
               and the systems that get them discovered, measured, and used.
             </h1>
 
-            <p className="mt-8 max-w-[760px] text-lg leading-relaxed text-[var(--text-muted)] md:text-xl">
-              I&apos;m Alex Bouchard, forward-deployed AI lead, founder, and
-              solo builder at MidnightDev. I take products from thesis and business model through UX, AI
-              behavior, full-stack web and iOS delivery, organic search, and
-              telemetry. Before software, I contributed to{" "}
+            <p className="mt-8 max-w-[820px] text-lg leading-relaxed text-[var(--text-muted)] md:text-xl">
+              I&apos;m Alex Bouchard, an AI-native founder-operator and
+              forward-deployed AI lead. At MidnightDev, I am the sole human
+              accountable for every function and every production decision—from
+              thesis, business model, brand, and UX through AI systems, full-stack
+              engineering, testing, security, deployment, growth, analytics, and
+              ongoing operations. Before software, I specialized in repositioning{" "}
               <a
                 href="https://www.linkedin.com/in/alex-bouchard-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline decoration-[var(--text-dim)] underline-offset-4 transition-colors hover:text-[var(--text-primary)] hover:decoration-[var(--text-muted)]"
               >
-                roughly $400 million in commercial real estate transactions
+                Class C shopping centers
               </a>{" "}
-              as half of a two-person team. The common thread is judgment under
-              uncertainty: test the thesis,
-              check the source data, define who has authority, and own the result.
+              and contributed to 85–90 shopping-center transactions totaling
+              roughly $400 million.
             </p>
+
+            <div className="mt-10 grid gap-3 sm:grid-cols-3">
+              <a
+                href="https://www.linkedin.com/in/alex-bouchard-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--border-hover)]"
+              >
+                <p className="font-display text-2xl font-bold tracking-[-0.03em]">85–90</p>
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--text-muted)]">
+                  shopping centers · Class C repositioning
+                </p>
+              </a>
+              <Link
+                href="/work/thatsmybest"
+                className="rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--border-hover)]"
+              >
+                <p className="font-display text-2xl font-bold tracking-[-0.03em]">≈2 weeks</p>
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--text-muted)]">
+                  concept to App Store approval
+                </p>
+              </Link>
+              <a
+                href="https://readablebyai.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--border-hover)]"
+              >
+                <p className="font-display text-2xl font-bold tracking-[-0.03em]">72 hours</p>
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--text-muted)]">
+                  ReadableByAI · concept to production
+                </p>
+              </a>
+            </div>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
@@ -604,10 +645,12 @@ export default function Home() {
               </h2>
               <div className="mt-5 grid max-w-[900px] gap-5 text-[15px] leading-relaxed text-[var(--text-muted)] md:grid-cols-2">
                 <p>
-                  Before MidnightDev, I led acquisitions, dispositions, leasing,
-                  and portfolio strategy in commercial real estate. The work
-                  demanded disciplined underwriting, careful diligence, and clear
-                  decisions under uncertainty.
+                  Before MidnightDev, I specialized in repositioning Class C
+                  shopping centers and contributed to 85–90 shopping-center
+                  transactions totaling roughly $400 million. I worked across
+                  acquisitions, dispositions, leasing, and portfolio strategy—finding
+                  underperforming retail assets, diagnosing the broken economics, and
+                  creating value through disciplined execution.
                 </p>
                 <p>
                   That experience is why I treat model output as evidence, not
@@ -635,8 +678,9 @@ export default function Home() {
               </h2>
               <p className="mt-4 max-w-md text-lg leading-relaxed text-[var(--text-muted)]">
                 MidnightDev takes a limited number of consulting engagements,
-                embedded product builds, strategic partnerships, and unusually
-                good forward-deployed and applied-AI product roles.
+                embedded product builds, and strategic partnerships. I am also open
+                to unusually strong forward-deployed AI leadership, AI-native
+                founder-operator, and special-projects roles.
               </p>
               <div className="mt-6 flex flex-col gap-2 font-mono text-[length:var(--fs-nav)]">
                 <a
