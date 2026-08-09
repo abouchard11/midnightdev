@@ -1,7 +1,7 @@
 # MidnightDev Workfolio
 
-The public workfolio of **Alex Bouchard**, a forward-deployed AI lead,
-founder, and solo builder creating products and organic growth systems in
+The public workfolio of **Alex Bouchard**, an AI-native founder-operator and
+forward-deployed AI lead creating products and organic growth systems in
 Houston, Texas.
 
 > **Generate boldly. Validate cheaply. Kill ruthlessly. Scale what survives.**
@@ -9,6 +9,11 @@ Houston, Texas.
 My operating rule is simple: models propose and challenge; explicit authority
 boundaries, human confirmation, and machine-checkable invariants decide what
 ships.
+
+Alex is the sole human accountable for every function and production decision
+across the products he ships—from thesis, business model, brand, and UX through
+AI systems, full-stack engineering, testing, security, deployment, growth,
+analytics, and ongoing operations.
 
 This site is the front door to shipped consumer AI products, public engineering
 evidence, and owned organic-acquisition systems. It intentionally separates:
@@ -39,7 +44,11 @@ labels visibility, leads, forecasts, and revenue separately.
 - [Yapword](https://yapword.com) — persistent generative character engineering
   in a daily word game, live on web and iOS.
 - [That's My Best](https://thatsmybest.com) — multimodal screenshot-to-quiz
-  product with creator-confirmed truth, sharing, and group reveals.
+  product with machine-checkable invariants, sharing, and group reveals; taken
+  from concept to App Store approval in roughly two weeks.
+- [ReadableByAI](https://readablebyai.com) — AI-crawler visibility system with
+  active probes, customer-owned monitoring, log analysis, and a 661-company
+  benchmark; taken from concept to production in 72 hours.
 - [Yapoleon's Court](https://github.com/abouchard11/yapoleons-court) —
   competitive AI judging with bounded model taste, deterministic server-owned
   scoring, prompt-injection isolation, safety, and spend controls.
@@ -71,6 +80,12 @@ labels visibility, leads, forecasts, and revenue separately.
   specialized business scaffold built in two days, spanning acquisition,
   diagnostic, operating, financing, and local-discovery systems; it is presented
   as a venture prototype, not claimed contractor operating history.
+
+## Commercial judgment
+
+Before software, Alex specialized in repositioning Class C shopping centers and
+contributed to 85–90 shopping-center transactions totaling roughly $400 million
+across acquisitions, dispositions, leasing, and portfolio strategy.
 
 ## Local development
 
