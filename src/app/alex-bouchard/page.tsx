@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CaseFilePage } from "../case-file/page";
+import { CaseFilePage } from "@/components/case-file-page";
 
 export const metadata: Metadata = {
   title: "Alex Bouchard | Forward-Deployed AI Lead",

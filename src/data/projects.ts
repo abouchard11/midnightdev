@@ -5,6 +5,7 @@ export type ProjectSummary = {
   description: string;
   stack: string[];
   screenshot: string;
+  screenshotAlt: string;
 };
 
 export type ProjectDetail = ProjectSummary & {
@@ -46,6 +47,8 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       "Competitive AI game where the model can't touch the score.",
     stack: ["react", "gemini", "vercel"],
     screenshot: "/screenshots/yapoleonscourt.png",
+    screenshotAlt:
+      "Yapoleon's Court gameplay screen showing the AI opponent's in-voice reply beside a favor meter the model cannot write to.",
     tagline: "An AI game the LLM can't game.",
     problem:
       "A competitive game backed by an LLM the player is actively trying to game — running on a paid API, in front of minors — is a stack of production hazards. The model can be prompt-injected. It can be flattered into a high score. A bad actor can burn through your API bill. And the model can say things a family audience shouldn't hear.",
@@ -96,6 +99,8 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       "Multimodal social game that turns photo-grid screenshots into a friend quiz.",
     stack: ["multimodal ai", "machine-checkable invariants", "web + ios"],
     screenshot: "/screenshots/thatsmybest.png",
+    screenshotAlt:
+      "That's My Best converting an uploaded photo-grid screenshot into a multiple-choice quiz about which friend picked which photo.",
     tagline: "Screenshots in. A playable social memory test out.",
     problem:
       "A screenshot contains visual evidence, but a model can still invent context, misread a tile, or turn an observation into mind-reading. The product also has to make quiz creation fast enough for a friend to finish, share, and pull other people into the loop.",
@@ -158,6 +163,8 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       "Six synthetic decision lenses, one broken forecast, and a reproducible source-of-truth audit.",
     stack: ["python", "monte carlo", "regression", "invariant tests"],
     screenshot: "/screenshots/boardroom-audit.svg",
+    screenshotAlt:
+      "AI Boardroom Forecast Audit diagram showing six synthetic decision lenses reviewing a $65.9M revenue forecast and flagging it as unsupported.",
     tagline: "The AI boardroom that killed a $65.9M forecast.",
     problem:
       "An AI-built operating plan for a real Houston festival concept produced an approximately $65.9M profit forecast. A six-seat synthetic review cut the headline dramatically, but a later audit found that even the corrected workbook mixed incompatible expense definitions.",
@@ -216,6 +223,8 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       "Daily word game with a persistent generative character that reacts to real play.",
     stack: ["react", "gemini", "capacitor", "web + ios"],
     screenshot: "/screenshots/yapword.png",
+    screenshotAlt:
+      "Yapword daily word game board mid-round, with the persistent generative character reacting to the player's guesses.",
     tagline: "A daily word game where the character remembers how you played.",
     problem:
       "A funny system prompt can produce a good line once. A consumer character has to remain recognizable across guesses, hints, difficulty modes, wins, losses, fallbacks, model changes, and thousands of repeated interactions — without being allowed to rewrite game truth.",
@@ -274,4 +283,5 @@ export const projectList: ProjectSummary[] = featuredProjectSlugs.map((slug) => 
   description: projects[slug].description,
   stack: projects[slug].stack,
   screenshot: projects[slug].screenshot,
+  screenshotAlt: projects[slug].screenshotAlt,
 }));

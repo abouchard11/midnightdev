@@ -6,7 +6,7 @@ import { Nav } from "@/components/nav";
 export const metadata: Metadata = {
   title: "The Build Room — Case File 001 | MidnightDev",
   description:
-    "How two AI products got shipped end-to-end by one person: authority boundaries, the Yapoleon voice ledger, a 14-day App Store release, release gates, and the telemetry that closes the loop.",
+    "How one person shipped two AI products end to end: authority boundaries, the Yapoleon voice ledger, a 14-day App Store release, and the telemetry behind it.",
   alternates: {
     canonical: "/build-room",
   },

@@ -9,7 +9,7 @@ import { projectList } from "@/data/projects";
 export const metadata: Metadata = {
   title: "AI-Native Founder-Operator | Forward-Deployed AI Lead",
   description:
-    "Alex Bouchard is an AI-native founder-operator and forward-deployed AI lead—the sole human accountable from product thesis and business model through engineering, release, growth, analytics, and operation.",
+    "Alex Bouchard is an AI-native founder-operator and forward-deployed AI lead — accountable from thesis through engineering, release, growth, and operation.",
   alternates: {
     canonical: "/",
   },
@@ -282,15 +282,14 @@ export default function Home() {
 
             <div className="grid gap-6 sm:grid-cols-2">
               {projectList.map((project) => (
-                <Link
+                <article
                   key={project.slug}
-                  href={`/work/${project.slug}`}
-                  className="group overflow-hidden rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--border-hover)]"
+                  className="group relative overflow-hidden rounded-[var(--r-md)] border border-[var(--border)] bg-[var(--surface)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--border-hover)] focus-within:border-[var(--border-hover)]"
                 >
                   <div className="relative h-[190px] overflow-hidden sm:h-[260px]">
                     <Image
                       src={project.screenshot}
-                      alt=""
+                      alt={project.screenshotAlt}
                       width={640}
                       height={400}
                       sizes="(max-width: 640px) 100vw, 50vw"
@@ -299,8 +298,18 @@ export default function Home() {
                   </div>
                   <div className="p-5">
                     <div className="flex items-start justify-between gap-4">
-                      <h3 className="text-[16px] font-semibold">{project.name}</h3>
-                      <span className="font-mono text-[10px] text-[var(--accent-blue)]">
+                      <h3 className="text-[16px] font-semibold">
+                        <Link
+                          href={`/work/${project.slug}`}
+                          className="after:absolute after:inset-0 after:content-['']"
+                        >
+                          {project.name}
+                        </Link>
+                      </h3>
+                      <span
+                        aria-hidden="true"
+                        className="font-mono text-[10px] text-[var(--accent-blue)]"
+                      >
                         case study →
                       </span>
                     </div>
@@ -318,7 +327,7 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
-                </Link>
+                </article>
               ))}
             </div>
           </div>

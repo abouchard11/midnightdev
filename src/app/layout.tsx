@@ -41,7 +41,7 @@ const cabinetGrotesk = localFont({
 export const metadata: Metadata = {
   title: "Alex Bouchard | Forward-Deployed AI Lead | MidnightDev",
   description:
-    "Forward-deployed AI lead and MidnightDev founder building products, organic growth systems, and commercial technology across strategy, full-stack delivery, AI reliability, SEO/GEO, and telemetry.",
+    "Forward-deployed AI lead and MidnightDev founder building products and organic growth systems — full-stack delivery, AI reliability, SEO/GEO, and telemetry.",
   metadataBase: new URL("https://midnightdev.dev"),
   icons: {
     icon: [

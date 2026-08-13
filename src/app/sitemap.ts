@@ -42,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
     {
+      url: "https://midnightdev.dev/alex-bouchard",
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: "https://midnightdev.dev/resume",
       lastModified: now,
       changeFrequency: "monthly" as const,
