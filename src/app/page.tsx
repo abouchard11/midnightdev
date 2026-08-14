@@ -202,7 +202,7 @@ export default function Home() {
               >
                 Class C shopping centers
               </a>{" "}
-              and contributed to 85–90 shopping-center transactions totaling
+              and contributed to ~90 shopping-center transactions totaling
               roughly $400 million.
             </p>
 
@@ -213,7 +213,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--border-hover)]"
               >
-                <p className="font-display text-2xl font-bold tracking-[-0.03em]">85–90</p>
+                <p className="font-display text-2xl font-bold tracking-[-0.03em]">~90</p>
                 <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--text-muted)]">
                   shopping centers · Class C repositioning
                 </p>
@@ -655,7 +655,7 @@ export default function Home() {
               <div className="mt-5 grid max-w-[900px] gap-5 text-[15px] leading-relaxed text-[var(--text-muted)] md:grid-cols-2">
                 <p>
                   Before MidnightDev, I specialized in repositioning Class C
-                  shopping centers and contributed to 85–90 shopping-center
+                  shopping centers and contributed to ~90 shopping-center
                   transactions totaling roughly $400 million. I worked across
                   acquisitions, dispositions, leasing, and portfolio strategy—finding
                   underperforming retail assets, diagnosing the broken economics, and
