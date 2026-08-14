@@ -7,9 +7,9 @@ import { Nav } from "@/components/nav";
 import { projectList } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "AI-Native Founder-Operator | Forward-Deployed AI Lead",
+  title: "Alex Bouchard — Forward-Deployed AI Lead · MidnightDev | ReadableByAI, Yapword | $400M CRE",
   description:
-    "Alex Bouchard is an AI-native founder-operator and forward-deployed AI lead — accountable from thesis through engineering, release, growth, and operation.",
+    "Embedded AI product builds for operators. Founder @ MidnightDev. Shipped ReadableByAI and Yapword. $400M closed in commercial real estate.",
   alternates: {
     canonical: "/",
   },
@@ -178,7 +178,7 @@ export default function Home() {
           <div className="mx-auto max-w-[var(--content-max)]">
             <p className="mb-6 flex items-center gap-2 font-mono text-[11px] lowercase tracking-[0.08em] text-[var(--accent-blue)]">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--success)]" />
-              Houston, Texas · AI-native founder-operator · forward-deployed AI lead
+              Houston, Texas · forward-deployed AI lead · founder @ MidnightDev
             </p>
 
             <h1 className="max-w-[920px] font-display text-[length:var(--fs-h1)] font-bold leading-[1.05] tracking-[-0.035em]">
@@ -188,8 +188,8 @@ export default function Home() {
             </h1>
 
             <p className="mt-8 max-w-[820px] text-lg leading-relaxed text-[var(--text-muted)] md:text-xl">
-              I&apos;m Alex Bouchard, an AI-native founder-operator and
-              forward-deployed AI lead. At MidnightDev, I am the sole human
+              I&apos;m Alex Bouchard, a forward-deployed AI lead and AI-native
+              founder-operator. At MidnightDev, I am the sole human
               accountable for every function and every production decision—from
               thesis, business model, brand, and UX through AI systems, full-stack
               engineering, testing, security, deployment, growth, analytics, and
