@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
+import { ORG_ID, PERSON_ID, WEBSITE_ID } from "@/data/schema";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -86,7 +87,7 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "Person",
-                  "@id": "https://midnightdev.dev/#alex-bouchard",
+                  "@id": PERSON_ID,
                   name: "Alex Bouchard",
                   alternateName: "Alex Bouchard AI",
                   jobTitle: "Forward-Deployed AI Lead",
@@ -99,7 +100,7 @@ export default function RootLayout({
                     "@type": "Place",
                     name: "Houston, Texas",
                   },
-                  worksFor: { "@id": "https://midnightdev.dev/#midnightdev" },
+                  worksFor: { "@id": ORG_ID },
                   sameAs: [
                     "https://midnightdev.dev",
                     "https://github.com/abouchard11",
@@ -123,10 +124,10 @@ export default function RootLayout({
                 },
                 {
                   "@type": "Organization",
-                  "@id": "https://midnightdev.dev/#midnightdev",
+                  "@id": ORG_ID,
                   name: "MidnightDev",
                   url: "https://midnightdev.dev",
-                  founder: { "@id": "https://midnightdev.dev/#alex-bouchard" },
+                  founder: { "@id": PERSON_ID },
                   logo: {
                     "@type": "ImageObject",
                     url: "https://midnightdev.dev/icon-512.png",
@@ -143,10 +144,10 @@ export default function RootLayout({
                 },
                 {
                   "@type": "WebSite",
-                  "@id": "https://midnightdev.dev/#website",
+                  "@id": WEBSITE_ID,
                   name: "MidnightDev",
                   url: "https://midnightdev.dev/",
-                  publisher: { "@id": "https://midnightdev.dev/#midnightdev" },
+                  publisher: { "@id": ORG_ID },
                 },
               ],
             }),
