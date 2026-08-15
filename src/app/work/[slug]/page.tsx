@@ -31,11 +31,25 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
         url: `https://midnightdev.dev/work/${slug}`,
         siteName: "MidnightDev",
         type: "website",
+        images: [
+          {
+            url: project.screenshot,
+            width: project.screenshotWidth,
+            height: project.screenshotHeight,
+            alt: project.screenshotAlt,
+          },
+        ],
       },
       twitter: {
         card: "summary_large_image" as const,
         title: `${project.name} — MidnightDev`,
         description: project.tagline,
+        images: [
+          {
+            url: project.screenshot,
+            alt: project.screenshotAlt,
+          },
+        ],
       },
     };
   });
@@ -51,8 +65,71 @@ export default async function ProjectPage({
   const project = projects[slug as keyof typeof projects];
   if (!project || !isFeatured) notFound();
 
+  const pageUrl = `https://midnightdev.dev/work/${slug}`;
+  const screenshotUrl = `https://midnightdev.dev${project.screenshot}`;
+
+  // Ties this page's screenshot to the canonical Person as its creator, so the
+  // "built by Alex Bouchard" claim is machine-readable rather than implied by
+  // page copy. primaryImageOfPage is one of the three signals Google reads when
+  // choosing a thumbnail for Search/Discover/AI Overviews (alongside
+  // mainEntityOfPage and og:image, which this route now also sets).
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: `${project.name} — MidnightDev`,
+        description: project.tagline,
+        isPartOf: { "@id": "https://midnightdev.dev/#website" },
+        primaryImageOfPage: { "@id": `${pageUrl}#screenshot` },
+        about: { "@id": `${pageUrl}#project` },
+        mainEntity: { "@id": `${pageUrl}#project` },
+      },
+      {
+        "@type": "ImageObject",
+        "@id": `${pageUrl}#screenshot`,
+        contentUrl: screenshotUrl,
+        url: screenshotUrl,
+        width: project.screenshotWidth,
+        height: project.screenshotHeight,
+        caption: project.screenshotAlt,
+        description: project.screenshotAlt,
+        encodingFormat: project.screenshot.endsWith(".svg")
+          ? "image/svg+xml"
+          : "image/png",
+        representativeOfPage: true,
+        creator: { "@id": "https://midnightdev.dev/#alex-bouchard" },
+        creditText: "MidnightDev",
+        copyrightNotice: "© Alex Bouchard / MidnightDev",
+      },
+      {
+        "@type": project.schemaType,
+        "@id": `${pageUrl}#project`,
+        name: project.name,
+        description: project.description,
+        url: `https://${project.url}`,
+        image: { "@id": `${pageUrl}#screenshot` },
+        author: { "@id": "https://midnightdev.dev/#alex-bouchard" },
+        creator: { "@id": "https://midnightdev.dev/#alex-bouchard" },
+        publisher: { "@id": "https://midnightdev.dev/#midnightdev" },
+        ...(project.applicationCategory
+          ? { applicationCategory: project.applicationCategory }
+          : {}),
+        ...(project.operatingSystem
+          ? { operatingSystem: project.operatingSystem }
+          : {}),
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav />
 
       <main className="flex-1">
@@ -109,9 +186,9 @@ export default async function ProjectPage({
             >
               <Image
                 src={project.screenshot}
-                alt={`${project.name} screenshot`}
-                width={1280}
-                height={800}
+                alt={project.screenshotAlt}
+                width={project.screenshotWidth}
+                height={project.screenshotHeight}
                 className="w-full"
                 sizes="100vw"
                 priority

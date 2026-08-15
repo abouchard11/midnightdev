@@ -168,9 +168,51 @@ const progression = [
   },
 ];
 
+// Declares the headshot as this page's primary image and attributes it to the
+// canonical Person. Person.image in layout.tsx stays a plain URL string on
+// purpose: that node is emitted byte-identically across all four properties and
+// their test contracts assert its shape, so the richer ImageObject lives here,
+// on the one page the photo actually appears.
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://midnightdev.dev/#webpage",
+      url: "https://midnightdev.dev/",
+      name: "Alex Bouchard — Forward-Deployed AI Lead · MidnightDev",
+      isPartOf: { "@id": "https://midnightdev.dev/#website" },
+      about: { "@id": "https://midnightdev.dev/#alex-bouchard" },
+      mainEntity: { "@id": "https://midnightdev.dev/#alex-bouchard" },
+      primaryImageOfPage: { "@id": "https://midnightdev.dev/#headshot" },
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://midnightdev.dev/#headshot",
+      contentUrl: "https://midnightdev.dev/headshot.jpg",
+      url: "https://midnightdev.dev/headshot.jpg",
+      width: 400,
+      height: 400,
+      encodingFormat: "image/jpeg",
+      caption:
+        "Alex Bouchard, Forward-Deployed AI Lead and founder of MidnightDev, Houston, Texas.",
+      description:
+        "Headshot of Alex Bouchard, Forward-Deployed AI Lead and founder of MidnightDev, Houston, Texas.",
+      representativeOfPage: true,
+      about: { "@id": "https://midnightdev.dev/#alex-bouchard" },
+      creditText: "MidnightDev",
+      copyrightNotice: "© Alex Bouchard / MidnightDev",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+      />
       <Nav />
 
       <main className="flex-1">
@@ -640,7 +682,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-[var(--content-max)] gap-10 md:grid-cols-[auto_1fr] md:gap-14">
             <Image
               src="/headshot.jpg"
-              alt="Alex Bouchard"
+              alt="Alex Bouchard, Forward-Deployed AI Lead and founder of MidnightDev, Houston, Texas."
               width={112}
               height={112}
               className="h-28 w-28 rounded-full object-cover"

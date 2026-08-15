@@ -6,6 +6,11 @@ export type ProjectSummary = {
   stack: string[];
   screenshot: string;
   screenshotAlt: string;
+  /** Intrinsic pixel dimensions of `screenshot`. Drives both the rendered
+   *  aspect ratio and the ImageObject width/height emitted in JSON-LD, so
+   *  these must match the real asset on disk. */
+  screenshotWidth: number;
+  screenshotHeight: number;
 };
 
 export type ProjectDetail = ProjectSummary & {
@@ -19,6 +24,13 @@ export type ProjectDetail = ProjectSummary & {
   testimonial: { quote: string; name: string; role: string } | null;
   linkLabel?: string;
   caseStudyHref?: string;
+  /** schema.org type for the JSON-LD node describing this project. Kept in
+   *  data rather than inferred in the template so the choice stays honest:
+   *  the shipped games are SoftwareApplication, a research artifact is not. */
+  schemaType: "SoftwareApplication" | "CreativeWork";
+  /** Only meaningful when schemaType is SoftwareApplication. */
+  applicationCategory?: string;
+  operatingSystem?: string;
 };
 
 export const projectSlugs = [
@@ -50,6 +62,8 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
     screenshot: "/screenshots/yapoleonscourt.png",
     screenshotAlt:
       "Yapoleon's Court gameplay screen showing the AI opponent's in-voice reply beside a favor meter the model cannot write to.",
+    screenshotWidth: 1200,
+    screenshotHeight: 630,
     tagline: "An AI game the LLM can't game.",
     problem:
       "A competitive game backed by an LLM the player is actively trying to game — running on a paid API, in front of minors — is a stack of production hazards. The model can be prompt-injected. It can be flattered into a high score. A bad actor can burn through your API bill. And the model can say things a family audience shouldn't hear.",
@@ -68,6 +82,9 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       "Prompt injection handled structurally (player reply rides as data being judged, never in the system instruction)",
     ],
     gradient: "from-[#160B2A] to-[#241238]",
+    schemaType: "SoftwareApplication",
+    applicationCategory: "GameApplication",
+    operatingSystem: "Web",
     tradeoffs: [
       {
         decision: "Model returns taste, server derives the score",
@@ -102,6 +119,8 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
     screenshot: "/screenshots/thatsmybest.png",
     screenshotAlt:
       "That's My Best converting an uploaded photo-grid screenshot into a multiple-choice quiz about which friend picked which photo.",
+    screenshotWidth: 1200,
+    screenshotHeight: 630,
     tagline: "Screenshots in. A playable social memory test out.",
     problem:
       "A screenshot contains visual evidence, but a model can still invent context, misread a tile, or turn an observation into mind-reading. The product also has to make quiz creation fast enough for a friend to finish, share, and pull other people into the loop.",
@@ -132,6 +151,9 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       "Early soft-launch generation cost measured at roughly 6–7¢ per completed quiz",
     ],
     gradient: "from-[#0C0C10] to-[#181820]",
+    schemaType: "SoftwareApplication",
+    applicationCategory: "GameApplication",
+    operatingSystem: "Web, iOS",
     tradeoffs: [
       {
         decision: "Invariants over a required review step",
@@ -166,6 +188,8 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
     screenshot: "/screenshots/boardroom-audit.svg",
     screenshotAlt:
       "AI Boardroom Forecast Audit diagram showing six synthetic decision lenses reviewing a $65.9M revenue forecast and flagging it as unsupported.",
+    screenshotWidth: 1280,
+    screenshotHeight: 800,
     tagline: "The AI boardroom that killed a $65.9M forecast.",
     problem:
       "An AI-built operating plan for a real Houston festival concept produced an approximately $65.9M profit forecast. A six-seat synthetic review cut the headline dramatically, but a later audit found that even the corrected workbook mixed incompatible expense definitions.",
@@ -196,6 +220,7 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       "Deterministic outputs, tests, evidence ledger, and limitations published publicly",
     ],
     gradient: "from-[#0A1224] to-[#18102B]",
+    schemaType: "CreativeWork",
     tradeoffs: [
       {
         decision: "Competing roles over one agreeable assistant",
@@ -226,6 +251,8 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
     screenshot: "/screenshots/yapword.png",
     screenshotAlt:
       "Yapword daily word game board mid-round, with the persistent generative character reacting to the player's guesses.",
+    screenshotWidth: 1200,
+    screenshotHeight: 630,
     tagline: "A daily word game where the character remembers how you played.",
     caseStudyHref: "/writing/benchmarking-a-generative-character",
     problem:
@@ -257,6 +284,9 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       "Server-owned rules prevent the generative layer from touching game truth",
     ],
     gradient: "from-[#2A0F14] to-[#38181F]",
+    schemaType: "SoftwareApplication",
+    applicationCategory: "GameApplication",
+    operatingSystem: "Web, iOS",
     tradeoffs: [
       {
         decision: "Deterministic game state, generative commentary",
@@ -286,4 +316,6 @@ export const projectList: ProjectSummary[] = featuredProjectSlugs.map((slug) => 
   stack: projects[slug].stack,
   screenshot: projects[slug].screenshot,
   screenshotAlt: projects[slug].screenshotAlt,
+  screenshotWidth: projects[slug].screenshotWidth,
+  screenshotHeight: projects[slug].screenshotHeight,
 }));
