@@ -30,6 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://midnightdev.dev/writing/benchmarking-a-generative-character",
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.8,
+    },
+    {
       url: "https://midnightdev.dev/writing",
       lastModified: now,
       changeFrequency: "monthly" as const,

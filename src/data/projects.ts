@@ -18,6 +18,7 @@ export type ProjectDetail = ProjectSummary & {
   tradeoffs: { decision: string; reasoning: string }[];
   testimonial: { quote: string; name: string; role: string } | null;
   linkLabel?: string;
+  caseStudyHref?: string;
 };
 
 export const projectSlugs = [
@@ -226,6 +227,7 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
     screenshotAlt:
       "Yapword daily word game board mid-round, with the persistent generative character reacting to the player's guesses.",
     tagline: "A daily word game where the character remembers how you played.",
+    caseStudyHref: "/writing/benchmarking-a-generative-character",
     problem:
       "A funny system prompt can produce a good line once. A consumer character has to remain recognizable across guesses, hints, difficulty modes, wins, losses, fallbacks, model changes, and thousands of repeated interactions — without being allowed to rewrite game truth.",
     solution:

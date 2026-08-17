@@ -38,6 +38,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "benchmarking-a-generative-character",
+    title:
+      "Benchmarking a generative character when there is nothing to diff against",
+    description:
+      "A shipped AI character, an 82% hidden-reasoning bill, and a whole-game evaluation harness for the quality a one-shot test cannot see.",
+    date: "2026-08-17",
+    dateLabel: "17 August 2026",
+    topic: "llm evaluation",
+  },
+  {
     slug: "ai-licensing-deals-in-status-codes",
     title: "Your firewall is your AI policy",
     description:
