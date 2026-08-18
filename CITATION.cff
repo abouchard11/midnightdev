@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 title: "midnightdev"
 abstract: >-
-  The MidnightDev agency website: enterprise SaaS development and AI-powered local
-  marketing services.
+  The MidnightDev site: Alex Bouchard's forward-deployed AI engineering practice —
+  shipped AI products, engineering case studies, and selective consulting.
 authors:
   - family-names: "Bouchard"
     given-names: "Alex"
