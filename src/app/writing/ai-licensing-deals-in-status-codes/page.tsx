@@ -267,6 +267,27 @@ export default function AiLicensingDealsInStatusCodesPage() {
           </div>
         </section>
 
+        {/* Editor's note — Index policy supersedes access-claim framing (CYA review) */}
+        <section className="px-6 pt-8 md:px-12">
+          <div className={INNER}>
+            <p className="max-w-[760px] border-l-2 border-[var(--accent-blue)] pl-4 font-mono text-[13px] leading-relaxed text-[var(--text-dim)]">
+              Editor&apos;s note (August 2026): every access claim in this piece describes what my
+              simulated probe received — not what any vendor&apos;s real crawler gets. The successor
+              to this work, the{" "}
+              <a href="https://readablebyai.com/index-report" className="text-[var(--accent-blue)] hover:underline">
+                ReadableByAI Index
+              </a>
+              , publishes under a stricter policy: bot-specific access results are never published
+              as claims about named companies; only identity-independent readability is. That
+              policy and the free re-verification offer live at{" "}
+              <a href="https://readablebyai.com/corrections" className="text-[var(--accent-blue)] hover:underline">
+                readablebyai.com/corrections
+              </a>
+              .
+            </p>
+          </div>
+        </section>
+
         {/* The problem */}
         <section className={SECTION}>
           <div className={INNER}>
