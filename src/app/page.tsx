@@ -166,6 +166,12 @@ const progression = [
     detail:
       "In Yapword, That’s My Best, and Yapoleon’s Court, models generate character and content; people and deterministic code control scores, confirmed answers, safety, and spend.",
   },
+  {
+    date: "Aug 2026",
+    title: "Accept, post, and pay stayed human-owned",
+    detail:
+      "Dozen is a marketplace graph for 1k–50k creators. The model drafts captions. Tests own the gates. Stripe and live posting are still scaffolding — the case does not claim GMV.",
+  },
 ];
 
 // Declares the headshot as this page's primary image and attributes it to the

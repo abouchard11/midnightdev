@@ -1,6 +1,6 @@
 # MidnightDev public positioning
 
-Last updated: August 3, 2026
+Last updated: August 19, 2026
 
 This is the canonical source for public MidnightDev and Alex Bouchard positioning.
 Website, LinkedIn, resumes, proposals, and public case studies should remain
@@ -48,6 +48,7 @@ I specialize in the difficult seam where probabilistic models meet reliable soft
 
 Selected work:
 • Yapword — AI-native word game live on web and the App Store
+• Dozen — agent marketplace where the model cannot accept, post, or pay; tests own the gates; Stripe and live posting still scaffolding, no GMV claim
 • That’s My Best — multimodal social product taken from concept to App Store approval in 14 days
 • Yapoleon’s Court — competitive AI game where the model never emits the score
 • HTX Foundation Fix — concept-to-live specialized business scaffold built in two days; a venture prototype, not claimed contractor operating history
@@ -77,6 +78,7 @@ Founder-led applied AI product and growth systems studio, operated by a forward-
 
 SHIPPED PRODUCTS
 • Yapword — persistent generative character inside a daily word game; live on web and the App Store
+• Dozen — twelve-node creator marketplace; accept/post/pay stay human- or verifier-owned; not live GMV
 • That’s My Best — multimodal screenshot-to-friend-quiz product; web and iOS
 • Yapoleon’s Court — competitive AI game where deterministic code, not the model, owns scoring
 
@@ -107,7 +109,7 @@ The studio works from initial thesis through launch and iteration: business mode
 
 The specialty is the difficult seam between probabilistic models and reliable software. MidnightDev builds persistent character systems, multimodal generation, deterministic controls, human confirmation, safety boundaries, cost protection, analytics, and feedback loops that turn raw model capability into products people can understand, trust, discover, and return to.
 
-Selected work includes Yapword, an AI-native word game live on web and the App Store; That’s My Best, a multimodal social product taken from concept to App Store approval in 14 days; and Yapoleon’s Court, a competitive AI game where the model never emits the score.
+Selected work includes Yapword, an AI-native word game live on web and the App Store; That’s My Best, a multimodal social product taken from concept to App Store approval in 14 days; Yapoleon’s Court, a competitive AI game where the model never emits the score; and Dozen, an agent marketplace where accept, post, and pay stay outside the model — tests, not live GMV.
 
 MidnightDev also owns and operates organic search systems across health research, legal information, real estate, local services, and consumer products. First-party Search Console snapshots show production visibility without paid acquisition, while five active PostHog project spaces connect activation, retention, sharing, reliability, and release decisions.
 
@@ -156,6 +158,7 @@ MidnightDev takes a limited number of product diagnostics, proof-of-value builds
 | PostHog across five project spaces | Connected MidnightDev PostHog organization inspected Aug. 3, 2026 | Four named product projects plus one shared/default project |
 | Yapword product instrumentation | Live PostHog event schema and growth dashboard inspected Aug. 3, 2026 | Dozens of product events; do not claim every planned event is populated |
 | HTX Foundation Fix concept-to-live in two days | Owner statement; confirm against repository/deployment chronology before using in formal diligence | Describe as a specialized business scaffold or venture prototype, not contractor operating history |
+| Dozen accept/post/pay gates | Production-imported tests in private repo (31 product + 5 graph-linter) as of Aug. 19, 2026 | Do not claim Stripe, live TikTok/IG posting, or production GMV |
 
 ## Public guardrails
 
@@ -173,3 +176,5 @@ MidnightDev takes a limited number of product diagnostics, proof-of-value builds
 - Do not present forecasts as validated economics.
 - Keep GEO claims at systems/readiness/research level until citation monitoring
   demonstrates answer-engine inclusion.
+- Do not claim Dozen has live Stripe escrow, live TikTok/Instagram posting, or
+  production GMV. The public artifact is the case study; the product repo stays private.
