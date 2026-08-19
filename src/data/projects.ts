@@ -58,7 +58,7 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
   dozen: {
     name: "Dozen",
     slug: "dozen",
-    url: "midnightdev.dev/work/dozen",
+    url: "dozen.midnightdev.dev",
     description:
       "Agent marketplace where the model cannot accept, post, or pay.",
     stack: ["tanstack start", "invariant tests", "closed-loop agents"],
@@ -96,7 +96,7 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       "Accept stays closed until Stripe Checkout is paid at or above the campaign budget",
       "Fake-risk and out-of-market seats are rejected at assemble and shown on the closed sample",
       "Anomalous ER holds that seat's payout; pay stays running until measure is clean and escrow is funded",
-      "Stripe Checkout is wired fail-closed. Connect transfers and live TikTok/Instagram confirmation remain scaffolding — this case does not claim production GMV",
+      "Stripe Checkout is wired fail-closed. Creators onboard Stripe Express on the desk. TikTok posts confirm via public oEmbed. GMV on /ledger is transferred cents only",
     ],
     gradient: "from-[#F4EFE4] to-[#E4D8C4]",
     schemaType: "SoftwareApplication",
@@ -125,7 +125,7 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       },
     ],
     testimonial: null,
-    linkLabel: "read the case",
+    linkLabel: "open Dozen",
     caseStudyHref: "/writing/the-model-cannot-own-the-money",
     caseStudyLabel: "launch essay",
   },
