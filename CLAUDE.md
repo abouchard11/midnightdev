@@ -23,6 +23,27 @@ In QA mode, flag any code that doesn't match DESIGN.md.
 - shadcn/ui components
 - JetBrains Mono, Cabinet Grotesk, DM Sans (Google Fonts)
 
+## Branching & shipping
+
+Default is **commit straight to `main`**. Vercel's git integration is connected, so a push
+to `main` deploys production. Solo repo — 24 merged PRs to date have received zero human
+reviews, so PR-per-change buys ceremony and branch litter, not safety.
+
+- **Content, copy, articles, data, single-page fixes** → commit to `main`, push, done.
+  Wrong output is a two-minute fix-forward, which is cheaper than the review round-trip.
+- **Branch + PR only when a preview build answers something you cannot check locally** —
+  dependency bumps, config/framework changes, shared components (`nav`, `footer`,
+  `globals.css`), sitewide SEO/schema/sitemap reach, or anything that can break the build.
+  The preview URL is the only thing a PR gives you that `main` does not. Use it.
+
+The test is not "how big is this change" — it is "can I tell it is right by looking at it?"
+
+Atomic commits still apply (one task, one commit), and never sweep unrelated working-tree
+changes into a commit; stage explicit paths, not `git add -A`.
+
+Delete merged branches locally and on the remote once merged. Remote deletion needs Alex's
+explicit go-ahead (global rule); see `~/.claude/references/git-hygiene.md`.
+
 ## Portfolio Sites (Built by MidnightDev)
 All sites should have a "Built by MidnightDev" footer credit linking to midnightdev.dev.
 
