@@ -24,6 +24,7 @@ export type ProjectDetail = ProjectSummary & {
   testimonial: { quote: string; name: string; role: string } | null;
   linkLabel?: string;
   caseStudyHref?: string;
+  caseStudyLabel?: string;
   /** schema.org type for the JSON-LD node describing this project. Kept in
    *  data rather than inferred in the template so the choice stays honest:
    *  the shipped games are SoftwareApplication, a research artifact is not. */
@@ -70,7 +71,7 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
     problem:
       "Influencer marketplaces still leave the work after “I found someone” on humans: briefs, FTC, posting, and payouts. Agent demos paper over that hole by auto-closing accept, post, and pay so a single handler can look finished.",
     solution:
-      "Built Dozen as a twelve-node graph with machine-checkable verifiers. Accept stays open until at least 60% of offered seats accept and at least six seats fill — or the brand explicitly refills from the bench. Post re-checks FTC disclosure fail-closed. Measure can fail without closing pay: anomalous engagement holds that seat. The model only writes captions.",
+      "Built Dozen as a twelve-node graph with machine-checkable verifiers. Accept stays idle until Stripe Checkout records the brand budget, then stays open until at least 60% of offered seats accept and at least six seats fill — or the brand explicitly refills from the bench. Post re-checks FTC disclosure fail-closed. Measure can fail without closing pay: anomalous engagement holds that seat. The model only writes captions.",
     techStack: [
       {
         name: "Closed-loop agent graph",
@@ -90,11 +91,12 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
       },
     ],
     results: [
-      "31 production-imported tests plus a 5-test graph linter that fails if the model owns accept, post, or pay",
+      "43 production-imported tests plus a 5-test graph linter that fails if the model owns accept, post, or pay",
       "Accept gate is dual: ≥60% and at least six seats; rejected seats stay in the offered denominator",
+      "Accept stays closed until Stripe Checkout is paid at or above the campaign budget",
       "Fake-risk and out-of-market seats are rejected at assemble and shown on the closed sample",
-      "Anomalous ER holds that seat's payout; pay stays running until measure is clean",
-      "Stripe escrow and live TikTok/Instagram confirmation remain scaffolding — this case does not claim production GMV",
+      "Anomalous ER holds that seat's payout; pay stays running until measure is clean and escrow is funded",
+      "Stripe Checkout is wired fail-closed. Connect transfers and live TikTok/Instagram confirmation remain scaffolding — this case does not claim production GMV",
     ],
     gradient: "from-[#F4EFE4] to-[#E4D8C4]",
     schemaType: "SoftwareApplication",
@@ -124,6 +126,8 @@ export const projects: Record<ProjectSlug, ProjectDetail> = {
     ],
     testimonial: null,
     linkLabel: "read the case",
+    caseStudyHref: "/writing/the-model-cannot-own-the-money",
+    caseStudyLabel: "launch essay",
   },
 
   yapoleonscourt: {

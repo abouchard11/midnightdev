@@ -59,10 +59,10 @@ const WORK: Work[] = [
       "Agent marketplace between brands and 1k–50k TikTok / Instagram creators. The model drafts captions. Accept, post, and pay stay open until a human or an independent verifier closes them.",
     bullets: [
       "Twelve-node graph: intake → safety → assemble → offer → accept → draft → verify → revise → review → post → measure → pay.",
-      "Accept gate is dual — ≥60% and at least six seats. Rejected seats stay in the offered denominator.",
+      "Accept gate is dual — ≥60% and at least six seats. Accept stays closed until Stripe Checkout records the brand budget. Rejected seats stay in the offered denominator.",
       "Post re-checks FTC disclosure fail-closed. Anomalous ER (3.2× or 0.15×) holds that seat's payout without closing pay.",
-      "31 production-imported tests plus a graph linter that fails if the model owns an irreversible edge.",
-      "Stripe escrow and live TikTok/Instagram confirmation remain scaffolding. This line does not claim production GMV.",
+      "43 production-imported tests plus a graph linter that fails if the model owns an irreversible edge.",
+      "Stripe Checkout is wired fail-closed. Connect transfers and live TikTok/Instagram confirmation remain scaffolding. This line does not claim production GMV.",
     ],
     printTrim: [3],
     stack: ["tanstack start", "postgres", "invariant tests", "closed-loop agents"],

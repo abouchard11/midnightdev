@@ -170,7 +170,7 @@ const progression = [
     date: "Aug 2026",
     title: "Accept, post, and pay stayed human-owned",
     detail:
-      "Dozen is a marketplace graph for 1k–50k creators. The model drafts captions. Tests own the gates. Stripe and live posting are still scaffolding — the case does not claim GMV.",
+      "Dozen is a marketplace graph for 1k–50k creators. The model drafts captions. Tests own the gates. Stripe Checkout is wired fail-closed; Connect transfers and live posting are still scaffolding — the case does not claim GMV.",
   },
 ];
 

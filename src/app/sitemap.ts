@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://midnightdev.dev/writing/the-model-cannot-own-the-money",
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.8,
+    },
+    {
       url: "https://midnightdev.dev/writing/ai-licensing-deals-in-status-codes",
       lastModified: now,
       changeFrequency: "yearly" as const,
