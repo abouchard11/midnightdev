@@ -103,6 +103,7 @@ export default function RootLayout({
                   worksFor: { "@id": ORG_ID },
                   sameAs: [
                     "https://midnightdev.dev",
+                    "https://orcid.org/0009-0003-0911-9681",
                     "https://github.com/abouchard11",
                     "https://www.linkedin.com/in/alex-bouchard-ai",
                     "https://dev.to/abouchard11",
