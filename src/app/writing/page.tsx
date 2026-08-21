@@ -38,6 +38,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "the-model-cannot-own-the-money",
+    title: "The model cannot own the money",
+    description:
+      "Dozen is a twelve-node creator marketplace. Accept, post, and pay stay outside the model. This is what the graph actually owns, what Stripe Checkout does, and what is still scaffolding.",
+    date: "2026-08-19",
+    dateLabel: "19 August 2026",
+    topic: "agent graphs",
+  },
+  {
     slug: "benchmarking-a-generative-character",
     title:
       "Benchmarking a generative character when there is nothing to diff against",

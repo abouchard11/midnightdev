@@ -24,6 +24,7 @@ export type ProjectDetail = ProjectSummary & {
   testimonial: { quote: string; name: string; role: string } | null;
   linkLabel?: string;
   caseStudyHref?: string;
+  caseStudyLabel?: string;
   /** schema.org type for the JSON-LD node describing this project. Kept in
    *  data rather than inferred in the template so the choice stays honest:
    *  the shipped games are SoftwareApplication, a research artifact is not. */
@@ -34,6 +35,7 @@ export type ProjectDetail = ProjectSummary & {
 };
 
 export const projectSlugs = [
+  "dozen",
   "yapword",
   "yapoleonscourt",
   "thatsmybest",
@@ -43,6 +45,7 @@ export const projectSlugs = [
 export type ProjectSlug = (typeof projectSlugs)[number];
 
 export const featuredProjectSlugs = [
+  "dozen",
   "yapword",
   "thatsmybest",
   "yapoleonscourt",
@@ -52,6 +55,81 @@ export const featuredProjectSlugs = [
 export type FeaturedProjectSlug = (typeof featuredProjectSlugs)[number];
 
 export const projects: Record<ProjectSlug, ProjectDetail> = {
+  dozen: {
+    name: "Dozen",
+    slug: "dozen",
+    url: "dozen.midnightdev.dev",
+    description:
+      "Agent marketplace where the model cannot accept, post, or pay.",
+    stack: ["tanstack start", "invariant tests", "closed-loop agents"],
+    screenshot: "/screenshots/dozen.png",
+    screenshotAlt:
+      "Dozen landing page with the headline Don't buy one influencer. Agents run a dozen, and a twelve-node campaign graph whose accept node is still running.",
+    screenshotWidth: 1200,
+    screenshotHeight: 630,
+    tagline: "The model writes captions. It does not own the irreversible edges.",
+    problem:
+      "Influencer marketplaces still leave the work after “I found someone” on humans: briefs, FTC, posting, and payouts. Agent demos paper over that hole by auto-closing accept, post, and pay so a single handler can look finished.",
+    solution:
+      "Built Dozen as a twelve-node graph with machine-checkable verifiers. Accept stays idle until Stripe Checkout records the brand budget, then stays open until at least 60% of offered seats accept and at least six seats fill — or the brand explicitly refills from the bench. Post re-checks FTC disclosure fail-closed. Measure can fail without closing pay: anomalous engagement holds that seat. The model only writes captions.",
+    techStack: [
+      {
+        name: "Closed-loop agent graph",
+        role: "intake → safety → assemble → offer → accept → draft → verify → revise → review → post → measure → pay. The script owns branching; the model does not own accept, post, or pay.",
+      },
+      {
+        name: "Production-imported tests",
+        role: "31 tests import the live matching, loop, and verifier modules — not stubs. A companion graph linter fails any topology that lets the model close an irreversible edge.",
+      },
+      {
+        name: "TanStack Start + Postgres",
+        role: "React 19 product surface with Better Auth and a PGLite/Postgres dual-mode store so the graph is durable, not a chat transcript.",
+      },
+      {
+        name: "Fail-closed policy",
+        role: "Banned verticals, FTC #ad, fake-risk ≥ 70 bps, and 1k–50k follower bounds reject before score. Anomalous ER (3.2× spike or 0.15× collapse) holds payout.",
+      },
+    ],
+    results: [
+      "43 production-imported tests plus a 5-test graph linter that fails if the model owns accept, post, or pay",
+      "Accept gate is dual: ≥60% and at least six seats; rejected seats stay in the offered denominator",
+      "Accept stays closed until Stripe Checkout is paid at or above the campaign budget",
+      "Fake-risk and out-of-market seats are rejected at assemble and shown on the closed sample",
+      "Anomalous ER holds that seat's payout; pay stays running until measure is clean and escrow is funded",
+      "Stripe Checkout is wired fail-closed. Creators onboard Stripe Express on the desk. TikTok posts confirm via public oEmbed. GMV on /ledger is transferred cents only",
+    ],
+    gradient: "from-[#F4EFE4] to-[#E4D8C4]",
+    schemaType: "SoftwareApplication",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    tradeoffs: [
+      {
+        decision: "The model cannot own accept, post, or pay",
+        reasoning:
+          "Those edges spend reputation and money. Auto-closing them so a demo finishes in one handler is a product lie. Humans, policy, or an independent verifier close them.",
+      },
+      {
+        decision: "Measure is independent of pay",
+        reasoning:
+          "A 3.2× engagement spike or a 0.15× collapse is a hold, not a reason to mark the campaign paid. The pay node stays running until measure is clean.",
+      },
+      {
+        decision: "Closed sample, not a fake finished campaign",
+        reasoning:
+          "The public /demo is labeled as a finished sample against the seed bench. Views are derived from baseline ER, not a live platform API.",
+      },
+      {
+        decision: "Keep the product repository private",
+        reasoning:
+          "The public artifact is this case study. Shipping a public repo before Stripe escrow and live post confirmation would over-claim the product.",
+      },
+    ],
+    testimonial: null,
+    linkLabel: "open Dozen",
+    caseStudyHref: "/writing/the-model-cannot-own-the-money",
+    caseStudyLabel: "launch essay",
+  },
+
   yapoleonscourt: {
     name: "Yapoleon's Court",
     slug: "yapoleonscourt",

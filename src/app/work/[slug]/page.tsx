@@ -168,7 +168,7 @@ export default async function ProjectPage({
                   href={project.caseStudyHref}
                   className="rounded-[var(--r-sm)] border border-[var(--border)] bg-[var(--surface)] px-5 py-2.5 font-mono text-[length:var(--fs-nav)] font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]"
                 >
-                  evaluation case study &rarr;
+                  {project.caseStudyLabel ?? "evaluation case study"} &rarr;
                 </Link>
               ) : null}
               <span className="font-mono text-xs text-[var(--text-dim)]">
